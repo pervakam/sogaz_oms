@@ -195,7 +195,7 @@
   </svg>
 </div>
 
-<header class="page-header">
+<header class="page-header" id="header">
   <div class="page-header__version-toggle">
     <div class="page-header__version-toggle-icon">
       <svg>
@@ -216,27 +216,264 @@
       <a class="main-nav__city" href="#">г. Санкт-Петербург</a>
     </div>
     <ul class="main-nav__help-list">
-      <li class="main-nav__help-item">
-        <div class="main-nav__help-item-icon">
+      <li class="main-nav__help-item main-nav__help-item--first">
+        <div class="main-nav__help-item-icon main-nav__help-item-icon--menu">
           <svg>
             <use xlink:href="#mark_white-icon"></use>
           </svg>
         </div>
-        <p>Адреса офисов</p>
+        <p class="main-nav__help-item-description">Адреса офисов</p>
       </li>
       <li class="main-nav__help-item">
-        <div class="main-nav__help-item-icon">
+        <div class="main-nav__help-item-icon main-nav__help-item-icon--menu">
           <svg>
             <use xlink:href="#lk_white-icon"></use>
           </svg>
         </div>
-        <p>Кабинет пользователя</p>
+        <p class="main-nav__help-item-description">Кабинет пользователя</p>
       </li>
-      <li class="main-nav__help-item">
+      <li class="main-nav__help-item main-nav__help-item--menu-hide">
         <a href="tel:88001000702">Круглосуточно<br>8 800 100 07 02</a>
       </li>
-      <li class="main-nav__help-item">
+      <li class="main-nav__help-item main-nav__help-item--menu-hide">
         <a href="#">Обращение<br>в СОГАЗ-Мед</a>
+      </li>
+      <li class="main-nav__help-item page-header__nav-hide main-nav__help-item--nav">
+        <a class="main-nav__help-item-button button" href="#">Оформить полис ОМС</a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="page-header__nav page-header__nav-hide">
+    <ul class="page-header__nav-wrapper">
+      <li class="page-header__section">
+        <input type="checkbox" id="header-nav-item4" name="header-nav-item4">
+        <label for="header-nav-item4" class="page-header__section-title page-header__section-title--second page-header__section-title--menu"><a>Получить
+          полис ОМС</a></label>
+        <ul class="page-header__nav-list page-header__nav-list--tablet">
+          <li class="ppage-header__nav-item page-header__nav-item--request page-header__nav-item--mark">
+            <a class="">Заявка на оформление полиса&nbsp;ОМС</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Порядок получения полиса ОМС</a>
+          </li>
+        </ul>
+        <input type="checkbox" id="header-nav-item3" name="header-nav-item3">
+        <label for="header-nav-item3" class="page-header__section-title page-header__section-title--second page-header__section-title--menu page-header__section-title--about"><a>О
+          компании</a></label>
+        <ul class="page-header__nav-list page-header__nav-list--tablet">
+          <li class="page-header__nav-item">
+            <a>Устав</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Лицензия</a>
+          </li>
+          <li class="page-header__nav-item page-header__nav-item--info">
+            <a>Раскрытие информации</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Акционеры</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Руководство</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Доска почета</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Участие в страховых группах, союзах страховщиков</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Сведения о правоустанавливающих документах</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Правила страхования и страховые тарифы</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Благотворительная деятельность</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Участники Страховой Группы «СОГАЗ»</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Информация о финансовом уполномоченном</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Контактная информация</a>
+          </li>
+        </ul>
+        <div class="page-header__nav-item-pdf">
+          <a>Информация об акционерах и лицах, под контролем либо значительным влиянием которых находится АО&nbsp;«Страховая
+            компания&nbsp;«СОГАЗ-Мед»</a>
+        </div>
+      </li>
+      <li class="page-header__section">
+        <input type="checkbox" id="header-nav-item5" name="header-nav-item5">
+        <label for="header-nav-item5" class="page-header__section-title page-header__section-title--second page-header__section-title--menu page-header__section-title--about"><a>Всё
+          об ОМС</a></label>
+        <ul class="page-header__nav-list page-header__nav-list--tablet">
+          <li class="page-header__nav-item">
+            <a>Законодательство</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Онлайн-чат</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Часто задаваемые вопросы</a>
+          </li>
+        </ul>
+        <input type="checkbox" id="header-nav-item2" name="header-nav-item2">
+        <label for="header-nav-item2" class="page-header__section-title page-header__section-title--third page-header__section-title--menu"><a>Полезно
+          знать</a></label>
+        <ul class="page-header__nav-list page-header__nav-list--tablet">
+          <li class="page-header__nav-item">
+            <a>Опросы и тесты</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Профилактика и диспансеризация</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Здоровое питание</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Образ жизни</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Здоровье ребёнка</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Важно знать</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Семья</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Красота</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Болезни и симптомы</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Мужское и женское здоровье</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Энциклопедия пациента</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a>Психология</a>
+          </li>
+        </ul>
+      </li>
+      <li class="page-header__section">
+        <ul class="page-header__section-list">
+          <li class="page-header__section-item">
+            <form class="page-header__help-form">
+              <input type="text" name="header-search-field" id="header-search-field" value="" placeholder=" " required="">
+              <label for="header-search-field">Что вы хотите найти?</label>
+            </form>
+          </li>
+          <li class="page-header__section-item">
+            <input type="checkbox" id="header-nav-item1" name="header-nav-item1">
+            <label for="header-nav-item1" class="page-header__section-title page-header__section-title--sec page-header__section-title--menu"><a>Права
+              и обязанности</a></label>
+            <ul class="page-header__nav-list page-header__nav-list--tablet">
+              <li class="page-header__nav-item">
+                <a>Обязанности страховой компании</a>
+              </li>
+              <li class="page-header__nav-item">
+                <a>Права застрахованных граждан</a>
+              </li>
+              <li class="page-header__nav-item">
+                <a>Обязанности застрахованных граждан</a>
+              </li>
+              <li class="page-header__nav-item">
+                <a>Если ваши права нарушены</a>
+              </li>
+              <li class="page-header__nav-item">
+                <a>Благодарности застрахованных граждан</a>
+              </li>
+              <li class="page-header__nav-item page-header__nav-item--mark">
+                <a>Написать Официальное обращение в СОГАЗ-Мед</a>
+              </li>
+            </ul>
+          </li>
+          <li class="page-header__section-item">
+            <h4 class="page-header__section-title page-header__section-title--first-list page-header__section-title--menu">
+            <a>Программа лояльности</a></h4></li>
+          <li class="page-header__section-item">
+            <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
+            <a>Новости</a></h4>
+          </li>
+          <li class="page-header__section-item">
+            <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
+            <a>Работа
+              в компании</a></h4></li>
+          <li class="page-header__section-item">
+            <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
+            <a>Карта
+              сайта</a></h4></li>
+          <li class="page-header__section-item">
+            <ul class="page-header__section-help-list">
+              <li class="page-header__section-help-item">
+                <a href="tel:88001000702">Круглосуточно<br>8 800 100 07 02</a>
+              </li>
+              <li class="page-header__section-help-item">
+                <a href="#">Обращение<br>в СОГАЗ-Мед</a>
+              </li>
+            </ul>
+            <div class="page-header__section-networks">
+              <ul class="page-header__networks-list">
+                <li class="page-header__networks-item">
+                  <a class="page-header__networks-item-link" href="#" title="Facebook">
+                    <span class="visually-hidden">Мы в Фейсбук</span>
+                    <svg>
+                      <use xlink:href="#fb-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-header__networks-item">
+                  <a class="page-header__networks-item-link" href="#" title="Instagram">
+                    <span class="visually-hidden">Мы в Инстаграм</span>
+                    <svg>
+                      <use xlink:href="#inst-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-header__networks-item">
+                  <a class="page-header__networks-item-link" href="#" title="Одноклассники">
+                    <span class="visually-hidden">Мы в Одноклассники</span>
+                    <svg>
+                      <use xlink:href="#ok-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-header__networks-item">
+                  <a class="page-header__networks-item-link" href="#" title="Вконтакте">
+                    <span class="visually-hidden">Мы в Вконтакте</span>
+                    <svg>
+                      <use xlink:href="#vk-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-header__networks-item">
+                  <a class="page-header__networks-item-link" href="#" title="Twitter">
+                    <span class="visually-hidden">Мы в Твиттер</span>
+                    <svg>
+                      <use xlink:href="#twt-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-header__networks-item">
+                  <a class="page-header__networks-item-link" href="#" title="RSS">
+                    <span class="visually-hidden">Наша RSS-лента</span>
+                    <svg>
+                      <use xlink:href="#rss-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </li>
     </ul>
   </nav>
@@ -458,8 +695,8 @@
       </ul>
     </div>
   </section>
-  <div class="up-button">
-    <p>наверх</p>
+  <div class="up-button up-button-hide">
+    <a href="#header">наверх</a>
   </div>
   <div class="networks">
     <ul class="networks__list">
@@ -575,7 +812,8 @@
           </li>
         </ul>
         <input type="checkbox" id="nav-item1" name="nav-item1">
-        <label for="nav-item1" class="page-footer__section-title page-footer__section-title--sec page-footer__section-title--menu"><a>Права и обязанности</a></label>
+        <label for="nav-item1" class="page-footer__section-title page-footer__section-title--sec page-footer__section-title--menu"><a>Права
+          и обязанности</a></label>
         <ul class="page-footer__nav-list page-footer__nav-list--tablet">
           <li class="page-footer__nav-item">
             <a>Обязанности страховой компании</a>
@@ -599,7 +837,8 @@
       </li>
       <li class="page-footer__section">
         <input type="checkbox" id="nav-item2" name="nav-item2">
-        <label for="nav-item2" class="page-footer__section-title page-footer__section-title--third page-footer__section-title--menu"><a>Полезно знать</a></label>
+        <label for="nav-item2" class="page-footer__section-title page-footer__section-title--third page-footer__section-title--menu"><a>Полезно
+          знать</a></label>
         <ul class="page-footer__nav-list page-footer__nav-list--tablet">
           <li class="page-footer__nav-item">
             <a>Опросы и тесты</a>
@@ -641,7 +880,8 @@
       </li>
       <li class="page-footer__section">
         <input type="checkbox" id="nav-item3" name="nav-item3">
-        <label for="nav-item3" class="page-footer__section-title page-footer__section-title--third page-footer__section-title--menu"><a>О компании</a></label>
+        <label for="nav-item3" class="page-footer__section-title page-footer__section-title--third page-footer__section-title--menu"><a>О
+          компании</a></label>
         <ul class="page-footer__nav-list page-footer__nav-list--tablet">
           <li class="page-footer__nav-item">
             <a>Устав</a>
@@ -683,15 +923,20 @@
             <a>Контактная информация</a>
           </li>
         </ul>
-      <div class="page-footer__nav-item-pdf">
-        <a>Информация об акционерах и лицах, под контролем либо значительным влиянием которых находится АО&nbsp;«Страховая компания&nbsp;«СОГАЗ-Мед»</a>
-      </div>
+        <div class="page-footer__nav-item-pdf">
+          <a>Информация об акционерах и лицах, под контролем либо значительным влиянием которых находится АО&nbsp;«Страховая
+            компания&nbsp;«СОГАЗ-Мед»</a>
+        </div>
       </li>
       <li class="page-footer__section">
-        <h4 class="page-footer__section-title page-footer__section-title--first-list page-footer__section-title--menu"><a>Программа лояльности</a></h4>
-        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a>Новости</a></h4>
-        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a>Работа в компании</a></h4>
-        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a>Карта сайта</a></h4>
+        <h4 class="page-footer__section-title page-footer__section-title--first-list page-footer__section-title--menu">
+          <a>Программа лояльности</a></h4>
+        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a>Новости</a>
+        </h4>
+        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a>Работа
+          в компании</a></h4>
+        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a>Карта
+          сайта</a></h4>
       </li>
       <li class="page-footer__section page-footer__section--contacts">
         <div class="page-footer__section-networks">
@@ -777,5 +1022,6 @@
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
