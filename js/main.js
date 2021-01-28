@@ -1,4 +1,5 @@
-const body = document.querySelector('body');
+const pageMain = document.querySelector('.page-main');
+const pageFooter = document.querySelector('.page-footer');
 const headerMenuHide = document.querySelector('.page-header__nav-hide');
 const mainNav = document.querySelector('.main-nav');
 const mainNavHelpList = document.querySelector('.main-nav__help-list');
@@ -19,13 +20,37 @@ const headerMainMenuItemsArray = Array.prototype.slice.call(headerMainMenuItems)
 const mainNavHelpItemIconsArray = Array.prototype.slice.call(mainNavHelpItemIcons);
 const mainNavHelpItemDescriptionsArray = Array.prototype.slice.call(mainNavHelpItemDescriptions);
 
+///// прокрутка наверх /////
+const scrollToTop = function () {
+  pageHeader.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
 ///// открывает/закрывает меню в шапке /////
+const addHideClass = function (element) {
+  element.forEach(function (it) {
+    it.classList.add('page-header__nav-hide');
+  });
+}
+
+const removeHideClass = function (element) {
+  element.forEach(function (it) {
+    it.classList.remove('page-header__nav-hide');
+  });
+}
+
+const classesToHide = [headerTopSection, headerCitySection, pageMain, pageFooter];
+
+const classesToShow = [headerMenu, mainNavButton, mainNavFirstItem];
+
 const closeHeaderMenu = function () {
-  headerMenu.classList.add('page-header__nav-hide');
-  headerMenuButton.classList.remove('main-nav__toggle--close');
-  headerTopSection.classList.remove('page-header__nav-hide');
-  headerCitySection.classList.remove('page-header__nav-hide');
+  removeHideClass(classesToHide)
   mainNavButton.classList.add('page-header__nav-hide');
+  headerMenu.classList.add('page-header__nav-hide');
+
+  headerMenuButton.classList.remove('main-nav__toggle--close');
   mainNav.classList.remove('main-nav-menu');
   mainNavHelpList.classList.remove('main-nav__help-list--menu');
   if (window.innerWidth <= 1279) {
@@ -58,14 +83,14 @@ const closeHeaderMenuByClick = function () {
 };
 
 const openHeaderMenu = function () {
-  headerMenu.classList.remove('page-header__nav-hide');
-  mainNavButton.classList.remove('page-header__nav-hide');
-  mainNavFirstItem.classList.remove('page-header__nav-hide');
-  headerTopSection.classList.add('page-header__nav-hide');
-  headerCitySection.classList.add('page-header__nav-hide');
+  scrollToTop();
+  removeHideClass(classesToShow);
+  addHideClass(classesToHide);
+
   headerMenuButton.classList.add('main-nav__toggle--close');
   mainNav.classList.add('main-nav-menu');
   mainNavHelpList.classList.add('main-nav__help-list--menu');
+
   headerMainMenuItemsArray.forEach(function (it) {
     it.classList.add('page-header__nav-hide');
   });
@@ -75,8 +100,9 @@ const openHeaderMenu = function () {
   mainNavHelpItemDescriptionsArray.forEach(function (it) {
     it.classList.add('main-nav__help-item-description--menu');
   });
-  closeHeaderMenuByClick();
+
   window.removeEventListener('resize', changeTabletMenu);
+  closeHeaderMenuByClick();
 };
 
 headerMenuButton.addEventListener('click', function (evt) {
@@ -84,7 +110,7 @@ headerMenuButton.addEventListener('click', function (evt) {
   openHeaderMenu();
 });
 
-///// прокрутка наверх /////
+///// кнопка наверх /////
 window.addEventListener('scroll', function () {
   const scrolled = window.pageYOffset || document.documentElement.scrollTop;
   if (scrolled > 100) {
@@ -96,10 +122,7 @@ window.addEventListener('scroll', function () {
 
 upButton.addEventListener('click', function (evt) {
   evt.preventDefault();
-  pageHeader.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  scrollToTop();
 });
 
 ///// меню в шапке меняет для модалки /////
@@ -146,10 +169,13 @@ const mySwiper = new Swiper('.swiper-container', {
 
   pagination: {
     el: '.oms-about__list-pagination',
+    clickable: true,
   },
 
   navigation: {
     nextEl: '.oms-about__list-next',
     prevEl: '.oms-about__list-prev',
   },
+
+
 });
