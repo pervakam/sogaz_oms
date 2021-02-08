@@ -1,24 +1,33 @@
+const body = document.querySelector('body');
+const header = document.querySelector('.page-header');
 const pageMain = document.querySelector('.page-main');
 const pageFooter = document.querySelector('.page-footer');
-const headerMenuHide = document.querySelector('.page-header__nav-hide');
 const mainNav = document.querySelector('.main-nav');
-const mainNavHelpList = document.querySelector('.main-nav__help-list');
+const mainNavWrapper = document.querySelector('.main-nav__wrapper');
 const headerMenuButton = document.querySelector('.main-nav__toggle');
+const headerNavMenuButton = document.querySelector('.main-nav-menu__toggle');
 const headerMenu = document.querySelector('.page-header__nav');
 const headerTopSection = document.querySelector('.page-header__version-toggle');
-const headerCitySection = document.querySelector('.main-nav__city');
-const headerMainMenuItems = document.querySelectorAll('.main-nav__help-item--menu-hide');
-const mainNavButton = document.querySelector('.main-nav__help-item--nav');
-const mainNavFirstItem = document.querySelector('.main-nav__help-item--first');
+const headerCitySection = document.querySelector('.main-nav-menu__city');
 const upButton = document.querySelector('.up-button');
 const pageHeader = document.querySelector('.page-header');
 const mainNavHelpItemIcons = document.querySelectorAll('.main-nav__help-item-icon--menu');
 const mainNavHelpItemDescriptions = document.querySelectorAll('.main-nav__help-item-description');
+const regionModal = document.querySelector('#region-modal').content.querySelector('.region');
+const mainNavMenu = document.querySelector('.main-nav__menu');
+const bonusesRegionField = document.getElementById('bonuses-region-field');
+const infoRegionList = document.querySelector('.info__region-list');
+const infoRegionItems = document.querySelectorAll('.info__region-item');
+const pageHeaderSectionTitleAbout = document.querySelector('.page-header__section-title--about')
+const tabRegionItems = document.querySelectorAll('.tab__region-item');
+const tabRegions = document.querySelectorAll('.tab__region');
+
+let regionSearchModal;
 
 ///// массивы для ie /////
-const headerMainMenuItemsArray = Array.prototype.slice.call(headerMainMenuItems);
-const mainNavHelpItemIconsArray = Array.prototype.slice.call(mainNavHelpItemIcons);
-const mainNavHelpItemDescriptionsArray = Array.prototype.slice.call(mainNavHelpItemDescriptions);
+const infoRegionItemsArray = Array.prototype.slice.call(infoRegionItems);
+const tabRegionItemsArray = Array.prototype.slice.call(tabRegionItems);
+const tabRegionsArray = Array.prototype.slice.call(tabRegions);
 
 ///// прокрутка наверх /////
 const scrollToTop = function () {
@@ -31,42 +40,29 @@ const scrollToTop = function () {
 ///// открывает/закрывает меню в шапке /////
 const addHideClass = function (element) {
   element.forEach(function (it) {
-    it.classList.add('page-header__nav-hide');
+    it.classList.add('page-header__nav--hide');
   });
 }
 
 const removeHideClass = function (element) {
   element.forEach(function (it) {
-    it.classList.remove('page-header__nav-hide');
+    it.classList.remove('page-header__nav--hide');
   });
 }
 
-const classesToHide = [headerTopSection, headerCitySection, pageMain, pageFooter];
-
-const classesToShow = [headerMenu, mainNavButton, mainNavFirstItem];
+// const classesToHide = [headerTopSection, mainNav, mainNavWrapper, pageMain, pageFooter];
+const classesToHide = [headerTopSection, mainNav, pageMain, pageFooter];
+const classesToShow = [headerMenu];
 
 const closeHeaderMenu = function () {
   removeHideClass(classesToHide)
-  mainNavButton.classList.add('page-header__nav-hide');
-  headerMenu.classList.add('page-header__nav-hide');
+  headerMenu.classList.add('page-header__nav--hide');
 
-  headerMenuButton.classList.remove('main-nav__toggle--close');
-  mainNav.classList.remove('main-nav-menu');
-  mainNavHelpList.classList.remove('main-nav__help-list--menu');
-  if (window.innerWidth <= 1279) {
-    mainNavFirstItem.classList.add('page-header__nav-hide');
+  if(mainNavWrapper) {
+    mainNavWrapper.classList.remove('page-header__nav--hide');
   }
-  headerMainMenuItemsArray.forEach(function (it) {
-    it.classList.remove('page-header__nav-hide');
-  })
-  mainNavHelpItemIconsArray.forEach(function (it) {
-    it.classList.remove('main-nav__help-item-icon--big');
-  })
-  mainNavHelpItemDescriptionsArray.forEach(function (it) {
-    it.classList.remove('main-nav__help-item-description--menu');
-  })
 
-  headerMenuButton.removeEventListener('click', closeHeaderMenu);
+  headerNavMenuButton.removeEventListener('click', closeHeaderMenu);
   window.removeEventListener('keydown', escHeaderMenuHandler);
 };
 
@@ -78,7 +74,7 @@ const escHeaderMenuHandler = function (evt) {
 };
 
 const closeHeaderMenuByClick = function () {
-  headerMenuButton.addEventListener('click', closeHeaderMenu);
+  headerNavMenuButton.addEventListener('click', closeHeaderMenu);
   window.addEventListener('keydown', escHeaderMenuHandler);
 };
 
@@ -87,21 +83,14 @@ const openHeaderMenu = function () {
   removeHideClass(classesToShow);
   addHideClass(classesToHide);
 
-  headerMenuButton.classList.add('main-nav__toggle--close');
-  mainNav.classList.add('main-nav-menu');
-  mainNavHelpList.classList.add('main-nav__help-list--menu');
+  if(mainNavWrapper) {
+    mainNavWrapper.classList.add('page-header__nav--hide');
+  }
 
-  headerMainMenuItemsArray.forEach(function (it) {
-    it.classList.add('page-header__nav-hide');
-  });
-  mainNavHelpItemIconsArray.forEach(function (it) {
-    it.classList.add('main-nav__help-item-icon--big');
-  });
-  mainNavHelpItemDescriptionsArray.forEach(function (it) {
-    it.classList.add('main-nav__help-item-description--menu');
-  });
+  if (window.innerWidth <= 1279) {
+    pageHeaderSectionTitleAbout.querySelector('a').removeAttribute('href')
+  }
 
-  window.removeEventListener('resize', changeTabletMenu);
   closeHeaderMenuByClick();
 };
 
@@ -124,19 +113,6 @@ upButton.addEventListener('click', function (evt) {
   evt.preventDefault();
   scrollToTop();
 });
-
-///// меню в шапке меняет для модалки /////
-const changeTabletMenu = function () {
-  if (window.innerWidth <= 1279) {
-    mainNavFirstItem.classList.add('page-header__nav-hide');
-  } else {
-    mainNavFirstItem.classList.remove('page-header__nav-hide');
-  }
-};
-
-changeTabletMenu();
-
-window.addEventListener('resize', changeTabletMenu);
 
 ///// слайдер в ОМС /////
 const mySwiper = new Swiper('.swiper-container', {
@@ -176,6 +152,121 @@ const mySwiper = new Swiper('.swiper-container', {
     nextEl: '.oms-about__list-next',
     prevEl: '.oms-about__list-prev',
   },
-
-
 });
+
+///// окно выбора региона /////
+const closeRegionModal = function () {
+  body.classList.remove('no-scroll');
+  if (regionSearchModal) {
+    regionSearchModal.remove();
+    regionSearchModal = null;
+  }
+}
+
+const escRegionModal = function (evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+    closeRegionModal();
+  }
+};
+
+const closeRegionModalByClick = function () {
+  const regionModalCloseButton = document.querySelector('.region-modal__close');
+
+  regionModalCloseButton.addEventListener('click', closeRegionModal);
+  window.addEventListener('keydown', escRegionModal);
+};
+
+const openRegionModal = function () {
+  const fragment = document.createDocumentFragment();
+  const regionSearch = regionModal.cloneNode(true);
+  fragment.appendChild(regionSearch);
+  header.insertBefore(fragment, headerTopSection);
+  regionSearchModal = regionSearch;
+
+  const regionSearchField = document.getElementById('region-search-field');
+
+  body.classList.add('no-scroll');
+  closeRegionModalByClick();
+
+  if (window.innerWidth <= 1279) {
+    regionSearchField.placeholder = 'Начните вводить регион';
+
+  }
+}
+
+headerCitySection.addEventListener('click', openRegionModal);
+
+///// инпут выбора региона /////
+const escRegionList = function (evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+    infoRegionList.classList.add('info__region-list--hide');
+  }
+};
+
+const overlayRegionList = function (evt) {
+  if (evt.target !== infoRegionList && evt.target !== bonusesRegionField) {
+    infoRegionList.classList.add('info__region-list--hide');
+  }
+};
+
+if (bonusesRegionField) {
+  bonusesRegionField.addEventListener('click', function () {
+    infoRegionList.classList.toggle('info__region-list--hide');
+    window.addEventListener('keydown', escRegionList);
+    document.addEventListener('click', overlayRegionList);
+  })
+}
+
+const setInputValue = function (evt) {
+  bonusesRegionField.value = evt.target.textContent;
+  infoRegionList.classList.add('info__region-list--hide');
+}
+
+infoRegionItemsArray.forEach(function (it) {
+  it.addEventListener('click', setInputValue)
+})
+
+///// подсветка региона при наведении /////
+console.log(tabRegionItemsArray)
+
+const [regionItemCentral, regionItemNorthwestern, regionItemVolga, regionItemUral, regionItemNorthCaucasian, regionItemSiberian, regionItemSouthern, regionItemFarEastern] = tabRegionItemsArray
+const [regionCentral, regionNorthwestern, regionVolga, regionUral, regionNorthCaucasian, regionSiberian, regionSouthern, regionFarEastern] = tabRegionsArray
+
+const showRegion = function (item, region) {
+  item.addEventListener('mouseenter', function () {
+    region.classList.add('tab__region--hover')
+  });
+  item.addEventListener('mouseleave', function () {
+    region.classList.remove('tab__region--hover')
+  });
+  region.addEventListener('mouseenter', function () {
+    item.classList.add('tab__region-item--hover')
+  });
+  region.addEventListener('mouseleave', function () {
+    item.classList.remove('tab__region-item--hover')
+  });
+}
+
+tabRegionItemsArray.forEach(function (it) {
+  if(it.contains(regionItemCentral)) {
+    showRegion(it, regionCentral);
+  } else if(it.contains(regionItemNorthwestern)) {
+    showRegion(it, regionNorthwestern)
+  } else if(it.contains(regionItemVolga)) {
+    showRegion(it, regionVolga)
+  } else if(it.contains(regionItemUral)) {
+    showRegion(it, regionUral)
+  } else if(it.contains(regionItemNorthCaucasian)) {
+    showRegion(it, regionNorthCaucasian)
+  } else if(it.contains(regionItemSiberian)) {
+    showRegion(it, regionSiberian)
+  } else if(it.contains(regionItemSouthern)) {
+    showRegion(it, regionSouthern)
+  } else if(it.contains(regionItemFarEastern)) {
+    showRegion(it, regionFarEastern)
+  }
+})
+
+
