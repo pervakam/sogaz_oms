@@ -50,7 +50,6 @@ const removeHideClass = function (element) {
   });
 }
 
-// const classesToHide = [headerTopSection, mainNav, mainNavWrapper, pageMain, pageFooter];
 const classesToHide = [headerTopSection, mainNav, pageMain, pageFooter];
 const classesToShow = [headerMenu];
 
@@ -229,8 +228,6 @@ infoRegionItemsArray.forEach(function (it) {
 })
 
 ///// подсветка региона при наведении /////
-console.log(tabRegionItemsArray)
-
 const [regionItemCentral, regionItemNorthwestern, regionItemVolga, regionItemUral, regionItemNorthCaucasian, regionItemSiberian, regionItemSouthern, regionItemFarEastern] = tabRegionItemsArray
 const [regionCentral, regionNorthwestern, regionVolga, regionUral, regionNorthCaucasian, regionSiberian, regionSouthern, regionFarEastern] = tabRegionsArray
 
@@ -269,4 +266,28 @@ tabRegionItemsArray.forEach(function (it) {
   }
 })
 
+///// скрывет окно с регионами /////
 
+const documentListItems =document.querySelectorAll('.tab__info-description-item');
+
+
+const documentListItemsArray = Array.prototype.slice.call(documentListItems);
+
+documentListItemsArray.forEach(function (it) {
+  const documentListOpenButton = it.querySelector('input[type="checkbox"]');
+  const documentListWindow = it.querySelector('.tab__info-document-list-wrapper');
+  const documentListCloseButton = it.querySelector('.tab__info-document-list-wrapper-toggle');
+
+  documentListOpenButton.addEventListener('change', function () {
+    documentListWindow.classList.remove('tab__info-document-list-wrapper--hide');
+
+    const documentListClassesToHide = classesToHide.slice();
+    documentListClassesToHide.splice(2, 1)
+    addHideClass(documentListClassesToHide);
+
+    documentListCloseButton.addEventListener('click', function () {
+      documentListWindow.classList.add('tab__info-document-list-wrapper--hide');
+      removeHideClass(documentListClassesToHide);
+    })
+  })
+})
