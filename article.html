@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Раскрытие информации | СОГАЗ-МЕД</title>
+  <title>Статья | СОГАЗ-МЕД</title>
   <meta name="description" content="Сайт подбора страхования">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -70,6 +70,12 @@
     <symbol id="fb-icon" viewBox="0 0 36 36">
       <path d="M0 18C0 8.05888 8.05888 0 18 0C27.9411 0 36 8.05888 36 18C36 27.9411 27.9411 36 18 36C8.05888 36 0 27.9411 0 18Z"></path>
       <path d="M19 15.5V13.5C19 12.948 19.448 12.5 20 12.5H21V10H19C17.343 10 16 11.343 16 13V15.5H14V18H16V26H19V18H21L22 15.5H19Z" fill="white"></path>
+    </symbol>
+    <symbol id="filter-icon" viewBox="0 0 25 25">
+      <rect width="24" height="24" transform="translate(0.5 0.5)" fill="#EFEFF4"></rect>
+      <rect width="18" height="14.4" transform="translate(3.5 5.2998)" fill="#EFEFF4"></rect>
+      <path d="M9.10166 12.4998C10.5622 12.4998 11.8075 11.4965 12.27 10.0998H21.5V7.6998H12.27C11.8075 6.30308 10.5622 5.2998 9.10166 5.2998C7.64112 5.2998 6.39583 6.30308 5.93336 7.6998H3.5V10.0998H5.93336C6.39583 11.4965 7.64112 12.4998 9.10166 12.4998ZM9.10166 7.6998C9.71941 7.6998 10.222 8.23812 10.222 8.8998C10.222 9.56148 9.71941 10.0998 9.10166 10.0998C8.48391 10.0998 7.98133 9.56148 7.98133 8.8998C7.98133 8.23812 8.48391 7.6998 9.10166 7.6998Z" fill="#000078"></path>
+      <path d="M15.8237 19.7C17.2842 19.7 18.5295 18.6967 18.992 17.3H21.5V14.9H18.992C18.5295 13.5033 17.2842 12.5 15.8237 12.5C14.3631 12.5 13.1178 13.5033 12.6554 14.9H3.5V17.3H12.6554C13.1178 18.6967 14.3631 19.7 15.8237 19.7ZM15.8237 14.9C16.4414 14.9 16.944 15.4383 16.944 16.1C16.944 16.7617 16.4414 17.3 15.8237 17.3C15.2059 17.3 14.7033 16.7617 14.7033 16.1C14.7033 15.4383 15.2059 14.9 15.8237 14.9Z" fill="#000078"></path>
     </symbol>
     <symbol id="health-icon" viewBox="0 0 40 40">
       <path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z" fill="white"></path>
@@ -208,7 +214,7 @@
     </div>
     <span>Версия для слабовидящих</span>
   </a>
-  <div class="main-nav__wrapper">
+  <div class="main-nav__wrapper main-nav__wrapper--news">
     <nav class="main-nav">
       <div class="main-nav__menu">
         <button class="main-nav__toggle main-nav__toggle--white" type="button" value="Открыть меню"></button>
@@ -252,7 +258,7 @@
   <nav class="page-header__nav page-header__nav--hide">
     <nav class="main-nav-menu">
       <div class="main-nav-menu__menu">
-        <button class="main-nav-menu__toggle" type="button" value="Закрыть меню"></button>
+        <button class="main-nav-menu__toggle" type="button" value="Открыть меню"></button>
         <a class="main-nav-menu__logo" href="index.html">
           <svg>
             <use xlink:href="#logo-icon"></use>
@@ -317,7 +323,7 @@
               <a href="license.html">Лицензия</a>
             </li>
             <li class="page-header__nav-item page-header__nav-item--info">
-              <a href="#">Раскрытие информации</a>
+              <a href="info.html">Раскрытие информации</a>
             </li>
             <li class="page-header__nav-item">
               <a href="shareholders.html">Акционеры</a>
@@ -326,7 +332,7 @@
               <a href="leaders.html">Руководство</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="honor.html">Доска почета</a>
+              <a href="#">Доска почета</a>
             </li>
             <li class="page-header__nav-item">
               <a href="https://www.sogaz-med.ru/about/groups.html">Участие в страховых группах, союзах страховщиков</a>
@@ -458,7 +464,7 @@
               <a href="https://www.sogaz-med.ru/loyalty.php">Программа лояльности</a></h4></li>
           <li class="page-header__section-item">
             <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
-              <a href="press.html">Новости</a></h4>
+              <a href="#">Новости</a></h4>
           </li>
           <li class="page-header__section-item">
             <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
@@ -540,1272 +546,64 @@
   <div class="page-main__wrapper">
     <section class="tabs">
       <ul class="tabs__list">
-        <li class="tabs__item"><a href="company.html">Компания «СОГАЗ-Мед»</a></li>
-        <li class="tabs__item"><a href="rule.html">Устав</a></li>
-        <li class="tabs__item"><a href="license.html">Лицензия</a></li>
-        <li class="tabs__item tabs__item--active"><a href="#">Раскрытие информации</a></li>
-        <li class="tabs__item"><a href="shareholders.html">Акционеры</a></li>
-        <li class="tabs__item"><a href="leaders.html">Руководство</a></li>
-        <li class="tabs__item"><a href="honor.html">Доска почета</a></li>
-        <li class="tabs__item"><a href="#">Участие в страховых группах, союзах страховщиков (Базовые стандарты СРО)</a>
-        </li>
-        <li class="tabs__item"><a href="#">Сведения о правоустанавливающих документах</a></li>
-        <li class="tabs__item"><a href="#">Правила страхования и страховые тарифы</a></li>
-        <li class="tabs__item"><a href="#">Благотворительная деятельность</a></li>
-        <li class="tabs__item"><a href="#">Контакты</a></li>
-        <li class="tabs__item"><a href="#">Участники Страховой Группы «СОГАЗ»</a></li>
-        <li class="tabs__item"><a href="#">Информация о финансовом уполномоченном</a></li>
+        <li class="tabs__item"><a href="#">Новости</a></li>
+        <li class="tabs__item tabs__item--active"><a href="#">Пресс-релизы</a></li>
+        <li class="tabs__item"><a href="about-us.html">Пресса о нас</a></li>
+        <li class="tabs__item"><a href="foto.html">Фотогалерея</a></li>
+        <li class="tabs__item"><a href="video.html">Видеоматериалы</a></li>
       </ul>
+      <div class="tabs__contacts">
+        <h3>Журналистам</h3>
+        <p>Мы признательны за освещение проектов и достижений Страховой Группы СОГАЗ. Ваши вопросы важны. Мы сделаем всё
+          возможное, чтобы вы получили запрашиваемую информацию.</p>
+        <a class="tabs__contacts-tel" href="tel:+74957392140">+7 (495) 739-21-40, доб. 1929</a>
+        <a class="tabs__contacts-mail" href="mailto:press@sogaz.ru">press@sogaz.ru</a>
+      </div>
     </section>
-    <section class="tab tab__info">
-      <h1>Раскрытие информации</h1>
-      <span>Обновлено 14.07.2020</span>
-      <ul class="tab__info-list">
-        <li class="tab__info-item">
-          <input type="checkbox" id="info-item1" name="tab__info-item-title" class="visually-hidden">
-          <label for="info-item1" class="tab__info-item-title"><span>Бухгалтерская отчетность</span></label>
-          <div class="tab__info-description">
-            <ul class="tab__info-description-list">
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item1" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item1" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2019 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2019 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/ao-sk-sogaz-med-2019.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.5 Мб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sk-sogaz-med-2019.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>11.9 Мб</p>
-                          <h5>Годовая бухгалтерская (финансовая) отчетность за 2019 год</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-sogaz-med-2019.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>8.5 Мб</p>
-                          <h5>Актуарное заключение за 2019 </h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/msfo-2019.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>12.6 Мб</p>
-                          <h5>Консолидированная финансовая отчетность в соответствии с МСФО за 2019</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/buhgalterskaya-finansovaya-otchetnost-vtb-ms-2019.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>11.6 Мб</p>
-                          <h5>Годовая бухгалтерская (финансовая) отчетность за 2019 год (ООО&nbsp;ВТБ&nbsp;МС) </h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-vtb-ms-2019-god.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>5.8 Мб</p>
-                          <h5>Актуарное заключение за 2019 год (ООО&nbsp;ВТБ&nbsp;МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item2" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item2" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2018 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2018 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogaz-med-msfo-2018.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>22.2 Мб</p>
-                          <h5>Консолидированная финансовая отчетность в соответствии с МСФО за 2018 год с аудиторским
-                            заключением независимого аудитора</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/Year_buh_fin_report_2018.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>109.8 Мб</p>
-                          <h5>Годовая бухгалтерская (финансовая) отчетность за 2018 год</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/buhgalterskaya-finansovaya-otchetnost-vtb-ms-2018.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>15.4 Мб</p>
-                          <h5>Годовая бухгалтерская (финансовая) отчетность за 2018 год (ООО ВТБ МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/finansovaya-otchetnost-vtb-ms-2018.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2.8 Мб</p>
-                          <h5>Консолидированная финансовая отчетность в соответствии с МСФО за 2018 год (ООО ВТБ
-                            МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-vtb-ms-2018-god.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>6.4 Мб</p>
-                          <h5>Актуарное заключение за 2018 год (ООО ВТБ МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item3" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item3" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2017 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2017 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/finansovaya-otchetnost-za-2017-god.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>23.6 Мб</p>
-                          <h5>Консолидированная финансовая отчетность</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/buhgalterskaya-finansovaya-otchetnost-za-2017-god.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>11.5 Мб</p>
-                          <h5>Годовая бухгалтерская (финансовая) отчетность за 2017 год</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-2017-g-ilovepdf-compressed.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2.2 Мб</p>
-                          <h5>Актуарное заключение за 2017 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/buhgalterskaya-finansovaya-otchetnost-vtb-ms-2017-compressed.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>33.3 Мб</p>
-                          <h5>Годовая бухгалтерская (финансовая) отчетность за 2017 год (ООО ВТБ МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/finansovaya-otchetnost-vtb-ms-2017.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2.9 Мб</p>
-                          <h5>Консолидированная финансовая отчетность за 2017 год (ООО ВТБ МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-vtb-ms-2017-god.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>12.3 Мб</p>
-                          <h5>Актуарное заключение за 2017 год (ООО ВТБ МС)</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item4" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item4" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2016 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2016 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>931.3 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-finansovyh-zatratah-2.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>884 Кб</p>
-                          <h5>Отчет о финансовых результатах</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/balans-2.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>693.4 Кб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-celevom-ispolzovanii-sredstv-2.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>725.8 Кб</p>
-                          <h5>Отчет о целевом использовании средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/ob-izmeneniyah-kapitala-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>949.1 Кб</p>
-                          <h5>Отчет об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-sogaz-med-2016-vm-b-ilovepdf-compressed-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>9.4 Мб</p>
-                          <h5>Консолидированная финансовая отчетность</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-dvizhenii-denezhnyh-sredstv-2.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>867.5 Кб</p>
-                          <h5>Отчет о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-za-2016-god-ilovepdf-compressed.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2.3 Мб</p>
-                          <h5>Актуарное заключение за 2016 год</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item5" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item5" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2015 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2015 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/scan-skfs-428-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1 Мб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-finansovyh-zatratah.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>684.9 Кб</p>
-                          <h5>Отчет о финансовых результатах</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/balans-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>462.8 Кб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-celevom-ispolzovanii-sredstv-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>707.4 Кб</p>
-                          <h5>Отчет о целевом использовании средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/ob-izmeneniyah-kapitala.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>681.2 Кб</p>
-                          <h5>Отчет об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogaz-med-ifrs-2015.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>656.4 Мб</p>
-                          <h5>Консолидированная финансовая отчетность</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-dvizhenii-denezhnyh-sredstv-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>605.5 Кб</p>
-                          <h5>Отчет о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/aktuarnoe-2015-sogaz-med.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2.3 Мб</p>
-                          <h5>Актуарное заключение за 2015 год</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item6" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item6" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2014 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2014 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zakluchenie.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.1 Мб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-finansovyh-rezultatah.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>907.8 Кб</p>
-                          <h5>Отчет о финансовых результатах</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/balans.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>630.9 Кб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-celevom-ispolzovanii-sredstv.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>296.2 Кб</p>
-                          <h5>Отчет о целевом использовании средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/ob-izmeneniyah-kapitala-strahovshchika.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>278.6 Кб</p>
-                          <h5>Отчет об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/ifrs-sogaz-med-2014-final.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.1 Мб</p>
-                          <h5>Консолидированная финансовая отчетность</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/o-dvizhenii-denezhnyh-sredstv.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>250.7 Кб</p>
-                          <h5>Отчет о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zaklyuchenie-2014.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>3.5 Мб</p>
-                          <h5>Актуарное заключение за 2014 год</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item7" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item7" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2013 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2013 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/auditorskoe-zaklyuchenie-otchyotnosti-po-rsbu.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>372.2 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forma-2-strahovshchik-2013g.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>204.5 Кб</p>
-                          <h5>Отчет о финансовых результатах</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forma-1-strahovshchik-2013g.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>141.8 Кб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forma-6-oms-2013g.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>205.5 Кб</p>
-                          <h5>Отчет о целевом использовании средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forma-3-strahovshchik-2013g.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>204.8 Кб</p>
-                          <h5>Отчет об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/konsolidirovannaya-finansovaya-otchyotnost-v-sootvetstvii-s-msfo-auditorskoe-zaklyuchenie.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1 Мб</p>
-                          <h5>Консолидированная финансовая отчетность</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forma-4-strahovshchik-2013.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>140.7 Кб</p>
-                          <h5>Отчет о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item8" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item8" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2012 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2012 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/audit-zak-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>225 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/otchet-pribil-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>181.7 Кб</p>
-                          <h5>Отчет о финансовых результатах</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/buh-balans-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>127.6 Кб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/otchet-smo-cel-isp-sredstv-oms.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>180.2 Кб</p>
-                          <h5>Отчет о целевом использовании средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/otchet-izmen-kapital-str-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>189.1 Кб</p>
-                          <h5>Отчет об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogaz-med-20signed-20ifrs-20fs-202012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>777.2 Кб</p>
-                          <h5>Консолидированная финансовая отчетность</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/otchet-den-sredst-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>156.7 Кб</p>
-                          <h5>Отчет о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/zakl-reviz-kom-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>672 Кб</p>
-                          <h5>Заключение ревизионной комиссии</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/poyasnit-zap-buh-otch-2012.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2.2 Мб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item9" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item9" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2011 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2011 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-auditor-2011.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>213.7 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-forms2011.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.4 Мб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-reviz-zakluch-2011.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>811.9 Кб</p>
-                          <h5>Заключение ревизионной комиссии</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-poyasn-2011.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.9 Мб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item10" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item10" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2010 г. утверждена Решением единственного акционера № 30 от 18.05.2011 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2010 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-auditor-2010.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>131.4 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-forms2010.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.6 Мб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-reviz-zakluch-2010.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>593.5 Кб</p>
-                          <h5>Заключение ревизионной комиссии</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-poyasn-2010.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>141.2 Кб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item11" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item11" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2009 г. утверждена Решением единственного акционера № 28 от 17.05.2010 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2009 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-auditor-2009.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>500.2 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-forms1-5-2009.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>3.9 Мб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-reviz-zakluch-2009.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>821.5 Кб</p>
-                          <h5>Заключение ревизионной комиссии</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-poyasn-2009.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>263.4 Кб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item12" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item12" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2008 г. утверждена Решением единственного акционера №25 от 25.05.2009 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2008 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-auditor-2008.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1 Мб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2008-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>2 Мб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-poyasn-2008.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>206.8 Кб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2008-2.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.9 Мб</p>
-                          <h5>Форма №2. Отчет о прибылях и убытках за 2008 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2008-2a.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1.4 Мб</p>
-                          <h5>Форма №2а. Отчет о прибылях и убытках за 2008 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forms3-5-2008.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>127.4 Кб</p>
-                          <h5>Отчёт об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item13" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item13" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2007 г. утверждена Решением единственного акционера № 20 от 27.05.2008 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2007 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-auditor-2007.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>939.5 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2007-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>778.4 Кб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-poyasn-2007.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>172.9 Кб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2007-2.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>648.4 Кб</p>
-                          <h5>Форма №2. Отчет о прибылях и убытках за 2007 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2007-2a.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>529.2 Кб</p>
-                          <h5>Форма №2а. Отчет о прибылях и убытках за 2007 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/forms3-5-2007.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>208 Кб</p>
-                          <h5>Отчёт об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tab__info-description-item">
-                <input type="checkbox" id="info-description-item14" name="tab__info-description-item-title" class="visually-hidden">
-                <label for="info-description-item14" class="tab__info-description-item-title"><span>Годовая бухгалтерская отчетность за 2006 г. утверждена Решением единственного акционера № 19 от 30.05.2007 г.</span></label>
-                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--hide">
-                  <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
-                  <h5>Годовая бухгалтерская отчетность за 2006 г.</h5>
-                  <ul class="tab__info-document-list">
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-auditor-2006.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>925 Кб</p>
-                          <h5>Аудиторское заключение</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-1.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>1 Мб</p>
-                          <h5>Бухгалтерский баланс</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-poyasn-2006.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>173.2 Кб</p>
-                          <h5>Пояснительная записка к бухгалтерской отчётности</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-2a.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>795.3 Кб</p>
-                          <h5>Форма №2. Отчет о прибылях и убытках за 2006 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-2a.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>619.6 Кб</p>
-                          <h5>Форма №2а. Отчет о прибылях и убытках за 2006 г.</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-3.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>167.8 Кб</p>
-                          <h5>Отчёт об изменениях капитала</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-4.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>259.1 Кб</p>
-                          <h5>Форма №4. Отчёт о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-4a.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>264.9 Кб</p>
-                          <h5>Форма №4а. Отчёт о движении денежных средств</h5>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="tab__info-document-item">
-                      <a class="tab__info-document-item-link" href="https://www.sogaz-med.ru/files/info/medstrah-balance-2006-5.pdf">
-                        <div class="tab__info-document-item-description">
-                          <p>173.2 Кб</p>
-                          <h5>Приложение к бухгалтерскому балансу</h5>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="tab__info-item">
-          <input type="checkbox" id="info-item2" name="tab__info-item-title" class="visually-hidden">
-          <label for="info-item2" class="tab__info-item-title"><span>Банковские реквизиты</span></label>
-          <div class="tab__info-description">
-            <ul class="tab__info-requisites-list">
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Наименование банка:</p>
-                <p class="tab__info-requisites-item-value">ГПБ (АО), Москва</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Расчетный счет:</p>
-                <p class="tab__info-requisites-item-value">40701810500000000447</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Корреспондентский счет:</p>
-                <p class="tab__info-requisites-item-value">30101810200000000823</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">БИК:</p>
-                <p class="tab__info-requisites-item-value">044525823</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">ИНН:</p>
-                <p class="tab__info-requisites-item-value">7728170427</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">КПП:</p>
-                <p class="tab__info-requisites-item-value">770801001</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Код по ОКОНХ:</p>
-                <p class="tab__info-requisites-item-value">96220</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Код по ОКТМО:</p>
-                <p class="tab__info-requisites-item-value">45378000000</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">НКод по ОКФС:</p>
-                <p class="tab__info-requisites-item-value">16</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Код по ОКОГУ:</p>
-                <p class="tab__info-requisites-item-value">4210014</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Код по ОКПО:</p>
-                <p class="tab__info-requisites-item-value">18426426</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">Код по ОКВЭД:</p>
-                <p class="tab__info-requisites-item-value">65.12.9</p>
-              </li>
-              <li class="tab__info-requisites-item">
-                <p class="tab__info-requisites-item-name">ОГРН:</p>
-                <p class="tab__info-requisites-item-value">1027739008440</p>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="tab__info-item">
-          <input type="checkbox" id="info-item3" name="tab__info-item-title" class="visually-hidden">
-          <label for="info-item3" class="tab__info-item-title"><span>Годовые отчёты</span></label>
-          <div class="tab__info-description">
-            <ul class="tab__report-list">
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/otchet-2019.pdf">
-                  <div class="tab__report-item-description">
-                    <p>693.4 Кб</p>
-                    <h5>Годовой отчет 2019 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/godovoi-otchet-2018.pdf">
-                  <div class="tab__report-item-description">
-                    <p>15.6 Мб</p>
-                    <h5>Годовой отчет 2018 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/otchet-2017-g.pdf">
-                  <div class="tab__report-item-description">
-                    <p>4.9 Мб</p>
-                    <h5>Годовой отчет 2017 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/otchet-2016-na-publikaciyu-ilovepdf-compressed.pdf">
-                  <div class="tab__report-item-description">
-                    <p>3.8 Мб</p>
-                    <h5>Годовой отчет 2016 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/otchet-2015-g-ilovepdf-compressed.pdf">
-                  <div class="tab__report-item-description">
-                    <p>1.2 Мб</p>
-                    <h5>Годовой отчет 2015 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/otchet-obshchestva-za-2014-god-1.pdf">
-                  <div class="tab__report-item-description">
-                    <p>9.9 Кб</p>
-                    <h5>Годовой отчет 2014 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/godovoy-otchet-2013-dlya-publikacii-na-sayte-2.pdf">
-                  <div class="tab__report-item-description">
-                    <p>778.7 Кб</p>
-                    <h5>Годовой отчет 2013 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/god-otchet-2012.doc">
-                  <div class="tab__report-item-description">
-                    <p>188.5 Кб</p>
-                    <h5>Годовой отчет 2012 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/godovoi-otchet-2011.doc">
-                  <div class="tab__report-item-description">
-                    <p>144.5 Кб</p>
-                    <h5>Годовой отчет 2011 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-otchet-2010.pdf">
-                  <div class="tab__report-item-description">
-                    <p>129.5 Кб</p>
-                    <h5>Годовой отчет 2010 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed-otchet-2009.pdf">
-                  <div class="tab__report-item-description">
-                    <p>180.4 Кб</p>
-                    <h5>Годовой отчет 2009 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed2008.pdf">
-                  <div class="tab__report-item-description">
-                    <p>187.7 Кб</p>
-                    <h5>Годовой отчет 2008 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed2007.pdf">
-                  <div class="tab__report-item-description">
-                    <p>182.6 Кб</p>
-                    <h5>Годовой отчет 2007 г.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/sogazmed2006.pdf">
-                  <div class="tab__report-item-description">
-                    <p>177.7 Кб</p>
-                    <h5>Годовой отчет 2006 г.</h5>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="tab__info-item">
-          <input type="checkbox" id="info-item4" name="tab__info-item-title" class="visually-hidden">
-          <label for="info-item4" class="tab__info-item-title"><span>Иные сведения, подлежащие раскрытию</span></label>
-          <div class="tab__info-description">
-            <ul class="tab__report-list">
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/vedomost-rezul-sout-rotated.pdf">
-                  <div class="tab__report-item-description">
-                    <p>6 Мб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Омский филиал. 2021 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/meropr-sout-rotated.pdf">
-                  <div class="tab__report-item-description">
-                    <p>582 Кб</p>
-                    <h5>Перечень рекомендуемых мероприятий по улучшению условий труда. Омский филиал. 2021 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/.pdf">
-                  <div class="tab__report-item-description">
-                    <p>4.1 Мб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Красноярский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/otchet-2016-na-publikaciyu-ilovepdf-compressed.pdf">
-                  <div class="tab__report-item-description">
-                    <p>5.7 Мб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Санкт-Петербургский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/mer-po-rezultatam-sout.pdf">
-                  <div class="tab__report-item-description">
-                    <p>332.4 Кб</p>
-                    <h5>Перечень рекомендуемых мероприятий по улучшению условий труда. Санкт-Петербургский филиал. 2020
-                      год</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/vedomost-saratovskogo-filiala-ao-strahovaya-kompaniya-sogaz-med-o-provedenii-specialnoy-ocenki-usloviy-truda.pdf">
-                  <div class="tab__report-item-description">
-                    <p>2 Мб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Саратовский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/vedomost-rostov.pdf">
-                  <div class="tab__report-item-description">
-                    <p>738.5 Кб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Ростовский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/meropriyatiy-rostov.pdf">
-                  <div class="tab__report-item-description">
-                    <p>662.4 Кб</p>
-                    <h5>Перечень рекомендуемых мероприятий по улучшению условий труда. Ростовский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/truda-buryatiya.pdf">
-                  <div class="tab__report-item-description">
-                    <p>354.9 Кб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Бурятский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/meropriyatiy-buryatiya.pdf">
-                  <div class="tab__report-item-description">
-                    <p>177.1 Кб</p>
-                    <h5>Перечень рекомендуемых мероприятий по улучшению условий труда. Бурятский филиал. 2020 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/vedomost-rezultatov-provedeniya-specialnoy-ocenki-usloviy-truda-v-vologodskom-filiale.doc">
-                  <div class="tab__report-item-description">
-                    <p>38 Кб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Вологодский филиал. 2018 год. </h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/medicinskoy-pomoshchi-predostavlennye-v-ramkah-programmy.pptx">
-                  <div class="tab__report-item-description">
-                    <p>966.2 Кб</p>
-                    <h5>Объемы медицинской помощи, предоставленные в рамках программы. 2017 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/reshetnikova14.pdf">
-                  <div class="tab__report-item-description">
-                    <p>406 Кб</p>
-                    <h5>Уведомление о постановке на налоговый учет. 2017 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/borovaya55.pdf">
-                  <div class="tab__report-item-description">
-                    <p>396.9 Кб</p>
-                    <h5>Уведомление о постановке на налоговый учет. 2017 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/vedomost-rezultatov-sout.rtf">
-                  <div class="tab__report-item-description">
-                    <p>1.2 Мб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Тюменский филиал. 2016 год. </h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/rekomenduemyh-meropriyatiy-po-uluchsheniyu-usloviy-truda.rtf">
-                  <div class="tab__report-item-description">
-                    <p>61.2 Кб</p>
-                    <h5>Перечень рекомендуемых мероприятий по улучшению условий труда. Тюменский филиал. 2016 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/scan-0001-1.pdf">
-                  <div class="tab__report-item-description">
-                    <p>14.9 Кб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ. Орловский филиал. 2016 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/cvodvedot-01.pdf">
-                  <div class="tab__report-item-description">
-                    <p>4.1 Мб</p>
-                    <h5>Сводная ведомость результатов проведения СОУТ по Обществу. 2015 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/meropriyatiy-dlya-sayta.doc">
-                  <div class="tab__report-item-description">
-                    <p>40.5 Кб</p>
-                    <h5>Перечень рекомендуемых мероприятий по улучшению условий труда по Обществу. 2015 год.</h5>
-                  </div>
-                </a>
-              </li>
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/secret-info-1.rtf">
-                  <div class="tab__report-item-description">
-                    <p>67.8 Кб</p>
-                    <h5>Сообщение об изменении адреса страницы в сети "Интернет", используемой акционерным обществом для
-                      раскрытия информации. 2012 год. </h5>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="tab__info-item">
-          <input type="checkbox" id="info-item5" name="tab__info-item-title" class="visually-hidden">
-          <label for="info-item5" class="tab__info-item-title"><span>Политика информационной безопасности</span></label>
-          <div class="tab__info-description">
-            <ul class="tab__report-list">
-              <li class="tab__report-item">
-                <a class="tab__report-item-link" href="https://www.sogaz-med.ru/files/info/sogaz-med-policy-1.pdf">
-                  <div class="tab__report-item-description">
-                    <p>3.4 Мб</p>
-                    <h5>Политика обработки персональных данных в АО «Страховая компания «СОГАЗ-Мед»</h5>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="tab__info-item">
-          <input type="checkbox" id="info-item6" name="tab__info-item-title" class="visually-hidden">
-          <label for="info-item6" class="tab__info-item-title"><span>Сведения о численности застрахованных лиц</span></label>
-          <div class="tab__info-description">
-            <p>В АО «Страховая компания «СОГАЗ-Мед» застраховано:</p>
-            <p>по состоянию на 01.01.2021 г. 42 428 774 человека.</p>
-          </div>
-        </li>
-      </ul>
+    <section class="tab tab__article">
+      <h1>Пресс-релизы</h1>
+      <h2>Новосибирский филиал СОГАЗ-Мед поздравляет граждан с наступающим Новым годом</h2>
+      <span>22 декабря 2020</span>
+      <div class="tab__article-description">
+        <p>В преддверии Нового года сотрудники Новосибирского филиала СОГАЗ-Мед решили порадовать своих клиентов и
+          создать
+          добрую, уютную атмосферу. С этой целью во всех офисах было сделано праздничное новогоднее оформление.</p>
+        <p>Кроме этого, в связи с трудным и напряжённым годом, чтобы поднять настроение и подарить каждому
+          застрахованному
+          частичку тепла и внимания сотрудники Новосибирского филиала СОГАЗ-Мед организовали беспроигрышную лотерею для
+          пришедших в офис граждан, каждый из которых получает символический подарок и поздравление с наступающим Новым
+          годом.</p>
+        <p>Также специалисты СОГАЗ-Мед информируют застрахованных о важности иметь актуальный полис ОМС, о профилактике
+          заболеваний и своевременном прохождении диспансеризации. Особое внимание акцентируется на теме соблюдения мер
+          безопасности в условиях распространения коронавирусной инфекции.</p>
+      </div>
+      <div class="tab__article-photo">
+        <picture>
+          <!-- 1х: 216px; 2x: 432px -->
+          <source media="(max-width: 767px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+          <!-- 1х: 444px; 2x: 888px -->
+          <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+          <!-- 1х: 650px; 2x: 1300px -->
+          <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+        </picture>
+        <picture>
+          <!-- 1х: 216px; 2x: 432px -->
+          <source media="(max-width: 767px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
+          <!-- 1х: 444px; 2x: 888px -->
+          <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
+          <!-- 1х: 650px; 2x: 1300px -->
+          <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
+        </picture>
+      </div>
+      <div class="tab__article-description">
+        <p>А ещё сотрудники Новосибирского филиала СОГАЗ-Мед заботятся не только о людях, но и братьях наших меньших.
+          Поэтому рядом с офисом в Советском районе города Новосибирска был установлен маленький, но уютный скворечник.
+          Теперь туда забегают полакомиться вкусными орешками и булочками птицы и белки.</p>
+        <p>Новосибирский филиал СОГАЗ-Мед призывает всех в эти чудесные предновогодние дни быть более чуткими
+          и внимательными не только к своим близким, но и к тем, кто находится рядом: к своим коллегам, клиентам
+          и просто прохожим на улице, чтобы новый 2021 год начинался с добрых улыбок и хорошего настроения.</p>
+      </div>
+      <p></p>
     </section>
   </div>
   <div class="up-button up-button-hide">
@@ -2011,16 +809,16 @@
             <a href="license.html">Лицензия</a>
           </li>
           <li class="page-footer__nav-item page-footer__nav-item--info">
-            <a href="#">Раскрытие информации</a>
+            <a href="info.html">Раскрытие информации</a>
           </li>
           <li class="page-footer__nav-item">
             <a href="shareholders.html">Акционеры</a>
           </li>
           <li class="page-footer__nav-item">
-            <a href="leaders.html">Руководство</a>
+            <a href="#">Руководство</a>
           </li>
           <li class="page-footer__nav-item">
-            <a href="honor.html">Доска почета</a>
+            <a href="https://www.sogaz-med.ru/press_leaders/index.html">Доска почета</a>
           </li>
           <li class="page-footer__nav-item">
             <a href="https://www.sogaz-med.ru/about/groups.html">Участие в страховых группах, союзах страховщиков</a>
@@ -2053,7 +851,7 @@
       <li class="page-footer__section">
         <h4 class="page-footer__section-title page-footer__section-title--first-list page-footer__section-title--menu">
           <a href="https://www.sogaz-med.ru/loyalty.php">Программа лояльности</a></h4>
-        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a href="press.html.html">Новости</a>
+        <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a href="#">Новости</a>
         </h4>
         <h4 class="page-footer__section-title page-footer__section-title--list page-footer__section-title--menu"><a href="https://www.sogaz-med.ru/vacancies/index.html">Работа
           в компании</a></h4>
