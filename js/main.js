@@ -64,7 +64,7 @@ const closeHeaderMenu = function () {
 
   if (window.innerWidth <= 1279) {
     headerCitySections.forEach(function (it) {
-      it.style.display = "none";
+      it.style.display = 'none';
     });
   }
 
@@ -96,7 +96,7 @@ const openHeaderMenu = function () {
   if (window.innerWidth <= 1279) {
     pageHeaderSectionTitleAbout.querySelector('a').removeAttribute('href');
     headerCitySections.forEach(function (it) {
-      it.style.display = "block";
+      it.style.display = 'block';
     });
   }
 
@@ -124,7 +124,7 @@ upButton.addEventListener('click', function (evt) {
 });
 
 ///// слайдер в ОМС /////
-const mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('.oms-about__list', {
   breakpoints: {
     320: {
       slidesPerView: 1.24,
@@ -151,6 +151,10 @@ const mySwiper = new Swiper('.swiper-container', {
       slidesOffsetAfter: 200,
     },
   },
+
+  wrapperClass: 'oms-about__list-wrapper',
+
+  slideClass: 'oms-about__item',
 
   pagination: {
     el: '.oms-about__list-pagination',
@@ -200,7 +204,6 @@ const openRegionModal = function () {
 
   if (window.innerWidth <= 1279) {
     regionSearchField.placeholder = 'Начните вводить регион';
-
   }
 };
 
@@ -306,11 +309,10 @@ if (window.innerWidth <= 1279) {
 
 ///// скрывет окно с фильтром /////
 const tabSearchForm = document.querySelector('.tab__search');
-// const tabFilterButton = document.querySelector('.tab__form-button');
 
 const tabFilterHandler = function () {
-  tabSearchForm.classList.toggle('tab__search--hide')
-}
+  tabSearchForm.classList.toggle('tab__search--hide');
+};
 
 if (window.innerWidth <= 1279 && tabSearchForm) {
   const tabFilterButton = document.querySelector('.tab__form-button');
@@ -319,3 +321,78 @@ if (window.innerWidth <= 1279 && tabSearchForm) {
   tabSearchCloseButton.addEventListener('click', tabFilterHandler);
 }
 
+/// карусель фотографий в статье /////
+const PhotoSlider = new Swiper('.tab__article-photo-list', {
+
+  wrapperClass: 'tab__article-photo-wrapper',
+
+  slideClass: 'tab__article-photo-slide',
+
+  navigation: {
+    nextEl: '.tab__article-photo-next',
+    prevEl: '.tab__article-photo-prev',
+  },
+
+  slidesPerView: 1,
+
+});
+
+///// модалка с фото /////
+// const photoSectionOpenButtons = document.querySelectorAll('.tab__photo-section-button');
+//
+// const photoSectionOpenButtonsArray = Array.prototype.slice.call(photoSectionOpenButtons);
+//
+// photoSectionOpenButtonsArray.forEach(function (it) {
+//   let photoSection = it.parentElement.parentElement;
+//   let photoSectionWrapper = photoSection.parentElement;
+//   const photoSectionNavigation = photoSection.querySelector('.tab__photo-section-navigation')
+//
+//   it.addEventListener('click', function (it) {
+//     photoSection.classList.add('tab__photo-section--modal');
+//     body.classList.add('no-scroll');
+//     photoSectionWrapper.classList.add('tab__photo-section-overlay');
+//     photoSectionNavigation.classList.add('tab__photo-section-navigation--hide')
+//
+//     // const ModalPhotoSlider = new Swiper('.tab__article-photo-list', {
+//     //
+//     //   wrapperClass: 'tab__article-photo-wrapper',
+//     //
+//     //   slideClass: 'tab__article-photo-img',
+//     //
+//     //   navigation: {
+//     //     nextEl: '.tab__article-photo-prev',
+//     //     prevEl: '.tab__article-photo-next',
+//     //   },
+//     //
+//     // });
+//   });
+// });
+const galleryThumbs  = new Swiper('.list-small', {
+  wrapperClass: 'wrapper-small',
+
+  slideClass: 'slide-small',
+
+  spaceBetween: 4,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+
+  navigation: {
+    nextEl: '.next',
+    prevEl: '.prev',
+  },
+});
+
+const galleryTop  = new Swiper('.list', {
+  slidesPerView: 1,
+
+  wrapperClass: 'wrapper',
+
+  slideClass: 'slide',
+
+  thumbs: {
+    swiper: galleryThumbs
+  }
+
+});

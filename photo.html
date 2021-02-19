@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Статья | СОГАЗ-МЕД</title>
+  <title>Пресс-релизы | СОГАЗ-МЕД</title>
   <meta name="description" content="Сайт подбора страхования">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -547,10 +547,10 @@
     <section class="tabs">
       <ul class="tabs__list">
         <li class="tabs__item"><a href="#">Новости</a></li>
-        <li class="tabs__item tabs__item--active"><a href="#">Пресс-релизы</a></li>
+        <li class="tabs__item"><a href="#">Пресс-релизы</a></li>
         <li class="tabs__item"><a href="about-us.html">Пресса о нас</a></li>
-        <li class="tabs__item"><a href="photo.html">Фотогалерея</a></li>
-        <li class="tabs__item"><a href="video.html">Видеоматериалы</a></li>
+        <li class="tabs__item tabs__item--active"><a href="#">Фотогалерея</a></li>
+        <li class="tabs__item"><a href="photo-test.html">Видеоматериалы</a></li>
       </ul>
       <div class="tabs__contacts">
         <h3>Журналистам</h3>
@@ -560,188 +560,198 @@
         <a class="tabs__contacts-mail" href="mailto:press@sogaz.ru">press@sogaz.ru</a>
       </div>
     </section>
-    <section class="tab tab__article">
-      <h1>Пресс-релизы</h1>
-      <h2>Новосибирский филиал СОГАЗ-Мед поздравляет граждан с наступающим Новым годом</h2>
-      <span>22 декабря 2020</span>
-      <div class="tab__article-description">
-        <p>В преддверии Нового года сотрудники Новосибирского филиала СОГАЗ-Мед решили порадовать своих клиентов и
-          создать
-          добрую, уютную атмосферу. С этой целью во всех офисах было сделано праздничное новогоднее оформление.</p>
-        <p>Кроме этого, в связи с трудным и напряжённым годом, чтобы поднять настроение и подарить каждому
-          застрахованному
-          частичку тепла и внимания сотрудники Новосибирского филиала СОГАЗ-Мед организовали беспроигрышную лотерею для
-          пришедших в офис граждан, каждый из которых получает символический подарок и поздравление с наступающим Новым
-          годом.</p>
-        <p>Также специалисты СОГАЗ-Мед информируют застрахованных о важности иметь актуальный полис ОМС, о профилактике
-          заболеваний и своевременном прохождении диспансеризации. Особое внимание акцентируется на теме соблюдения мер
-          безопасности в условиях распространения коронавирусной инфекции.</p>
+    <section class="tab tab__photo">
+      <h1>Фотогалерея</h1>
+      <div class="tab__press-form">
+        <button class="tab__form-button">
+          <svg>
+            <use xlink:href="#filter-icon"></use>
+          </svg>
+          <span>фильтры</span>
+        </button>
+        <form class="tab__search tab__search--hide">
+          <button class="tab__search-toggle" type="button" value="Закрыть окно"></button>
+          <h1>Фильтры</h1>
+          <div class="tab__search-input tab__search-input--region">
+            <input type="text" name="name-field" id="region-field" value="" placeholder=" " required="">
+            <label for="region-field">Регион</label>
+          </div>
+          <div class="tab__search-input tab__search-input--year">
+            <input type="text" name="name-field" id="year-field" value="" placeholder=" " required="">
+            <label for="year-field">Год</label>
+          </div>
+          <div class="tab__search-input tab__search-input--month">
+            <input type="text" name="name-field" id="month-field" value="" placeholder=" " required="">
+            <label for="month-field">Месяц</label>
+          </div>
+        </form>
       </div>
-      <div class="tab__article-photo">
-        <div class="tab__article-photo-prev"></div>
-        <div class="tab__article-photo-list swiper-container">
-          <div class="tab__article-photo-wrapper">
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
+      <ul class="tab__photo-list">
+        <li class="tab__photo-item">
+          <div class="tab__photo-item-title">
+            <time datetime="2020-11-27">27 ноября 2020</time>
+            <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках Орловской
+              области</h4>
+          </div>
+          <div class="tab__photo-section">
+            <div class="tab__photo-section-prev"></div>
+            <div class="tab__photo-section-list swiper-container">
+              <div class="tab__photo-section-wrapper">
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                  <!-- 1х: 444px; 2x: 888px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                  <!-- 1х: 650px; 2x: 1300px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                  <!-- 1х: 444px; 2x: 888px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                  <!-- 1х: 650px; 2x: 1300px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                  <!-- 1х: 444px; 2x: 888px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                  <!-- 1х: 650px; 2x: 1300px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                  <!-- 1х: 444px; 2x: 888px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                  <!-- 1х: 650px; 2x: 1300px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+              </div>
             </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
-                <!-- 1х: 297px; 2x: 594px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
-                <!-- 1х: 434px; 2x: 868px -->
-                <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
+            <div class="tab__photo-section-next"></div>
+            <div class="tab__photo-section-navigation">
+              <button class="tab__photo-section-button" type="button" value="Смотреть всё">Смотреть всё</button>
+              <div class="tab__article-photo-counter">
+                <span class="tab__photo-section-counter-item">1</span>
+                <span class="tab__photo-section-counter-amount">/4</span>
+              </div>
             </div>
           </div>
-
-        </div>
-        <div class="tab__article-photo-next"></div>
-        <div class="tab__article-photo-navigation">
-          <button class="tab__article-button" type="button" value="Смотреть всё">Смотреть всё</button>
-          <div class="tab__article-photo-counter">
-            <span class="tab__article-photo-counter-item">1</span>
-            <span class="tab__article-photo-counter-amount">/4</span>
+        </li>
+        <li class="tab__photo-item">
+          <div class="tab__photo-item-title">
+            <time datetime="2020-11-27">27 ноября 2020</time>
+            <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках Орловской
+              области</h4>
           </div>
-        </div>
-      </div>
-      <div class="tab__article-description">
-        <p>А ещё сотрудники Новосибирского филиала СОГАЗ-Мед заботятся не только о людях, но и братьях наших меньших.
-          Поэтому рядом с офисом в Советском районе города Новосибирска был установлен маленький, но уютный скворечник.
-          Теперь туда забегают полакомиться вкусными орешками и булочками птицы и белки.</p>
-        <p>Новосибирский филиал СОГАЗ-Мед призывает всех в эти чудесные предновогодние дни быть более чуткими
-          и внимательными не только к своим близким, но и к тем, кто находится рядом: к своим коллегам, клиентам
-          и просто прохожим на улице, чтобы новый 2021 год начинался с добрых улыбок и хорошего настроения.</p>
-      </div>
-      <div class="tab__article-news">
-        <h2>Другие новости</h2>
-        <div class="tab__article-news-prev"></div>
-        <div class="tab__article-news-list swiper-container">
-          <ul class="tab__article-news-wrapper">
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
-                  <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
-                </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
-                  </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
-                  </li>
-                </ul>
-              </a>
-            </li>
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
-                  <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
-                </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
-                  </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
-                  </li>
-                </ul>
-              </a>
-            </li>
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
-                  <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
-                </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
-                  </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
-                  </li>
-                </ul>
-              </a>
-            </li>
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
-                  <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
-                </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
-                  </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
-                  </li>
-                </ul>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="tab__article-news-next"></div>
-        <button class="tab__article-button tab__article-button--news" type="button" value="Все новости">Все новости</button>
+          <div class="tab__photo-section">
+            <div class="tab__photo-section-prev"></div>
+            <div class="tab__photo-section-list swiper-container">
+              <div class="tab__photo-section-wrapper">
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
+                  <!-- 1х: 297px; 2x: 594px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
+                  <!-- 1х: 434px; 2x: 868px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
+                  <!-- 1х: 297px; 2x: 594px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
+                  <!-- 1х: 434px; 2x: 868px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
+                  <!-- 1х: 297px; 2x: 594px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
+                  <!-- 1х: 434px; 2x: 868px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
+                  <!-- 1х: 297px; 2x: 594px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
+                  <!-- 1х: 434px; 2x: 868px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+              </div>
+            </div>
+            <div class="tab__photo-section-next"></div>
+            <div class="tab__photo-section-navigation">
+              <button class="tab__photo-section-button" type="button" value="Смотреть всё">Смотреть всё</button>
+              <div class="tab__article-photo-counter">
+                <span class="tab__photo-section-counter-item">1</span>
+                <span class="tab__photo-section-counter-amount">/4</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="tab__photo-item">
+          <div class="tab__photo-item-title">
+            <time datetime="2020-11-27">27 ноября 2020</time>
+            <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках Орловской
+              области</h4>
+          </div>
+          <div class="tab__photo-section">
+            <div class="tab__photo-section-prev"></div>
+            <div class="tab__photo-section-list swiper-container">
+              <div class="tab__photo-section-wrapper">
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                  <!-- 1х: 444px; 2x: 888px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                  <!-- 1х: 650px; 2x: 1300px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
+                  <!-- 1х: 297px; 2x: 594px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
+                  <!-- 1х: 434px; 2x: 868px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+                <picture>
+                  <!-- 1х: 216px; 2x: 432px -->
+                  <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                  <!-- 1х: 444px; 2x: 888px -->
+                  <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                  <!-- 1х: 650px; 2x: 1300px -->
+                  <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                </picture>
+              </div>
+            </div>
+            <div class="tab__photo-section-next"></div>
+            <div class="tab__photo-section-navigation">
+              <button class="tab__photo-section-button" type="button" value="Смотреть всё">Смотреть всё</button>
+              <div class="tab__article-photo-counter">
+                <span class="tab__photo-section-counter-item">1</span>
+                <span class="tab__photo-section-counter-amount">/4</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="tab__press-list-navigation">
+        <div class="tab__press-list-prev"></div>
+        <ol class="tab__press-list-pagination">
+          <li class="tab__press-list-pagination-bullet tab__press-list-pagination-bullet-active"></li>
+          <li class="tab__press-list-pagination-bullet"></li>
+          <li class="tab__press-list-pagination-bullet"></li>
+          <li class="tab__press-list-pagination-bullet"></li>
+          <li class="tab__press-list-pagination-bullet"></li>
+        </ol>
+        <div class="tab__honor-list-next"></div>
       </div>
     </section>
   </div>
