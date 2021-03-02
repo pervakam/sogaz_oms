@@ -321,20 +321,7 @@ if (window.innerWidth <= 1279 && tabSearchForm) {
   tabSearchCloseButton.addEventListener('click', tabFilterHandler);
 }
 
-/// карусель фотографий в статье /////
-const PhotoSlider = new Swiper('.tab__article-photo-list', {
-
-  wrapperClass: 'tab__article-photo-wrapper',
-
-  slideClass: 'tab__article-photo-slide',
-
-  navigation: {
-    nextEl: '.tab__article-photo-next',
-    prevEl: '.tab__article-photo-prev',
-  },
-});
-
-/// карусель фотографий в разделе фотогалереи /////
+/// карусель фотографий в разделе фотогалереи и в статье/////
 const tabPhotoSections = document.querySelectorAll('.tab__photo-section');
 
 tabPhotoSections.forEach(function (it) {
@@ -362,80 +349,135 @@ tabPhotoSections.forEach(function (it) {
 });
 
 ///// модалка с фото /////
-const photoSectionOpenButtons = document.querySelectorAll('.tab__photo-section-button');
+const tabItemMediaModal = document.querySelector('.tab-item__media-modal');
+const tabItemMediaListWrapper = document.querySelector('.tab-item__media-list-wrapper')
+const tabItemMediaSlide = document.querySelectorAll('.tab-item__media-slide');
 
-const photoSectionOpenButtonsArray = Array.prototype.slice.call(photoSectionOpenButtons);
+tabItemMediaSlide.forEach(function (it) {
+  const showMorePhotoButton = it.querySelector('.tab__photo-section-button');
+  const tabPhotoSection = it.querySelector('.tab__photo-section');
+  const mediaModalCloseButton = document.querySelector('.tab-item__media-modal-close');
 
-photoSectionOpenButtonsArray.forEach(function (it) {
-  const photoModalClone = it.parentElement.parentElement.parentElement.cloneNode(true)
-  const tabPhotoItem = it.parentElement.parentElement.parentElement.parentElement;
+  if (showMorePhotoButton) {
+    showMorePhotoButton.addEventListener('click', function () {
+      tabItemMediaModal.classList.remove('tab-item__media-modal--hide');
+      const tabMediaModalPhotoSection = tabPhotoSection.cloneNode(true);
+      const photoModal = tabItemMediaModal.appendChild(tabMediaModalPhotoSection);
 
-  it.addEventListener('click', function () {
-    const photoModalOverlay = tabPhotoItem.appendChild(photoModalClone);
-    const photoModal = photoModalOverlay.querySelector('.tab__photo-section');
-    photoModalOverlay.classList.add('tab__photo-section-overlay');
-    photoModal.classList.add('tab__photo-section--modal');
+      photoModal.classList.add('tab__photo-section--modal');
+      photoModal.querySelector('.tab__photo-section-navigation').classList.add('tab__photo-section-navigation--hide');
 
-    const topList = photoModal.querySelector('.tab__photo-section-list');
-    const topWrapper = photoModal.querySelector('.tab__photo-section-wrapper');
-    const topSlides = photoModal.querySelectorAll('.tab__photo-section-slide');
-    topList.classList.add('tab__photo-section-list--top');
-    topWrapper.classList.add('tab__photo-section-wrapper--top')
-    topSlides.forEach(function (it) {
-      it.classList.add('tab__photo-section-slide--top')
-    });
+      const topList = photoModal.querySelector('.tab__photo-section-list');
+      const topWrapper = photoModal.querySelector('.tab__photo-section-wrapper');
+      const topSlides = photoModal.querySelectorAll('.tab__photo-section-slide');
+      const prevSlide = photoModal.querySelector('.tab__photo-section-prev');
+      const nextSlide = photoModal.querySelector('.tab__photo-section-next');
 
-    const photoModalThumbs = photoModalOverlay.querySelector('.tab__photo-section-list').cloneNode(true);
-    const photoModalThumbsSection = photoModal.appendChild(photoModalThumbs);
-    const thumbsWrapper = photoModalThumbsSection.querySelector('.tab__photo-section-wrapper');
-    const thumbsSlides = photoModalThumbsSection.querySelectorAll('.tab__photo-section-slide');
-    photoModalThumbsSection.classList.add('tab__photo-section-list--thumbs');
-    thumbsWrapper.classList.add('tab__photo-section-wrapper--thumbs')
-    thumbsSlides.forEach(function (it) {
-      it.classList.add('tab__photo-section-slide--thumbs')
-    });
+      const photoModalThumbs = photoModal.querySelector('.tab__photo-section-list').cloneNode(true);
+      const photoModalThumbsSection = photoModal.appendChild(photoModalThumbs);
+      const thumbsWrapper = photoModalThumbsSection.querySelector('.tab__photo-section-wrapper');
+      const thumbsSlides = photoModalThumbsSection.querySelectorAll('.tab__photo-section-slide');
 
-    const galleryThumbs  = new Swiper('.tab__photo-section-list--thumbs', {
-      wrapperClass: 'tab__photo-section-wrapper--thumbs',
-      slideClass: 'tab__photo-section-slide--thumbs',
-      spaceBetween: 4,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      // navigation: {
-      //   nextEl: '.next',
-      //   prevEl: '.prev',
-      // },
-    });
+      topList.classList.add('tab__photo-section-list--top');
+      topWrapper.classList.add('tab__photo-section-wrapper--top')
+      topSlides.forEach(function (it) {
+        it.classList.add('tab__photo-section-slide--top');
+      });
+      prevSlide.classList.add('tab__photo-section-prev--modal');
+      nextSlide.classList.add('tab__photo-section-next--modal');
+      if (window.innerWidth <= 1279) {
+        prevSlide.style.display = 'block';
+        nextSlide.style.display = 'block';
+      }
 
-    const galleryTop  = new Swiper('.tab__photo-section-list--top', {
-      wrapperClass: 'tab__photo-section-wrapper--top',
-      slideClass: 'tab__photo-section-slide--top',
-      thumbs: {
-        swiper: galleryThumbs
-      },
-    });
+      photoModalThumbsSection.classList.add('tab__photo-section-list--thumbs');
+      thumbsWrapper.classList.add('tab__photo-section-wrapper--thumbs')
+      thumbsSlides.forEach(function (it) {
+        it.classList.add('tab__photo-section-slide--thumbs');
+        const thumbsImg = it.querySelector('.tab__photo-section-img');
+        thumbsImg.classList.add('tab__photo-section-img--thumbs');
+      });
 
-  });
-});
+      if (window.innerWidth < 640) {
+        photoModal.querySelector('.tab__photo-section-navigation').classList.remove('tab__photo-section-navigation--hide');
+        photoModal.querySelector('.tab__photo-section-button').classList.add('tab__photo-section-button--hide');
+        photoModal.querySelector('.tab__article-photo-counter').classList.add('tab__article-photo-counter--modal');
+      }
+
+
+      const closeModalHandler = function () {
+        tabItemMediaModal.classList.add('tab-item__media-modal--hide');
+        photoModal.classList.remove('tab__photo-section--modal');
+        photoModal.remove();
+        photoModalThumbsSection.remove();
+
+        topList.classList.remove('tab__photo-section-list--top');
+        topWrapper.classList.remove('tab__photo-section-wrapper--top')
+        topSlides.forEach(function (it) {
+          it.classList.remove('tab__photo-section-slide--top');
+        });
+
+        photoModalThumbsSection.classList.remove('tab__photo-section-list--thumbs');
+        thumbsWrapper.classList.remove('tab__photo-section-wrapper--thumbs')
+        thumbsSlides.forEach(function (it) {
+          it.classList.remove('tab__photo-section-slide--thumbs')
+        });
+      }
+
+      const escModalHandler = function (evt) {
+        if (evt.keyCode === 27) {
+          evt.preventDefault();
+          closeModalHandler()
+        }
+      };
+
+      mediaModalCloseButton.addEventListener('click', closeModalHandler);
+      window.addEventListener('keydown', escModalHandler);
+
+      const galleryThumbs = new Swiper('.tab__photo-section-list--thumbs', {
+        wrapperClass: 'tab__photo-section-wrapper--thumbs',
+        slideClass: 'tab__photo-section-slide--thumbs',
+        spaceBetween: 4,
+        slidesPerView: 'auto',
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        navigation: {
+          nextEl: '.tab__photo-section-next--modal',
+          prevEl: '.tab__photo-section-prev--modal',
+        },
+      });
+
+      const galleryTop = new Swiper('.tab__photo-section-list--top', {
+        wrapperClass: 'tab__photo-section-wrapper--top',
+        slideClass: 'tab__photo-section-slide--top',
+        slidesPerView: 'auto',
+        autoHeight: true,
+        centeredSlides: true,
+        spaceBetween: 4,
+        thumbs: {
+          swiper: galleryThumbs
+        },
+        navigation: {
+          nextEl: '.tab__photo-section-next--modal',
+          prevEl: '.tab__photo-section-prev--modal',
+        },
+        pagination: {
+          el: '.tab__article-photo-counter',
+          type: 'fraction',
+        },
+      });
+    })
+  }
+})
 
 ///// слайдер новостей /////
 const tabSlides = document.querySelectorAll('.tab-item__list-slide');
 const tabListNavigation = document.querySelector('.tab-item__list-navigation');
 
 const newsSwiper = new Swiper('.tab-item__list-container', {
-  breakpoints: {
-    320: {
-      slidesPerView: 1.007,
-    },
-    640: {
-      slidesPerView: 2,
-    },
-  },
-
+  slidesPerView: 'auto',
   slidesPerColumn: 3,
-  spaceBetween: 24,
 
   wrapperClass: 'tab-item__list-wrapper',
 
@@ -459,7 +501,7 @@ const newsSwiper = new Swiper('.tab-item__list-container', {
   },
 });
 
-if(tabSlides.length < 7 && tabListNavigation) {
+if (tabSlides.length < 7 && tabListNavigation) {
   tabListNavigation.classList.add('tab-item__list-navigation--hide')
 }
 
@@ -477,9 +519,9 @@ tabItemPhotosLists.forEach(function (it) {
     tabItemPhotosItems[maxPhoto - 1].textContent = '+' + (tabItemPhotosItems.length - (maxPhoto - 1));
   }
 
-  if(tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_DESKTOP && window.innerWidth > 1280) {
+  if (tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_DESKTOP && window.innerWidth > 1280) {
     tabItemPhotosCounter(MAX_PHOTO_IN_CARD_DESKTOP);
-  } else if(tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_TABLET && window.innerWidth <= 1279) {
+  } else if (tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_TABLET && window.innerWidth <= 1279) {
     tabItemPhotosCounter(MAX_PHOTO_IN_CARD_TABLET);
   }
 })
@@ -487,6 +529,7 @@ tabItemPhotosLists.forEach(function (it) {
 ///// слайдер в фотогалерее /////
 const tabMediaSlides = document.querySelectorAll('.tab-item__media-slide');
 const tabMediaNavigation = document.querySelector('.tab-item__media-list-navigation');
+const tabMediaListContainer = document.querySelector('.tab-item__media-list-container');
 
 const MediaSwiper = new Swiper('.tab-item__media-list-container', {
   slidesPerView: 1,
@@ -516,6 +559,6 @@ const MediaSwiper = new Swiper('.tab-item__media-list-container', {
   },
 });
 
-if(tabMediaSlides.length < 4) {
+if (tabMediaSlides.length < 4 && tabMediaListContainer) {
   tabMediaNavigation.classList.add('tab-item__media-list-navigation--hide')
 }

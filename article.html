@@ -216,9 +216,9 @@
   </a>
   <div class="main-nav__wrapper main-nav__wrapper--news">
     <nav class="main-nav">
-      <div class="main-nav__menu">
-        <button class="main-nav__toggle main-nav__toggle--white" type="button" value="Открыть меню"></button>
-        <a class="main-nav__logo main-nav__logo--white" href="index.html">
+      <div class="main-nav__menu main-nav__menu--white">
+        <button class="main-nav__toggle" type="button" value="Открыть меню"></button>
+        <a class="main-nav__logo" href="index.html">
           <svg>
             <use xlink:href="#logo-icon"></use>
           </svg>
@@ -564,6 +564,9 @@
       <h1>Пресс-релизы</h1>
       <h2>Новосибирский филиал СОГАЗ-Мед поздравляет граждан с наступающим Новым годом</h2>
       <span>22 декабря 2020</span>
+      <div class="tab-item__media-modal tab-item__media-modal--hide">
+        <button class="tab-item__media-modal-close" type="button"><span class="visually-hidden">закрыть</span></button>
+      </div>
       <div class="tab__article-description">
         <p>В преддверии Нового года сотрудники Новосибирского филиала СОГАЗ-Мед решили порадовать своих клиентов и
           создать
@@ -577,82 +580,62 @@
           заболеваний и своевременном прохождении диспансеризации. Особое внимание акцентируется на теме соблюдения мер
           безопасности в условиях распространения коронавирусной инфекции.</p>
       </div>
-      <div class="tab__article-photo">
-        <div class="tab__article-photo-prev"></div>
-        <div class="tab__article-photo-list swiper-container">
-          <div class="tab__article-photo-wrapper">
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
+      <ul class="tab-item__media-list-wrapper tab-item__media-list-wrapper--article">
+        <li class="tab-item__media-slide tab-item__media-slide--article">
+          <div class="tab__photo-section">
+            <div class="tab__photo-section-prev"></div>
+            <div class="tab__photo-section-list">
+              <div class="tab__photo-section-wrapper">
+                <div class="tab__photo-section-slide">
+                  <picture>
+                    <!-- 1х: 216px; 2x: 432px -->
+                    <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                    <!-- 1х: 444px; 2x: 888px -->
+                    <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                    <!-- 1х: 650px; 2x: 1300px -->
+                    <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                  </picture>
+                </div>
+                <div class="tab__photo-section-slide">
+                  <picture>
+                    <!-- 1х: 216px; 2x: 432px -->
+                    <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                    <!-- 1х: 444px; 2x: 888px -->
+                    <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                    <!-- 1х: 650px; 2x: 1300px -->
+                    <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                  </picture>
+                </div>
+                <div class="tab__photo-section-slide">
+                  <picture>
+                    <!-- 1х: 216px; 2x: 432px -->
+                    <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                    <!-- 1х: 444px; 2x: 888px -->
+                    <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                    <!-- 1х: 650px; 2x: 1300px -->
+                    <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                  </picture>
+                </div>
+                <div class="tab__photo-section-slide">
+                  <picture>
+                    <!-- 1х: 216px; 2x: 432px -->
+                    <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
+                    <!-- 1х: 444px; 2x: 888px -->
+                    <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
+                    <!-- 1х: 650px; 2x: 1300px -->
+                    <img class="tab__photo-section-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
+                  </picture>
+                </div>
+              </div>
+              <div class="tab__photo-section-navigation">
+                <button class="tab__photo-section-button" type="button" value="Смотреть всё">Смотреть всё</button>
+                <div class="tab__article-photo-counter"></div>
+              </div>
             </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
-                <!-- 1х: 297px; 2x: 594px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
-                <!-- 1х: 434px; 2x: 868px -->
-                <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-1_mobile@1x.jpg 1x, img/article-photo-1_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-1_tablet@1x.jpg 1x, img/article-photo-1_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-1_desktop@1x.jpg" srcset="img/article-photo-1_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
-            <div class="tab__article-photo-slide">
-              <picture>
-                <!-- 1х: 216px; 2x: 432px -->
-                <source media="(max-width: 639px)" srcset="img/article-photo-2_mobile@1x.jpg 1x, img/article-photo-2_mobile@2x.jpg 2x">
-                <!-- 1х: 444px; 2x: 888px -->
-                <source type="image/webp" media="(max-width: 1279px)" srcset="img/article-photo-2_tablet@1x.jpg 1x, img/article-photo-2_tablet@2x.jpg 2x">
-                <!-- 1х: 650px; 2x: 1300px -->
-                <img class="tab__article-photo-img" src="img/article-photo-2_desktop@1x.jpg" srcset="img/article-photo-2_desktop@2x.jpg 2x" alt="фотография к статье">
-              </picture>
-            </div>
+            <div class="tab__photo-section-next"></div>
           </div>
-
-        </div>
-        <div class="tab__article-photo-next"></div>
-        <div class="tab__article-photo-navigation">
-          <button class="tab__article-button" type="button" value="Смотреть всё">Смотреть всё</button>
-          <div class="tab__article-photo-counter">
-            <span class="tab__article-photo-counter-item">1</span>
-            <span class="tab__article-photo-counter-amount">/4</span>
-          </div>
-        </div>
-      </div>
+        </li>
+      </ul>
       <div class="tab__article-description">
         <p>А ещё сотрудники Новосибирского филиала СОГАЗ-Мед заботятся не только о людях, но и братьях наших меньших.
           Поэтому рядом с офисом в Советском районе города Новосибирска был установлен маленький, но уютный скворечник.
@@ -663,84 +646,326 @@
       </div>
       <div class="tab__article-news">
         <h2>Другие новости</h2>
-        <div class="tab__article-news-prev"></div>
-        <div class="tab__article-news-list swiper-container">
-          <ul class="tab__article-news-wrapper">
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
+        <div class="tab-item__list-container tab-item__list-container--article">
+          <ul class="tab-item__list-wrapper tab-item__list-wrapper--article">
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
                   <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
+                  <h4>Мурманский филиал СОГАЗ-Мед получил награду за активное участие в волонтерской деятельности</h4>
                 </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
                   </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
                   </li>
                 </ul>
               </a>
             </li>
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
                   <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
+                  <h4>Марийский филиал СОГАЗ-Мед получил благодарность за помощь в организации работы волонтерского
+                    центра</h4>
                 </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize03.png">
                   </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize04.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize05.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize06.png">
                   </li>
                 </ul>
               </a>
             </li>
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
+
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
                   <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
+                  <h4>Мурманский филиал СОГАЗ-Мед получил награду за активное участие в волонтерской деятельности</h4>
                 </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
                   </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
                   </li>
                 </ul>
               </a>
             </li>
-            <li class="tab__article-news-item">
-              <a class="tab__article-news-item-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
-                <div class="tab__article-news-item-title">
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
                   <time datetime="2020-11-27">27 ноября 2020</time>
-                  <h4>Орловский филиал СОГАЗ-Мед напоминает о дежурствах страховых представителях в поликлиниках
-                    Орловской
-                    области</h4>
+                  <h4>Марийский филиал СОГАЗ-Мед получил благодарность за помощь в организации работы волонтерского
+                    центра</h4>
                 </div>
-                <ul class="tab__article-news-item-photos-list">
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize01.png">
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize03.png">
                   </li>
-                  <li class="tab__article-news-item-photos-item">
-                    <img class="tab__article-news-item-pic" src="img/prize02.png">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize04.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize05.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize06.png">
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
+                  <time datetime="2020-11-27">27 ноября 2020</time>
+                  <h4>Мурманский филиал СОГАЗ-Мед получил награду за активное участие в волонтерской деятельности</h4>
+                </div>
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                </ul>
+              </a>
+            </li>
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
+                  <time datetime="2020-11-27">27 ноября 2020</time>
+                  <h4>Марийский филиал СОГАЗ-Мед получил благодарность за помощь в организации работы волонтерского
+                    центра</h4>
+                </div>
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize03.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize04.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize05.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize06.png">
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
+                  <time datetime="2020-11-27">27 ноября 2020</time>
+                  <h4>Мурманский филиал СОГАЗ-Мед получил награду за активное участие в волонтерской деятельности</h4>
+                </div>
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize01.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize02.png">
+                  </li>
+                </ul>
+              </a>
+            </li>
+            <li class="tab-item__list-slide tab-item__list-slide--article">
+              <a class="tab-item__list-slide-link" href="https://www.sogaz-med.ru/press_leaders/index.html?a=1">
+                <div class="tab-item__list-slide-title">
+                  <time datetime="2020-11-27">27 ноября 2020</time>
+                  <h4>Марийский филиал СОГАЗ-Мед получил благодарность за помощь в организации работы волонтерского
+                    центра</h4>
+                </div>
+                <ul class="tab-item__list-slide-photos-list">
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize03.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize04.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize05.png">
+                  </li>
+                  <li class="tab-item__list-slide-photos-item">
+                    <img class="tab-item__list-slide-photos-item-pic" src="img/prize06.png">
                   </li>
                 </ul>
               </a>
             </li>
           </ul>
         </div>
-        <div class="tab__article-news-next"></div>
+        <div class="tab-item__list-navigation tab-item__list-navigation--article">
+          <div class="tab-item__list-prev tab-item__list-prev--article"></div>
+          <div class="tab-item__list-pagination tab-item__list-pagination--article"></div>
+          <div class="tab-item__list-next tab-item__list-next--article"></div>
+        </div>
         <button class="tab__article-button tab__article-button--news" type="button" value="Все новости">Все новости</button>
       </div>
     </section>
