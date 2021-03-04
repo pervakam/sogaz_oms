@@ -16,6 +16,7 @@ const mainNavHelpItemDescriptions = document.querySelectorAll('.main-nav__help-i
 const regionModal = document.querySelector('#region-modal').content.querySelector('.region');
 const mainNavMenu = document.querySelector('.main-nav__menu');
 const bonusesRegionField = document.getElementById('bonuses-region-field');
+const formRegionField = document.getElementById('region-field');
 const infoRegionList = document.querySelector('.info__region-list');
 const infoRegionItems = document.querySelectorAll('.info__region-item');
 const pageHeaderSectionTitleAbout = document.querySelector('.page-header__section-title--about');
@@ -211,36 +212,40 @@ headerCitySectionsArray.forEach(function (it) {
   it.addEventListener('click', openRegionModal);
 });
 
-///// инпут выбора региона /////
-const escRegionList = function (evt) {
-  if (evt.keyCode === 27) {
-    evt.preventDefault();
-    infoRegionList.classList.add('info__region-list--hide');
-  }
-};
+///// инпуты выбора значений в формах /////
+const formInputs = document.querySelectorAll('.tab-item__search-input');
 
-const overlayRegionList = function (evt) {
-  if (evt.target !== infoRegionList && evt.target !== bonusesRegionField) {
-    infoRegionList.classList.add('info__region-list--hide');
-  }
-};
+formInputs.forEach(function (it) {
+  const formSearchInput = it.querySelector('input');
+  const formResultList = it.querySelector('.form__result-list');
+  const formResultItems = formResultList.querySelectorAll('.form__result-item');
 
-if (bonusesRegionField) {
-  bonusesRegionField.addEventListener('click', function () {
-    infoRegionList.classList.toggle('info__region-list--hide');
-    window.addEventListener('keydown', escRegionList);
-    document.addEventListener('click', overlayRegionList);
+  const escResultList = function (evt) {
+    if (evt.keyCode === 27) {
+      evt.preventDefault();
+      formResultList.classList.add('form__result-list--hide');
+    }
+  };
+  const overlayResultList = function (evt) {
+    if (evt.target !== formResultList && evt.target !== formSearchInput) {
+      formResultList.classList.add('form__result-list--hide');
+    }
+  };
+  const setInputValue = function (evt) {
+    formSearchInput.value = evt.target.textContent;
+  };
+
+  formSearchInput.addEventListener('click', function () {
+    formResultList.classList.toggle('form__result-list--hide');
+    window.addEventListener('keydown', escResultList);
+    document.addEventListener('click', overlayResultList);
   });
-}
 
-const setInputValue = function (evt) {
-  bonusesRegionField.value = evt.target.textContent;
-  infoRegionList.classList.add('info__region-list--hide');
-};
-
-infoRegionItemsArray.forEach(function (it) {
-  it.addEventListener('click', setInputValue);
+  formResultItems.forEach(function (it) {
+    it.addEventListener('click', setInputValue);
+  });
 });
+
 
 ///// подсветка региона при наведении /////
 const [regionItemCentral, regionItemNorthwestern, regionItemVolga, regionItemUral, regionItemNorthCaucasian, regionItemSiberian, regionItemSouthern, regionItemFarEastern] = tabRegionItemsArray;
@@ -350,7 +355,7 @@ tabPhotoSections.forEach(function (it) {
 
 ///// модалка с фото /////
 const tabItemMediaModal = document.querySelector('.tab-item__media-modal');
-const tabItemMediaListWrapper = document.querySelector('.tab-item__media-list-wrapper')
+const tabItemMediaListWrapper = document.querySelector('.tab-item__media-list-wrapper');
 const tabItemMediaSlide = document.querySelectorAll('.tab-item__media-slide');
 
 tabItemMediaSlide.forEach(function (it) {
@@ -379,7 +384,7 @@ tabItemMediaSlide.forEach(function (it) {
       const thumbsSlides = photoModalThumbsSection.querySelectorAll('.tab__photo-section-slide');
 
       topList.classList.add('tab__photo-section-list--top');
-      topWrapper.classList.add('tab__photo-section-wrapper--top')
+      topWrapper.classList.add('tab__photo-section-wrapper--top');
       topSlides.forEach(function (it) {
         it.classList.add('tab__photo-section-slide--top');
       });
@@ -391,7 +396,7 @@ tabItemMediaSlide.forEach(function (it) {
       }
 
       photoModalThumbsSection.classList.add('tab__photo-section-list--thumbs');
-      thumbsWrapper.classList.add('tab__photo-section-wrapper--thumbs')
+      thumbsWrapper.classList.add('tab__photo-section-wrapper--thumbs');
       thumbsSlides.forEach(function (it) {
         it.classList.add('tab__photo-section-slide--thumbs');
         const thumbsImg = it.querySelector('.tab__photo-section-img');
@@ -412,22 +417,22 @@ tabItemMediaSlide.forEach(function (it) {
         photoModalThumbsSection.remove();
 
         topList.classList.remove('tab__photo-section-list--top');
-        topWrapper.classList.remove('tab__photo-section-wrapper--top')
+        topWrapper.classList.remove('tab__photo-section-wrapper--top');
         topSlides.forEach(function (it) {
           it.classList.remove('tab__photo-section-slide--top');
         });
 
         photoModalThumbsSection.classList.remove('tab__photo-section-list--thumbs');
-        thumbsWrapper.classList.remove('tab__photo-section-wrapper--thumbs')
+        thumbsWrapper.classList.remove('tab__photo-section-wrapper--thumbs');
         thumbsSlides.forEach(function (it) {
-          it.classList.remove('tab__photo-section-slide--thumbs')
+          it.classList.remove('tab__photo-section-slide--thumbs');
         });
-      }
+      };
 
       const escModalHandler = function (evt) {
         if (evt.keyCode === 27) {
           evt.preventDefault();
-          closeModalHandler()
+          closeModalHandler();
         }
       };
 
@@ -456,7 +461,7 @@ tabItemMediaSlide.forEach(function (it) {
         centeredSlides: true,
         spaceBetween: 4,
         thumbs: {
-          swiper: galleryThumbs
+          swiper: galleryThumbs,
         },
         navigation: {
           nextEl: '.tab__photo-section-next--modal',
@@ -467,9 +472,9 @@ tabItemMediaSlide.forEach(function (it) {
           type: 'fraction',
         },
       });
-    })
+    });
   }
-})
+});
 
 ///// слайдер новостей /////
 const tabSlides = document.querySelectorAll('.tab-item__list-slide');
@@ -502,7 +507,7 @@ const newsSwiper = new Swiper('.tab-item__list-container', {
 });
 
 if (tabSlides.length < 7 && tabListNavigation) {
-  tabListNavigation.classList.add('tab-item__list-navigation--hide')
+  tabListNavigation.classList.add('tab-item__list-navigation--hide');
 }
 
 ///// фотографии в карточке новостей /////
@@ -517,14 +522,14 @@ tabItemPhotosLists.forEach(function (it) {
     tabItemPhotosItems[maxPhoto - 1].classList.add('tab-item__list-slide-photos-item--more');
     tabItemPhotosItems[maxPhoto - 1].querySelector('.tab-item__list-slide-photos-item-pic').classList.add('tab-item__list-slide-photos-item-pic--hide');
     tabItemPhotosItems[maxPhoto - 1].textContent = '+' + (tabItemPhotosItems.length - (maxPhoto - 1));
-  }
+  };
 
   if (tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_DESKTOP && window.innerWidth > 1280) {
     tabItemPhotosCounter(MAX_PHOTO_IN_CARD_DESKTOP);
   } else if (tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_TABLET && window.innerWidth <= 1279) {
     tabItemPhotosCounter(MAX_PHOTO_IN_CARD_TABLET);
   }
-})
+});
 
 ///// слайдер в фотогалерее /////
 const tabMediaSlides = document.querySelectorAll('.tab-item__media-slide');
@@ -560,5 +565,5 @@ const MediaSwiper = new Swiper('.tab-item__media-list-container', {
 });
 
 if (tabMediaSlides.length < 4 && tabMediaListContainer) {
-  tabMediaNavigation.classList.add('tab-item__media-list-navigation--hide')
+  tabMediaNavigation.classList.add('tab-item__media-list-navigation--hide');
 }

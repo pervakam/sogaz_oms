@@ -232,23 +232,10 @@
       </div>
       <ul class="main-nav__help-list">
         <li class="main-nav__help-item main-nav__help-item--address">
-          <a class="main-nav__help-item-description main-nav__help-item-description--address" href="https://www.sogaz-med.ru/contact-ya.html">
-            <div class="main-nav__help-item-icon main-nav__help-item-icon--menu">
-              <svg>
-                <use xlink:href="#mark_white-icon"></use>
-              </svg>
-            </div>
-            <span>Адреса офисов</span>
-          </a>
+          <a class="main-nav__help-item-description main-nav__help-item-description--address" href="https://www.sogaz-med.ru/contact-ya.html">Адреса офисов</a>
         </li>
         <li class="main-nav__help-item main-nav__help-item--account">
-          <a class="main-nav__help-item-description" href="#">
-            <div class="main-nav__help-item-icon main-nav__help-item-icon--menu">
-              <svg>
-                <use xlink:href="#lk_white-icon"></use>
-              </svg>
-            </div>
-            <span>Кабинет пользователя</span></a>
+          <a class="main-nav__help-item-description" href="#">Кабинет пользователя</a>
         </li>
         <li class="main-nav__help-item main-nav__help-item--tel">
           <a href="tel:88001000702">Круглосуточно<br>8 800 100 07 02</a>
@@ -309,6 +296,9 @@
             </li>
             <li class="page-header__nav-item">
               <a href="procedure-policy.html">Порядок получения полиса ОМС</a>
+            </li>
+            <li class="page-header__nav-item">
+              <a href="check-policy.html">Проверка готовности полиса</a>
             </li>
           </ul>
         </div>
@@ -739,36 +729,36 @@
     <div class="info__bonuses">
       <h3>Программа лояльности</h3>
       <p>Выберете регион и узнайте, какие бонусы вы получите, когда оформите полис ОМС у нас</p>
-      <form class="info__bonuses-form">
+      <form class="tab-item__search-input tab-item__search-input--bonuses info__bonuses-form">
         <input type="text" name="bonuses-region-field" id="bonuses-region-field" value="" placeholder=" " required="">
         <label for="bonuses-region-field">Выберите регион</label>
-        <ul class="info__region-list info__region-list--hide">
-          <li class="info__region-item">Амурская область</li>
-          <li class="info__region-item">Архангельская область</li>
-          <li class="info__region-item">Астраханская область</li>
-          <li class="info__region-item">республика Адыгея</li>
-          <li class="info__region-item">Брянская область</li>
-          <li class="info__region-item">Байконур</li>
-          <li class="info__region-item">республика Башкортостан</li>
-          <li class="info__region-item">республика Бурятия</li>
-          <li class="info__region-item">Волгоградская область</li>
-          <li class="info__region-item">Вологодская область</li>
-          <li class="info__region-item">Воронежская область</li>
-          <li class="info__region-item">Еврейская автономная область</li>
-          <li class="info__region-item">Ивановская область</li>
-          <li class="info__region-item">Иркутская область</li>
-          <li class="info__region-item">Калининградская область</li>
-          <li class="info__region-item">Калужская область</li>
-          <li class="info__region-item">Камчатский край</li>
-          <li class="info__region-item">Кировская область</li>
-          <li class="info__region-item">Костромская область</li>
-          <li class="info__region-item">Краснодарский край</li>
-          <li class="info__region-item">Красноярский край</li>
-          <li class="info__region-item">Курская область</li>
-          <li class="info__region-item">республика Калмыкия</li>
-          <li class="info__region-item">республика Коми</li>
-          <li class="info__region-item">Ленинградская область</li>
-          <li class="info__region-item">Липецкая область</li>
+        <ul class="form__result-list form__result-list--hide">
+          <li class="form__result-item">Амурская область</li>
+          <li class="form__result-item">Архангельская область</li>
+          <li class="form__result-item">Астраханская область</li>
+          <li class="form__result-item">республика Адыгея</li>
+          <li class="form__result-item">Брянская область</li>
+          <li class="form__result-item">Байконур</li>
+          <li class="form__result-item">республика Башкортостан</li>
+          <li class="form__result-item">республика Бурятия</li>
+          <li class="form__result-item">Волгоградская область</li>
+          <li class="form__result-item">Вологодская область</li>
+          <li class="form__result-item">Воронежская область</li>
+          <li class="form__result-item">Еврейская автономная область</li>
+          <li class="form__result-item">Ивановская область</li>
+          <li class="form__result-item">Иркутская область</li>
+          <li class="form__result-item">Калининградская область</li>
+          <li class="form__result-item">Калужская область</li>
+          <li class="form__result-item">Камчатский край</li>
+          <li class="form__result-item">Кировская область</li>
+          <li class="form__result-item">Костромская область</li>
+          <li class="form__result-item">Краснодарский край</li>
+          <li class="form__result-item">Красноярский край</li>
+          <li class="form__result-item">Курская область</li>
+          <li class="form__result-item">республика Калмыкия</li>
+          <li class="form__result-item">республика Коми</li>
+          <li class="form__result-item">Ленинградская область</li>
+          <li class="form__result-item">Липецкая область</li>
         </ul>
         <a class="info__bonuses-button button" href="#">Показать бонусы</a>
       </form>
@@ -917,6 +907,9 @@
           </li>
           <li class="page-footer__nav-item">
             <a href="procedure-policy.html">Порядок получения полиса ОМС</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a href="check-policy.html">Проверка готовности полиса</a>
           </li>
         </ul>
         <h4 class="page-footer__section-title"><a>Всё об ОМС</a></h4>

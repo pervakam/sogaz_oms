@@ -208,9 +208,9 @@
     </div>
     <span>Версия для слабовидящих</span>
   </a>
-  <div class="main-nav__wrapper main-nav__wrapper--news">
+  <div class="main-nav__wrapper main-nav__wrapper--white main-nav__wrapper--company">
     <nav class="main-nav">
-      <div class="main-nav__menu main-nav__menu--white">
+      <div class="main-nav__menu">
         <button class="main-nav__toggle" type="button" value="Открыть меню"></button>
         <a class="main-nav__logo" href="index.html">
           <svg>
@@ -218,32 +218,28 @@
           </svg>
           <span class="visually-hidden">СОГАЗ МЕД</span>
         </a>
-        <a class="main-nav__city main-nav__city--white" href="#">г. Санкт-Петербург</a>
+        <div class="main-nav__city-wrapper">
+          <a class="main-nav__city" href="#">г. Санкт-Петербург</a>
+          <div class="page-header__region-check">
+            <p>Ваш регион г. Санкт-Петербург?</p>
+            <div class="page-header__region-check-buttons">
+              <a class="main-nav__city page-header__region-no-button button" href="#">выбрать другой</a>
+              <a class="page-header__region-yes-button button" href="#">да</a>
+            </div>
+          </div>
+        </div>
       </div>
       <ul class="main-nav__help-list">
-        <li class="main-nav__help-item main-nav__help-item--white main-nav__help-item--address">
-          <a class="main-nav__help-item-description main-nav__help-item-description--address" href="https://www.sogaz-med.ru/contact-ya.html">
-            <div class="main-nav__help-item-icon main-nav__help-item-icon--menu">
-              <svg>
-                <use xlink:href="#mark_blue-icon"></use>
-              </svg>
-            </div>
-            <span>Адреса офисов</span>
-          </a>
+        <li class="main-nav__help-item main-nav__help-item--address">
+          <a class="main-nav__help-item-description main-nav__help-item-description--address" href="https://www.sogaz-med.ru/contact-ya.html">Адреса офисов</a>
         </li>
-        <li class="main-nav__help-item main-nav__help-item--white main-nav__help-item--account">
-          <a class="main-nav__help-item-description main-nav__help-item-description--mobile" href="#">
-            <div class="main-nav__help-item-icon main-nav__help-item-icon--menu">
-              <svg>
-                <use xlink:href="#lk_blue-icon"></use>
-              </svg>
-            </div>
-            <span>Кабинет пользователя</span></a>
+        <li class="main-nav__help-item main-nav__help-item--account">
+          <a class="main-nav__help-item-description" href="#">Кабинет пользователя</a>
         </li>
-        <li class="main-nav__help-item main-nav__help-item--white main-nav__help-item--tel">
+        <li class="main-nav__help-item main-nav__help-item--tel">
           <a href="tel:88001000702">Круглосуточно<br>8 800 100 07 02</a>
         </li>
-        <li class="main-nav__help-item main-nav__help-item--white main-nav__help-item--feedback">
+        <li class="main-nav__help-item main-nav__help-item--feedback">
           <a href="feedback.html">Обращение<br>в СОГАЗ-Мед</a>
         </li>
       </ul>
@@ -253,7 +249,7 @@
     <nav class="main-nav-menu">
       <div class="main-nav-menu__menu">
         <button class="main-nav-menu__toggle" type="button" value="Открыть меню"></button>
-        <a class="main-nav-menu__logo" href="index.html">
+        <a class="main-nav-menu__logo" href="#">
           <svg>
             <use xlink:href="#logo-icon"></use>
           </svg>
@@ -298,7 +294,7 @@
               <a href="https://www.sogaz-med.ru/new_oms.php">Заявка на оформление полиса&nbsp;ОМС</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="https://www.sogaz-med.ru/oms_policy/index.html">Порядок получения полиса ОМС</a>
+              <a href="procedure-policy.html">Порядок получения полиса ОМС</a>
             </li>
           </ul>
         </div>
@@ -326,16 +322,16 @@
               <a href="leaders.html">Руководство</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="#">Доска почета</a>
+              <a href="honor.html">Доска почета</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="https://www.sogaz-med.ru/about/groups.html">Участие в страховых группах, союзах страховщиков</a>
+              <a href="groups.html">Участие в страховых группах, союзах страховщиков</a>
             </li>
             <li class="page-header__nav-item">
               <a href="https://www.sogaz-med.ru/about/docs.html">Сведения о правоустанавливающих документах</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="https://www.sogaz-med.ru/about/rules.html">Правила страхования и страховые тарифы</a>
+              <a href="tariffs.html">Правила страхования и страховые тарифы</a>
             </li>
             <li class="page-header__nav-item">
               <a href="https://www.sogaz-med.ru/press/charity.html">Благотворительная деятельность</a>
@@ -344,7 +340,7 @@
               <a href="https://www.sogaz-med.ru/about/gruppasogaz.html">Участники Страховой Группы «СОГАЗ»</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="https://www.sogaz-med.ru/fin_upoln.html">Информация о финансовом уполномоченном</a>
+              <a href="finombudsman.html">Информация о финансовом уполномоченном</a>
             </li>
             <li class="page-header__nav-item">
               <a href="https://www.sogaz-med.ru/about/contacts.html">Контактная информация</a>
@@ -458,7 +454,7 @@
               <a href="https://www.sogaz-med.ru/loyalty.php">Программа лояльности</a></h4></li>
           <li class="page-header__section-item">
             <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
-              <a href="#">Новости</a></h4>
+              <a href="press.html">Новости</a></h4>
           </li>
           <li class="page-header__section-item">
             <h4 class="page-header__section-title page-header__section-title--list page-header__section-title--menu">
@@ -821,7 +817,7 @@
             <a href="https://www.sogaz-med.ru/about/docs.html">Сведения о правоустанавливающих документах</a>
           </li>
           <li class="page-footer__nav-item">
-            <a href="#">Правила страхования и страховые тарифы</a>
+            <a href="tariffs.html">Правила страхования и страховые тарифы</a>
           </li>
           <li class="page-footer__nav-item">
             <a href="https://www.sogaz-med.ru/press/charity.html">Благотворительная деятельность</a>
@@ -830,7 +826,7 @@
             <a href="https://www.sogaz-med.ru/about/gruppasogaz.html">Участники Страховой Группы «СОГАЗ»</a>
           </li>
           <li class="page-footer__nav-item">
-            <a href="#">Информация о финансовом уполномоченном</a>
+            <a href="finombudsman.html">Информация о финансовом уполномоченном</a>
           </li>
           <li class="page-footer__nav-item">
             <a href="https://www.sogaz-med.ru/about/contacts.html">Контактная информация</a>
@@ -954,62 +950,62 @@
         <li class="region-modal__region-item">
           <h2>А</h2>
           <ul class="region-modal__region-item-list">
-            <li>Амурская область</li>
-            <li>Архангельская область</li>
-            <li>Астраханская область</li>
-            <li>республика Адыгея</li>
+            <li><a href="#">Амурская область</a></li>
+            <li><a href="#">Архангельская область</a></li>
+            <li><a href="#">Астраханская область</a></li>
+            <li><a href="#">республика Адыгея</a></li>
           </ul>
         </li>
         <li class="region-modal__region-item">
           <h2>Б</h2>
           <ul class="region-modal__region-item-list">
-            <li>Брянская область</li>
-            <li>Байконур</li>
-            <li>республика Башкортостан</li>
-            <li>республика Бурятия</li>
+            <li><a href="#">Брянская область</a></li>
+            <li><a href="#">Байконур</a></li>
+            <li><a href="#">республика Башкортостан</a></li>
+            <li><a href="#">республика Бурятия</a></li>
           </ul>
         </li>
         <li class="region-modal__region-item">
           <h2>В</h2>
           <ul class="region-modal__region-item-list">
-            <li>Волгоградская область</li>
-            <li>Вологодская область</li>
-            <li>Воронежская область</li>
+            <li><a href="#">Волгоградская область</a></li>
+            <li><a href="#">Вологодская область</a></li>
+            <li><a href="#">Воронежская область</a></li>
           </ul>
         </li>
         <li class="region-modal__region-item">
           <h2>Е</h2>
           <ul class="region-modal__region-item-list">
-            <li>Еврейская автономная область</li>
+            <li><a href="#">Еврейская автономная область</a></li>
           </ul>
         </li>
         <li class="region-modal__region-item">
           <h2>И</h2>
           <ul class="region-modal__region-item-list">
-            <li>Ивановская область</li>
-            <li>Иркутская область</li>
+            <li><a href="#">Ивановская область</a></li>
+            <li><a href="#">Иркутская область</a></li>
           </ul>
         </li>
         <li class="region-modal__region-item">
           <h2>К</h2>
           <ul class="region-modal__region-item-list">
-            <li>Калининградская область</li>
-            <li>Калужская область</li>
-            <li>Камчатский край</li>
-            <li>Кировская область</li>
-            <li>Костромская область</li>
-            <li>Краснодарский край</li>
-            <li>Красноярский край</li>
-            <li>Курская область</li>
-            <li>республика Калмыкия</li>
-            <li>республика Коми</li>
+            <li><a href="#">Калининградская область</a></li>
+            <li><a href="#">Калужская область</a></li>
+            <li><a href="#">Камчатский край</a></li>
+            <li><a href="#">Кировская область</a></li>
+            <li><a href="#">Костромская область</a></li>
+            <li><a href="#">Краснодарский край</a></li>
+            <li><a href="#">Красноярский край</a></li>
+            <li><a href="#">Курская область</a></li>
+            <li><a href="#">республика Калмыкия</a></li>
+            <li><a href="#">республика Коми</a></li>
           </ul>
         </li>
         <li class="region-modal__region-item">
           <h2>Л</h2>
           <ul class="region-modal__region-item-list">
-            <li>Ленинградская область</li>
-            <li>Липецкая область</li>
+            <li><a href="#">Ленинградская область</a></li>
+            <li><a href="#">Липецкая область</a></li>
           </ul>
         </li>
       </ul>
