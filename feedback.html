@@ -226,7 +226,7 @@
           <span class="visually-hidden">СОГАЗ МЕД</span>
         </a>
         <div class="main-nav__city-wrapper">
-          <a class="main-nav__city" href="#">г. Санкт-Петербург</a>
+          <a class="main-nav__city" href="#">Санкт-Петербург</a>
           <div class="page-header__region-check">
             <p>Ваш регион г. Санкт-Петербург?</p>
             <div class="page-header__region-check-buttons">
@@ -561,107 +561,75 @@
         <fieldset>
           <legend>Личные данные</legend>
           <ul class="feedback__input-list">
-            <li class="feedback__input-item feedback__input-item--surname">
+            <li class="tab-item__search-input tab-item__search-input--surname">
               <input type="text" name="surname-feedback-field" id="surname-feedback-field" value="" placeholder=" " required="">
               <label for="surname-feedback-field">Фамилия</label>
             </li>
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--name">
               <input type="text" name="name-feedback-field" id="name-feedback-field" value="" placeholder=" " required="">
               <label for="name-feedback-field">Имя</label>
             </li>
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--second-name">
               <input type="text" name="second-name-feedback-field" id="second-name-feedback-field" value="" placeholder=" " required="">
               <label for="second-name-feedback-field">Отчество, если есть</label>
             </li>
-            <li class="tab-item__search-input feedback__input-item feedback__input-item--list">
-              <input type="text" name="nationality-feedback-field" id="nationality-feedback-field" value="" placeholder=" " required="">
-              <label for="nationality-feedback-field">Гражданство</label>
-              <ul class="form__result-list form__result-list--hide">
-                <li class="form__result-item">Амурская область</li>
-                <li class="form__result-item">Архангельская область</li>
-                <li class="form__result-item">Астраханская область</li>
-                <li class="form__result-item">республика Адыгея</li>
-                <li class="form__result-item">Брянская область</li>
-              </ul>
+            <li class="tab-item__search-input tab-item__search-input--nationality">
+              <label for="nationality-result-list">Гражданство</label>
+              <select id="nationality-result-list" class="form__result-list">
+                <option disabled="" selected="" value=""></option>
+                <option selected="">Российская Федерация</option>
+                <option>Иное гражданство</option>
+              </select>
             </li>
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--number">
               <input type="text" name="policy-feedback-field" id="policy-feedback-field" value="" placeholder=" " required="">
               <label for="policy-feedback-field">Номер полиса ОМС</label>
             </li>
-            <li class="tab-item__search-input feedback__input-item feedback__input-item--list">
-              <input type="text" name="region-feedback-field" id="region-feedback-field" value="" placeholder=" " required="">
-              <label for="region-feedback-field">Регион проживания</label>
-              <ul class="form__result-list form__result-list--hide">
-                <li class="form__result-item">Амурская область</li>
-                <li class="form__result-item">Архангельская область</li>
-                <li class="form__result-item">Астраханская область</li>
-                <li class="form__result-item">республика Адыгея</li>
-                <li class="form__result-item">Брянская область</li>
-                <li class="form__result-item">Байконур</li>
-                <li class="form__result-item">республика Башкортостан</li>
-                <li class="form__result-item">республика Бурятия</li>
-                <li class="form__result-item">Волгоградская область</li>
-                <li class="form__result-item">Вологодская область</li>
-                <li class="form__result-item">Воронежская область</li>
-                <li class="form__result-item">Еврейская автономная область</li>
-                <li class="form__result-item">Ивановская область</li>
-                <li class="form__result-item">Иркутская область</li>
-                <li class="form__result-item">Калининградская область</li>
-                <li class="form__result-item">Калужская область</li>
-                <li class="form__result-item">Камчатский край</li>
-                <li class="form__result-item">Кировская область</li>
-                <li class="form__result-item">Костромская область</li>
-                <li class="form__result-item">Краснодарский край</li>
-                <li class="form__result-item">Красноярский край</li>
-                <li class="form__result-item">Курская область</li>
-                <li class="form__result-item">республика Калмыкия</li>
-                <li class="form__result-item">республика Коми</li>
-                <li class="form__result-item">Ленинградская область</li>
-                <li class="form__result-item">Липецкая область</li>
-              </ul>
+            <li class="tab-item__search-input tab-item__search-input--feedback-region">
+              <label for="region-result-list">Регион</label>
+              <select id="region-result-list" class="form__result-list form__result-list--feedback">
+                <option disabled="" selected="" value=""></option>
+                <option>Амурская область</option>
+                <option>Архангельская область</option>
+                <option>Астраханская область</option>
+                <option>республика Адыгея</option>
+                <option>Брянская область</option>
+                <option>Байконур</option>
+                <option>республика Башкортостан</option>
+                <option>республика Бурятия</option>
+                <option>Волгоградская область</option>
+                <option>Вологодская область</option>
+                <option>Воронежская область</option>
+                <option>Еврейская автономная область</option>
+                <option>Амурская область</option>
+                <option>Архангельская область</option>
+                <option>Астраханская область</option>
+                <option>республика Адыгея</option>
+                <option>Брянская область</option>
+                <option>Байконур</option>
+                <option>республика Башкортостан</option>
+                <option>республика Бурятия</option>
+                <option>Волгоградская область</option>
+                <option>Вологодская область</option>
+                <option>Воронежская область</option>
+                <option>Еврейская автономная область</option>
+                <option>Санкт-Петербург</option>
+              </select>
             </li>
-            <li class="tab-item__search-input feedback__input-item feedback__input-item--list">
+            <li class="tab-item__search-input tab-item__search-input--location">
               <input type="text" name="location-feedback-field" id="location-feedback-field" value="" placeholder=" " required="">
               <label for="location-feedback-field">Населённый пункт</label>
-              <ul class="form__result-list form__result-list--hide">
-                <li class="form__result-item">Амурская область</li>
-                <li class="form__result-item">Архангельская область</li>
-                <li class="form__result-item">Астраханская область</li>
-                <li class="form__result-item">республика Адыгея</li>
-                <li class="form__result-item">Брянская область</li>
-                <li class="form__result-item">Байконур</li>
-                <li class="form__result-item">республика Башкортостан</li>
-                <li class="form__result-item">республика Бурятия</li>
-                <li class="form__result-item">Волгоградская область</li>
-                <li class="form__result-item">Вологодская область</li>
-                <li class="form__result-item">Воронежская область</li>
-                <li class="form__result-item">Еврейская автономная область</li>
-                <li class="form__result-item">Ивановская область</li>
-                <li class="form__result-item">Иркутская область</li>
-                <li class="form__result-item">Калининградская область</li>
-                <li class="form__result-item">Калужская область</li>
-                <li class="form__result-item">Камчатский край</li>
-                <li class="form__result-item">Кировская область</li>
-                <li class="form__result-item">Костромская область</li>
-                <li class="form__result-item">Краснодарский край</li>
-                <li class="form__result-item">Красноярский край</li>
-                <li class="form__result-item">Курская область</li>
-                <li class="form__result-item">республика Калмыкия</li>
-                <li class="form__result-item">республика Коми</li>
-                <li class="form__result-item">Ленинградская область</li>
-                <li class="form__result-item">Липецкая область</li>
-              </ul>
             </li>
           </ul>
         </fieldset>
         <fieldset>
           <legend>Контакты</legend>
           <ul class="feedback__input-list">
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--phone">
               <input type="text" name="phone-feedback-field" id="phone-feedback-field" value="" placeholder=" " required="">
               <label for="phone-feedback-field">Номер телефона</label>
             </li>
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--mail">
               <input type="text" name="mail-feedback-field" id="mail-feedback-field" value="" placeholder=" " required="">
               <label for="mail-feedback-field">E-mail</label>
             </li>
@@ -670,31 +638,38 @@
         <fieldset>
           <legend>Ваше обращение</legend>
           <ul class="feedback__input-list">
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--text">
               <textarea name="topic-field" id="topic-field" placeholder="Тема обращения. Например, качество медицинской помощи"></textarea>
               <label class="visually-hidden" for="topic-field">Тема</label>
             </li>
-            <li class="feedback__input-item">
+            <li class="tab-item__search-input tab-item__search-input--text">
               <textarea name="comment" id="comment-field" placeholder="Напишите наименование медицинской организации и суть обращения, в чем вы усматриваете нарушение прав. Текст обращения должен быть составлен на русском языке и содержать достоверную информацию."></textarea>
               <label class="visually-hidden" for="comment-field">Комментарий</label>
             </li>
           </ul>
-
-
         </fieldset>
         <fieldset>
-          <input type="file" name="upload-feedback-field" id="upload-feedback-field" class="visually-hidden">
-          <label for="upload-feedback-field" class="feedback__upload-button">
-            <span>Прикрепить файлы</span>
-            <span>До 10Mb. Форматы jpg, png, pdf, doc, docx</span>
-          </label>
+          <ul class="feedback__input-list feedback__input-list--upload">
+            <li class="feedback__upload-result feedback__upload-result--hide">
+              <ul class="feedback__upload-result-list">
+                <li class="feedback__upload-result-item"><span class="feedback__upload-result-name"></span><span class="feedback__upload-result-size"></span><span class="feedback__upload-result-del"></span></li>
+              </ul>
+            </li>
+            <li class="feedback__upload-button-wrapper">
+              <input type="file" multiple="" name="upload-feedback-field[]" id="upload-feedback-field" class="visually-hidden">
+              <label for="upload-feedback-field" class="feedback__upload-button">
+                <span>Прикрепить файлы</span>
+                <span>До 10Mb. Форматы jpg, png, pdf, doc, docx</span>
+              </label>
+            </li>
+          </ul>
         </fieldset>
         <fieldset>
           <div class="feedback__form-recaptcha g-recaptcha" data-sitekey="your_site_key"></div>
         </fieldset>
         <fieldset>
           <div class="feedback__form-submit">
-            <input type="checkbox" name="feedback-agree-field" id="feedback-agree-field" class="visually-hidden" checked="" required="">
+            <input type="checkbox" name="feedback-agree-field" id="feedback-agree-field" class="visually-hidden" required="">
             <label for="feedback-agree-field" class="feedback__form-agree">Я согласен с положением о
               конфиденциальности</label>
             <button type="submit" class="feedback__form-button button">Отправить обращение</button>

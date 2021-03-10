@@ -572,73 +572,46 @@
           <button class="tab-item__search-toggle" type="button" value="Закрыть окно"></button>
           <h1>Фильтры</h1>
           <div class="tab-item__search-input tab-item__search-input--region">
-            <input type="text" name="name-field" id="region-field" value="" placeholder=" " required="">
-            <label for="region-field">Регион</label>
-            <ul class="form__result-list form__result-list--hide">
-              <li class="form__result-item">Амурская область</li>
-              <li class="form__result-item">Архангельская область</li>
-              <li class="form__result-item">Астраханская область</li>
-              <li class="form__result-item">республика Адыгея</li>
-              <li class="form__result-item">Брянская область</li>
-              <li class="form__result-item">Байконур</li>
-              <li class="form__result-item">республика Башкортостан</li>
-              <li class="form__result-item">республика Бурятия</li>
-              <li class="form__result-item">Волгоградская область</li>
-              <li class="form__result-item">Вологодская область</li>
-              <li class="form__result-item">Воронежская область</li>
-              <li class="form__result-item">Еврейская автономная область</li>
-              <li class="form__result-item">Ивановская область</li>
-              <li class="form__result-item">Иркутская область</li>
-              <li class="form__result-item">Калининградская область</li>
-              <li class="form__result-item">Калужская область</li>
-              <li class="form__result-item">Камчатский край</li>
-              <li class="form__result-item">Кировская область</li>
-              <li class="form__result-item">Костромская область</li>
-              <li class="form__result-item">Краснодарский край</li>
-              <li class="form__result-item">Красноярский край</li>
-              <li class="form__result-item">Курская область</li>
-              <li class="form__result-item">республика Калмыкия</li>
-              <li class="form__result-item">республика Коми</li>
-              <li class="form__result-item">Ленинградская область</li>
-              <li class="form__result-item">Липецкая область</li>
-            </ul>
+            <label for="region-result-list">Регион</label>
+            <select id="region-result-list" class="form__result-list">
+              <option disabled="" selected="" value=""></option>
+              <option>Амурская область</option>
+              <option>Архангельская область</option>
+              <option>Астраханская область</option>
+              <option>республика Адыгея</option>
+              <option>Брянская область</option>
+              <option>Байконур</option>
+              <option>республика Башкортостан</option>
+              <option>республика Бурятия</option>
+              <option>Волгоградская область</option>
+              <option>Вологодская область</option>
+              <option>Воронежская область</option>
+              <option>Еврейская автономная область</option>
+              <option>Амурская область</option>
+              <option>Архангельская область</option>
+              <option>Астраханская область</option>
+              <option>республика Адыгея</option>
+              <option>Брянская область</option>
+              <option>Байконур</option>
+              <option>республика Башкортостан</option>
+              <option>республика Бурятия</option>
+              <option>Волгоградская область</option>
+              <option>Вологодская область</option>
+              <option>Воронежская область</option>
+              <option>Еврейская автономная область</option>
+            </select>
           </div>
           <div class="tab-item__search-input tab-item__search-input--year">
-            <input type="text" name="name-field" id="year-field" value="" placeholder=" " required="">
-            <label for="year-field">Год</label>
-            <ul class="form__result-list form__result-list--hide">
-              <li class="form__result-item">2021</li>
-              <li class="form__result-item">2020</li>
-              <li class="form__result-item">2019</li>
-              <li class="form__result-item">2018</li>
-              <li class="form__result-item">2017</li>
-              <li class="form__result-item">2016</li>
-              <li class="form__result-item">2015</li>
-              <li class="form__result-item">2014</li>
-              <li class="form__result-item">2013</li>
-              <li class="form__result-item">2012</li>
-              <li class="form__result-item">2011</li>
-              <li class="form__result-item">2010</li>
-              <li class="form__result-item">2009</li>
-            </ul>
+            <label for="year-result-list">Год</label>
+            <select id="year-result-list" class="form__result-list form__result-list--year">
+              <option disabled="" selected="" value=""></option>
+            </select>
           </div>
           <div class="tab-item__search-input tab-item__search-input--month">
-            <input type="text" name="name-field" id="month-field" value="" placeholder=" " required="">
-            <label for="month-field">Месяц</label>
-            <ul class="form__result-list form__result-list--hide">
-              <li class="form__result-item">Январь</li>
-              <li class="form__result-item">Февраль</li>
-              <li class="form__result-item">Март</li>
-              <li class="form__result-item">Апрель</li>
-              <li class="form__result-item">Май</li>
-              <li class="form__result-item">Июнь</li>
-              <li class="form__result-item">Июль</li>
-              <li class="form__result-item">Август</li>
-              <li class="form__result-item">Сентябрь</li>
-              <li class="form__result-item">Октябрь</li>
-              <li class="form__result-item">Ноябрь</li>
-              <li class="form__result-item">Декабрь</li>
-            </ul>
+            <label for="month-result-list">Месяц</label>
+            <select id="month-result-list" class="form__result-list form__result-list--month">
+              <option disabled="" selected="" value=""></option>
+            </select>
           </div>
         </form>
       </div>

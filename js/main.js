@@ -212,40 +212,93 @@ headerCitySectionsArray.forEach(function (it) {
   it.addEventListener('click', openRegionModal);
 });
 
-///// инпуты выбора значений в формах /////
-const formInputs = document.querySelectorAll('.tab-item__search-input');
+///// стилизация select /////
+const tabItemSearchInputs = document.querySelectorAll('.tab-item__search-input');
+const secondNameFeedbackField = document.getElementById('second-name-feedback-field');
+const locationFeedbackField = document.getElementById('location-feedback-field');
 
-formInputs.forEach(function (it) {
-  const formSearchInput = it.querySelector('input');
+tabItemSearchInputs.forEach(function (it) {
   const formResultList = it.querySelector('.form__result-list');
-  const formResultItems = formResultList.querySelectorAll('.form__result-item');
+  const yearResultList = it.querySelector('.form__result-list--year');
+  const monthResultList = it.querySelector('.form__result-list--month');
+  const bonusesResultList = it.querySelector('.form__result-list--bonuses');
+  const feedbackResultList = it.querySelector('.form__result-list--feedback');
+  const FIRST_YEAR = 1920
+  const CURRENT_YEAR = new Date().getFullYear();
+  const MONTHS_ARRAY = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 
-  const escResultList = function (evt) {
-    if (evt.keyCode === 27) {
-      evt.preventDefault();
-      formResultList.classList.add('form__result-list--hide');
+  if (yearResultList) {
+    for (let i = CURRENT_YEAR; i >= FIRST_YEAR; i--) {
+      let newOption = new Option([i], [i]);
+      yearResultList.append(newOption);
     }
-  };
-  const overlayResultList = function (evt) {
-    if (evt.target !== formResultList && evt.target !== formSearchInput) {
-      formResultList.classList.add('form__result-list--hide');
+  }
+
+  if (monthResultList) {
+    MONTHS_ARRAY.forEach(function (it) {
+      let newMonthOption = new Option(it, it);
+      monthResultList.append(newMonthOption);
+    })
+  }
+
+  if (formResultList) {
+    formResultList.addEventListener('change', function (evt) {
+      if (evt.target.value != "") {
+        it.classList.add('tab-item__search-input-selected')
+      }
+    })
+  }
+
+  if (bonusesResultList || feedbackResultList) {
+    for (let i = 0; i < formResultList.options.length; i++) {
+      if (formResultList.options[i].value === headerCitySections[0].textContent) {
+        formResultList.options[i].setAttribute('selected', 'selected');
+        formResultList.options[i].parentNode.parentNode.classList.add('tab-item__search-input-selected');
+      }
     }
-  };
-  const setInputValue = function (evt) {
-    formSearchInput.value = evt.target.textContent;
-  };
+  }
+})
 
-  formSearchInput.addEventListener('click', function () {
-    formResultList.classList.toggle('form__result-list--hide');
-    window.addEventListener('keydown', escResultList);
-    document.addEventListener('click', overlayResultList);
-  });
+const feedbackFormButton = document.querySelector('.feedback__form-button');
+feedbackFormButton.addEventListener('click', function () {
+  secondNameFeedbackField.removeAttribute('required');
+  locationFeedbackField.removeAttribute('required');
+})
 
-  formResultItems.forEach(function (it) {
-    it.addEventListener('click', setInputValue);
-  });
-});
+///// вывод данных о загруженных файлах /////
+const feedbackUploadButton = document.getElementById('upload-feedback-field');
+const feedbackUploadResult = document.querySelector('.feedback__upload-result')
+const feedbackUploadResultList = document.querySelector('.feedback__upload-result-list');
+const feedbackUploadResultItem = document.querySelector('.feedback__upload-result-item');
 
+feedbackUploadButton.addEventListener('change', function () {
+  feedbackUploadResult.classList.remove('feedback__upload-result--hide');
+
+ const createUploadFileList = function () {
+    let fragment = new DocumentFragment();
+    for (let i = 1; i < feedbackUploadButton.files.length; i++) {
+      const feedbackUploadResultItemNext = feedbackUploadResultItem.cloneNode(true)
+      fragment.append(feedbackUploadResultItemNext);
+    }
+    return fragment;
+  }
+  feedbackUploadResultList.append(createUploadFileList());
+
+  const uploadFileName = document.querySelectorAll('.feedback__upload-result-name');
+  const uploadFileSize = document.querySelectorAll('.feedback__upload-result-size');
+  const feedbackUploadResultDel = document.querySelectorAll('.feedback__upload-result-del')
+
+  for (let i = 0; i < feedbackUploadButton.files.length; i++) {
+    uploadFileName[i].textContent = feedbackUploadButton.files[i].name;
+    uploadFileSize[i].textContent = feedbackUploadButton.files[i].size;
+  }
+
+  feedbackUploadResultDel.forEach(function (it) {
+    it.addEventListener('click', function () {
+      it.parentElement.parentElement.removeChild(it.parentElement);
+    })
+  })
+})
 
 ///// подсветка региона при наведении /////
 const [regionItemCentral, regionItemNorthwestern, regionItemVolga, regionItemUral, regionItemNorthCaucasian, regionItemSiberian, regionItemSouthern, regionItemFarEastern] = tabRegionItemsArray;
