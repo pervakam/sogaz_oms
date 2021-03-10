@@ -270,9 +270,11 @@ const feedbackUploadButton = document.getElementById('upload-feedback-field');
 const feedbackUploadResult = document.querySelector('.feedback__upload-result')
 const feedbackUploadResultList = document.querySelector('.feedback__upload-result-list');
 const feedbackUploadResultItem = document.querySelector('.feedback__upload-result-item');
+const feedbackUploadMore = document.querySelector('.feedback__upload-more')
 
 feedbackUploadButton.addEventListener('change', function () {
   feedbackUploadResult.classList.remove('feedback__upload-result--hide');
+  feedbackUploadMore.textContent = "прикрепить ещё";
 
  const createUploadFileList = function () {
     let fragment = new DocumentFragment();
