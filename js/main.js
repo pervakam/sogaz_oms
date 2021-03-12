@@ -657,6 +657,7 @@ if (feedbackLocationButton) {
     body.classList.add('no-scroll');
     pointModalCloseButton.addEventListener('click', function () {
       pointModalOverlay.classList.add('tab-item__point-overlay--hide');
+      body.classList.remove('no-scroll');
     })
   })
 }
@@ -686,6 +687,7 @@ pointInfoItems.forEach(function (it) {
         formPointField.options[i].setAttribute('selected', 'selected');
       }
     }
+    body.classList.remove('no-scroll');
     formPointField.parentElement.classList.add('tab-item__search-input-selected');
     pointModalOverlay.classList.add('tab-item__point-overlay--hide');
   })
