@@ -543,7 +543,7 @@
 </header>
 
 <main class="page-main">
-  <h1>Обратная связь – письмо директору</h1>
+  <h1 class="feedback-title">Обратная связь – письмо директору</h1>
   <div class="page-main__wrapper">
     <section class="feedback-note">
       <h4>Уважаемый посетитель официального сайта Страховой компании «СОГАЗ-Мед»! Благодарим за оказанное внимание
@@ -562,32 +562,32 @@
           <legend>Личные данные</legend>
           <ul class="feedback__input-list">
             <li class="tab-item__search-input tab-item__search-input--surname">
-              <input type="text" name="surname-feedback-field" id="surname-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="surname" id="surname-feedback-field" value="" placeholder=" " required="">
               <label for="surname-feedback-field">Фамилия</label>
             </li>
             <li class="tab-item__search-input tab-item__search-input--name">
-              <input type="text" name="name-feedback-field" id="name-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="name" id="name-feedback-field" value="" placeholder=" " required="">
               <label for="name-feedback-field">Имя</label>
             </li>
             <li class="tab-item__search-input tab-item__search-input--second-name">
-              <input type="text" name="second-name-feedback-field" id="second-name-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="second-name" id="second-name-feedback-field" value="" placeholder=" " required="">
               <label for="second-name-feedback-field">Отчество, если есть</label>
             </li>
             <li class="tab-item__search-input tab-item__search-input--nationality">
               <label for="nationality-result-list">Гражданство</label>
-              <select id="nationality-result-list" class="form__result-list">
+              <select id="nationality-result-list" class="form__result-list" name="nationality">
                 <option disabled="" selected="" value=""></option>
                 <option selected="">Российская Федерация</option>
                 <option>Иное гражданство</option>
               </select>
             </li>
             <li class="tab-item__search-input tab-item__search-input--number">
-              <input type="text" name="policy-feedback-field" id="policy-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="policy" id="policy-feedback-field" value="" placeholder=" " required="">
               <label for="policy-feedback-field">Номер полиса ОМС</label>
             </li>
             <li class="tab-item__search-input tab-item__search-input--feedback-region">
               <label for="region-result-list">Регион</label>
-              <select id="region-result-list" class="form__result-list form__result-list--feedback">
+              <select id="region-result-list" class="form__result-list form__result-list--feedback" name="region">
                 <option disabled="" selected="" value=""></option>
                 <option>Амурская область</option>
                 <option>Архангельская область</option>
@@ -617,7 +617,7 @@
               </select>
             </li>
             <li class="tab-item__search-input tab-item__search-input--location">
-              <input type="text" name="location-feedback-field" id="location-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="location" id="location-feedback-field" value="" placeholder=" " required="">
               <label for="location-feedback-field">Населённый пункт</label>
             </li>
           </ul>
@@ -626,11 +626,11 @@
           <legend>Контакты</legend>
           <ul class="feedback__input-list">
             <li class="tab-item__search-input tab-item__search-input--phone">
-              <input type="text" name="phone-feedback-field" id="phone-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="phone" id="phone-feedback-field" value="" placeholder=" " required="">
               <label for="phone-feedback-field">Номер телефона</label>
             </li>
             <li class="tab-item__search-input tab-item__search-input--mail">
-              <input type="text" name="mail-feedback-field" id="mail-feedback-field" value="" placeholder=" " required="">
+              <input type="text" name="mail" id="mail-feedback-field" value="" placeholder=" " required="">
               <label for="mail-feedback-field">E-mail</label>
             </li>
           </ul>

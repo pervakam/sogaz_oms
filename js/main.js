@@ -260,10 +260,14 @@ tabItemSearchInputs.forEach(function (it) {
 })
 
 const feedbackFormButton = document.querySelector('.feedback__form-button');
-feedbackFormButton.addEventListener('click', function () {
-  secondNameFeedbackField.removeAttribute('required');
-  locationFeedbackField.removeAttribute('required');
-})
+
+if (feedbackFormButton) {
+  feedbackFormButton.addEventListener('click', function () {
+    secondNameFeedbackField.removeAttribute('required');
+    locationFeedbackField.removeAttribute('required');
+  })
+}
+
 
 ///// вывод данных о загруженных файлах /////
 const feedbackUploadButton = document.getElementById('upload-feedback-field');
@@ -272,35 +276,44 @@ const feedbackUploadResultList = document.querySelector('.feedback__upload-resul
 const feedbackUploadResultItem = document.querySelector('.feedback__upload-result-item');
 const feedbackUploadMore = document.querySelector('.feedback__upload-more')
 
-feedbackUploadButton.addEventListener('change', function () {
-  feedbackUploadResult.classList.remove('feedback__upload-result--hide');
-  feedbackUploadMore.textContent = "прикрепить ещё";
+if (feedbackUploadButton) {
+  feedbackUploadButton.addEventListener('change', function () {
+    feedbackUploadResult.classList.remove('feedback__upload-result--hide');
+    feedbackUploadMore.textContent = "прикрепить ещё";
 
- const createUploadFileList = function () {
-    let fragment = new DocumentFragment();
-    for (let i = 1; i < feedbackUploadButton.files.length; i++) {
-      const feedbackUploadResultItemNext = feedbackUploadResultItem.cloneNode(true)
-      fragment.append(feedbackUploadResultItemNext);
+    const createUploadFileList = function () {
+      let fragment = new DocumentFragment();
+      for (let i = 1; i < feedbackUploadButton.files.length; i++) {
+        const feedbackUploadResultItemNext = feedbackUploadResultItem.cloneNode(true)
+        fragment.append(feedbackUploadResultItemNext);
+      }
+      return fragment;
     }
-    return fragment;
-  }
-  feedbackUploadResultList.append(createUploadFileList());
+    feedbackUploadResultList.append(createUploadFileList());
 
-  const uploadFileName = document.querySelectorAll('.feedback__upload-result-name');
-  const uploadFileSize = document.querySelectorAll('.feedback__upload-result-size');
-  const feedbackUploadResultDel = document.querySelectorAll('.feedback__upload-result-del')
+    const uploadFileName = document.querySelectorAll('.feedback__upload-result-name');
+    const uploadFileSize = document.querySelectorAll('.feedback__upload-result-size');
+    const uploadResultList = document.querySelector('.feedback__upload-result-list')
+    const feedbackUploadResultDel = uploadResultList.querySelectorAll('.feedback__upload-result-del')
 
-  for (let i = 0; i < feedbackUploadButton.files.length; i++) {
-    uploadFileName[i].textContent = feedbackUploadButton.files[i].name;
-    uploadFileSize[i].textContent = feedbackUploadButton.files[i].size;
-  }
+    for (let i = 0; i < feedbackUploadButton.files.length; i++) {
+      uploadFileName[i].textContent = feedbackUploadButton.files[i].name;
+      uploadFileSize[i].textContent = feedbackUploadButton.files[i].size;
+    }
 
-  feedbackUploadResultDel.forEach(function (it) {
-    it.addEventListener('click', function () {
-      it.parentElement.parentElement.removeChild(it.parentElement);
+    feedbackUploadResultDel.forEach(function (it) {
+      it.addEventListener('click', function () {
+        uploadResultList.removeChild(it.parentElement);
+      })
+    })
+
+    feedbackUploadResultList.addEventListener('change', function () {
+      if(feedbackUploadButton.files.length > 0) {
+        console.log('jopka');
+      }
     })
   })
-})
+}
 
 ///// подсветка региона при наведении /////
 const [regionItemCentral, regionItemNorthwestern, regionItemVolga, regionItemUral, regionItemNorthCaucasian, regionItemSiberian, regionItemSouthern, regionItemFarEastern] = tabRegionItemsArray;
@@ -622,3 +635,58 @@ const MediaSwiper = new Swiper('.tab-item__media-list-container', {
 if (tabMediaSlides.length < 4 && tabMediaListContainer) {
   tabMediaNavigation.classList.add('tab-item__media-list-navigation--hide');
 }
+
+///// попап с пунктами выдачи полисов /////
+const feedbackLocationButton = document.querySelector('.feedback__location-button');
+const pointModalOverlay = document.querySelector('.tab-item__point-overlay');
+const pointModalCloseButton = document.querySelector('.tab-item__point-modal-close')
+const pointInfoMoreButtons = document.querySelectorAll('.tab-item__point-info-more-button');
+const pointInfoCloseButton = document.querySelector('.tab-item__point-info-close');
+const pointInfoItems = document.querySelectorAll('.tab-item__point-item');
+const formPointField = document.querySelector('.form__result-list--point')
+const SHOW_MORE_TEXT = 'подробнее';
+const SHOW_LESS_TEXT = 'скрыть';
+
+const pointModalOverlayHandler = function (item) {
+  pointModalOverlay.classList.remove('tab-item__point-overlay--mobile');
+}
+
+if (feedbackLocationButton) {
+  feedbackLocationButton.addEventListener('click', function () {
+    pointModalOverlay.classList.remove('tab-item__point-overlay--hide');
+    body.classList.add('no-scroll');
+    pointModalCloseButton.addEventListener('click', function () {
+      pointModalOverlay.classList.add('tab-item__point-overlay--hide');
+    })
+  })
+}
+
+pointInfoMoreButtons.forEach(function (it) {
+  it.addEventListener('click', function (evt) {
+
+    if (window.innerWidth > 640) {
+      if (it.textContent === SHOW_MORE_TEXT) {
+        it.textContent = SHOW_LESS_TEXT
+      } else if (it.textContent === SHOW_LESS_TEXT) {
+        it.textContent = SHOW_MORE_TEXT
+      }
+    } else if (window.innerWidth < 640) {
+      pointModalOverlay.classList.toggle('tab-item__point-overlay--mobile');
+    }
+  })
+})
+
+pointInfoItems.forEach(function (it) {
+  const pointInfoButton = it.querySelector('.tab-item__point-info-button');
+  const pointAddressField = it.querySelector('.tab-item__point-address');
+
+  pointInfoButton.addEventListener('click', function () {
+    for (let i = 0; i < formPointField.options.length; i++) {
+      if(formPointField.options[i].textContent === pointAddressField.textContent) {
+        formPointField.options[i].setAttribute('selected', 'selected');
+      }
+    }
+    formPointField.parentElement.classList.add('tab-item__search-input-selected');
+    pointModalOverlay.classList.add('tab-item__point-overlay--hide');
+  })
+})
