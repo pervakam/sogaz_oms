@@ -23,12 +23,6 @@
 }
 
 @media (max-width: $mobile-max-width) {
-  .page-main {
-    h1 {
-
-    }
-  }
-
   .page-main__wrapper {
     max-width: $mobile-max-width;
     margin: 17px auto 42px;

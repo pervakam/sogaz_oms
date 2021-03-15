@@ -11,8 +11,9 @@
 }
 
 .feedback-title {
-  text-align: left;
   @include title-h1;
+
+  text-align: left;
   width: 1214px;
   margin: 64px auto 40px;
 }
@@ -79,7 +80,7 @@
     &:focus,
     &:hover {
       border: 1px solid $light-gray;
-      box-shadow: 0px 5px 10px rgba(0, 0, 120, 0.05);
+      box-shadow: 0 5px 10px rgba(0, 0, 120, 0.05);
     }
   }
 
@@ -271,7 +272,7 @@
   width: 554px;
   box-sizing: border-box;
   padding: 12px 0;
-  border: 1px solid #CCCCE4;
+  border: 1px solid $button-second;
   border-radius: 8px;
   text-align: center;
 
@@ -374,6 +375,18 @@
 
     textarea {
       width: 496px;
+    }
+
+    &--address {
+      padding: 40px 0 0;
+      width: 100%;
+      max-width: 1215px;
+
+      .feedback__input-list {
+        width: 100%;
+        max-width: 1215px;
+        flex-direction: column;
+      }
     }
   }
 
@@ -495,6 +508,14 @@
 
       &[name="comment"] {
         height: 223px;
+      }
+    }
+
+    &--address {
+      padding: 24px 24px;
+
+      .feedback__input-list {
+        max-width: $mobile-max-width;
       }
     }
   }

@@ -110,7 +110,6 @@
 }
 
 .tab__region {
-
   svg {
     position: absolute;
   }
@@ -135,6 +134,7 @@
 
   &--central {
     z-index: 10;
+
     svg {
       width: 134px;
       height: 124px;
@@ -145,6 +145,7 @@
 
   &--northwestern {
     z-index: -1;
+
     svg {
       width: 336px;
       height: 245px;

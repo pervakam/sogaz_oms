@@ -114,6 +114,7 @@
 
 .swiper-slide__wrapper-retina {
   display: none;
+
   @media (min-resolution: $retina-dppx) {
     display: block;
   }

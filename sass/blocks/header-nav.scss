@@ -41,18 +41,15 @@
   &:nth-child(2) {
     width: 280px;
     margin-right: 132px;
-
   }
 
   &:nth-child(3) {
     width: 380px;
-
   }
 
   &:nth-child(4) {
     width: 230px;
     margin-right: 182px;
-
   }
 
   &--contacts {
@@ -60,7 +57,6 @@
     margin: 68px 0 0 0;
     display: flex;
     justify-content: space-between;
-
   }
 }
 
@@ -280,7 +276,7 @@
     width: 388px;
     height: 56px;
     border-radius: 8px;
-    border: 1px solid #CCCCE4;
+    border: 1px solid $button-second;
     box-sizing: border-box;
     padding: 26px 0 10px 16px;
   }
@@ -289,7 +285,7 @@
   & input:focus,
   & input:active {
     border: 1px solid $light-gray;
-    filter: drop-shadow(0px 5px 10px rgba(0, 0, 120, 0.05));
+    box-shadow: 0 5px 10px rgba(0, 0, 120, 0.05);
   }
 
   & input ~ label {
@@ -455,9 +451,8 @@
     width: 100%;
     max-width: 1208px;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: flex-start;
-    flex-wrap: nowrap;
   }
 
   .page-header__section {
@@ -497,7 +492,7 @@
 
 
     & input:checked ~ .page-header__section-title--menu {
-      &:after {
+      &::after {
         transform: rotate(90deg);
       }
     }
@@ -614,7 +609,7 @@
     }
 
     &--menu {
-      &:after {
+      &::after {
         display: block;
         content: "";
         width: 16px;

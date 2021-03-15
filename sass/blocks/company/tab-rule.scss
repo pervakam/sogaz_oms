@@ -30,7 +30,7 @@
   &:hover {
     background-color: $background-footer;
 
-    &:before {
+    &::before {
       background-image: url("../img/rule_doc-hover.svg");
     }
 
@@ -44,7 +44,7 @@
       }
     }
 
-    &:after {
+    &::after {
       display: block;
       content: "";
       width: 16px;
@@ -54,12 +54,10 @@
       position: absolute;
       right: 27px;
       top: calc(50% - 8px);
-      //float: right;
-      //margin: 3px 9px 0 0;
     }
   }
 
-  &:before {
+  &::before {
     display: block;
     content: "";
     width: 40px;
@@ -102,7 +100,6 @@
   .tab__rule-list {
     margin: 24px 0 0;
   }
-
 }
 
 @media (max-width: $mobile-max-width) {

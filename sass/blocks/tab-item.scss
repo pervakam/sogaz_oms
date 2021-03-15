@@ -42,13 +42,11 @@
   max-width: 800px;
   height: 1242px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
 
   &--article {
     height: 388px;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
   }
 }
 
@@ -77,7 +75,7 @@
   }
 
   &:hover {
-    box-shadow: 0px 24px 20px -10px rgba(0, 0, 120, 0.1);
+    box-shadow: 0 24px 20px -10px rgba(0, 0, 120, 0.1);
     transition: box-shadow 0.5s;
 
     .tab__honor-item-title {
@@ -317,7 +315,6 @@
   }
 
   .tab-item__list-slide-title {
-
     time {
       line-height: 19px;
     }
@@ -377,6 +374,14 @@
     max-width: $mobile-max-width;
     padding: 0 24px;
     margin: 24px 0 0;
+
+    &--address {
+      padding: 0;
+
+      h1 {
+        padding: 0 24px;
+      }
+    }
   }
 
   .tab-item__list-wrapper {

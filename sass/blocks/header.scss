@@ -355,7 +355,6 @@
     outline: none;
     background-color: $hover-text;
   }
-
 }
 
 .main-nav-menu {
@@ -500,7 +499,6 @@
     outline: none;
     background-color: $hover-text;
   }
-
 }
 
 .main-nav-menu__help-item-icon {
@@ -536,7 +534,6 @@
       width: 24px;
       height: 24px;
     }
-
   }
 
   .main-nav {
@@ -568,9 +565,9 @@
 
   .main-nav-menu {
     width: 100%;
-    max-width: 1212px;
+    max-width: $tablet-max-width;
     margin: 0 auto;
-    padding: 16px 26px 0 32px;
+    padding: 13px 0 22px;
     display: block;
   }
 
@@ -654,14 +651,6 @@
       font-size: 16px;
       line-height: 19px;
     }
-  }
-
-  .main-nav-menu {
-    width: 100%;
-    max-width: $tablet-max-width;
-    margin: 0 auto;
-    padding: 13px 0 22px;
-    display: block;
   }
 
   .main-nav-menu__menu,

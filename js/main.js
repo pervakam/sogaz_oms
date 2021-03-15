@@ -306,12 +306,6 @@ if (feedbackUploadButton) {
         uploadResultList.removeChild(it.parentElement);
       })
     })
-
-    feedbackUploadResultList.addEventListener('change', function () {
-      if(feedbackUploadButton.files.length > 0) {
-        console.log('jopka');
-      }
-    })
   })
 }
 
@@ -639,6 +633,7 @@ if (tabMediaSlides.length < 4 && tabMediaListContainer) {
 ///// попап с пунктами выдачи полисов /////
 const feedbackLocationButton = document.querySelector('.feedback__location-button');
 const pointModalOverlay = document.querySelector('.tab-item__point-overlay');
+const pointSearchInput = document.querySelector('.tab-item__search-input--map-region')
 const pointModalCloseButton = document.querySelector('.tab-item__point-modal-close')
 const pointInfoMoreButtons = document.querySelectorAll('.tab-item__point-info-more-button');
 const pointInfoCloseButton = document.querySelector('.tab-item__point-info-close');
@@ -671,7 +666,7 @@ pointInfoMoreButtons.forEach(function (it) {
       } else if (it.textContent === SHOW_LESS_TEXT) {
         it.textContent = SHOW_MORE_TEXT
       }
-    } else if (window.innerWidth < 640) {
+    } else if (window.innerWidth < 640 && pointSearchInput) {
       pointModalOverlay.classList.toggle('tab-item__point-overlay--mobile');
     }
   })
@@ -681,14 +676,17 @@ pointInfoItems.forEach(function (it) {
   const pointInfoButton = it.querySelector('.tab-item__point-info-button');
   const pointAddressField = it.querySelector('.tab-item__point-address');
 
-  pointInfoButton.addEventListener('click', function () {
-    for (let i = 0; i < formPointField.options.length; i++) {
-      if(formPointField.options[i].textContent === pointAddressField.textContent) {
-        formPointField.options[i].setAttribute('selected', 'selected');
+  if (pointInfoButton) {
+    pointInfoButton.addEventListener('click', function () {
+      for (let i = 0; i < formPointField.options.length; i++) {
+        if(formPointField.options[i].textContent === pointAddressField.textContent) {
+          formPointField.options[i].setAttribute('selected', 'selected');
+        }
       }
-    }
-    body.classList.remove('no-scroll');
-    formPointField.parentElement.classList.add('tab-item__search-input-selected');
-    pointModalOverlay.classList.add('tab-item__point-overlay--hide');
-  })
+      body.classList.remove('no-scroll');
+      formPointField.parentElement.classList.add('tab-item__search-input-selected');
+      pointModalOverlay.classList.add('tab-item__point-overlay--hide');
+    })
+  }
+
 })

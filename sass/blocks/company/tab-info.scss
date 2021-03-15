@@ -31,7 +31,7 @@
     }
 
     .tab__info-item {
-      & input:checked + .tab__info-item-title:before {
+      & input:checked + .tab__info-item-title::before {
         width: 32px;
         height: 32px;
         background-size: 32px 32px;
@@ -165,13 +165,13 @@
     & + .tab__info-item-title {
       color: $hover-text;
 
-      &:before {
+      &::before {
         background-image: url("../img/minus-hover-icon.svg");
       }
     }
   }
 
-  & input:checked + .tab__info-item-title:before {
+  & input:checked + .tab__info-item-title::before {
     display: block;
     content: "";
     width: 48px;
@@ -256,8 +256,9 @@
 
 .tab__info-description-list,
 .tab__info-requisites-list {
-  position: relative;
   @include list;
+
+  position: relative;
   margin: 16px 0 0 65px;
   width: 838px;
 
@@ -395,7 +396,7 @@
   &:hover {
     background-color: $background-footer;
 
-    &:before {
+    &::before {
       background-image: url("../img/rule_doc-hover.svg");
     }
 
@@ -409,7 +410,7 @@
       }
     }
 
-    &:after {
+    &::after {
       display: block;
       content: "";
       width: 16px;
@@ -435,7 +436,6 @@
 }
 
 .tab__info-document-item-description {
-
   h5 {
     @include title-h5;
   }
@@ -519,7 +519,7 @@
       }
     }
 
-    &:after {
+    &::after {
       display: block;
       content: "";
       width: 16px;
@@ -589,7 +589,6 @@
 
     & input:checked:hover {
       & + .tab__info-item-title {
-
         &::before {
           background-image: url("../img/minus-hover-icon-tablet.svg");
         }
@@ -626,7 +625,7 @@
       max-width: 800px;
     }
 
-    &:before {
+    &::before {
       width: 32px;
       height: 32px;
       background-image: url("../img/plus-icon-tablet.svg");
@@ -634,7 +633,7 @@
 
     &:hover,
     &:focus {
-      &:before {
+      &::before {
         background-image: url("../img/plus-hover-icon-tablet.svg");
       }
     }
@@ -817,7 +816,6 @@
         line-height: 19px;
         width: 220px;
         margin: 0 0 8px;
-
       }
 
       .tab-item__point-contacts {
