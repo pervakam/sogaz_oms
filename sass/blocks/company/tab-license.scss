@@ -1,0 +1,124 @@
+.tab__license {
+  width: 800px;
+  text-align: left;
+
+  h1 {
+    @include title-h1;
+  }
+}
+
+.tab__license-description {
+  @include text-big;
+  margin: 40px 0 0;
+  width: 100%;
+}
+
+.tab__license-list {
+  @include list;
+  border: 1px solid $button-second;
+  margin: 40px 0 0;
+}
+
+.tab__license-item {
+  &:not(:last-child) {
+    border-bottom: 1px solid $button-second;
+  }
+}
+
+.tab__license-item-document {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 23px 13px 19px;
+  position: relative;
+
+  &:hover {
+    background-color: $background-footer;
+
+    svg {
+      fill: $hover-text;
+    }
+
+    .tab__license-item-description {
+      h5 {
+        color: $hover-text;
+      }
+
+      p {
+        color: $hover-text;
+      }
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 20px;
+      background-image: url("../img/right-big-hover.svg");
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 27px;
+      top: calc(50% - 8px);
+      //float: right;
+      //margin: 3px 9px 0 0;
+    }
+  }
+}
+
+.tab__license-item-icon {
+  width: 40px;
+  margin: 0 16px 0 0;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: $button-second;
+  }
+}
+
+.tab__license-item-description {
+  h5 {
+    @include title-h5;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: $black-text;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .tab__license {
+    width: 100%;
+    max-width: $tablet-max-width;
+    box-sizing: border-box;
+    padding: 0 32px;
+    margin: 0 auto;
+
+    h1 {
+      @include title-tablet-h1;
+      margin: 40px 0 0;
+    }
+  }
+
+  .tab__license-description {
+    @include text-tablet-big;
+    margin: 24px 0 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .tab__license {
+    max-width: $mobile-max-width;
+    padding: 0 24px;
+
+    h1 {
+      margin: 24px 0 0;
+    }
+  }
+}

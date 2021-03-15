@@ -1,0 +1,249 @@
+.tabs {
+  text-align: left;
+  width: 285px;
+}
+
+.tabs__list {
+  @include list;
+  border: 1px solid $button-second;
+  padding-bottom: 20px;
+}
+
+.tabs__item {
+  display: block;
+  box-sizing: border-box;
+  width: 285px;
+  cursor: pointer;
+
+  &:not(:first-child) {
+    padding: 8px 40px;
+
+    a {
+      text-decoration: none;
+      color: $black-text;
+
+      &:hover {
+        color: $hover-text;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &:first-child {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 23px 40px;
+    margin: 0 0 22px 0;
+    border-bottom: 1px solid $button-second;
+
+    a {
+      text-decoration: none;
+      color: $blue;
+
+      &:hover {
+        color: $hover-text;
+        text-decoration: none;
+
+      }
+    }
+  }
+
+  &--active {
+    position: relative;
+
+    &:not(:first-child) {
+      a {
+        color: $blue;
+      }
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: 3px;
+      height: 30px;
+      background-color: $blue;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 15px);
+    }
+  }
+
+  &--policy {
+    cursor: auto;
+  }
+}
+
+.tabs__contacts {
+  margin: 40px 0 0;
+
+  h3 {
+    @include title-h3;
+    color: $blue;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 16px 0 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $blue;
+  }
+}
+
+.tabs__contacts-tel {
+  display: block;
+  font-family: $Stratos;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 16px 0 0;
+}
+
+.tabs__contacts-mail {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+@media (max-width: $tablet-max-width) {
+  .tabs {
+    text-align: center;
+    width: unset;
+  }
+
+  .tabs__list {
+    @include list;
+    border: none;
+
+    padding: 0 0 0 32px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: $tablet-max-width;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .tabs__item {
+    width: unset;
+
+    &:not(:first-child) {
+      padding: 3px 7px;
+      margin: 0 8px 0 0;
+      font-size: 12px;
+      line-height: 19px;
+      border: 1px solid $button-second;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      a {
+        display: inline-block;
+        vertical-align: center;
+        width: max-content;
+      }
+
+      &:hover {
+        border: 1px solid $hover-text;
+        background-color: $hover-text;
+        a {
+          color: $white;
+        }
+      }
+
+      &:active {
+        border: 1px solid $hover-text;
+        background-color: $hover-text;
+        a {
+          color: $white;
+        }
+      }
+    }
+
+    &:first-child {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 19px;
+      letter-spacing: unset;
+      text-transform: none;
+      padding: 3px 7px;
+      margin: 0 8px 0 0;
+      border: 1px solid $button-second;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      a {
+        display: inline-block;
+        vertical-align: center;
+        width: max-content;
+      }
+
+      &:hover {
+        border: 1px solid $hover-text;
+        background-color: $hover-text;
+        a {
+          color: $white;
+        }
+      }
+    }
+
+    &--active {
+      background-color: $blue;
+
+      &:not(:first-child) {
+        border: 1px solid $blue;
+
+        a {
+          color: $white;
+        }
+
+        &:hover {
+          border: 1px solid $hover-text;
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      &:first-child {
+        border: 1px solid $blue;
+
+        a {
+          color: $white;
+        }
+
+        &:hover {
+          border: 1px solid $blue;
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .tabs__contacts {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .tabs__list {
+    padding: 0 0 0 24px;
+  }
+}

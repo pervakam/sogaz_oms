@@ -1,0 +1,220 @@
+.tab__shareholders {
+  width: 800px;
+  text-align: left;
+
+  h1 {
+    @include title-h1;
+  }
+
+  h2 {
+    @include title-h2;
+  }
+}
+
+.tab__shareholders-description {
+  @include text-big;
+  margin: 37px 0 0 0;
+
+}
+
+.tab__shareholders-list {
+  @include list;
+  margin: 32px 0 64px;
+  min-width: 828px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab__shareholders-item {
+  margin: 0 19px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  p {
+    @include text-blue;
+    margin: 6px 0 0;
+  }
+}
+
+.tab__shareholders-license-list {
+  @include list;
+  margin: 40px 0 0;
+}
+
+.tab__shareholders-license-item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 16px;
+
+  h4 {
+    @include title-h4;
+    width: 182px;
+    background-color: $background-select;
+    background-image: url("../img/pattern.png");
+    box-sizing: border-box;
+    padding: 32px 24px 33px;
+    border-radius: 8px;
+  }
+
+  p {
+    width: 618px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    box-sizing: border-box;
+    padding: 37px 66px 31px 40px;
+    background-color: $background-select;
+    border-radius: 8px;
+  }
+}
+
+.tab__shareholders-more {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 32px 0 0;
+
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: $blue;
+  }
+
+  &:hover {
+    a {
+      color: $hover-text;
+    }
+
+    .tab__shareholders-more-icon {
+      svg {
+        fill: $hover-text;
+      }
+    }
+  }
+}
+
+.tab__shareholders-more-icon {
+  width: 40px;
+  margin: 0 16px 0 0;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: $blue;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .tab__shareholders {
+    width: 100%;
+    max-width: $tablet-max-width;
+    box-sizing: border-box;
+    padding: 0 32px;
+
+    h1 {
+      @include title-tablet-h1;
+      margin: 40px 0 0;
+    }
+
+    h2 {
+      @include title-tablet-h1;
+      margin: 40px 0 0;
+    }
+  }
+
+  .tab__shareholders-description {
+    @include text-tablet-big;
+    margin: 16px 0 0 0;
+
+  }
+
+  .tab__shareholders-list {
+    margin: 24px 0 40px;
+    min-width: unset;
+    width: 100%;
+    max-width: 828px;
+  }
+
+  .tab__shareholders-item {
+    h1 {
+      @include title-h2;
+    }
+
+    p {
+      @include text-tablet-blue;
+      margin: 5px 0 0;
+    }
+  }
+
+  .tab__shareholders-license-list {
+    margin: 24px 0 0;
+  }
+
+  .tab__shareholders-license-item {
+    h4 {
+      @include title-tablet-h2;
+      min-width: 177px;
+      padding: 29px 24px 33px;
+    }
+
+    p {
+      min-width: 399px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .tab__shareholders {
+    max-width: $mobile-max-width;
+    padding: 0 24px;
+
+    h1 {
+      margin: 24px 0 0;
+    }
+
+    h2 {
+      margin: 32px 0 0;
+    }
+  }
+
+  .tab__shareholders-list {
+    margin: 24px 0 32px;
+    max-width: 590px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .tab__shareholders-item {
+    margin: 0 30px 0 0;
+  }
+
+  .tab__shareholders-license-list {
+    margin: 32px 0 0;
+  }
+
+  .tab__shareholders-license-item {
+    display: block;
+
+    h4 {
+      width: 100%;
+      min-width: unset;
+      max-width: 590px;
+      padding: 24px 16px 7px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    p {
+      width: 100%;
+      min-width: unset;
+      max-width: 590px;
+      font-size: 14px;
+      line-height: 22px;
+      padding: 8px 16px 25px;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}

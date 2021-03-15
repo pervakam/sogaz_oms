@@ -1,0 +1,667 @@
+.tab-item__form {
+  margin: 40px 0 0;
+  width: 100%;
+  background-color: $background-footer;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.tab-item__form-button {
+  display: none;
+}
+
+.tab-item__search {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  background-image: url("../img/pattern.svg");
+
+  & > h1 {
+    display: none;
+  }
+}
+
+.tab-item__search-toggle {
+  display: none;
+}
+
+.tab-item__search-input {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: 16px;
+    top: 17px;
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/arrow_down-icon.svg");
+    pointer-events: none;
+  }
+
+  input,
+  select {
+    border: 1px solid $button-second;
+    box-sizing: border-box;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    padding: 17px 35px 5px 15px;
+    height: 56px;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    & + label {
+      font-size: 14px;
+      line-height: 20px;
+      color: $black-text;
+    }
+
+    &:focus,
+    &:hover {
+      border: 1px solid $light-gray;
+      box-shadow: 0 5px 10px rgba(0, 0, 120, 0.05);
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 18px;
+    left: 19px;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  &--bonuses {
+    margin: 22px 0 0;
+
+    select {
+      width: 285px;
+    }
+  }
+
+  &--region {
+    select {
+      width: 356px;
+    }
+  }
+
+  &--year,
+  &--month {
+    select {
+      width: 160px;
+    }
+  }
+
+  &--surname {
+    margin: 0 0 24px;
+
+    input {
+      width: 554px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--name {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--second-name {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--nationality {
+    margin: 0 0 24px;
+
+    select {
+      width: 266px;
+    }
+
+    label {
+      top: 8px;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      color: $light-gray;
+    }
+  }
+
+  &--number {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--feedback-region {
+    margin: 0 0 24px;
+
+    select {
+      width: 266px;
+    }
+  }
+
+  &--request-region {
+    margin: 0 0 24px;
+
+    select {
+      width: 554px;
+    }
+  }
+
+  &--map-region {
+    position: absolute;
+    top: 16px;
+    left: 42px;
+
+    select {
+      width: 448px;
+    }
+  }
+
+  &--point {
+    margin: 0 0 24px;
+
+    select {
+      width: 554px;
+    }
+  }
+
+  &--location {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--id {
+    margin: 0 0 24px;
+
+    input {
+      width: 554px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--phone {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--mail {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--text {
+    margin: 0 0 24px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--date {
+    margin: 0 0 24px;
+
+    input {
+      width: 266px;
+
+      & + label {
+        color: $light-gray;
+      }
+
+      &::-webkit-calendar-picker-indicator {
+        display: block;
+        position: absolute;
+        right: 16px;
+        top: 17px;
+        opacity: 0;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      right: 16px;
+      top: 17px;
+      display: block;
+      content: "";
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/calendar.svg");
+      pointer-events: none;
+    }
+
+    input:not(:focus)::-webkit-datetime-edit-text,
+    input:not(:focus)::-webkit-datetime-edit-month-field,
+    input:not(:focus)::-webkit-datetime-edit-day-field,
+    input:not(:focus)::-webkit-datetime-edit-year-field {
+      opacity: 0;
+    }
+
+    input:not(:focus):valid::-webkit-datetime-edit-text,
+    input:not(:focus):valid::-webkit-datetime-edit-month-field,
+    input:not(:focus):valid::-webkit-datetime-edit-day-field,
+    input:not(:focus):valid::-webkit-datetime-edit-year-field {
+      opacity: 1;
+    }
+  }
+
+  &--address-region {
+    select {
+      width: 490px;
+    }
+  }
+
+  &--address-point {
+    select {
+      width: 490px;
+    }
+
+    &::after {
+      right: 19px;
+      top: 18px;
+      width: 18px;
+      height: 18px;
+      background-image: url("../img/search-icon.svg");
+      background-size: cover;
+    }
+  }
+
+  textarea {
+    resize: none;
+    width: 554px;
+    border: 1px solid $button-second;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 17px 30px 17px 15px;
+    outline: none;
+
+    &[name="topic-field"] {
+      height: 56px;
+    }
+
+    &[name="comment"] {
+      height: 160px;
+    }
+
+    &:focus,
+    &:hover {
+      border: 1px solid $light-gray;
+      box-shadow: 0px 5px 10px rgba(0, 0, 120, 0.05);
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 20px;
+      color: $light-gray;
+    }
+  }
+
+  input:focus ~ label,
+  input:not(:focus):valid ~ label {
+    top: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $light-gray;
+  }
+}
+
+.tab-item__search-input-selected {
+  label {
+    top: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $light-gray;
+  }
+}
+
+.tab-item__about-address-button {
+  width: 181px;
+  height: 56px;
+  background-color: $button-second;
+  color: $blue;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: $tablet-max-width) {
+  .tab-item__form {
+    margin: 32px 0 0;
+  }
+
+  .tab-item__search-input {
+    &--bonuses {
+      width: 576px;
+
+      select {
+        width: 576px;
+      }
+    }
+
+    &--region {
+      width: 43%;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    &--year {
+      width: 22%;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    &--month {
+      width: 26.8%;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    &--surname {
+      input {
+        width: 496px;
+      }
+    }
+
+    &--name,
+    &--second-name,
+    &--nationality,
+    &--number,
+    &--feedback-region,
+    &--location,
+    &--phone,
+    &--mail,
+    &--date {
+      input,
+      select {
+        width: 236px;
+      }
+    }
+
+    &--request-region,
+    &--point {
+      select,
+      input {
+        width: 496px;
+      }
+    }
+
+    &--id {
+      input {
+        width: 496px;
+      }
+
+      margin-bottom: 48px;
+    }
+
+    &--map-region {
+      left: 32px;
+      width: calc(100% - 64px);
+      max-width: 1215px;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    textarea {
+      width: 496px;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .tab-item__form {
+    margin: 40px 0 0;
+    width: 100%;
+    background-color: $background-footer;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .tab-item__form-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $blue;
+    box-sizing: border-box;
+    padding: 16px 0;
+    border-radius: 8px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin: 0 10px 0 0;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  .tab-item__search {
+    padding: 24px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: none;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+
+    & > h1 {
+      display: block;
+      @include title-tablet-h1;
+      margin: 0 0 32px 0;
+    }
+
+    &--hide {
+      display: none;
+    }
+  }
+
+  .tab-item__search-toggle {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/menu-close-icon.svg");
+    background-color: transparent;
+    border: none;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    outline: none;
+
+
+    &:hover {
+      background-image: url("../img/menu-hover-close-icon.svg");
+      outline: none;
+    }
+  }
+
+  .tab-item__search-input {
+    width: 100%;
+
+    input {
+      & + label {
+        font-size: 14px;
+        line-height: 20px;
+        color: $black-text;
+      }
+
+      &:focus,
+      &:hover {
+        border: 1px solid $light-gray;
+        box-shadow: 0 5px 10px rgba(0, 0, 120, 0.05);
+      }
+    }
+
+    &--bonuses {
+      select {
+        width: 100%;
+        max-width: 576px;
+      }
+    }
+
+    &--region {
+      margin: 0 0 24px 0;
+    }
+
+    &--year {
+      margin: 0 0 24px 0;
+    }
+
+    &--surname {
+      input {
+        width: 100%;
+        max-width: 559px;
+      }
+    }
+
+    &--name,
+    &--second-name,
+    &--nationality,
+    &--number,
+    &--feedback-region,
+    &--location,
+    &--phone,
+    &--mail,
+    &--request-region,
+    &--point,
+    &--id,
+    &--date {
+      input,
+      select {
+        width: 100%;
+        max-width: 559px;
+      }
+    }
+
+    &--map-region {
+      left: 24px;
+      width: calc(100% - 48px);
+      max-width: 559px;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 559px;
+    }
+  }
+}

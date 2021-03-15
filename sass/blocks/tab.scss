@@ -1,0 +1,143 @@
+.tab__description-first {
+  @include text-big;
+  margin: 37px 0 0 0;
+  width: 800px;
+
+  p {
+    margin: 0 0 16px;
+
+    a {
+      text-decoration: none;
+      color: $blue;
+
+      &:hover {
+        color: $hover-text;
+      }
+    }
+  }
+}
+
+.tab__description-second {
+  @include text;
+  margin: 29px 0 0;
+  width: 800px;
+
+  p {
+    margin: 0 0 16px;
+
+    a {
+      text-decoration: none;
+      color: $black-text;
+
+      &:hover {
+        color: $hover-text;
+      }
+    }
+  }
+}
+
+.tab__document-list {
+  @include list;
+  border: 1px solid $button-second;
+  margin: 40px 0 0;
+}
+
+.tab__document-item {
+  &:not(:last-child) {
+    border-bottom: 1px solid $button-second;
+  }
+}
+
+.tab__document-item-link {
+  text-decoration: none;
+  color: $black-text;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 23px 60px 19px 13px;
+  position: relative;
+
+  &:hover {
+    background-color: $background-footer;
+
+    &::before {
+      background-image: url("../img/rule_doc-hover.svg");
+    }
+
+    .tab__document-item-description {
+      h5 {
+        color: $hover-text;
+      }
+
+      p {
+        color: $hover-text;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 20px;
+      background-image: url("../img/right-big-hover.svg");
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 27px;
+      top: calc(50% - 8px);
+    }
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    min-width: 40px;
+    height: 40px;
+    margin: 0 16px 0 0;
+    background-image: url("../img/rule_doc.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.tab__document-item-description {
+  h5 {
+    @include title-h5;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .tab__description-first {
+    @include text-tablet-big;
+    margin: 30px 0 0 1px;
+    width: 100%;
+    max-width: 1214px;
+  }
+
+  .tab__description-second {
+    @include text-tablet;
+    margin: 23px 0 0 1px;
+    width: 100%;
+    max-width: 1214px;
+  }
+
+  .tab__document-list {
+    margin: 24px 0 0;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .tab__description-first {
+    max-width: 590px;
+  }
+
+  .tab__description-second {
+    max-width: 590px;
+  }
+}

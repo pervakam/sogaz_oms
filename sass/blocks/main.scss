@@ -1,0 +1,36 @@
+.page-main {
+  width: 100%;
+  margin: 0 auto;
+  flex: 1 0 auto;
+}
+
+.page-main__wrapper {
+  width: 1214px;
+  margin: 64px auto 122px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+@media (max-width: $tablet-max-width) {
+  .page-main__wrapper {
+    width: 100%;
+    max-width: $tablet-max-width;
+    box-sizing: border-box;
+    margin: 17px auto 64px;
+    display: block;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .page-main {
+    h1 {
+
+    }
+  }
+
+  .page-main__wrapper {
+    max-width: $mobile-max-width;
+    margin: 17px auto 42px;
+  }
+}

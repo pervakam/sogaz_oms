@@ -1,0 +1,134 @@
+.tab__leaders {
+  width: 800px;
+  text-align: left;
+
+  h1 {
+    @include title-h1;
+  }
+}
+
+.tab__leaders-list {
+  @include list;
+  margin: 37px 0 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tab__leaders-item {
+  box-sizing: border-box;
+  flex-basis: 48.5%;
+  margin: 0 0 24px;
+  border: 1px solid $button-second;
+  padding: 40px 40px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.5s;
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 53px;
+    height: 100%;
+    background-image: url("../img/pattern.svg");
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  h3 {
+    @include title-h3;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  img {
+    position: absolute;
+    top: -16px;
+    right: 24px;
+    width: 72px;
+    height: 72px;
+  }
+
+  &:first-child {
+    flex-basis: 100%;
+    margin: 0 0 32px;
+  }
+
+  &:hover {
+    box-shadow: 0px 24px 20px -10px rgba(0, 0, 120, 0.1);
+    transition: box-shadow 0.5s;
+
+    &::after {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .tab__leaders {
+    width: 100%;
+    max-width: 864px;
+    box-sizing: border-box;
+    padding: 0 32px;
+    margin: 0 auto;
+
+    h1 {
+      @include title-tablet-h1;
+      margin: 24px 0 0;
+    }
+  }
+
+  .tab__leaders-list {
+    margin: 32px auto 0;
+  }
+
+  .tab__leaders-item {
+    padding: 24px 24px 32px 32px;
+
+    h3 {
+      @include title-tablet-h2;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    img {
+      top: -11px;
+      right: 12px;
+      width: 48px;
+      height: 48px;
+    }
+
+    &:first-child {
+      margin: 0 0 24px;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .tab__leaders {
+    max-width: $mobile-max-width;
+    padding: 0 24px;
+  }
+
+  .tab__leaders-item {
+    flex-basis: 100%;
+    margin: 0 0 16px;
+
+    &:first-child {
+      margin: 0 0 16px;
+    }
+  }
+}
