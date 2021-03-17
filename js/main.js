@@ -268,7 +268,6 @@ if (feedbackFormButton) {
   })
 }
 
-
 ///// вывод данных о загруженных файлах /////
 const feedbackUploadButton = document.getElementById('upload-feedback-field');
 const feedbackUploadResult = document.querySelector('.feedback__upload-result')
@@ -550,18 +549,6 @@ const newsSwiper = new Swiper('.tab-item__list-container', {
 
   slideClass: 'tab-item__list-slide',
 
-  pagination: {
-    el: '.tab-item__list-pagination',
-    dynamicBullets: true,
-    bulletClass: 'tab-item__list-pagination-bullet',
-    bulletActiveClass: 'tab-item__list-pagination-bullet--active',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '' +
-        '<div class="' + className + '">' + (index + 1) + '</div>';
-    },
-  },
-
   navigation: {
     nextEl: '.tab-item__list-next',
     prevEl: '.tab-item__list-prev',
@@ -635,40 +622,80 @@ const feedbackLocationButton = document.querySelector('.feedback__location-butto
 const pointModalOverlay = document.querySelector('.tab-item__point-overlay');
 const pointSearchInput = document.querySelector('.tab-item__search-input--map-region')
 const pointModalCloseButton = document.querySelector('.tab-item__point-modal-close')
-const pointInfoMoreButtons = document.querySelectorAll('.tab-item__point-info-more-button');
 const pointInfoCloseButton = document.querySelector('.tab-item__point-info-close');
 const pointInfoItems = document.querySelectorAll('.tab-item__point-item');
-const formPointField = document.querySelector('.form__result-list--point')
+const formPointField = document.querySelector('.form__result-list--point');
+const requestForm = document.querySelector('.feedback__form');
+const addressItem = document.querySelector('.tab-item--address');
 const SHOW_MORE_TEXT = 'подробнее';
 const SHOW_LESS_TEXT = 'скрыть';
 
-const pointModalOverlayHandler = function (item) {
-  pointModalOverlay.classList.remove('tab-item__point-overlay--mobile');
-}
-
-if (feedbackLocationButton) {
-  feedbackLocationButton.addEventListener('click', function () {
-    pointModalOverlay.classList.remove('tab-item__point-overlay--hide');
-    body.classList.add('no-scroll');
-    pointModalCloseButton.addEventListener('click', function () {
-      pointModalOverlay.classList.add('tab-item__point-overlay--hide');
-      body.classList.remove('no-scroll');
-    })
+const pointModalOverlayHandler = function () {
+  pointModalOverlay.classList.remove('tab-item__point-overlay--hide');
+  body.classList.add('no-scroll');
+  pointModalCloseButton.addEventListener('click', function () {
+    pointModalOverlay.classList.add('tab-item__point-overlay--hide');
+    body.classList.remove('no-scroll');
   })
 }
 
-pointInfoMoreButtons.forEach(function (it) {
-  it.addEventListener('click', function (evt) {
+const addressModalOverlayHandler = function (item) {
+  const addressModalOverlay = pointModalOverlay.cloneNode(true);
+  const addressModal = addressItem.appendChild(addressModalOverlay);
+  const addressModalMap = addressModal.querySelector('.tab-item__point-map');
+  const addressModalItemsList = addressModal.querySelector('.tab-item__point-list');
+  const addressModalItems = addressModal.querySelectorAll('.tab-item__point-item');
+  const addressModalInfo = addressModal.querySelector('.tab-item__point-modal-info');
 
-    if (window.innerWidth > 640) {
+
+  const addressModalTitle = addressModal.querySelector('.tab-item__point-modal-title');
+  const addressModalCloseButton = addressModal.querySelector('.tab-item__point-modal-close');
+  const addressModalItem = addressModal.querySelector('.tab-item__point-list');
+
+  // addressModalInfo.removeChild(addressModalMap);
+  // addressModalItems.forEach(function (it) {
+  //   addressModalItemsList.removeChild(it)
+  // })
+
+  const currentItem = item.cloneNode(true);
+  const currentAddressModalItem = addressModalItemsList.appendChild(currentItem);
+
+
+  addressModal.classList.remove('tab-item__point-overlay--address');
+  addressModal.classList.add('tab-item__point-overlay--address-modal');
+  upButton.classList.add('up-button-hide');
+  body.classList.add('no-scroll');
+
+  const addressItemTitle = item.querySelector('.tab-item__point-title');
+
+  addressModalTitle.textContent = addressItemTitle.textContent;
+
+  addressModalCloseButton.addEventListener('click', function () {
+    addressItem.removeChild(addressModal)
+    body.classList.remove('no-scroll');
+  })
+}
+
+if (feedbackLocationButton) {
+  feedbackLocationButton.addEventListener('click', pointModalOverlayHandler);
+}
+
+pointInfoItems.forEach(function (it) {
+  const pointInfoMoreButton = it.querySelector('.tab-item__point-info-more-button');
+
+  pointInfoMoreButton.addEventListener('click', function () {
+
+    if (window.innerWidth > 640 && requestForm.contains(feedbackLocationButton)) {
       if (it.textContent === SHOW_MORE_TEXT) {
         it.textContent = SHOW_LESS_TEXT
       } else if (it.textContent === SHOW_LESS_TEXT) {
         it.textContent = SHOW_MORE_TEXT
       }
-    } else if (window.innerWidth < 640 && pointSearchInput) {
+    } else if (window.innerWidth < 640 && requestForm.contains(feedbackLocationButton)) {
       pointModalOverlay.classList.toggle('tab-item__point-overlay--mobile');
     }
+
+    addressModalOverlayHandler(it);
   })
 })
 
@@ -679,7 +706,7 @@ pointInfoItems.forEach(function (it) {
   if (pointInfoButton) {
     pointInfoButton.addEventListener('click', function () {
       for (let i = 0; i < formPointField.options.length; i++) {
-        if(formPointField.options[i].textContent === pointAddressField.textContent) {
+        if (formPointField.options[i].textContent === pointAddressField.textContent) {
           formPointField.options[i].setAttribute('selected', 'selected');
         }
       }
@@ -688,5 +715,26 @@ pointInfoItems.forEach(function (it) {
       pointModalOverlay.classList.add('tab-item__point-overlay--hide');
     })
   }
-
 })
+
+///// информационные баннеры /////
+const covidBanner = document.querySelector('.covid-banner');
+const courierBannerOverlay = document.querySelector('.courier-banner__overlay')
+const covidBannerCloseButton = document.querySelector('.banner__close--covid');
+if (courierBannerOverlay) {
+  const bannerCloseButtons = courierBannerOverlay.querySelectorAll('.banner__close')
+  bannerCloseButtons.forEach(function (it) {
+    it.addEventListener('click', function () {
+      courierBannerOverlay.classList.add('courier-banner__overlay--hide')
+    })
+  })
+}
+
+
+if (covidBannerCloseButton) {
+  covidBannerCloseButton.addEventListener('click', function () {
+    covidBanner.classList.add('hide');
+  })
+}
+
+

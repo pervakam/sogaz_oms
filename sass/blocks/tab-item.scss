@@ -207,6 +207,8 @@
 .tab-item__list-pagination {
   max-width: 304px;
   white-space: nowrap;
+  counter-reset: myCounter;
+  margin: 0;
 
   &--article {
     display: none;
@@ -217,31 +219,43 @@
   display: inline-block;
   position: relative;
   min-width: 46px;
-  max-height: 46px;
+  height: 46px;
   margin: 0 16px 0 0;
   border: 1px solid $button-second;
   border-radius: 50%;
   cursor: pointer;
   outline: none;
 
-  font-family: $Stratos;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 23px;
-  text-align: center;
-  color: $blue;
-  padding: 12px 0;
+  &::before {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $Stratos;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    color: $blue;
+    padding: 12px 0;
+  }
 
   &:hover {
     border: 1px solid $hover-text;
     background-color: $hover-text;
-    color: $white;
+
+    &::before {
+      color: $white;
+    };
   }
 
   &--active {
     border: 1px solid $blue;
     background-color: $blue;
-    color: $white;
+
+    &::before {
+      color: $white;
+    }
   }
 }
 
