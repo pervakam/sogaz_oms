@@ -424,6 +424,8 @@ tabItemMediaSlide.forEach(function (it) {
   const tabPhotoSection = it.querySelector('.tab__photo-section');
   const mediaModalCloseButton = document.querySelector('.tab-item__media-modal-close');
 
+  console.log(tabPhotoSection);
+
   if (showMorePhotoButton) {
     showMorePhotoButton.addEventListener('click', function () {
       tabItemMediaModal.classList.remove('tab-item__media-modal--hide');
@@ -613,10 +615,6 @@ const MediaSwiper = new Swiper('.tab-item__media-list-container', {
   },
 });
 
-if (tabMediaSlides.length < 4 && tabMediaListContainer) {
-  tabMediaNavigation.classList.add('tab-item__media-list-navigation--hide');
-}
-
 ///// попап с пунктами выдачи полисов /////
 const feedbackLocationButton = document.querySelector('.feedback__location-button');
 const pointModalOverlay = document.querySelector('.tab-item__point-overlay');
@@ -642,24 +640,21 @@ const pointModalOverlayHandler = function () {
 const addressModalOverlayHandler = function (item) {
   const addressModalOverlay = pointModalOverlay.cloneNode(true);
   const addressModal = addressItem.appendChild(addressModalOverlay);
-  const addressModalMap = addressModal.querySelector('.tab-item__point-map');
   const addressModalItemsList = addressModal.querySelector('.tab-item__point-list');
-  const addressModalItems = addressModal.querySelectorAll('.tab-item__point-item');
-  const addressModalInfo = addressModal.querySelector('.tab-item__point-modal-info');
-
-
   const addressModalTitle = addressModal.querySelector('.tab-item__point-modal-title');
   const addressModalCloseButton = addressModal.querySelector('.tab-item__point-modal-close');
-  const addressModalItem = addressModal.querySelector('.tab-item__point-list');
-
-  // addressModalInfo.removeChild(addressModalMap);
-  // addressModalItems.forEach(function (it) {
-  //   addressModalItemsList.removeChild(it)
-  // })
 
   const currentItem = item.cloneNode(true);
   const currentAddressModalItem = addressModalItemsList.appendChild(currentItem);
+  currentAddressModalItem.style.display = 'block'
+  const currentItemInfo = currentAddressModalItem.querySelectorAll('.tab__info-item')
 
+  for (let i = 0; i < currentItemInfo.length; i++) {
+    const currentItemInfoInput = currentItemInfo[i].querySelector('input[type="checkbox"]');
+    const currentItemInfoLabel = currentItemInfo[i].querySelector('.tab__info-item-title');
+    currentItemInfoInput.setAttribute('id', 'address-info-10' + [i])
+    currentItemInfoLabel.setAttribute('for', 'address-info-10' + [i])
+  }
 
   addressModal.classList.remove('tab-item__point-overlay--address');
   addressModal.classList.add('tab-item__point-overlay--address-modal');
@@ -696,6 +691,36 @@ pointInfoItems.forEach(function (it) {
     }
 
     addressModalOverlayHandler(it);
+
+    const addressGalleryThumbs = new Swiper('.tab-item__point-gallery-thumbs', {
+      wrapperClass: 'tab-item__point-gallery-wrapper--thumbs',
+      slideClass: 'tab-item__point-gallery-slide-thumbs',
+      spaceBetween: 4,
+      slidesPerView: 'auto',
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: '.tab-item__point-gallery-next',
+        prevEl: '.tab-item__point-gallery-prev',
+      },
+    });
+
+    const addressGalleryTop = new Swiper('.tab-item__point-gallery-top', {
+      wrapperClass: 'tab-item__point-gallery-wrapper--top',
+      slideClass: 'tab-item__point-gallery-slide-top',
+      slidesPerView: 4,
+      autoHeight: true,
+      centeredSlides: true,
+      spaceBetween: 40,
+      thumbs: {
+        swiper: addressGalleryThumbs,
+      },
+      navigation: {
+        nextEl: '.tab-item__point-gallery-next',
+        prevEl: '.tab-item__point-gallery-prev',
+      },
+    });
   })
 })
 
@@ -730,11 +755,9 @@ if (courierBannerOverlay) {
   })
 }
 
-
 if (covidBannerCloseButton) {
   covidBannerCloseButton.addEventListener('click', function () {
     covidBanner.classList.add('hide');
   })
 }
-
 
