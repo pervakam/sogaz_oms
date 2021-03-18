@@ -54,6 +54,10 @@
     background-image: url("../img/news-header-background_desktop@1x.jpg");
   }
 
+  &--oms {
+    background-image: url("../img/oms-header-background_desktop@1x.jpg");
+  }
+
   &--feedback,
   &--index,
   &--policy {
@@ -550,6 +554,10 @@
 
     &--news {
       background-image: url("../img/news-header-background_desktop@1x.jpg");
+    }
+
+    &--oms {
+      background-image: url("../img/oms-header-background_tablet@1x.jpg");
     }
 
     &--feedback,
