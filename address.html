@@ -592,11 +592,11 @@
 
 
       </form>
+      <input class="tab-item__view-button tab-item__view-button--map" type="radio" name="view-button" id="button-map" checked="">
+      <label for="button-map">На карте</label>
+      <input class="tab-item__view-button tab-item__view-button--list" type="radio" name="view-button" id="button-list">
+      <label for="button-list">Списком</label>
       <div class="tab-item__point-overlay tab-item__point-overlay--address">
-        <div class="tab-item__point-modal-buttons">
-          <button class="tab-item__view-button tab-item__view-button--active button" type="button">На карте</button>
-          <button class="tab-item__view-button button" type="button">Списком</button>
-        </div>
         <div class="tab-item__point-modal">
           <button class="tab-item__point-modal-close" type="button"><span class="visually-hidden">закрыть</span>
           </button>
@@ -975,6 +975,287 @@
                       <li class="tab__info-item">
                         <input type="checkbox" id="address-contacts-3" name="contacts" class="visually-hidden">
                         <label for="address-contacts-3" class="tab__info-item-title"><span>Контакты</span></label>
+                        <div class="tab__info-description">
+                          <ul class="tab-item__point-contacts">
+                            <li class="tab-item__point-phone"><a href="tel:89456644285">8 945 664 42 85</a></li>
+                            <li class="tab-item__point-phone"><a href="tel:89456647846">8 945 664 78 46</a></li>
+                            <li class="tab-item__point-mail"><a href="mailto:mdbutovopark@sogaz-med.ru">mdbutovopark@sogaz-med.ru</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tab-item__point-overlay tab-item__point-overlay--list">
+        <div class="tab-item__point-modal">
+          <div class="tab-item__point-modal-info">
+            <ul class="tab-item__point-list">
+              <li class="tab-item__point-item">
+                <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 1</h5>
+                <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ Зингер
+                  Плаза, 4 этаж, офис 401</p>
+                <div class="tab-item__point-info">
+                  <input type="checkbox" id="address-info-4" name="point-info" class="visually-hidden">
+                  <label for="address-info-4" class="tab-item__point-info-more-button"><span>подробнее</span></label>
+                  <div class="tab-item__point-about">
+                    <ul class="tab__info-list tab__info-list--point">
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-schedule-4" name="schedule" class="visually-hidden" checked="">
+                        <label for="address-schedule-4" class="tab__info-item-title"><span>График работы</span></label>
+                        <div class="tab__info-description">
+                          <p class="tab-item__point-today">
+                            <span class="tab-item__point-time-today">Открыто до 22:00,</span>
+                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Понедельник</span>
+                            <span class="tab-item__point-time">09:00–17:30,</span>
+                            <span class="tab-item__point-break">без обеда</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Вторник-пятница</span>
+                            <span class="tab-item__point-time">09:00–19:00,</span>
+                            <span class="tab-item__point-break">без обеда</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Суббота</span>
+                            <span class="tab-item__point-time">09:00–17:30,</span>
+                            <span class="tab-item__point-break">обед</span>
+                            <span class="tab-item__point-time">12:00–12:30</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-weekend">Воскресенье – выходной</span>
+                          </p>
+                          <p class="tab-item__point-holidays">Не рабочие дни:
+                            <span class="tab-item__point-dayoff">6 ноября 2020, 1-10 января 2020, 27 ноября 2020</span>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-services-4" name="services" class="visually-hidden">
+                        <label for="address-services-4" class="tab__info-item-title"><span>Доступные услуги</span></label>
+                        <div class="tab__info-description">
+                          <ul class="tab-item__point-services">
+                            <li class="tab-item__point-service tab-item__point-service--oms"><span>Оформление и выдача полисов
+                              ОМС, в том числе электронных</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--registration"><span>Оформление и
+                              выдача карты записи к врачу</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--long-day"><span>Продлён рабочий день
+                            </span></li>
+                            <li class="tab-item__point-service tab-item__point-service--weekend-work"><span>Работает в
+                              выходные дни</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--e-policy"><span>Возможность сохранения
+                              электронного полиса при смене страховой компании</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--policy"><span>Оформление и выдача не
+                              электронных полисов ОМС</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--manager"><span>Личный приём
+                              руководителя филиала</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--card"><span>Оформление универсальной
+                              электронной карты</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--disabled-person"><span>Оборудован для
+                              инвалидов</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-contacts-4" name="contacts" class="visually-hidden">
+                        <label for="address-contacts-4" class="tab__info-item-title"><span>Контакты</span></label>
+                        <div class="tab__info-description">
+                          <ul class="tab-item__point-contacts">
+                            <li class="tab-item__point-phone"><a href="tel:89456644285">8 945 664 42 85</a></li>
+                            <li class="tab-item__point-phone"><a href="tel:89456647846">8 945 664 78 46</a></li>
+                            <li class="tab-item__point-mail"><a href="mailto:mdbutovopark@sogaz-med.ru">mdbutovopark@sogaz-med.ru</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="tab-item__point-item">
+                <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 2</h5>
+                <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ Зингер
+                  Плаза, 4 этаж, офис 401</p>
+                <div class="tab-item__point-info">
+                  <input type="checkbox" id="address-info-5" name="point-info" class="visually-hidden">
+                  <label for="address-info-5" class="tab-item__point-info-more-button"><span>подробнее</span></label>
+                  <div class="tab-item__point-about">
+                    <ul class="tab__info-list tab__info-list--point">
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-schedule-5" name="schedule" class="visually-hidden" checked="">
+                        <label for="address-schedule-5" class="tab__info-item-title"><span>График работы</span></label>
+                        <div class="tab__info-description">
+                          <p class="tab-item__point-today">
+                            <span class="tab-item__point-time-today">Открыто до 22:00,</span>
+                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Понедельник</span>
+                            <span class="tab-item__point-time">09:00–17:30,</span>
+                            <span class="tab-item__point-break">без обеда</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Вторник-пятница</span>
+                            <span class="tab-item__point-time">09:00–19:00,</span>
+                            <span class="tab-item__point-break">без обеда</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Суббота</span>
+                            <span class="tab-item__point-time">09:00–17:30,</span>
+                            <span class="tab-item__point-break">обед</span>
+                            <span class="tab-item__point-time">12:00–12:30</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-weekend">Воскресенье – выходной</span>
+                          </p>
+                          <p class="tab-item__point-holidays">Не рабочие дни:
+                            <span class="tab-item__point-dayoff">6 ноября 2020, 1-10 января 2020, 27 ноября 2020</span>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-services-5" name="services" class="visually-hidden">
+                        <label for="address-services-5" class="tab__info-item-title"><span>Доступные услуги</span></label>
+                        <div class="tab__info-description">
+                          <ul class="tab-item__point-services">
+                            <li class="tab-item__point-service tab-item__point-service--oms"><span>Оформление и выдача полисов
+                              ОМС, в том числе электронных</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--registration"><span>Оформление и
+                              выдача карты записи к врачу</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--long-day"><span>Продлён рабочий день
+                            </span></li>
+                            <li class="tab-item__point-service tab-item__point-service--weekend-work"><span>Работает в
+                              выходные дни</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--e-policy"><span>Возможность сохранения
+                              электронного полиса при смене страховой компании</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--policy"><span>Оформление и выдача не
+                              электронных полисов ОМС</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--manager"><span>Личный приём
+                              руководителя филиала</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--card"><span>Оформление универсальной
+                              электронной карты</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--disabled-person"><span>Оборудован для
+                              инвалидов</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-contacts-5" name="contacts" class="visually-hidden">
+                        <label for="address-contacts-5" class="tab__info-item-title"><span>Контакты</span></label>
+                        <div class="tab__info-description">
+                          <ul class="tab-item__point-contacts">
+                            <li class="tab-item__point-phone"><a href="tel:89456644285">8 945 664 42 85</a></li>
+                            <li class="tab-item__point-phone"><a href="tel:89456647846">8 945 664 78 46</a></li>
+                            <li class="tab-item__point-mail"><a href="mailto:mdbutovopark@sogaz-med.ru">mdbutovopark@sogaz-med.ru</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="tab-item__point-item">
+                <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 3</h5>
+                <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ Зингер
+                  Плаза, 4 этаж, офис 401</p>
+                <div class="tab-item__point-info">
+                  <input type="checkbox" id="address-info-6" name="point-info" class="visually-hidden">
+                  <label for="address-info-6" class="tab-item__point-info-more-button"><span>подробнее</span></label>
+                  <div class="tab-item__point-about">
+                    <ul class="tab__info-list tab__info-list--point">
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-schedule-6" name="schedule" class="visually-hidden" checked="">
+                        <label for="address-schedule-6" class="tab__info-item-title"><span>График работы</span></label>
+                        <div class="tab__info-description">
+                          <p class="tab-item__point-today">
+                            <span class="tab-item__point-time-today">Открыто до 22:00,</span>
+                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Понедельник</span>
+                            <span class="tab-item__point-time">09:00–17:30,</span>
+                            <span class="tab-item__point-break">без обеда</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Вторник-пятница</span>
+                            <span class="tab-item__point-time">09:00–19:00,</span>
+                            <span class="tab-item__point-break">без обеда</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-day">Суббота</span>
+                            <span class="tab-item__point-time">09:00–17:30,</span>
+                            <span class="tab-item__point-break">обед</span>
+                            <span class="tab-item__point-time">12:00–12:30</span>
+                          </p>
+                          <p>
+                            <span class="tab-item__point-weekend">Воскресенье – выходной</span>
+                          </p>
+                          <p class="tab-item__point-holidays">Не рабочие дни:
+                            <span class="tab-item__point-dayoff">6 ноября 2020, 1-10 января 2020, 27 ноября 2020</span>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-services-6" name="services" class="visually-hidden">
+                        <label for="address-services-6" class="tab__info-item-title"><span>Доступные услуги</span></label>
+                        <div class="tab__info-description">
+                          <ul class="tab-item__point-services">
+                            <li class="tab-item__point-service tab-item__point-service--oms"><span>Оформление и выдача полисов
+                              ОМС, в том числе электронных</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--registration"><span>Оформление и
+                              выдача карты записи к врачу</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--long-day"><span>Продлён рабочий день
+                            </span></li>
+                            <li class="tab-item__point-service tab-item__point-service--weekend-work"><span>Работает в
+                              выходные дни</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--e-policy"><span>Возможность сохранения
+                              электронного полиса при смене страховой компании</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--policy"><span>Оформление и выдача не
+                              электронных полисов ОМС</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--manager"><span>Личный приём
+                              руководителя филиала</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--card"><span>Оформление универсальной
+                              электронной карты</span>
+                            </li>
+                            <li class="tab-item__point-service tab-item__point-service--disabled-person"><span>Оборудован для
+                              инвалидов</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="tab__info-item">
+                        <input type="checkbox" id="address-contacts-6" name="contacts" class="visually-hidden">
+                        <label for="address-contacts-6" class="tab__info-item-title"><span>Контакты</span></label>
                         <div class="tab__info-description">
                           <ul class="tab-item__point-contacts">
                             <li class="tab-item__point-phone"><a href="tel:89456644285">8 945 664 42 85</a></li>
