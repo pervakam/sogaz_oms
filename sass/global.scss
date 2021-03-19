@@ -135,6 +135,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   outline: none;
+  cursor: pointer;
 
   &:hover {
     background-color: $hover-text;
