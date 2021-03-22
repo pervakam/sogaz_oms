@@ -58,6 +58,10 @@
     background-image: url("../img/oms-header-background_desktop@1x.jpg");
   }
 
+  &--health {
+    background-image: url("../img/health-header-background_desktop@1x.jpg");
+  }
+
   &--feedback,
   &--index,
   &--policy {
@@ -102,7 +106,7 @@
         &::before {
           background-image: url("../img/lk_blue-icon.svg");
           background-position: center;
-          background-size: 32px 32px;
+          background-size: cover;
         }
 
         &:hover {

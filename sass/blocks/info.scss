@@ -14,10 +14,23 @@
     line-height: 29px;
     color: $blue;
     margin: 0;
+
+    a {
+      color: $blue;
+    }
   }
 
   p {
     margin: 16px 0 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: $hover-text;
   }
 }
 
@@ -61,13 +74,7 @@
   width: 270px;
 
   a {
-    text-decoration: none;
     color: $black-text;
-  }
-
-  a:hover,
-  a:focus {
-    color: $hover-text;
   }
 }
 
@@ -86,13 +93,7 @@
   }
 
   a {
-    text-decoration: none;
     color: $black-text;
-  }
-
-  a:hover,
-  a:focus {
-    color: $hover-text;
   }
 }
 
