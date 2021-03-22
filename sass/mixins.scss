@@ -33,6 +33,14 @@
   margin: 0;
 }
 
+@mixin title-tablet-h3 {
+  font-family: $Stratos;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
+}
+
 @mixin title-tablet-h4 {
   font-family: $Stratos;
   font-weight: normal;
