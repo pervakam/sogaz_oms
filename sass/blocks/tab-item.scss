@@ -34,6 +34,34 @@
     position: relative;
     height: 388px;
   }
+
+  &--health {
+    height: max-content;
+    min-width: 800px;
+
+    .tab-item__list-wrapper {
+      flex-flow: row wrap;
+      height: max-content;
+      min-width: 800px;
+    }
+
+    .tab-item__list-slide {
+      max-height: 504px;
+      box-sizing: border-box;
+      padding: 32px 32px 40px;
+
+      &:nth-child(2n) {
+        margin: 0 0 24px 0;
+      }
+    }
+
+    .tab-item__list-slide-title {
+      h4 {
+        @include title-tablet-h2;
+        margin: 0 0 16px;
+      }
+    }
+  }
 }
 
 .tab-item__list-wrapper {
@@ -53,6 +81,7 @@
 .tab-item__list-slide {
   width: 100%;
   max-width: 386px;
+  min-height: 386px;
   max-height: 386px;
   border: 1px solid $button-second;
   transition: box-shadow 0.5s;
@@ -206,7 +235,9 @@
 
 .tab-item__list-pagination {
   max-width: 304px;
-  white-space: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   counter-reset: myCounter;
   margin: 0;
 
@@ -259,6 +290,44 @@
   }
 }
 
+.tab-item__slide-topic {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: $light-gray;
+  margin: 32px 0 8px;
+}
+
+.tab-item__slide-description {
+  font-size: 16px;
+  line-height: 24px;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin: 0 0 13px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.tab-item__slide-more {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $blue;
+
+  &:hover {
+    color: $hover-text;
+  }
+}
+
 @media (max-width: 1366px) {
   .tab-item__list-navigation {
     &--article {
@@ -305,6 +374,36 @@
       margin: 24px auto 0;
       position: relative;
       height: 388px;
+    }
+
+    &--health {
+      height: max-content;
+      min-width: 576px;
+
+      .tab-item__list-wrapper {
+        flex-flow: row wrap;
+        height: max-content;
+        min-width: 576px;
+      }
+
+      .tab-item__list-slide {
+        max-width: 276px;
+        max-height: 441px;
+        box-sizing: border-box;
+        padding: 32px 32px 38px;
+
+        &:nth-child(2n) {
+          margin: 0 0 24px 0;
+        }
+      }
+
+      .tab-item__list-slide-title {
+        h4 {
+          @include title-tablet-h2;
+          line-height: 22px;
+          margin: 0 0 16px;
+        }
+      }
     }
   }
 
@@ -381,6 +480,31 @@
       }
     }
   }
+
+  .tab-item__slide-topic {
+    margin: 24px 0 8px;
+  }
+
+  .tab-item__slide-description {
+    font-size: 12px;
+    line-height: 19px;
+    max-height: 116px;
+    margin: 0 0 18px;
+  }
+
+  .tab-item__slide-more {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+      color: $hover-text;
+    }
+  }
 }
 
 @media (max-width: $mobile-max-width) {
@@ -396,6 +520,46 @@
       h1 {
         padding: 0 24px;
         text-align: left;
+      }
+    }
+  }
+
+  .tab-item__list-container {
+    &--health {
+      height: max-content;
+      min-width: unset;
+      width: 100%;
+      max-width: 591px;
+
+
+      .tab-item__list-wrapper {
+        flex-flow: column nowrap;
+        height: max-content;
+        min-width: unset;
+        width: 100%;
+        max-width: 591px;
+      }
+
+      .tab-item__list-slide {
+        min-width: unset;
+        width: 100%;
+        max-width: 591px;
+        max-height: 441px;
+        box-sizing: border-box;
+        padding: 32px 32px 38px;
+        margin: 0 0 24px 0;
+
+        &:nth-child(2n) {
+          margin: 0 0 24px 0;
+        }
+      }
+
+      .tab-item__list-slide-title {
+        h4 {
+          @include title-tablet-h2;
+          line-height: 22px;
+          margin: 0 0 16px;
+        }
       }
     }
   }
@@ -420,9 +584,19 @@
 
   .tab-item__list-pagination {
     max-width: 160px;
+    padding: 0;
   }
 
   .tab-item__list-pagination-bullet {
     margin: 0 8px 0 0;
+
+    &:nth-child(3n) {
+      margin: 0;
   }
+
+    &:nth-child(n + 4) {
+      display: none;
+    }
+  }
+
 }
