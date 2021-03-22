@@ -44,6 +44,8 @@
   margin: 29px 0 0;
   width: 800px;
 
+  ul,
+  ol,
   p {
     margin: 0 0 16px;
 
@@ -53,6 +55,44 @@
 
       &:hover {
         color: $hover-text;
+      }
+    }
+  }
+
+  ol {
+    padding: 0;
+    counter-reset: list;
+    list-style-type: none;
+
+    li {
+      margin: 0 0 16px;
+
+      &::before {
+        counter-increment: list;
+        content: counter(list) ") ";
+      }
+    }
+
+    ol {
+      margin: 16px 0;
+      padding-left: 38px;
+
+      li {
+        $cyrillic-alphabet: 'абвгдежзиклмнопрстуфхцчшщъыьэюя';
+
+        @for $i from 1 through str-length($cyrillic-alphabet) {
+          $letter: str-slice($cyrillic-alphabet, $i, $i);
+
+          &:nth-child(#{$i}) {
+            &::before {
+              content: '#{$letter}) ';
+            }
+          }
+        }
+
+        &::before {
+          content: counter(list, lower-alpha) ") ";
+        }
       }
     }
   }
