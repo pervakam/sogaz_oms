@@ -17,7 +17,8 @@
 
 .tab-item__media-list-container {
   width: 800px;
-  height: 1950px;
+  height: max-content;
+  max-height: 1950px;
   margin: 32px auto 0;
   overflow: hidden;
 }
@@ -25,7 +26,8 @@
 .tab-item__media-list-wrapper {
   @include list;
   width: 800px;
-  height: 1950px;
+  height: max-content;
+  max-height: 1950px;
   display: flex;
   flex-flow: column wrap;
 
@@ -43,6 +45,10 @@
   border: 1px solid $button-second;
   transition: box-shadow 0.5s;
   position: relative;
+
+  &:not(:last-child) {
+    margin: 0 0 24px;
+  }
 
   &:hover {
     box-shadow: 0 24px 20px -10px rgba(0, 0, 120, 0.1);

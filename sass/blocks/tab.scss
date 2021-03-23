@@ -17,28 +17,6 @@
   }
 }
 
-.tab__description-h4 {
-  @extend .tab__description-first;
-
-  @include title-h4;
-  margin: 37px 0 0 0;
-
-  p {
-    color: $blue;
-  }
-}
-
-.tab__description-h5 {
-  @extend .tab__description-first;
-
-  @include title-h5;
-  margin: 37px 0 0 0;
-
-  p {
-    color: $blue;
-  }
-}
-
 .tab__description-second {
   @include text;
   margin: 29px 0 0;
@@ -50,8 +28,6 @@
     margin: 32px 0 16px;
   }
 
-  ul,
-  ol,
   p {
     margin: 0 0 16px;
 
@@ -65,47 +41,9 @@
     }
   }
 
-  ol {
-    padding: 0;
-    counter-reset: list;
-    list-style-type: none;
-
-    li {
-      margin: 0 0 16px;
-
-      &::before {
-        counter-increment: list;
-        content: counter(list) ") ";
-      }
-    }
-
-    ol {
-      margin: 16px 0;
-      padding-left: 38px;
-
-      li {
-        $cyrillic-alphabet: 'абвгдежзиклмнопрстуфхцчшщъыьэюя';
-
-        @for $i from 1 through str-length($cyrillic-alphabet) {
-          $letter: str-slice($cyrillic-alphabet, $i, $i);
-
-          &:nth-child(#{$i}) {
-            &::before {
-              content: '#{$letter}) ';
-            }
-          }
-        }
-
-        &::before {
-          content: counter(list, lower-alpha) ") ";
-        }
-      }
-    }
+  .tab__document-list {
+    margin: 24px 0;
   }
-}
-
-.tab__document-list {
-  margin: 24px 0;
 }
 
 .tab__description-numbers {
@@ -191,55 +129,6 @@
     letter-spacing: 0.02em;
     margin: 0;
   }
-}
-
-.tab__blockquote {
-  background-color: $background-select;
-  border-radius: 8px;
-  @include title-h4;
-  padding: 24px 80px 20px 24px;
-  margin-top: 16px;
-  color: $blue;
-}
-
-.tab__document-card {
-  display: flex;
-  margin-top: 24px;
-}
-
-.tab__document-card-preview,
-.tab__document-card-content {
-  border-radius: 8px;
-  background-color: $background-select;
-  box-sizing: border-box;
-}
-
-.tab__document-card-preview {
-  flex: 0 0 234px;
-  padding: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url("../img/document-card-pattern.png");
-  background-position: -22px;
-}
-
-.tab__document-card-image {
-  display: block;
-  max-width: 100%;
-}
-
-.tab__document-card-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 60px 42px;
-}
-
-.tab__document-card-text {
-  @include title-h3;
-  padding-left: 28px;
-  color: $blue;
 }
 
 .tab__contacts-list {
@@ -379,6 +268,7 @@
       color: $hover-text;
     }
   }
+
 }
 
 @media (max-width: $tablet-max-width) {
@@ -387,18 +277,6 @@
     margin: 30px 0 0 1px;
     width: 100%;
     max-width: 1214px;
-  }
-
-  .tab__description-h4 {
-    @include title-tablet-h4;
-    margin: 30px 0 0 1px;
-    width: 100%;
-  }
-
-  .tab__description-h5 {
-    @include title-tablet-h5;
-    margin: 30px 0 0 1px;
-    width: 100%;
   }
 
   .tab__description-second {
@@ -416,25 +294,6 @@
 
   .tab__document-list {
     margin: 24px 0 0;
-  }
-
-  .tab__blockquote {
-    @include title-tablet-h4;
-  }
-
-  .tab__document-card-preview {
-    flex-basis: 175px;
-    padding: 20px;
-  }
-
-  .tab__document-card-content {
-    padding: 44px 26px;
-  }
-
-  .tab__document-card-text {
-    @include title-tablet-h3;
-    padding-left: 0;
-    padding-right: 10px;
   }
 
   .tab__contacts-item {
@@ -511,6 +370,7 @@
       line-height: 16px;
       color: $blue;
     }
+
   }
 }
 
@@ -521,28 +381,6 @@
 
   .tab__description-second {
     max-width: 590px;
-  }
-
-  .tab__blockquote {
-    padding: 24px;
-  }
-
-  .tab__document-card {
-    flex-direction: column;
-  }
-
-  .tab__document-card-preview,
-  .tab__document-card-content {
-    width: 100%;
-    flex: auto;
-  }
-
-  .tab__document-card-image {
-    max-height: 188px;
-  }
-
-  .tab__document-card-content {
-    padding: 20px 16px;
   }
 
   .tab__contacts-part {

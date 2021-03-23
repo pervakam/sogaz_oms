@@ -24,8 +24,10 @@
 
 .tab-item__list-container {
   width: 100%;
+  min-width: 800px;
   max-width: 800px;
-  height: 1242px;
+  height: max-content;
+  max-height: 1212px;
   margin: 37px auto 0;
   overflow: hidden;
 
@@ -36,23 +38,12 @@
   }
 
   &--health {
-    height: max-content;
-    min-width: 800px;
-
-    .tab-item__list-wrapper {
-      flex-flow: row wrap;
-      height: max-content;
-      min-width: 800px;
-    }
+    max-height: 2088px;
 
     .tab-item__list-slide {
       max-height: 504px;
       box-sizing: border-box;
       padding: 32px 32px 40px;
-
-      &:nth-child(2n) {
-        margin: 0 0 24px 0;
-      }
     }
 
     .tab-item__list-slide-title {
@@ -67,10 +58,11 @@
 .tab-item__list-wrapper {
   @include list;
   width: 100%;
+  min-width: 800px;
   max-width: 800px;
-  height: 1242px;
+  height: max-content;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
 
   &--article {
     height: 388px;
@@ -125,6 +117,10 @@
 
   &--article {
     margin: 0 24px 0 0;
+  }
+
+  &:nth-child(2n) {
+    margin: 0 0 24px 0;
   }
 }
 
@@ -213,8 +209,6 @@
   height: 48px;
   background-repeat: no-repeat;
   background-size: 48px 48px;
-  cursor: pointer;
-  outline: none;
 }
 
 .tab-item__list-prev {
@@ -238,7 +232,6 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  counter-reset: myCounter;
   margin: 0;
 
   &--article {
@@ -247,46 +240,35 @@
 }
 
 .tab-item__list-pagination-bullet {
-  display: inline-block;
-  position: relative;
   min-width: 46px;
   height: 46px;
   margin: 0 16px 0 0;
   border: 1px solid $button-second;
   border-radius: 50%;
-  cursor: pointer;
-  outline: none;
-
-  &::before {
-    counter-increment: myCounter;
-    content: counter(myCounter);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $Stratos;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 23px;
-    color: $blue;
-    padding: 12px 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $Stratos;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+  color: $blue;
+  text-decoration: none;
 
   &:hover {
     border: 1px solid $hover-text;
     background-color: $hover-text;
+    color: $white;
+  }
 
-    &::before {
-      color: $white;
-    };
+  &:nth-child(4n) {
+    margin: 0;
   }
 
   &--active {
     border: 1px solid $blue;
     background-color: $blue;
-
-    &::before {
-      color: $white;
-    }
+    color: $white;
   }
 }
 
@@ -367,7 +349,7 @@
 
   .tab-item__list-container {
     max-width: 576px;
-    height: 1152px;
+    height: max-content;
     margin: 0 auto;
 
     &--article {
@@ -377,7 +359,7 @@
     }
 
     &--health {
-      height: max-content;
+      max-height: 1845px;
       min-width: 576px;
 
       .tab-item__list-wrapper {
@@ -526,7 +508,7 @@
 
   .tab-item__list-container {
     &--health {
-      height: max-content;
+      max-height: 3640px;
       min-width: unset;
       width: 100%;
       max-width: 591px;
@@ -592,7 +574,7 @@
 
     &:nth-child(3n) {
       margin: 0;
-  }
+    }
 
     &:nth-child(n + 4) {
       display: none;

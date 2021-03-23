@@ -127,31 +127,12 @@ upButton.addEventListener('click', function (evt) {
 ///// слайдер в ОМС /////
 const mySwiper = new Swiper('.oms-about__list', {
   breakpoints: {
-    320: {
-      slidesPerView: 1.24,
-      slidesOffsetAfter: 0,
-    },
-    375: {
-      slidesPerView: 1.47,
-      slidesOffsetAfter: 0,
-    },
-    400: {
-      slidesPerView: 1.63,
-      slidesOffsetAfter: 0,
-    },
-    730: {
-      slidesPerView: 2.25,
-      slidesOffsetAfter: 0,
-    },
-    1000: {
-      slidesPerView: 3.05,
-      slidesOffsetAfter: 20,
-    },
     1280: {
-      slidesPerView: 4,
       slidesOffsetAfter: 200,
     },
   },
+
+  slidesPerView: 'auto',
 
   wrapperClass: 'oms-about__list-wrapper',
 
@@ -223,7 +204,8 @@ tabItemSearchInputs.forEach(function (it) {
   const monthResultList = it.querySelector('.form__result-list--month');
   const bonusesResultList = it.querySelector('.form__result-list--bonuses');
   const feedbackResultList = it.querySelector('.form__result-list--feedback');
-  const FIRST_YEAR = 1920
+  const regionResultList = it.querySelector('.form__result-list--region');
+  const FIRST_YEAR = 1920;
   const CURRENT_YEAR = new Date().getFullYear();
   const MONTHS_ARRAY = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 
@@ -232,6 +214,16 @@ tabItemSearchInputs.forEach(function (it) {
       let newOption = new Option([i], [i]);
       yearResultList.append(newOption);
     }
+  }
+
+  if (regionResultList) {
+    const regionResultListOptions = Array.prototype.slice.call(regionResultList.options);
+
+    regionResultListOptions.forEach(function (option) {
+      if (option.hasAttribute('selected') && !option.hasAttribute('disabled')) {
+        it.classList.add('tab-item__search-input-selected')
+      }
+    })
   }
 
   if (monthResultList) {
@@ -246,7 +238,7 @@ tabItemSearchInputs.forEach(function (it) {
       if (evt.target.value != "") {
         it.classList.add('tab-item__search-input-selected')
       }
-    })
+    });
   }
 
   if (bonusesResultList || feedbackResultList) {
@@ -258,6 +250,8 @@ tabItemSearchInputs.forEach(function (it) {
     }
   }
 })
+
+
 
 const feedbackFormButton = document.querySelector('.feedback__form-button');
 
@@ -539,28 +533,6 @@ tabItemMediaSlide.forEach(function (it) {
   }
 });
 
-///// слайдер новостей /////
-// const tabSlides = document.querySelectorAll('.tab-item__list-slide');
-// const tabListNavigation = document.querySelector('.tab-item__list-navigation');
-//
-// const newsSwiper = new Swiper('.tab-item__list-container', {
-//   slidesPerView: 'auto',
-//   slidesPerColumn: 3,
-//
-//   wrapperClass: 'tab-item__list-wrapper',
-//
-//   slideClass: 'tab-item__list-slide',
-//
-//   navigation: {
-//     nextEl: '.tab-item__list-next',
-//     prevEl: '.tab-item__list-prev',
-//   },
-// });
-//
-// if (tabSlides.length < 7 && tabListNavigation) {
-//   tabListNavigation.classList.add('tab-item__list-navigation--hide');
-// }
-
 ///// фотографии в карточке новостей /////
 const tabItemPhotosLists = document.querySelectorAll('.tab-item__list-slide-photos-list');
 const MAX_PHOTO_IN_CARD_DESKTOP = 4;
@@ -580,39 +552,6 @@ tabItemPhotosLists.forEach(function (it) {
   } else if (tabItemPhotosItems.length > MAX_PHOTO_IN_CARD_TABLET && window.innerWidth <= 1279) {
     tabItemPhotosCounter(MAX_PHOTO_IN_CARD_TABLET);
   }
-});
-
-///// слайдер в фотогалерее /////
-const tabMediaSlides = document.querySelectorAll('.tab-item__media-slide');
-const tabMediaNavigation = document.querySelector('.tab-item__media-list-navigation');
-const tabMediaListContainer = document.querySelector('.tab-item__media-list-container');
-
-const MediaSwiper = new Swiper('.tab-item__media-list-container', {
-  slidesPerView: 1,
-  slidesPerColumn: 3,
-  spaceBetween: 24,
-  allowTouchMove: false,
-
-  wrapperClass: 'tab-item__media-list-wrapper',
-
-  slideClass: 'tab-item__media-slide',
-
-  pagination: {
-    el: '.tab-item__media-list-pagination',
-    dynamicBullets: true,
-    bulletClass: 'tab-item__media-list-pagination-bullet',
-    bulletActiveClass: 'tab-item__media-list-pagination-bullet--active',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '' +
-        '<div class="' + className + '">' + (index + 1) + '</div>';
-    },
-  },
-
-  navigation: {
-    nextEl: '.tab-item__media-list-next',
-    prevEl: '.tab-item__media-list-prev',
-  },
 });
 
 ///// попап с пунктами выдачи полисов /////
