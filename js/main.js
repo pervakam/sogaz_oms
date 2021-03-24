@@ -685,6 +685,8 @@ pointInfoItems.forEach(function (it) {
 const covidBanner = document.querySelector('.covid-banner');
 const courierBannerOverlay = document.querySelector('.courier-banner__overlay')
 const covidBannerCloseButton = document.querySelector('.banner__close--covid');
+const covidBannerMoreButton = document.querySelector('.covid-banner__button');
+
 if (courierBannerOverlay) {
   const bannerCloseButtons = courierBannerOverlay.querySelectorAll('.banner__close')
   bannerCloseButtons.forEach(function (it) {
@@ -700,12 +702,16 @@ if (covidBannerCloseButton) {
   })
 }
 
+if (covidBannerMoreButton) {
+  covidBannerMoreButton.addEventListener('click', function () {
+    covidBanner.classList.add('hide');
+  })
+}
+
 ///// Отображает перечень обследований для диспасеризации /////
 const preventionButton = document.querySelector('.tab-item__search-button');
 const preventionAbout = document.querySelector('.tab-item__about-prevention');
 const preventionMore = document.querySelector('.tab-item__about-prevention-more');
-const preventionForm = document.querySelector('.tab-item__form--prevention');
-const preventionFormYearList = preventionForm.querySelector('.form__result-list--year')
 
 if (preventionButton) {
   preventionButton.addEventListener('click', function () {
