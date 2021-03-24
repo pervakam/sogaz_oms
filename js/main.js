@@ -251,8 +251,6 @@ tabItemSearchInputs.forEach(function (it) {
   }
 })
 
-
-
 const feedbackFormButton = document.querySelector('.feedback__form-button');
 
 if (feedbackFormButton) {
@@ -376,9 +374,14 @@ const tabFilterHandler = function () {
 
 if (window.innerWidth <= 1279 && tabSearchForm) {
   const tabFilterButton = document.querySelector('.tab-item__form-button');
-  tabFilterButton.addEventListener('click', tabFilterHandler);
+  if (tabFilterButton) {
+    tabFilterButton.addEventListener('click', tabFilterHandler);
+  }
   const tabSearchCloseButton = document.querySelector('.tab-item__search-toggle');
-  tabSearchCloseButton.addEventListener('click', tabFilterHandler);
+  if (tabSearchCloseButton) {
+    tabSearchCloseButton.addEventListener('click', tabFilterHandler);
+  }
+
 }
 
 /// карусель фотографий в разделе фотогалереи и в статье/////
@@ -615,6 +618,8 @@ if (feedbackLocationButton) {
 }
 
 pointInfoItems.forEach(function (it) {
+  const pointInfoButton = it.querySelector('.tab-item__point-info-button');
+  const pointAddressField = it.querySelector('.tab-item__point-address');
   const pointInfoMoreButton = it.querySelector('.tab-item__point-info-more-button');
 
   pointInfoMoreButton.addEventListener('click', function () {
@@ -661,11 +666,6 @@ pointInfoItems.forEach(function (it) {
       },
     });
   })
-})
-
-pointInfoItems.forEach(function (it) {
-  const pointInfoButton = it.querySelector('.tab-item__point-info-button');
-  const pointAddressField = it.querySelector('.tab-item__point-address');
 
   if (pointInfoButton) {
     pointInfoButton.addEventListener('click', function () {
@@ -700,3 +700,16 @@ if (covidBannerCloseButton) {
   })
 }
 
+///// Отображает перечень обследований для диспасеризации /////
+const preventionButton = document.querySelector('.tab-item__search-button');
+const preventionAbout = document.querySelector('.tab-item__about-prevention');
+const preventionMore = document.querySelector('.tab-item__about-prevention-more');
+const preventionForm = document.querySelector('.tab-item__form--prevention');
+const preventionFormYearList = preventionForm.querySelector('.form__result-list--year')
+
+if (preventionButton) {
+  preventionButton.addEventListener('click', function () {
+    preventionAbout.classList.remove('tab-item__about-prevention--hide');
+    preventionMore.classList.remove('tab-item__about-prevention-more--hide');
+  })
+}

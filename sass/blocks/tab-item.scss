@@ -13,6 +13,11 @@
     margin: 40px 0 32px;
   }
 
+  h4 {
+    @include title-h4;
+    color: $blue;
+  }
+
   &--address {
     width: 1212px;
 
@@ -42,6 +47,10 @@
 
     .tab-item__list-slide {
       max-height: 504px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       box-sizing: border-box;
       padding: 32px 32px 40px;
     }
@@ -283,12 +292,9 @@
 .tab-item__slide-description {
   font-size: 16px;
   line-height: 24px;
+  height: 100%;
   max-height: 120px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
   margin: 0 0 13px;
 
   p {
@@ -307,6 +313,165 @@
 
   &:hover {
     color: $hover-text;
+  }
+}
+
+.tab-item__questionnaire {
+  h3 {
+    margin: 40px 0 16px;
+  }
+
+  p {
+    @include text;
+    margin: 0 0 24px;
+  }
+
+}
+
+.tab-item__questionnaire-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-item__questionnaire-button {
+  background-color: $button-second;
+  color: $blue;
+  width: 283px;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.tab-item__video-list {
+  @include list
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.tab-item__video-item {
+  width: 48.5%;
+  box-sizing: border-box;
+  border: 1px solid $button-second;
+  padding: 32px;
+  margin: 0 24px 24px 0;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:nth-child(2n) {
+    margin: 0 0 24px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 182px;
+  }
+}
+
+.tab-item__video-item-title {
+  margin: 24px 0 0;
+
+  h2 {
+    @include title-tablet-h2;
+    margin: 0 0 8px;
+  }
+
+  time {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $light-gray;
+  }
+}
+
+.tab-item__about-prevention {
+  margin: 80px 0 0;
+
+  h4 {
+    margin: 24px 0 0;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 16px 0 0;
+  }
+
+  ul {
+    @include list;
+    margin: 16px 0 0;
+  }
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 8px;
+
+    &::before {
+      display: block;
+      content: "\2014";
+      margin: 0 5px 0 0;
+    }
+  }
+
+  &--hide {
+    display: none;
+  }
+}
+
+.tab-item__about-prevention-more {
+  background-color: $hover-text;
+  color: $white;
+  margin: -8px 0 0;
+  border-radius: 0 0 8px 8px;
+  box-sizing: border-box;
+  padding: 24px 40px 32px;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.tab-item__about-prevention-more-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-family: $Stratos;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &::before {
+      display: block;
+      content: "";
+      min-width: 56px;
+      height: 56px;
+      background-image: url("../img/pin-icon.svg");
+      margin: 0 16px 0 0;
+    }
+  }
+}
+
+.tab-item__about-prevention-more-button {
+  color: $hover-text;
+  background-color: $white;
+  width: 226px;
+  height: 56px;
+  margin: 0 0 0 10px;
+
+  &:hover {
+    color: $hover-text;
+    background-color: $white;
+    box-shadow: none;
   }
 }
 
@@ -361,15 +526,22 @@
     &--health {
       max-height: 1845px;
       min-width: 576px;
+      max-width: 1215px;
+      margin: 0;
 
       .tab-item__list-wrapper {
         flex-flow: row wrap;
         height: max-content;
         min-width: 576px;
+        width: 100%;
+        max-width: 1215px;
+        margin: 0 auto;
       }
 
       .tab-item__list-slide {
-        max-width: 276px;
+        min-width: 276px;
+        width: 47.5%;
+        max-width: 47.5%;
         max-height: 441px;
         box-sizing: border-box;
         padding: 32px 32px 38px;
@@ -487,6 +659,48 @@
       color: $hover-text;
     }
   }
+
+  .tab-item__questionnaire-form {
+    justify-content: flex-start;
+
+    .tab-item__search-input {
+      &--address-region {
+        margin: 0 26px 0 0;
+        width: 47.7%;
+        max-width: 47.7%;
+
+        select {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .tab-item__questionnaire-button {
+    width: 47.7%;
+  }
+
+  .tab-item__video-item {
+    width: 47.5%;
+    box-sizing: border-box;
+    border: 1px solid $button-second;
+    padding: 32px;
+    margin: 0 24px 24px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:nth-child(2n) {
+      margin: 0 0 24px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 120px;
+    }
+  }
 }
 
 @media (max-width: $mobile-max-width) {
@@ -581,4 +795,93 @@
     }
   }
 
+  .tab-item__questionnaire-form {
+    display: block;
+
+    .tab-item__search-input {
+      &--address-region {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+
+        select {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .tab-item__questionnaire-button {
+    width: 100%;
+    margin: 16px 0 0;
+  }
+
+  .tab-item__video-list {
+    @include list;
+    display: block;
+  }
+
+  .tab-item__video-item {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $button-second;
+    padding: 32px;
+    margin: 0 0 16px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:nth-child(2n) {
+      margin: 0 0 16px 0;
+    }
+  }
+
+  .tab-item__video-item-title {
+    margin: 24px 0 0;
+
+    h2 {
+      @include title-tablet-h2;
+      margin: 0 0 8px;
+    }
+
+    time {
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      color: $light-gray;
+    }
+  }
+
+  .tab-item__about-prevention {
+    margin: 40px 0 0;
+  }
+
+  .tab-item__about-prevention-more {
+    padding: 24px;
+  }
+
+  .tab-item__about-prevention-more-wrapper {
+    display: block;
+
+    p {
+      font-family: $Stratos;
+      font-size: 20px;
+      line-height: 30px;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .tab-item__about-prevention-more-button {
+    width: 100%;
+    margin: 16px 0 0 0;
+  }
 }

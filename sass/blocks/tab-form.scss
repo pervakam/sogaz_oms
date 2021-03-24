@@ -4,6 +4,29 @@
   background-color: $background-footer;
   border-radius: 8px;
   box-sizing: border-box;
+
+  &--prevention {
+    background-image: url("../img/pattern.svg");
+    padding: 32px;
+
+    h3 {
+      margin: 0 0 32px;
+    }
+
+    .tab-item__search {
+      background-image: unset;
+      padding: 0;
+    }
+
+    .tab-item__search-input {
+      &--year {
+        width: 30.5%;
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 .tab-item__form-button {
@@ -337,6 +360,7 @@
   }
 
   &--address-region {
+    width: 490px;
     select {
       width: 490px;
     }
@@ -417,9 +441,63 @@
   margin: 0 0 24px;
 }
 
+.tab-item__search-radio {
+  background-color: $white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 32%;
+  padding: 8px;
+
+  input + label {
+    font-family: $Stratos;
+    font-size: 18px;
+    line-height: 18px;
+    color: $black;
+    box-sizing: border-box;
+    border: 1px solid $button-second;
+    border-radius: 6px;
+    padding: 12px 45px;
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    color: $white;
+    background-color: $blue;
+    border: 1px solid $blue;
+  }
+}
+
+.tab-item__search-button {
+  width: 30.5%;
+}
+
 @media (max-width: $tablet-max-width) {
   .tab-item__form {
     margin: 32px 0 0;
+
+    &--prevention {
+      padding: 40px;
+
+      h3 {
+        margin: 0 0 24px;
+      }
+
+      .tab-item__search {
+        flex-wrap: wrap;
+      }
+
+      .tab-item__search-input {
+        &--year {
+          width: 47.5%;
+          select {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 
   .tab-item__search-input {
@@ -504,6 +582,8 @@
 
     &--address-region {
       margin: 0 0 24px 0;
+      width: 100%;
+      max-width: 1215px;
 
       select {
         width: 100%;
@@ -529,6 +609,21 @@
     width: 100%;
     max-width: 1215px;
   }
+
+  .tab-item__search-radio {
+    width: 47%;
+
+    input + label {
+      padding: 10px 45px;
+      width: 48%;
+      text-align: center;
+    }
+  }
+
+  .tab-item__search-button {
+    margin: 32px 0 0;
+    width: 100%;
+  }
 }
 
 @media (max-width: $mobile-max-width) {
@@ -538,6 +633,39 @@
     background-color: $background-footer;
     border-radius: 8px;
     box-sizing: border-box;
+
+    &--prevention {
+      padding: 24px 16px;
+
+      h3 {
+        margin: 0 0 24px;
+      }
+
+      .tab-item__search {
+        padding: unset;
+        position: relative;
+        z-index: unset;
+        width: unset;
+        height: unset;
+        background-image: unset;
+        background-color: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-sizing: border-box;
+      }
+
+      .tab-item__search-input {
+        &--year {
+          width: 100%;
+          margin: 0 0 16px 0;
+
+          select {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 
   .tab-item__form-button {
@@ -688,5 +816,20 @@
       width: 100%;
       max-width: 559px;
     }
+  }
+
+  .tab-item__search-radio {
+    width: 100%;
+
+    input + label {
+      padding: 10px 45px;
+      width: 48%;
+      text-align: center;
+    }
+  }
+
+  .tab-item__search-button {
+    margin: 24px 0 0;
+    width: 100%;
   }
 }

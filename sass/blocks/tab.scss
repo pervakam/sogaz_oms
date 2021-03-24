@@ -33,7 +33,7 @@
 
     a {
       text-decoration: none;
-      color: $black-text;
+      color: $blue;
 
       &:hover {
         color: $hover-text;
@@ -43,6 +43,10 @@
 
   .tab__document-list {
     margin: 24px 0;
+  }
+
+  &--prevention {
+    width: 700px;
   }
 }
 
@@ -289,6 +293,14 @@
       @include title-tablet-h2;
       color: $blue;
       margin: 32px 0 16px;
+    }
+
+    &--prevention {
+      @include text;
+      margin: 40px 0 0;
+      line-height: 22px;
+      width: 100%;
+      max-width: 1215px;
     }
   }
 
