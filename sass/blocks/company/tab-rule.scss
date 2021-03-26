@@ -24,7 +24,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 23px 13px 19px;
+  padding: 23px 45px 19px 13px;
   position: relative;
 
   &:hover {
@@ -60,7 +60,7 @@
   &::before {
     display: block;
     content: "";
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     margin: 0 16px 0 0;
     background-image: url("../img/rule_doc.svg");

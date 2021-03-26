@@ -13,7 +13,7 @@
     margin: 40px 0 32px;
   }
 
-  h4 {
+  & > h4 {
     @include title-h4;
     color: $blue;
   }
@@ -25,6 +25,158 @@
       width: 796px;
     }
   }
+
+  &--about-oms {
+    & > h4 {
+      margin: 40px 0 16px;
+    }
+  }
+}
+
+.tab-item__about-description {
+  @include text;
+  line-height: 150%;
+  margin: 0 0 16px;
+  width: 697px;
+
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.tab-item__about-list {
+  @include list;
+  counter-reset: myCounter;
+
+  & > li {
+    margin: 0 0 32px;
+  }
+
+  li > h5 {
+    @include title-h5;
+    color: $blue;
+    display: inline-block;
+    margin: 0 0 16px;
+
+    &::before {
+      counter-increment: myCounter;
+      content: counter(myCounter) '.';
+      display: inline-block;
+      @include title-h5;
+      color: $blue;
+      margin: 0 5px 0 0;
+    }
+  }
+
+  .tab__document-list {
+    margin: 24px 0 0;
+  }
+
+  &--simple {
+    & > li {
+      margin: 0 0 16px;
+
+      ol {
+        margin: 16px 0 0;
+        list-style: none;
+        padding: 0 0 0 38px;
+
+        & > li {
+          margin: 0 0 16px;
+        }
+
+        & > li {
+          &::before {
+            display: inline-block;
+            margin: 0 5px 0 0;
+          }
+
+          &:nth-child(1) {
+            &::before {
+              content: 'а)';
+            }
+          }
+
+          &:nth-child(2) {
+            &::before {
+              content: 'б)';
+            }
+          }
+
+          &:nth-child(3) {
+            &::before {
+              content: 'в)';
+            }
+          }
+
+          &:nth-child(4) {
+            &::before {
+              content: 'г)';
+            }
+          }
+
+          &:nth-child(5) {
+            &::before {
+              content: 'д)';
+            }
+          }
+
+          &:nth-child(6) {
+            &::before {
+              content: 'е)';
+            }
+          }
+
+          &:nth-child(7) {
+            &::before {
+              content: 'ж)';
+            }
+          }
+
+          &:nth-child(8) {
+            &::before {
+              content: 'з)';
+            }
+          }
+
+          &:nth-child(9) {
+            &::before {
+              content: 'и)';
+            }
+          }
+
+          &:nth-child(10) {
+            &::before {
+              content: 'к)';
+            }
+          }
+        }
+      }
+    }
+
+    & > li::before {
+      counter-increment: myCounter;
+      content: counter(myCounter) ')';
+      display: inline-block;
+      @include text;
+      margin: 0 5px 0 0;
+      line-height: 150%;
+      font-family: "Arial", "Helvetica", sans-serif;
+      color: $black-text;
+    }
+  }
+}
+
+.tab-item__emphasis {
+  @include title-h4;
+  color: $blue;
+
+  box-sizing: border-box;
+  padding: 24px 24px 20px;
+  background-color: $background-select;
+  border-radius: 8px;
+  margin: 0 0 32px;
 }
 
 .tab-item__list-container {
@@ -507,8 +659,62 @@
       margin: 32px 0 32px;
     }
 
+    & > h4 {
+      @include title-tablet-h2;
+      color: $blue;
+    }
+
     &--honor {
       max-width: 640px;
+    }
+
+    &--about-oms {
+      h3 {
+        margin: 32px 0 16px;
+      }
+
+      & > h4 {
+        margin: 32px 0 16px;
+      }
+    }
+  }
+
+  .tab-item__about-description {
+    @include text-tablet;
+    margin: 0 0 16px;
+    width: 100%;
+    max-width: 1215px;
+  }
+
+  .tab-item__emphasis {
+    @include title-tablet-h2;
+    color: $blue;
+    padding: 24px 81px 24px 24px;
+  }
+
+  .tab-item__about-list {
+    .tab__document-list {
+      margin: 16px 0 0;
+    }
+
+    &--simple {
+      & > li {
+        ol {
+          padding: 0 0 0 16px;
+
+          & > li {
+            &::before {
+              display: inline-block;
+              margin: 0 5px 0 0;
+            }
+          }
+        }
+      }
+
+      & > li::before {
+        @include text-tablet;
+        margin: 0 5px 0 0;
+      }
     }
   }
 
@@ -716,6 +922,26 @@
       h1 {
         padding: 0 24px;
         text-align: left;
+      }
+    }
+
+    &--about-oms {
+      & > h4 {
+        margin: 24px 0 16px;
+      }
+    }
+  }
+
+  .tab-item__emphasis {
+    padding: 24px 24px 14px 24px;
+  }
+
+  .tab-item__about-list {
+    &--simple {
+      & > li {
+        ol {
+          padding: 0 0 0 12px;
+        }
       }
     }
   }

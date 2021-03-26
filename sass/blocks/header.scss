@@ -58,6 +58,10 @@
     background-image: url("../img/health-header-background_desktop@1x.jpg");
   }
 
+  &--oms {
+    background-image: url("../img/oms-header-background_desktop@1x.jpg");
+  }
+
   &--feedback,
   &--index,
   &--policy {
@@ -551,10 +555,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-    &--news {
-      background-image: url("../img/news-header-background_desktop@1x.jpg");
-    }
 
     &--feedback,
     &--index,
