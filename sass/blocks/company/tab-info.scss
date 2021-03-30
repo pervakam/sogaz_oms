@@ -73,31 +73,31 @@
         margin: 0 10px 0 0;
       }
 
-      &--oms {
+      &--epoms {
         &::before {
           background-image: url("../img/service-oms.svg");
         }
       }
 
-      &--registration {
+      &--card {
         &::before {
           background-image: url("../img/service-registration.svg");
         }
       }
 
-      &--long-day {
+      &--full_day {
         &::before {
           background-image: url("../img/service-long.svg");
         }
       }
 
-      &--weekend-work {
+      &--weekend {
         &::before {
           background-image: url("../img/service-weekend.svg");
         }
       }
 
-      &--e-policy {
+      &--save_policy {
         &::before {
           background-image: url("../img/service-e-policy.svg");
         }
@@ -109,19 +109,19 @@
         }
       }
 
-      &--manager {
+      &--priem {
         &::before {
           background-image: url("../img/service-manager.svg");
         }
       }
 
-      &--card {
+      &--ecard {
         &::before {
           background-image: url("../img/service-card.svg");
         }
       }
 
-      &--disabled-person {
+      &--invalid {
         &::before {
           background-image: url("../img/service-disabled.svg");
         }
@@ -146,6 +146,13 @@
       li {
         margin: 0 0 8px 0;
       }
+    }
+  }
+
+  &--filial-region {
+    .tab__info-description {
+      margin: 0 0 0 65px;
+      width: 697px;
     }
   }
 }
@@ -254,12 +261,23 @@
   }
 }
 
+.tab__info-description-link {
+  @include title-h4;
+  color: $blue;
+  text-decoration: none;
+  display: block;
+  margin: 20px 0;
+
+  &:hover {
+    color: $hover-text;
+  }
+}
+
 .tab__info-description-list,
 .tab__info-requisites-list {
   @include list;
-
   position: relative;
-  margin: 16px 0 0 65px;
+  margin: 16px 0 0 0;
   width: 838px;
 
   &--policy {
@@ -574,6 +592,13 @@
 
   .tab__info-list {
     margin: 16px 0;
+
+    &--filial-region {
+      .tab__info-description {
+        margin: 0 0 0 40px;
+        width: unset;
+      }
+    }
   }
 
   .tab__info-item {
@@ -652,7 +677,7 @@
   .tab__info-requisites-list {
     position: relative;
     margin: 0;
-    padding: 0 0 0 46px;
+    padding: 0;
     box-sizing: border-box;
     width: 100%;
     max-width: 800px;
@@ -737,6 +762,13 @@
       margin: 0 0 23px;
       color: $blue;
     }
+
+    &--filial-region {
+      & > h5 {
+        @include title-tablet-h1;
+        color: $blue;
+      }
+    }
   }
 
   .tab__info-document-list-wrapper-toggle {
@@ -791,6 +823,12 @@
   .tab__report-item-link {
     padding: 23px 35px 19px 13px;
   }
+
+  .tab__info-description-link {
+    @include title-tablet-h2;
+    color: $blue;
+    margin: 20px 0;
+  }
 }
 
 @media (max-width: $mobile-max-width) {
@@ -837,6 +875,11 @@
           margin: 0 0 8px 0;
         }
       }
+    }
+
+    &--filial-region {
+      padding: 0 24px;
+      text-align: left;
     }
   }
 

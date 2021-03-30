@@ -165,6 +165,123 @@
 .tab__contacts-list {
   @include list;
   margin: 40px 0 32px;
+
+  &--address {
+    width: 800px;
+  }
+
+  &--filial {
+    padding: 0 54px;
+
+    .tab__contacts-item {
+      box-sizing: border-box;
+      padding: 0;
+      background-color: unset;
+      border-radius: unset;
+    }
+
+    .tab__contacts-info {
+      margin: 0 0 24px;
+
+      p,
+      a {
+        margin: 0;
+      }
+    }
+
+    .tab__contacts-type {
+      font-family: Stratos;
+      font-size: 16px;
+      line-height: 146%;
+      color: $light-gray;
+      width: 24%;
+    }
+
+    .tab__contacts-data {
+      font-size: 14px;
+      line-height: 140%;
+      width: 75%;
+
+      &--leaders {
+        @include list;
+        display: flex;
+        flex-wrap: wrap;
+
+        & > li {
+          box-sizing: border-box;
+          border: 1px solid $button-second;
+          width: 50%;
+          padding: 24px 24px 32px 32px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          &:nth-child(2n) {
+            margin-left: -1px;
+          }
+
+          &:nth-child(n + 3) {
+            margin-top: -1px;
+          }
+
+          h4,
+          p {
+            color: $black-text;
+            margin: 0;
+          }
+        }
+      }
+
+      &--contacts {
+        @include list;
+        display: flex;
+        justify-content: space-between;
+
+        & > li {
+          box-sizing: border-box;
+          width: 50%;
+          padding: 0 30px 0 0;
+
+          a {
+            text-decoration: none;
+            color: $black-text;
+            display: block;
+            font-size: 14px;
+            line-height: 140%;
+
+            &:hover {
+              color: $hover-text;
+            }
+          }
+
+          h5 {
+            @include title-h5;
+            margin: 0 0 8px;
+          }
+        }
+      }
+
+      &--schedule {
+        li {
+          width: 100%;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 140%;
+
+          &:not(:last-of-type) {
+            margin: 0 0 8px;
+          }
+        }
+      }
+    }
+
+    .tab-item__point-holidays,
+    .tab-item__point-dayoff {
+      color: $coral;
+    }
+  }
 }
 
 .tab__contacts-item {
@@ -174,6 +291,8 @@
   border-radius: 8px;
 
   h4 {
+    @include title-h4;
+    color: $blue;
     margin: 0 0 24px;
   }
 
@@ -203,7 +322,8 @@
   }
 }
 
-.tab__contacts-part {
+.tab__contacts-part,
+.tab__contacts-info {
   display: flex;
   justify-content: flex-start;
 
@@ -212,15 +332,37 @@
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 16px;
-    color: $black-text;
     text-decoration: none;
   }
 
   a {
+    color: $black-text;
+
     &:hover {
       color: $hover-text;
     }
   }
+}
+
+.tab__contacts-schedule {
+  color: $blue;
+}
+
+.tab__contacts-info {
+  justify-content: space-between;
+  align-items: flex-start;
+
+  a {
+    color: $blue;
+  }
+}
+
+.tab__contacts-type {
+  width: 30%;
+}
+
+.tab__contacts-data {
+  width: 61%;
 }
 
 .tab__contacts-button {
@@ -352,6 +494,142 @@
     margin: 24px 0 0;
   }
 
+  .tab__contacts-list {
+    margin: 24px 0;
+
+    &--address {
+      width: 100%;
+    }
+
+    &--filial {
+      padding: 0;
+      margin: 32px 0;
+
+      .tab__contacts-item {
+        box-sizing: border-box;
+        padding: 0;
+        background-color: unset;
+        border-radius: unset;
+      }
+
+      .tab__contacts-info {
+        display: block;
+
+        p,
+        a {
+          margin: 0 0 8px;
+        }
+      }
+
+      .tab__contacts-type {
+        font-size: 18px;
+        line-height: 120%;
+        width: 100%;
+      }
+
+      .tab__contacts-data {
+        width: 100%;
+
+        &--leaders {
+
+          & > li {
+            box-sizing: border-box;
+            border: 1px solid $button-second;
+            width: 50%;
+            padding: 24px 24px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &:nth-child(2n) {
+              margin-left: -1px;
+            }
+
+            &:nth-child(n + 3) {
+              margin-top: -1px;
+            }
+
+            h4 {
+              @include title-tablet-h2;
+            }
+
+            p {
+              font-size: 14px;
+              line-height: 120%;
+            }
+          }
+        }
+
+        &--contacts {
+          @include list;
+          display: flex;
+          justify-content: space-between;
+
+          & > li {
+            box-sizing: border-box;
+            width: 50%;
+            padding: 0 30px 0 0;
+
+            a {
+              text-decoration: none;
+              color: $black-text;
+              display: block;
+              font-size: 14px;
+              line-height: 140%;
+
+              &:hover {
+                color: $hover-text;
+              }
+            }
+
+            h5 {
+              @include title-h5;
+              margin: 0 0 8px;
+            }
+          }
+        }
+
+        &--schedule {
+          li {
+            width: 100%;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 140%;
+
+            &:not(:last-of-type) {
+              margin: 0 0 8px;
+            }
+          }
+        }
+      }
+
+      .tab-item__point-holidays,
+      .tab-item__point-dayoff {
+        color: $coral;
+      }
+    }
+  }
+
+  .tab__contacts-part,
+  .tab__contacts-info {
+
+    p,
+    a {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  .tab__contacts-type {
+    width: 30%;
+  }
+
+  .tab__contacts-data {
+    width: 61%;
+  }
+
   .tab__contacts-item {
     padding: 32px 20px 16px 32px;
 
@@ -439,8 +717,68 @@
     max-width: 590px;
   }
 
+  .tab__contacts-list {
+    &--filial {
+      .tab__contacts-data {
+
+        &--leaders {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+
+          & > li {
+            width: 100%;
+
+            &:nth-child(2n) {
+              margin-left: 0;
+              margin-top: -1px;
+            }
+
+            &:nth-child(n + 2) {
+              margin-top: -1px;
+            }
+          }
+        }
+
+        &--contacts {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          & > li {
+            width: 100%;
+            margin: 0 0 16px;
+          }
+        }
+      }
+    }
+  }
+
+
   .tab__document-card {
     display: block;
+  }
+
+  .tab__contacts-info {
+    display: block;
+
+    p:first-of-type {
+      margin: 0 0 8px;
+    }
+
+    a {
+      display: block;
+      margin: 0 0 16px;
+    }
+  }
+
+  .tab__contacts-type {
+    width: 100%;
+
+  }
+
+  .tab__contacts-data {
+    width: 100%;
   }
 
   .tab__document-card-preview {

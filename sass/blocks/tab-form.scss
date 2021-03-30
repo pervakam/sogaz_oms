@@ -366,6 +366,13 @@
     }
   }
 
+  &--filial-region {
+    width: 97.4%;
+    select {
+      width: 100%;
+    }
+  }
+
   &--address-point {
     select {
       width: 490px;
@@ -439,6 +446,13 @@
   border: none;
   outline: none;
   margin: 0 0 24px;
+
+  &--filial {
+    width: 23.4%;
+    background-color: $blue;
+    color: $white;
+    margin: 0;
+  }
 }
 
 .tab-item__search-radio {
@@ -608,6 +622,13 @@
   .tab-item__about-address-button {
     width: 100%;
     max-width: 1215px;
+
+    &--filial {
+      max-width: 178px;
+      background-color: $blue;
+      color: $white;
+      margin: 0;
+    }
   }
 
   .tab-item__search-radio {
@@ -696,6 +717,13 @@
 
     span {
       display: block;
+    }
+  }
+
+  .tab-item__about-address-button {
+    &--filial {
+      width: 100%;
+      max-width: 591px;
     }
   }
 
