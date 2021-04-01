@@ -43,6 +43,10 @@
     color: $blue;
     text-decoration: none;
   }
+
+  &--first {
+    margin: 40px 0 16px;
+  }
 }
 
 .tab-item__about-list {
@@ -625,6 +629,17 @@
   }
 }
 
+.tab-item__picture {
+  margin: 40px 0 0;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 640px;
+    height: 948px;
+  }
+}
+
 @media (max-width: 1366px) {
   .tab-item__list-navigation {
     &--article {
@@ -682,6 +697,10 @@
     margin: 0 0 16px;
     width: 100%;
     max-width: 1215px;
+
+    &--first {
+      margin: 32px 0 16px;
+    }
   }
 
   .tab-item__emphasis {
@@ -903,6 +922,18 @@
     iframe {
       width: 100%;
       height: 120px;
+    }
+  }
+
+  .tab-item__picture {
+    margin: 32px 0 0;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 640px;
+      height: auto;
     }
   }
 }

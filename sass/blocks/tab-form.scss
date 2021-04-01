@@ -388,6 +388,36 @@
     }
   }
 
+  &--policy-region {
+    margin: 0 0 24px;
+    width: 100%;
+
+    select {
+      width: 100%;
+    }
+  }
+
+  &--policy-number {
+    margin: 0 0 24px;
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    input ~ label {
+      top: 8px;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      color: $light-gray;
+    }
+  }
+
   textarea {
     resize: none;
     width: 554px;
@@ -612,6 +642,10 @@
         width: 100%;
         max-width: 1215px;
       }
+    }
+
+    &--policy-number {
+      margin: 0 0 32px;
     }
 
     textarea {

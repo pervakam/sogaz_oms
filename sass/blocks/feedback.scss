@@ -65,7 +65,7 @@
 
     legend {
       @include title-h4;
-      line-height: 30px;
+      line-height: 150%;
     }
   }
 
@@ -110,6 +110,31 @@
       margin: 0;
       width: 1006px;
     }
+  }
+
+  &--check {
+    margin: 56px 0 0;
+
+    .feedback__form-location {
+      flex-direction: column;
+      width: 49%;
+    }
+
+    .feedback__input-list {
+      margin: 0;
+      width: unset;
+    }
+  }
+}
+
+.feedback__check-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  h4 {
+    @include title-h4;
+    line-height: 150%;
+    width: 35%;
   }
 }
 
@@ -331,6 +356,21 @@
   cursor: pointer;
 }
 
+.feedback__check-button {
+  background-color: $blue;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  color: $white;
+  padding: 20px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: $hover-text;
+  }
+}
+
 @media (max-width: $tablet-max-width) {
   .feedback-title {
     @include title-tablet-h1;
@@ -418,6 +458,33 @@
 
 
     }
+
+    &--check {
+      margin: 40px 0 0;
+      width: 100%;
+      max-width: 1215px;
+
+      .feedback__form-location {
+        margin: 24px 0 0;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .feedback__input-list {
+        margin: 0;
+        width: unset;
+      }
+    }
+  }
+
+  .feedback__check-wrapper {
+    flex-direction: column;
+
+    h4 {
+      @include title-h4;
+      line-height: 150%;
+      width: 100%;
+    }
   }
 
   .feedback__input-list {
@@ -475,6 +542,7 @@
   .feedback__location-button {
     width: 480px;
   }
+
 }
 
 @media (max-width: $mobile-max-width) {

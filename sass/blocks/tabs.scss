@@ -14,6 +14,7 @@
   box-sizing: border-box;
   width: 285px;
   cursor: pointer;
+  color: $blue;
 
   &:not(:first-child) {
     padding: 8px 40px;
