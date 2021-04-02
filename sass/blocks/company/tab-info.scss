@@ -297,11 +297,10 @@
         margin: 0 0 8px;
       }
 
-      display: flex;
-      justify-content: flex-start;
+      display: inline-block;
 
       &::before {
-        display: block;
+        display: inline-block;
         content: "—";
         margin: 0 5px 0 0;
       }
@@ -336,6 +335,19 @@
   & input:checked ~ .tab__info-document-list-wrapper--hide {
     display: block;
   }
+
+  .tab__report-list {
+    width: 100%;
+    max-width: 838px;
+  }
+
+  .tab__report-item-link {
+    padding: 24px 40px 20px 12px;
+  }
+
+  .tab__info-document-list {
+    width: 100%;
+  }
 }
 
 .tab__info-description-item-title {
@@ -368,6 +380,10 @@
 
   & > h5 {
     display: none;
+  }
+
+  & > ol {
+    margin: 16px 0 0;
   }
 }
 
@@ -573,6 +589,21 @@
     letter-spacing: 0.02em;
     color: $black-text;
     margin: 0;
+  }
+}
+
+.tab__description-list{
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+
+    &::before {
+      display: block;
+      content: "—";
+      margin: 0 5px 0 0;
+    }
   }
 }
 

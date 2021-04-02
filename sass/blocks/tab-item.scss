@@ -638,6 +638,15 @@
     width: 640px;
     height: 948px;
   }
+
+  &--structure {
+    margin: 40px 0;
+
+    img {
+      width: 728px;
+      height: 552px;
+    }
+  }
 }
 
 @media (max-width: 1366px) {
