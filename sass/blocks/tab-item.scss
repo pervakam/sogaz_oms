@@ -35,7 +35,6 @@
 
 .tab-item__about-description {
   @include text;
-  line-height: 150%;
   margin: 0 0 16px;
   width: 697px;
 
@@ -44,8 +43,16 @@
     text-decoration: none;
   }
 
+  & > ol {
+    padding: 0 0 0 16px;
+
+    li {
+      margin: 0 0 16px;
+    }
+  }
+
   &--first {
-    margin: 40px 0 16px;
+    margin: 40px 0 32px;
   }
 }
 

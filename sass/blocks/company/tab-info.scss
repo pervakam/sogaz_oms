@@ -1,9 +1,20 @@
 .tab__info {
   width: 903px;
   text-align: left;
+  font-size: 16px;
+  line-height: 150%;
 
   h1 {
     @include title-h1;
+  }
+
+  & > h3 {
+    @include title-h3;
+    color: $blue;
+  }
+
+  &--rights {
+    width: 697px;
   }
 }
 
@@ -258,6 +269,22 @@
     letter-spacing: 0.02em;
     width: 264px;
     margin: 0 0 0 auto;
+  }
+
+  &--rights {
+    width: 77%;
+    margin: 0 0 0 64px;
+    font-size: 16px;
+    line-height: 150%;
+
+    a {
+      text-decoration: none;
+      color: $blue;
+
+      &:hover {
+        color: $hover-text;
+      }
+    }
   }
 }
 
@@ -592,12 +619,15 @@
   }
 }
 
-.tab__description-list{
+.tab__description-list {
   list-style: none;
+  padding: 0 0 0 16px;
+  margin: 24px 0;
 
   li {
     display: flex;
     justify-content: flex-start;
+    margin: 0 0 16px;
 
     &::before {
       display: block;
@@ -618,6 +648,11 @@
     h1 {
       @include title-tablet-h1;
       margin: 40px 0 0;
+    }
+
+    & > h3 {
+      @include title-tablet-h2;
+      color: $blue;
     }
   }
 
@@ -859,6 +894,11 @@
     @include title-tablet-h2;
     color: $blue;
     margin: 20px 0;
+  }
+
+  .tab__description-list {
+    font-size: 14px;
+    line-height: 160%;
   }
 }
 

@@ -59,6 +59,62 @@
   }
 }
 
+.tab__description-wrapper {
+  background-color: $background-select;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 32px 57px 24px 32px;
+  margin: 24px 0;
+
+  h4 {
+    @include title-h4;
+    color: $blue;
+  }
+
+  //ul {
+  //  margin: 16px 0 0;
+  //  padding: 0 0 0 16px;
+  //  list-style: disc;
+  //
+  //  li {
+  //    margin: 0 0 16px;
+  //  }
+  //}
+
+  ol {
+    margin: 16px 0 0;
+    padding: 0 0 0 16px;
+  }
+
+  a {
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $hover-text;
+    }
+  }
+
+  .tab__report-list {
+    width: 100%;
+  }
+
+  .tab__report-item-link {
+    align-items: flex-start;
+    padding: 23px 50px 19px 13px;
+  }
+}
+
+.tab__description-wrapper-list {
+  margin: 16px 0 0;
+  padding: 0 0 0 16px;
+  list-style: disc;
+
+  li {
+    margin: 0 0 16px;
+  }
+}
+
 .tab__document-list {
   @include list;
   border: 1px solid $button-second;
@@ -190,7 +246,7 @@
     }
 
     .tab__contacts-type {
-      font-family: Stratos;
+      font-family: $Stratos;
       font-size: 16px;
       line-height: 146%;
       color: $light-gray;
@@ -473,6 +529,18 @@
     }
   }
 
+  .tab__description-wrapper {
+    padding: 32px 40px 24px 32px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 160%;
+
+    h4 {
+      @include title-tablet-h2;
+      color: $blue;
+    }
+  }
+
   .tab__document-card {
     margin: 0 0 24px;
   }
@@ -723,8 +791,7 @@
 
         &--leaders {
           display: flex;
-          flex-direction: column;
-          flex-wrap: nowrap;
+          flex-flow: column nowrap;
 
           & > li {
             width: 100%;
