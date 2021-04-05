@@ -409,7 +409,8 @@
     display: none;
   }
 
-  & > ol {
+  & > ol,
+  & > ul {
     margin: 16px 0 0;
   }
 }
@@ -734,8 +735,8 @@
     &--policy {
       width: 92%;
       margin: 0 0 0 49px;
-      font-size: 12px;
-      line-height: 19px;
+      font-size: 14px;
+      line-height: 160%;
     }
   }
 
