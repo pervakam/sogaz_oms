@@ -10,11 +10,20 @@
 
   & > h3 {
     @include title-h3;
+
     color: $blue;
   }
 
   &--rights {
     width: 697px;
+
+    .tab__info-document-list-wrapper {
+      padding: 0 16px 0 52px;
+
+      ol {
+        padding: 0 0 0 16px;
+      }
+    }
   }
 }
 
@@ -141,6 +150,7 @@
 
     .tab-item__point-contacts {
       @include list;
+
       font-size: 12px;
       line-height: 14px;
       letter-spacing: 0.02em;
@@ -161,9 +171,35 @@
   }
 
   &--filial-region {
+    width: 904px;
+
     .tab__info-description {
-      margin: 0 0 0 65px;
-      width: 697px;
+      margin: 0 0 0 64px;
+    }
+
+    .tab__info-item-title {
+      &::after {
+        display: block;
+        content: "";
+        width: 93%;
+        height: 1px;
+        background-color: $button-second;
+        position: absolute;
+        bottom: -2px;
+        left: 64px;
+      }
+    }
+
+    .tab__info-item {
+      & input:checked + .tab__info-item-title {
+          &::after {
+            display: none;
+        }
+      }
+    }
+
+    .tab__info-document-list-wrapper {
+      margin: 24px 0 0 24px;
     }
   }
 }
@@ -220,7 +256,7 @@
   z-index: 10;
 
   span {
-    width: 800px;
+    width: 93%;
   }
 
   &::before {
@@ -261,6 +297,18 @@
         color: $hover-text;
       }
     }
+
+    .tab__report-list {
+      margin: 24px 0;
+    }
+
+    .tab__info-document-list-wrapper {
+      padding: 0 16px 0 52px;
+
+      ol {
+        padding: 0 0 0 16px;
+      }
+    }
   }
 
   &--shedule {
@@ -290,6 +338,7 @@
 
 .tab__info-description-link {
   @include title-h4;
+
   color: $blue;
   text-decoration: none;
   display: block;
@@ -303,6 +352,7 @@
 .tab__info-description-list,
 .tab__info-requisites-list {
   @include list;
+
   position: relative;
   margin: 16px 0 0 0;
   width: 838px;
@@ -379,6 +429,7 @@
 
 .tab__info-description-item-title {
   @include title-h5;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -413,6 +464,11 @@
   & > ul {
     margin: 16px 0 0;
   }
+
+  .tab__contacts-list--filial {
+    padding: 0;
+    background-color: unset;
+  }
 }
 
 .tab__info-document-list-wrapper-toggle {
@@ -421,6 +477,7 @@
 
 .tab__info-document-list {
   @include list;
+
   border: 1px solid $button-second;
   margin: 24px 0 0 56px;
   width: 670px;
@@ -535,6 +592,7 @@
 
 .tab__report-list {
   @include list;
+
   width: 838px;
   border: 1px solid $button-second;
   margin: 16px 0 0 auto;
@@ -648,11 +706,13 @@
 
     h1 {
       @include title-tablet-h1;
+
       margin: 40px 0 0;
     }
 
     & > h3 {
       @include title-tablet-h2;
+
       color: $blue;
     }
   }
@@ -661,9 +721,21 @@
     margin: 16px 0;
 
     &--filial-region {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: $tablet-max-width;
+
       .tab__info-description {
         margin: 0 0 0 40px;
         width: unset;
+      }
+
+      .tab__info-item-title {
+        &::after {
+          width: 93%;
+          bottom: 0;
+          left: 48px;
+        }
       }
     }
   }
@@ -746,8 +818,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 800px;
+    width: 98%;
   }
 
   .tab__info-description-list {
@@ -821,18 +892,16 @@
     height: 100vh;
 
     & > h5 {
+      @include title-tablet-h1;
+
       display: block;
-      font-family: "Arial", "Helvetica", sans-serif;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
       margin: 0 0 23px;
-      color: $blue;
     }
 
     &--filial-region {
       & > h5 {
         @include title-tablet-h1;
+
         color: $blue;
       }
     }
@@ -848,7 +917,6 @@
     margin: 0 0 40px auto;
     cursor: pointer;
     outline: none;
-
 
     &:hover {
       background-image: url("../img/menu-hover-close-icon.svg");
@@ -883,6 +951,7 @@
 
   .tab__report-list {
     @include list;
+
     width: 92%;
     margin: 16px 0 0 0;
   }
@@ -893,6 +962,7 @@
 
   .tab__info-description-link {
     @include title-tablet-h2;
+
     color: $blue;
     margin: 20px 0;
   }
@@ -930,6 +1000,7 @@
 
       .tab-item__point-contacts {
         @include list;
+
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.02em;

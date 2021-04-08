@@ -719,3 +719,20 @@ if (preventionButton) {
     preventionMore.classList.remove('tab-item__about-prevention-more--hide');
   })
 }
+
+///// Нижний бордер в списке филиалов /////
+const pointModalOverlayList = document.querySelector('.tab-item__point-overlay--list');
+const pointModalInfo = pointModalOverlayList.querySelector('.tab-item__point-modal-info');
+const listPointItems = pointModalOverlayList.querySelectorAll('.tab-item__point-item');
+
+if (pointModalOverlayList) {
+
+  pointModalInfo.querySelector('.tab-item__point-list').addEventListener('change', function () {
+    if (listPointItems.length > 6) {
+      pointModalInfo.classList.add('tab-item__point-modal-info--border');
+    }
+  })
+  // if (listPointItems.length > 6) {
+  //   pointModalInfo.classList.add('tab-item__point-modal-info--border');
+  // }
+}

@@ -4,6 +4,7 @@
 
   h4 {
     @include title-h4;
+
     line-height: 30px;
     color: $blue;
     width: 438px;
@@ -65,6 +66,7 @@
 
     legend {
       @include title-h4;
+
       line-height: 150%;
     }
   }
@@ -133,6 +135,7 @@
 
   h4 {
     @include title-h4;
+
     line-height: 150%;
     width: 35%;
   }
@@ -140,6 +143,7 @@
 
 .feedback__input-list {
   @include list;
+
   margin: 24px 0 0;
   width: 554px;
   display: flex;
@@ -259,6 +263,7 @@
 
   h4 {
     @include title-h4;
+
     color: $blue;
   }
 
@@ -315,6 +320,7 @@
 
   ul {
     @include list;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -374,11 +380,12 @@
 @media (max-width: $tablet-max-width) {
   .feedback-title {
     @include title-tablet-h1;
+
     box-sizing: border-box;
     padding: 0 32px;
     width: 100%;
     max-width: $tablet-max-width;
-    margin: 40px auto 40px;
+    margin: 40px auto;
   }
 
   .feedback-note {
@@ -390,6 +397,7 @@
 
     h4 {
       @include title-tablet-h2;
+
       width: 100%;
       max-width: $tablet-max-width;
     }
@@ -398,7 +406,7 @@
   .feedback-note__time {
     width: 476px;
     margin: 32px auto 0;
-    padding: 32px 32px 32px 32px;
+    padding: 32px;
     background-image: url("../img/pattern-feedback-tablet.png");
 
     h4 {
@@ -455,8 +463,6 @@
         margin: 0;
         width: 100%;
       }
-
-
     }
 
     &--check {
@@ -482,6 +488,7 @@
 
     h4 {
       @include title-h4;
+
       line-height: 150%;
       width: 100%;
     }
@@ -542,7 +549,6 @@
   .feedback__location-button {
     width: 480px;
   }
-
 }
 
 @media (max-width: $mobile-max-width) {
@@ -610,7 +616,7 @@
     }
 
     &--address {
-      padding: 24px 24px;
+      padding: 24px;
 
       .feedback__input-list {
         max-width: $mobile-max-width;

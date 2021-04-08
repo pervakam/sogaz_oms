@@ -476,6 +476,29 @@
 .tab-item__point-modal-info {
   display: flex;
   justify-content: flex-start;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: "";
+    width: 1206px;
+    height: 1px;
+    background-color: $button-second;
+  }
+
+  &--border {
+    &::after {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      content: "";
+      width: 1206px;
+      height: 1px;
+      background-color: $button-second;
+    }
+  }
 }
 
 .tab-item__point-map {

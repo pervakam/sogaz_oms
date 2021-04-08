@@ -1,5 +1,6 @@
 .tab__description-first {
   @include text-big;
+
   margin: 37px 0 0 0;
   width: 800px;
 
@@ -19,11 +20,13 @@
 
 .tab__description-second {
   @include text;
+
   margin: 29px 0 0;
   width: 800px;
 
   h4 {
     @include title-h4;
+
     color: $blue;
     margin: 32px 0 16px;
   }
@@ -52,6 +55,7 @@
 
 .tab__description-numbers {
   @include list;
+
   display: flex;
 
   li:not(:last-child) {
@@ -68,18 +72,9 @@
 
   h4 {
     @include title-h4;
+
     color: $blue;
   }
-
-  //ul {
-  //  margin: 16px 0 0;
-  //  padding: 0 0 0 16px;
-  //  list-style: disc;
-  //
-  //  li {
-  //    margin: 0 0 16px;
-  //  }
-  //}
 
   ol {
     margin: 16px 0 0;
@@ -117,6 +112,7 @@
 
 .tab__document-list {
   @include list;
+
   border: 1px solid $button-second;
   margin: 40px 0 0;
 }
@@ -220,6 +216,7 @@
 
 .tab__contacts-list {
   @include list;
+
   margin: 40px 0 32px;
 
   &--address {
@@ -227,22 +224,15 @@
   }
 
   &--filial {
-    padding: 0 54px;
+    box-sizing: border-box;
+    padding: 40px 32px 32px 32px;
+    background-color: $background-select;
+    border-radius: 8px;
+    width: 100%;
+    margin: 12px 0 0;
 
-    .tab__contacts-item {
-      box-sizing: border-box;
-      padding: 0;
-      background-color: unset;
-      border-radius: unset;
-    }
-
-    .tab__contacts-info {
+    .tab__contacts-info:not(:last-child) {
       margin: 0 0 24px;
-
-      p,
-      a {
-        margin: 0;
-      }
     }
 
     .tab__contacts-type {
@@ -250,33 +240,37 @@
       font-size: 16px;
       line-height: 146%;
       color: $light-gray;
-      width: 24%;
+      min-width: 26%;
+      max-width: 26%;
+      margin: 0 24px 0 0;
     }
 
     .tab__contacts-data {
       font-size: 14px;
       line-height: 140%;
-      width: 75%;
+      width: 100%;
+      margin: 0;
 
       &--leaders {
         @include list;
+
         display: flex;
         flex-wrap: wrap;
 
         & > li {
           box-sizing: border-box;
           border: 1px solid $button-second;
-          width: 50%;
+          width: 33%;
           padding: 24px 24px 32px 32px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
 
-          &:nth-child(2n) {
+          &:nth-child(n) {
             margin-left: -1px;
           }
 
-          &:nth-child(n + 3) {
+          &:nth-child(n + 4) {
             margin-top: -1px;
           }
 
@@ -290,13 +284,14 @@
 
       &--contacts {
         @include list;
+
         display: flex;
         justify-content: space-between;
 
         & > li {
           box-sizing: border-box;
-          width: 50%;
-          padding: 0 30px 0 0;
+          width: 45%;
+          padding: 0;
 
           a {
             text-decoration: none;
@@ -312,6 +307,7 @@
 
           h5 {
             @include title-h5;
+
             margin: 0 0 8px;
           }
         }
@@ -341,15 +337,16 @@
 }
 
 .tab__contacts-item {
-  box-sizing: border-box;
-  padding: 40px 45px 24px 32px;
-  background-color: $background-select;
-  border-radius: 8px;
-
   h4 {
     @include title-h4;
+
     color: $blue;
     margin: 0 0 24px;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid $button-second;
+    padding: 32px 0 0;
   }
 
   &:not(:last-child) {
@@ -383,11 +380,11 @@
   display: flex;
   justify-content: flex-start;
 
-  p,
-  a {
+  & > p,
+  & > a {
     font-size: 16px;
     line-height: 24px;
-    margin: 0 0 16px;
+    margin: 16px 0 0;
     text-decoration: none;
   }
 
@@ -405,7 +402,7 @@
 }
 
 .tab__contacts-info {
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 
   a {
@@ -419,6 +416,55 @@
 
 .tab__contacts-data {
   width: 61%;
+
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.tab__attention {
+  margin: 24px 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: $white;
+  background-image: url("../img/pattern_filial.png");
+  background-size: cover;
+  padding: 16px;
+
+  p {
+    margin: 0;
+    color: $blue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &::before {
+      margin: 0 8px 0 0;
+      display: block;
+      content: "";
+      min-width: 24px;
+      height: 24px;
+      background-image: url("../img/alert_warning.svg");
+    }
+  }
+
+  &--prepare {
+    display: none;
+  }
+
+  &--unsuccessfully {
+    display: none;
+  }
+
+  &--issued {
+    display: none;
+  }
+
+  &--ready {
+    display: none;
+  }
 }
 
 .tab__contacts-button {
@@ -427,7 +473,7 @@
   justify-content: flex-start;
   align-items: center;
 
-  &:after {
+  &::after {
     display: block;
     content: "";
     width: 16px;
@@ -440,6 +486,7 @@
 
 .tab-item__members {
   @include list;
+
   margin: 32px 0;
   display: flex;
   justify-content: space-between;
@@ -482,6 +529,7 @@
 
 .tab-item__members-list {
   @include list;
+
   margin: 75px 0 0;
 
   li:not(:last-child) {
@@ -490,6 +538,7 @@
 
   a {
     @include title-h4;
+
     color: $blue;
     text-decoration: none;
 
@@ -497,12 +546,12 @@
       color: $hover-text;
     }
   }
-
 }
 
 @media (max-width: $tablet-max-width) {
   .tab__description-first {
     @include text-tablet-big;
+
     margin: 30px 0 0 1px;
     width: 100%;
     max-width: 1214px;
@@ -510,18 +559,21 @@
 
   .tab__description-second {
     @include text-tablet;
+
     margin: 23px 0 0 1px;
     width: 100%;
     max-width: 1214px;
 
     h4 {
       @include title-tablet-h2;
+
       color: $blue;
       margin: 32px 0 16px;
     }
 
     &--prevention {
       @include text;
+
       margin: 40px 0 0;
       line-height: 22px;
       width: 100%;
@@ -537,6 +589,7 @@
 
     h4 {
       @include title-tablet-h2;
+
       color: $blue;
     }
   }
@@ -571,7 +624,8 @@
 
     &--filial {
       padding: 0;
-      margin: 32px 0;
+      margin: 0;
+      background-color: unset;
 
       .tab__contacts-item {
         box-sizing: border-box;
@@ -599,7 +653,6 @@
         width: 100%;
 
         &--leaders {
-
           & > li {
             box-sizing: border-box;
             border: 1px solid $button-second;
@@ -630,8 +683,10 @@
 
         &--contacts {
           @include list;
+
           display: flex;
           justify-content: space-between;
+          flex-direction: column;
 
           & > li {
             box-sizing: border-box;
@@ -652,7 +707,12 @@
 
             h5 {
               @include title-h5;
+
               margin: 0 0 8px;
+            }
+
+            &:not(:first-child) {
+              margin: 16px 0 0;
             }
           }
         }
@@ -682,7 +742,6 @@
 
   .tab__contacts-part,
   .tab__contacts-info {
-
     p,
     a {
       font-size: 14px;
@@ -703,6 +762,10 @@
 
     h4 {
       margin: 0 0 24px;
+    }
+
+    &:not(:first-child) {
+      padding: 32px 0 0;
     }
 
     &--address,
@@ -761,6 +824,7 @@
 
   .tab-item__members-list {
     @include list;
+
     margin: 37px 0 0;
 
     li:not(:last-child) {
@@ -769,10 +833,20 @@
 
     a {
       @include title-h5;
+
       line-height: 16px;
       color: $blue;
     }
+  }
 
+  .tab__attention {
+    background-color: $background-select;
+
+    p {
+      &::before {
+        margin: 0 12px 0 0;
+      }
+    }
   }
 }
 
@@ -788,7 +862,6 @@
   .tab__contacts-list {
     &--filial {
       .tab__contacts-data {
-
         &--leaders {
           display: flex;
           flex-flow: column nowrap;
@@ -821,7 +894,6 @@
     }
   }
 
-
   .tab__document-card {
     display: block;
   }
@@ -841,7 +913,6 @@
 
   .tab__contacts-type {
     width: 100%;
-
   }
 
   .tab__contacts-data {
@@ -876,6 +947,7 @@
 
   .tab-item__members {
     @include list;
+
     margin: 32px 0;
     display: block;
     width: 100%;
@@ -890,6 +962,7 @@
 
   .tab-item__members-list {
     @include list;
+
     margin: 37px 0 0;
 
     li:not(:last-child) {

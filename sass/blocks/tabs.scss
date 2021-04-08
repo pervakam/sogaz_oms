@@ -1,6 +1,10 @@
 .tabs {
   text-align: left;
   width: 285px;
+  height: max-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
 }
 
 .tabs__list {

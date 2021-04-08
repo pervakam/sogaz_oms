@@ -591,9 +591,26 @@
                 <input type="text" name="name" id="number-field" value="" placeholder="XXX XXX XXX" required="">
                 <label for="number-field">Номер временного свидетельства</label>
               </li>
+              <li class="tab-item__search-input tab-item__search-input--policy-birthday">
+                <input type="date" name="name" id="birthday-field" value="" required="">
+                <label for="birthday-field">Дата рождения</label>
+                <label for="birthday-field">__.__.____</label>
+              </li>
             </ul>
             <button class="feedback__check-button button" type="submit">проверить готовность</button>
           </div>
+        </div>
+        <div class="tab__attention tab__attention--prepare">
+          <p>Ваш полис ОМС готовится. Мы пришлём СМС-оповещение о готовности.</p>
+        </div>
+        <div class="tab__attention tab__attention--unsuccessfully">
+          <p>К сожалению, полис не может быть оформлен. Обратитесь в офис, где вы его оформляли.</p>
+        </div>
+        <div class="tab__attention tab__attention--issued">
+          <p>Полис ОМС выдан по адресу 350000, ул. Красноармейская 58, к. 1, д. 10</p>
+        </div>
+        <div class="tab__attention tab__attention--ready">
+          <p>Полис ОМС готов. Заберите полис ОМС по адресу 350000, ул.Красноармейская 58, к.1, д.10</p>
         </div>
       </form>
     </section>

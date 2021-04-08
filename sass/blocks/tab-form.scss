@@ -21,6 +21,7 @@
     .tab-item__search-input {
       &--year {
         width: 30.5%;
+
         select {
           width: 100%;
         }
@@ -361,6 +362,7 @@
 
   &--address-region {
     width: 490px;
+
     select {
       width: 490px;
     }
@@ -368,6 +370,7 @@
 
   &--filial-region {
     width: 97.4%;
+
     select {
       width: 100%;
     }
@@ -403,6 +406,10 @@
 
     input {
       width: 100%;
+
+      &::placeholder {
+        color: $light-gray;
+      }
     }
 
     &::after {
@@ -415,6 +422,65 @@
       line-height: 14px;
       letter-spacing: 0.02em;
       color: $light-gray;
+    }
+  }
+
+  &--policy-birthday {
+    margin: 0 0 24px;
+    width: 100%;
+
+    input {
+      padding: 16px 16px 4px 16px;
+      width: 100%;
+    }
+
+    input:not(:focus)::-webkit-datetime-edit-text,
+    input:not(:focus)::-webkit-datetime-edit-month-field,
+    input:not(:focus)::-webkit-datetime-edit-day-field,
+    input:not(:focus)::-webkit-datetime-edit-year-field {
+      opacity: 0;
+    }
+
+    input:not(:focus):valid::-webkit-datetime-edit-text,
+    input:not(:focus):valid::-webkit-datetime-edit-month-field,
+    input:not(:focus):valid::-webkit-datetime-edit-day-field,
+    input:not(:focus):valid::-webkit-datetime-edit-year-field {
+      opacity: 1;
+    }
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-calendar-picker-indicator {
+      display: block;
+      opacity: 0;
+    }
+
+    &::after {
+      right: 16px;
+      top: 16px;
+      background-color: $white;
+      background-image: url("../img/calendar-black.svg");
+      pointer-events: none;
+    }
+
+    input ~ label:first-of-type {
+      top: 8px;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      color: $light-gray;
+    }
+
+    input ~ label:last-of-type {
+      top: unset;
+      bottom: 10px;
+      font-size: 14px;
+      line-height: 140%;
+      color: $light-gray;
+    }
+
+    input:focus ~ label:last-of-type,
+    input:not(:focus):valid ~ label:last-of-type {
+      display: none;
     }
   }
 
@@ -448,8 +514,8 @@
     }
   }
 
-  input:focus ~ label,
-  input:not(:focus):valid ~ label {
+  input:focus ~ label:last-of-type,
+  input:not(:focus):valid ~ label:last-of-type {
     top: 8px;
     font-size: 12px;
     line-height: 14px;
@@ -536,6 +602,7 @@
       .tab-item__search-input {
         &--year {
           width: 47.5%;
+
           select {
             width: 100%;
           }
@@ -645,6 +712,12 @@
     }
 
     &--policy-number {
+      width: 48%;
+      margin: 0 0 32px;
+    }
+
+    &--policy-birthday {
+      width: 48%;
       margin: 0 0 32px;
     }
 
@@ -799,7 +872,6 @@
     cursor: pointer;
     outline: none;
 
-
     &:hover {
       background-image: url("../img/menu-hover-close-icon.svg");
       outline: none;
@@ -810,11 +882,6 @@
     width: 100%;
 
     input {
-      & + label {
-        font-size: 14px;
-        line-height: 20px;
-        color: $black-text;
-      }
 
       &:focus,
       &:hover {
