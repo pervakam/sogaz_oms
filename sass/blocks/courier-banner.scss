@@ -26,12 +26,11 @@
 
   h2 {
     @include title-h2;
+
     margin: 0 0 24px;
   }
 
   p {
-    font-size: 16px;
-    line-height: 24px;
     color: black;
     margin: 0;
 
@@ -48,6 +47,7 @@
 
     h2 {
       @include title-tablet-h1;
+
       margin: 0 0 30px;
     }
 
@@ -80,9 +80,6 @@
     }
 
     p {
-      font-size: 14px;
-      line-height: 22px;
-
       &:first-of-type {
         margin: 0 0 22px;
       }

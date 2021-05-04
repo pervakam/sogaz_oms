@@ -1,0 +1,39 @@
+.title {
+    font-family: $Stratos;
+    color: $blue;
+    font-weight: 400;
+    margin: 0;
+
+    &--h1 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    &--h2 {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    &--h3 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    &--color {
+        &-white {
+            color: $white;
+        }
+    }
+
+    @media (min-width: $desktop-min-width) {
+        &--h1 {
+            font-size: 48px;
+            line-height: 58px;
+        }
+
+        &--h2 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}

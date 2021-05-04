@@ -2,6 +2,93 @@
   width: 100%;
   margin: 0 auto;
   flex: 0 0 auto;
+  font-size: 0.875em;
+  line-height: 140%;
+
+  &--vision {
+    .page-footer__help-wrapper {
+      padding: 12px 0;
+    }
+
+    .page-footer__help-list {
+      padding: 0;
+      width: unset;
+      justify-content: flex-start;
+    }
+
+    .page-footer__help-item {
+      background-color: $white;
+      border-radius: 8px;
+      box-sizing: border-box;
+      padding: 16px 28px;
+
+      a {
+        color: $blue;
+        font-size: 1.14em;
+      }
+
+      &:nth-child(1) {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        margin: 0 24px 0 0;
+        width: unset;
+      }
+    }
+
+    .page-footer__help-item-icon {
+      display: none;
+    }
+
+    .page-footer__help-form {
+      position: relative;
+      width: 40%;
+
+      & input {
+        width: 100%;
+        height: unset;
+      }
+    }
+
+    .page-footer__section {
+      font-size: 1.14em;
+
+      &:nth-child(1) {
+        width: 32%;
+        margin-right: 24px;
+        order: 1;
+      }
+
+      &:nth-child(2) {
+        width: 32%;
+        margin-right: 24px;
+        order: 2;
+      }
+
+      &:nth-child(3) {
+        width: 32%;
+        order: 3;
+      }
+
+      &:nth-child(4) {
+        width: 32%;
+        margin-right: 24px;
+        order: 4;
+      }
+    }
+
+    .page-footer__nav-item--mark,
+    .page-footer__nav-item--info {
+      display: none;
+    }
+
+    .page-footer__nav-item-pdf {
+      & a::before {
+        display: none;
+      }
+    }
+  }
 }
 
 .page-footer__help {
@@ -101,6 +188,7 @@
     border: none;
     box-sizing: border-box;
     padding: 26px 0 10px 16px;
+    background-color: $white;
   }
 
   & input:hover,
@@ -122,8 +210,8 @@
   & input:focus ~ label,
   & input:not(:focus):valid ~ label {
     top: 8px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
   }
 }
@@ -292,10 +380,8 @@
 }
 
 .page-footer__section-title {
-  font-family: $Stratos;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
+  @include title-h4;
+  line-height: 150%;
   color: $blue;
   margin: 32px 0 0;
   display: block;
@@ -351,11 +437,7 @@
 
 .page-footer__section-contacts {
   a {
-    font-family: $Stratos;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 38px;
-    color: $blue;
+    @include title-h2;
     text-decoration: none;
     display: block;
     margin: 6px 0 0;
@@ -373,6 +455,10 @@
   justify-content: space-between;
   margin: 0 auto;
   text-align: left;
+
+  svg {
+    fill: $blue;
+  }
 }
 
 .page-footer__security-logo {
@@ -406,13 +492,62 @@
   p {
     margin: 0;
     color: $blue;
-    font-size: 9px;
-    line-height: 13px;
+    font-size: 0.56em;
+    line-height: 145%;
     letter-spacing: 0.03em;
   }
 }
 
 @media (max-width: $tablet-max-width) {
+  .page-footer {
+    &--vision {
+      .page-footer__help-wrapper {
+        padding: 12px 24px;
+      }
+
+      .page-footer__help-list {
+        flex-direction: column;
+      }
+
+      .page-footer__help-item {
+        &:nth-child(2) {
+          margin: 0 0 24px;
+        }
+      }
+
+      .page-footer__help-form {
+        width: 100%;
+      }
+
+      .page-footer__section {
+        font-size: 1.14em;
+
+        &:nth-child(1) {
+          width: 100%;
+          margin-right: 0;
+          order: 1;
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+          margin-right: 0;
+          order: 2;
+        }
+
+        &:nth-child(3) {
+          width: 100%;
+          order: 4;
+        }
+
+        &:nth-child(4) {
+          width: 100%;
+          margin-right: 0;
+          order: 3;
+        }
+      }
+    }
+  }
+
   .page-footer__help-wrapper {
     max-width: $tablet-max-width;
     box-sizing: border-box;
@@ -436,8 +571,8 @@
     text-align: left;
 
     p {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
       width: unset;
     }
 
@@ -537,8 +672,8 @@
     margin: 16px 0 0;
 
     a {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
     }
 
     a:hover {
@@ -573,14 +708,12 @@
       width: 530px;
       font-family: $Stratos;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 21px;
     }
   }
 
   .page-footer__section-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.28em;
+    line-height: 120%;
     margin: 20px 0 0;
     padding: 26px 0 0;
     border-top: 1px solid $button-second;
@@ -664,8 +797,8 @@
     a {
       font-family: $Stratos;
       font-weight: normal;
-      font-size: 32px;
-      line-height: 38px;
+      font-size: 2.28em;
+      line-height: 120%;
       color: $blue;
       text-decoration: none;
       display: block;
@@ -714,8 +847,8 @@
     p {
       margin: 0;
       color: $blue;
-      font-size: 9px;
-      line-height: 13px;
+      font-size: 0.64em;
+      line-height: 145%;
       letter-spacing: 0.03em;
     }
   }
@@ -745,8 +878,8 @@
     text-align: left;
 
     p {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
       width: unset;
     }
 
@@ -849,8 +982,8 @@
     margin: 16px 0 0;
 
     a {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
     }
 
     a:hover {
@@ -887,15 +1020,13 @@
       max-width: 574px;
       font-family: $Stratos;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 21px;
       padding-right: 10px;
     }
   }
 
   .page-footer__section-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.28em;
+    line-height: 120%;
     margin: 20px 0 0;
     padding: 26px 0 0;
     border-top: 1px solid $button-second;
@@ -979,8 +1110,8 @@
     a {
       font-family: $Stratos;
       font-weight: normal;
-      font-size: 32px;
-      line-height: 38px;
+      font-size: 2.28em;
+      line-height: 120%;
       color: $blue;
       text-decoration: none;
       display: block;
@@ -1029,8 +1160,8 @@
     p {
       margin: 0;
       color: $blue;
-      font-size: 9px;
-      line-height: 13px;
+      font-size: 0.64em;
+      line-height: 145%;
       letter-spacing: 0.03em;
     }
   }

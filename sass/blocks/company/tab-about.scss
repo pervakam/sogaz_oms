@@ -1,400 +1,406 @@
 .tab__about {
-  width: 874px;
+	width: 874px;
 }
 
 .tab__hidden {
-  display: none;
+	display: none;
 }
 
 .tab__about-description,
 .tab__about-map {
-  text-align: left;
+	text-align: left;
 
-  h1 {
-    @include title-h1;
-  }
+	h1 {
+		@include title-h1;
+	}
 }
 
 .tab__about-description-first {
-  @include text-big;
-  margin: 37px 0 0 7px;
-  width: 688px;
+	@include text-big;
+
+	margin: 37px 0 0 7px;
+	width: 688px;
 }
 
 .tab__about-description-second {
-  @include text;
-  margin: 29px 0 0;
-  width: 688px;
+	@include text;
+
+	margin: 29px 0 0;
+	width: 688px;
 }
 
 .tab__advantages-list {
-  @include list;
-  margin: 68px 0 0;
-  display: flex;
-  justify-content: flex-start;
+	@include list;
+
+	margin: 68px 0 0;
+	display: flex;
+	justify-content: flex-start;
 }
 
 .tab__advantages-item {
-  width: 187px;
-  margin: 0 19px 0 0;
+	width: 187px;
+	margin: 0 19px 0 0;
 
-  p {
-    @include text-blue;
-    margin: 6px 0 0;
-  }
+	p {
+		@include text-blue;
+
+		margin: 6px 0 0;
+	}
 }
 
 .tab__about-map {
-  margin: 32px 0 0;
+	margin: 32px 0 0;
 }
 
 .tab__region-list {
-  @include list;
-  margin: 91px 0 0;
+	@include list;
+
+	margin: 91px 0 0;
 }
 
 .tab__region-item {
-  font-family: $Stratos;
-  font-size: 24px;
-  line-height: 29px;
-  margin: 0 0 10px;
-  position: relative;
-  z-index: 10;
+	@include title-h3;
+	margin: 0 0 10px;
+	position: relative;
+	z-index: 10;
 
-  &:hover {
-    color: $blue;
-  }
+	&:hover {
+		color: $blue;
+	}
 
-  &--hover {
-    color: $blue;
-  }
+	&--hover {
+		color: $blue;
+	}
 
-  &--central {
-    width: 190px;
-  }
+	&--central {
+		width: 190px;
+	}
 
-  &--northwestern {
-    width: 250px;
-  }
+	&--northwestern {
+		width: 250px;
+	}
 
-  &--volga {
-    width: 195px;
-  }
+	&--volga {
+		width: 195px;
+	}
 
-  &--ural {
-    width: 170px;
-  }
+	&--ural {
+		width: 170px;
+	}
 
-  &--north-caucasian {
-    width: 261px;
-  }
+	&--north-caucasian {
+		width: 261px;
+	}
 
-  &--siberian {
-    width: 170px;
-  }
+	&--siberian {
+		width: 170px;
+	}
 
-  &--southern {
-    width: 120px;
-  }
+	&--southern {
+		width: 120px;
+	}
 
-  &--far-eastern {
-    width: 242px;
-  }
+	&--far-eastern {
+		width: 242px;
+	}
 }
 
 .tab__map {
-  width: 874px;
-  height: 608px;
-  margin: -393px 0 0;
-  position: relative;
+	width: 874px;
+	height: 608px;
+	margin: -393px 0 0;
+	position: relative;
 }
 
 .tab__region {
-  svg {
-    position: absolute;
-  }
+	svg {
+		position: absolute;
+	}
 
-  svg g {
-    cursor: pointer;
-  }
+	svg g {
+		cursor: pointer;
+	}
 
-  .tab__region-img {
-    g:hover {
-      opacity: 0;
-    }
-  }
+	.tab__region-img {
+		g:hover {
+			opacity: 0;
+		}
+	}
 
-  &--hover {
-    .tab__region-img {
-      g {
-        opacity: 0;
-      }
-    }
-  }
+	&--hover {
+		.tab__region-img {
+			g {
+				opacity: 0;
+			}
+		}
+	}
 
-  &--central {
-    z-index: 10;
+	&--central {
+		z-index: 10;
 
-    svg {
-      width: 134px;
-      height: 124px;
-      bottom: 95px;
-      left: 62px;
-    }
-  }
+		svg {
+			width: 134px;
+			height: 124px;
+			bottom: 95px;
+			left: 62px;
+		}
+	}
 
-  &--northwestern {
-    z-index: -1;
+	&--northwestern {
+		z-index: -1;
 
-    svg {
-      width: 336px;
-      height: 245px;
-      top: 184px;
-      left: 15px;
-    }
-  }
+		svg {
+			width: 336px;
+			height: 245px;
+			top: 184px;
+			left: 15px;
+		}
+	}
 
-  &--volga {
-    svg {
-      width: 142px;
-      height: 157px;
-      bottom: 50px;
-      left: 123px;
-    }
-  }
+	&--volga {
+		svg {
+			width: 142px;
+			height: 157px;
+			bottom: 50px;
+			left: 123px;
+		}
+	}
 
-  &--ural {
-    svg {
-      width: 181px;
-      height: 244px;
-      bottom: 71px;
-      left: 229px;
-    }
-  }
+	&--ural {
+		svg {
+			width: 181px;
+			height: 244px;
+			bottom: 71px;
+			left: 229px;
+		}
+	}
 
-  &--north-caucasian {
-    svg {
-      width: 82px;
-      height: 99px;
-      bottom: -25px;
-      left: 71px;
-    }
-  }
+	&--north-caucasian {
+		svg {
+			width: 82px;
+			height: 99px;
+			bottom: -25px;
+			left: 71px;
+		}
+	}
 
-  &--siberian {
-    svg {
-      width: 291px;
-      height: 375px;
-      bottom: 35px;
-      right: 268px;
-    }
-  }
+	&--siberian {
+		svg {
+			width: 291px;
+			height: 375px;
+			bottom: 35px;
+			right: 268px;
+		}
+	}
 
-  &--southern {
-    svg {
-      width: 132px;
-      height: 85px;
-      bottom: 27px;
-      left: 22px;
-    }
-  }
+	&--southern {
+		svg {
+			width: 132px;
+			height: 85px;
+			bottom: 27px;
+			left: 22px;
+		}
+	}
 
-  &--far-eastern {
-    svg {
-      width: 399px;
-      height: 497px;
-      bottom: 83px;
-      right: 9px;
-    }
-  }
+	&--far-eastern {
+		svg {
+			width: 399px;
+			height: 497px;
+			bottom: 83px;
+			right: 9px;
+		}
+	}
 }
 
 @media (max-width: $tablet-max-width) {
-  .tab__about {
-    width: 100%;
-    max-width: $tablet-max-width;
-    padding: 0 31px;
-    margin: 40px 0 0;
-    box-sizing: border-box;
-  }
+	.tab__about {
+		width: 100%;
+		max-width: $tablet-max-width;
+		padding: 0 31px;
+		margin: 40px 0 0;
+		box-sizing: border-box;
+	}
 
-  .tab__about-description,
-  .tab__about-map {
-    text-align: left;
+	.tab__about-description,
+	.tab__about-map {
+		text-align: left;
 
-    h1 {
-      @include title-tablet-h1;
-    }
-  }
+		h1 {
+			@include title-tablet-h1;
+		}
+	}
 
-  .tab__about-description-first {
-    @include text-tablet-big;
-    margin: 30px 0 0 1px;
-    width: 100%;
-    max-width: 1214px;
-  }
+	.tab__about-description-first {
+		@include text-tablet-big;
 
-  .tab__about-description-second {
-    @include text-tablet;
-    margin: 23px 0 0 1px;
-    width: 100%;
-    max-width: 1214px;
-  }
+		margin: 30px 0 0 1px;
+		width: 100%;
+		max-width: 1214px;
+	}
 
-  .tab__advantages-list {
-    @include list;
-    margin: 46px 0 0 1px;
-    display: flex;
-    justify-content: flex-start;
+	.tab__about-description-second {
+		@include text-tablet;
 
-    &--bottom {
-      margin: 34px 0 0 1px;
-    }
-  }
+		margin: 23px 0 0 1px;
+		width: 100%;
+		max-width: 1214px;
+	}
 
-  .tab__advantages-item {
-    width: 114px;
-    margin: 0 15px 0 0;
+	.tab__advantages-list {
+		@include list;
 
-    h1 {
-      @include title-h2;
-    }
+		margin: 46px 0 0 1px;
+		display: flex;
+		justify-content: flex-start;
 
-    p {
-      @include text-tablet-blue;
-      margin: 5px 0 0;
-    }
-  }
+		&--bottom {
+			margin: 34px 0 0 1px;
+		}
+	}
 
-  .tab__about-map {
-    margin: 32px 0 0;
-  }
+	.tab__advantages-item {
+		width: 114px;
+		margin: 0 15px 0 0;
 
-  .tab__region-list {
-    margin: 32px 0 0;
-  }
+		h1 {
+			@include title-h2;
+		}
 
-  .tab__region-item {
-    font-size: 18px;
-    line-height: 22px;
-    margin: 0 0 10px;
+		p {
+			@include text-tablet-blue;
 
-    &:hover {
-      color: unset;
-    }
+			margin: 5px 0 0;
+		}
+	}
 
-    &--central {
-      width: unset;
-    }
+	.tab__about-map {
+		margin: 32px 0 0;
+	}
 
-    &--northwestern {
-      width: unset;
-    }
+	.tab__region-list {
+		margin: 32px 0 0;
+	}
 
-    &--volga {
-      width: unset;
-    }
+	.tab__region-item {
+		font-size: 1.28em;
+		line-height: 120%;
+		margin: 0 0 10px;
 
-    &--ural {
-      width: unset;
-    }
+		&:hover {
+			color: unset;
+		}
 
-    &--north-caucasian {
-      width: unset;
-    }
+		&--central {
+			width: unset;
+		}
 
-    &--siberian {
-      width: unset;
-    }
+		&--northwestern {
+			width: unset;
+		}
 
-    &--southern {
-      width: unset;
-    }
+		&--volga {
+			width: unset;
+		}
 
-    &--far-eastern {
-      width: unset;
-    }
-  }
+		&--ural {
+			width: unset;
+		}
 
-  .tab__map {
-    width: 100%;
-    max-width: 1214px;
-    height: 400px;
-    text-align: right;
-    margin: -147px 0 0;
+		&--north-caucasian {
+			width: unset;
+		}
 
-    background-image: url("../img/map_tablet@1x.png");
-    background-repeat: no-repeat;
-    background-size: 576px 400px;
-    background-position: right;
+		&--siberian {
+			width: unset;
+		}
 
-    @media (min-resolution: $retina-dppx) {
-      background-image: url("../img/map_tablet@2x.png");
-    }
-  }
+		&--southern {
+			width: unset;
+		}
 
-  .tab__region {
-    display: none;
-  }
+		&--far-eastern {
+			width: unset;
+		}
+	}
+
+	.tab__map {
+		width: 100%;
+		max-width: 1214px;
+		height: 400px;
+		text-align: right;
+		margin: -147px 0 0;
+
+		background-image: url("../img/map_tablet@1x.png");
+		background-repeat: no-repeat;
+		background-size: 576px 400px;
+		background-position: right;
+
+		@media (min-resolution: $retina-dppx) {
+			background-image: url("../img/map_tablet@2x.png");
+		}
+	}
+
+	.tab__region {
+		display: none;
+	}
 }
 
 @media (max-width: $mobile-max-width) {
-  .tab__about {
-    max-width: $mobile-max-width;
-    padding: 0;
-    margin: 24px 0 0;
-  }
+	.tab__about {
+		max-width: $mobile-max-width;
+		padding: 0;
+		margin: 24px 0 0;
+	}
 
-  .tab__about-description {
-    padding: 0 24px;
-  }
+	.tab__about-description {
+		padding: 0 24px;
+	}
 
-  .tab__about-description-first {
-    max-width: 590px;
-  }
+	.tab__about-description-first {
+		max-width: 590px;
+	}
 
-  .tab__about-description-second {
-    max-width: 590px;
-  }
+	.tab__about-description-second {
+		max-width: 590px;
+	}
 
-  .tab__advantages-list {
-    margin: 40px 0 0 1px;
-    flex-wrap: wrap;
+	.tab__advantages-list {
+		margin: 40px 0 0 1px;
+		flex-wrap: wrap;
 
-    &--bottom {
-      margin: 34px 0 0 1px;
-      padding: 0 24px;
-    }
-  }
+		&--bottom {
+			margin: 34px 0 0 1px;
+			padding: 0 24px;
+		}
+	}
 
-  .tab__advantages-item {
-    width: 114px;
-    margin: 0 21px 17px 0;
-  }
+	.tab__advantages-item {
+		width: 114px;
+		margin: 0 21px 17px 0;
+	}
 
-  .tab__about-map {
-    margin: 23px 0 0;
-  }
+	.tab__about-map {
+		margin: 23px 0 0;
+	}
 
-  .tab__region-list {
-    margin: 0;
-    padding: 0 24px;
-  }
+	.tab__region-list {
+		margin: 0;
+		padding: 0 24px;
+	}
 
-  .tab__map {
-    max-width: 590px;
-    height: 222px;
-    margin: -62px 0 0;
+	.tab__map {
+		max-width: 590px;
+		height: 222px;
+		margin: -62px 0 0;
+		background-image: url("../img/map_mobile@1x.png");
+		background-size: 320px 222px;
 
-    background-image: url("../img/map_mobile@1x.png");
-    background-size: 320px 222px;
+		@media (min-resolution: $retina-dppx) {
+			background-image: url("../img/map_mobile@2x.png");
+		}
+	}
 
-    @media (min-resolution: $retina-dppx) {
-      background-image: url("../img/map_mobile@2x.png");
-    }
-  }
-
-  .tab__region {
-    display: none;
-  }
+	.tab__region {
+		display: none;
+	}
 }

@@ -1,8 +1,6 @@
 .tab__info {
   width: 903px;
   text-align: left;
-  font-size: 16px;
-  line-height: 150%;
 
   h1 {
     @include title-h1;
@@ -36,8 +34,7 @@
     margin: 0 0 30px;
 
     .tab__info-item-title {
-      font-size: 16px;
-      line-height: 19px;
+      line-height: 120%;
 
       span {
         width: fit-content;
@@ -59,8 +56,8 @@
     }
 
     .tab__info-description {
-      font-size: 12px;
-      line-height: 14px;
+      font-size: 0.75em;
+      line-height: 120%;
       letter-spacing: 0.02em;
       width: 264px;
       margin: 0 0 0 48px;
@@ -75,8 +72,8 @@
     }
 
     .tab-item__point-service {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875em;
+      line-height: 140%;
       width: 263px;
       margin: 0 0 16px;
       display: flex;
@@ -151,8 +148,8 @@
     .tab-item__point-contacts {
       @include list;
 
-      font-size: 12px;
-      line-height: 14px;
+      font-size: 0.75em;
+      line-height: 120%;
       letter-spacing: 0.02em;
 
       a {
@@ -243,8 +240,8 @@
 .tab__info-item-title {
   font-family: $Stratos;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.25em;
+  line-height: 150%;
   color: $blue;
   cursor: pointer;
   display: flex;
@@ -286,8 +283,6 @@
   &--policy {
     width: 838px;
     margin: 0 0 0 auto;
-    font-size: 16px;
-    line-height: 24px;
 
     a {
       text-decoration: none;
@@ -312,8 +307,8 @@
   }
 
   &--shedule {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
     width: 264px;
     margin: 0 0 0 auto;
@@ -322,8 +317,6 @@
   &--rights {
     width: 77%;
     margin: 0 0 0 64px;
-    font-size: 16px;
-    line-height: 150%;
 
     a {
       text-decoration: none;
@@ -560,8 +553,8 @@
   }
 
   p {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
     margin: 0;
     color: $black-text;
@@ -572,11 +565,6 @@
   display: flex;
   justify-content: flex-start;
   margin: 8px 0 0;
-
-  p {
-    font-size: 16px;
-    line-height: 24px;
-  }
 }
 
 .tab__info-requisites-item-name {
@@ -670,8 +658,8 @@
   }
 
   p {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
     color: $black-text;
     margin: 0;
@@ -768,8 +756,8 @@
 
   .tab__info-item-title {
     font-family: "Arial", "Helvetica", sans-serif;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1.14em;
+    line-height: 120%;
     padding: 16px 0;
     position: relative;
 
@@ -807,8 +795,6 @@
     &--policy {
       width: 92%;
       margin: 0 0 0 49px;
-      font-size: 14px;
-      line-height: 160%;
     }
   }
 
@@ -858,8 +844,8 @@
 
   .tab__info-description-item-title {
     font-family: "Arial", "Helvetica", sans-serif;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.857em;
+    line-height: 130%;
     color: $blue;
 
     &::before {
@@ -939,13 +925,12 @@
     margin: 8px 0 0;
 
     p:first-of-type {
-      font-size: 12px;
-      line-height: 19px;
+      font-size: 0.857em;
+      line-height: 160%;
     }
 
     p:nth-of-type(2) {
-      font-size: 14px;
-      line-height: 17px;
+      line-height: 120%;
     }
   }
 
@@ -965,11 +950,6 @@
 
     color: $blue;
     margin: 20px 0;
-  }
-
-  .tab__description-list {
-    font-size: 14px;
-    line-height: 160%;
   }
 }
 
@@ -992,8 +972,8 @@
       }
 
       .tab-item__point-service {
-        font-size: 12px;
-        line-height: 19px;
+        font-size: 0.857em;
+        line-height: 160%;
         width: 220px;
         margin: 0 0 8px;
       }
@@ -1001,8 +981,8 @@
       .tab-item__point-contacts {
         @include list;
 
-        font-size: 12px;
-        line-height: 14px;
+        font-size: 0.857em;
+        line-height: 120%;
         letter-spacing: 0.02em;
 
         a {

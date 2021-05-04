@@ -1,0 +1,16 @@
+.img-off {
+  img,
+  picture {
+    display: none;
+  }
+
+  div {
+    background-image: none !important;
+  }
+
+  .tab-item__list-slide-photos-item {
+    &--more {
+      display: none;
+    }
+  }
+}

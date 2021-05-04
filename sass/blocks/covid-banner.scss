@@ -72,7 +72,6 @@
   outline: none;
   width: 24px;
   height: 24px;
-
   background-image: url("../img/close-icon.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -133,7 +132,6 @@
       right: 0;
     }
   }
-
 }
 
 @media (max-width: $mobile-max-width) {
@@ -148,13 +146,13 @@
 
   .covid-banner__info {
     h4 {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
     }
 
     p {
-      font-size: 12px;
-      line-height: 19px;
+      font-size: 0.857em;
+      line-height: 160%;
       margin: 8px 0 0;
     }
   }

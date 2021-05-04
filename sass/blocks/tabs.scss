@@ -9,6 +9,7 @@
 
 .tabs__list {
   @include list;
+
   border: 1px solid $button-second;
   padding-bottom: 20px;
 }
@@ -19,6 +20,8 @@
   width: 285px;
   cursor: pointer;
   color: $blue;
+  font-size: 0.875em;
+  line-height: 140%;
 
   &:not(:first-child) {
     padding: 8px 40px;
@@ -36,8 +39,6 @@
 
   &:first-child {
     font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 23px 40px;
@@ -90,8 +91,8 @@
   }
 
   p {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875em;
+    line-height: 157%;
     margin: 16px 0 0;
   }
 
@@ -102,34 +103,32 @@
 }
 
 .tabs__contacts-tel {
+  @include title-h4;
   display: block;
-  font-family: $Stratos;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
   margin: 16px 0 0;
 }
 
 .tabs__contacts-mail {
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 0.785em;
 }
 
 @media (max-width: $tablet-max-width) {
   .tabs {
     text-align: center;
     width: unset;
+    position: relative;
   }
 
   .tabs__list {
     @include list;
-    border: none;
 
-    padding: 0 0 0 32px;
+    border: none;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    width: 100%;
+    width: auto;
+    margin: 0 -5%;
+    padding: 0 5%;
     max-width: $tablet-max-width;
     overflow: auto;
     scrollbar-width: none;
@@ -146,8 +145,8 @@
     &:not(:first-child) {
       padding: 3px 7px;
       margin: 0 8px 0 0;
-      font-size: 12px;
-      line-height: 19px;
+      font-size: 0.857em;
+      line-height: 160%;
       border: 1px solid $button-second;
       box-sizing: border-box;
       border-radius: 4px;
@@ -179,8 +178,8 @@
 
     &:first-child {
       font-weight: normal;
-      font-size: 12px;
-      line-height: 19px;
+      font-size: 0.857em;
+      line-height: 160%;
       letter-spacing: unset;
       text-transform: none;
       padding: 3px 7px;
@@ -253,6 +252,7 @@
 
 @media (max-width: $mobile-max-width) {
   .tabs__list {
-    padding: 0 0 0 24px;
+    margin: 0 -9%;
+    padding: 0 9%;
   }
 }

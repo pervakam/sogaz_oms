@@ -1,0 +1,135 @@
+.test {
+    &__progress {
+        color: $light-gray;
+        margin: 0 0 16px;
+    }
+
+    &__form {
+        margin: 40px 0 0;
+    }
+
+    &__question-list {
+        @include list;
+    }
+
+    &__question__item {
+        margin: 0 0 16px;
+
+        input {
+            display: none;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &::before {
+                display: block;
+                content: "";
+                width: 32px;
+                height: 32px;
+                border-radius: 32px;
+                border: 1px solid $button-second;
+                margin: 0 16px 0 0;
+            }
+
+            &:hover {
+                &::before {
+                    border: 1px solid $hover-text;
+                }
+            }
+        }
+
+        input:checked + label::before {
+            border: 1px solid $blue;
+            background-image: url("../img/form-check.svg");
+            background-position: center;
+        }
+    }
+
+    &__back-button {
+        position: absolute;
+        top: 0;
+        left: -206px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $blue;
+        font-size: 0.875em;
+        font-weight: 700;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &::before {
+            display: block;
+            content: "";
+            width: 16px;
+            height: 16px;
+            background-image: url("../img/right-big.svg");
+            transform: rotate(180deg);
+            margin: 0 8px 0 0;
+            background-position: center;
+        }
+
+        &:hover {
+            color: $hover-text;
+
+            &::before {
+                background-image: url("../img/right-big-hover.svg");
+            }
+        }
+    }
+
+    &__button {
+        margin: 40px 0 0;
+        padding: 20px 80px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &::after {
+            display: block;
+            content: "";
+            width: 16px;
+            height: 16px;
+            background-image: url("../img/right-big-white.svg");
+            margin: 0 0 0 8px;
+            background-position: center;
+        }
+
+        &--hide {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $tablet-max-width) {
+    .test {
+        &__back-button {
+            position: relative;
+            left: 0;
+            font-size: 1em;
+            margin-bottom: 28px;
+
+            &::before {
+                display: block;
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-image: url("../img/right-big.svg");
+                transform: rotate(180deg);
+                margin: 0 8px 0 0;
+                background-position: center;
+            }
+
+            &:hover {
+                color: $hover-text;
+
+                &::before {
+                    background-image: url("../img/right-big-hover.svg");
+                }
+            }
+        }
+    }
+}

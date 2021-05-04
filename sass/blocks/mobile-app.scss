@@ -5,7 +5,6 @@
   box-sizing: border-box;
   padding: 24px 0 0;
   position: relative;
-
   background-image: url("../img/app_background-desktop@1x.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,18 +29,14 @@
   padding: 0 0 0 60px;
 
   h2 {
-    font-family: $Stratos;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 38px;
+    @include title-h2;
+    color: $white;
     width: 610px;
     margin: 0 0 36px 0;
   }
 }
 
 .mobile-app__description-list {
-  font-size: 16px;
-  line-height: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -119,7 +114,6 @@
   .mobile-app {
     max-width: $tablet-max-width;
     padding: 34px 0 0;
-
     background-image: url("../img/app_background-tablet@1x.png");
 
     @media (min-resolution: $retina-dppx) {
@@ -140,8 +134,8 @@
     padding: 0 0 0 16px;
 
     h2 {
-      font-size: 24px;
-      line-height: 24px;
+      font-size: 1.71em;
+      line-height: 100%;
       width: 450px;
       margin: 0 0 28px 0;
     }
@@ -158,8 +152,8 @@
     margin: 0 0 17px;
 
     p {
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 1.143em;
+      line-height: 138%;
       width: 309px;
       margin: 0;
     }
@@ -202,7 +196,6 @@
   .mobile-app {
     max-width: $mobile-max-width;
     padding: 40px 0 0;
-
     background-image: url("../img/app_background-mobile@1x.png");
 
     @media (min-resolution: $retina-dppx) {

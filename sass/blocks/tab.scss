@@ -180,8 +180,8 @@
   }
 
   p {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 117%;
     letter-spacing: 0.02em;
     margin: 0;
   }
@@ -201,6 +201,7 @@
 }
 
 .tab__document-card-preview {
+  min-width: 230px;
   padding: 26px;
   background-image: url("../img/pattern.svg");
 
@@ -237,8 +238,6 @@
 
     .tab__contacts-type {
       font-family: $Stratos;
-      font-size: 16px;
-      line-height: 146%;
       color: $light-gray;
       min-width: 26%;
       max-width: 26%;
@@ -246,7 +245,7 @@
     }
 
     .tab__contacts-data {
-      font-size: 14px;
+      font-size: 0.875em;
       line-height: 140%;
       width: 100%;
       margin: 0;
@@ -297,7 +296,7 @@
             text-decoration: none;
             color: $black-text;
             display: block;
-            font-size: 14px;
+            font-size: 0.875em;
             line-height: 140%;
 
             &:hover {
@@ -319,7 +318,7 @@
         }
 
         p {
-          font-size: 14px;
+          font-size: 0.875em;
           line-height: 140%;
 
           &:not(:last-of-type) {
@@ -358,7 +357,7 @@
     .tab__contacts-part {
       p {
         &:first-of-type {
-          width: 266px;
+          min-width: 266px;
         }
       }
     }
@@ -382,8 +381,7 @@
 
   & > p,
   & > a {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1em;
     margin: 16px 0 0;
     text-decoration: none;
   }
@@ -584,8 +582,6 @@
   .tab__description-wrapper {
     padding: 32px 40px 24px 32px;
     margin: 16px 0;
-    font-size: 14px;
-    line-height: 160%;
 
     h4 {
       @include title-tablet-h2;
@@ -644,7 +640,7 @@
       }
 
       .tab__contacts-type {
-        font-size: 18px;
+        font-size: 1.28em;
         line-height: 120%;
         width: 100%;
       }
@@ -675,8 +671,7 @@
             }
 
             p {
-              font-size: 14px;
-              line-height: 120%;
+               line-height: 120%;
             }
           }
         }
@@ -697,7 +692,6 @@
               text-decoration: none;
               color: $black-text;
               display: block;
-              font-size: 14px;
               line-height: 140%;
 
               &:hover {
@@ -723,7 +717,6 @@
           }
 
           p {
-            font-size: 14px;
             line-height: 140%;
 
             &:not(:last-of-type) {
@@ -737,15 +730,6 @@
       .tab-item__point-dayoff {
         color: $coral;
       }
-    }
-  }
-
-  .tab__contacts-part,
-  .tab__contacts-info {
-    p,
-    a {
-      font-size: 14px;
-      line-height: 22px;
     }
   }
 
@@ -792,12 +776,6 @@
   }
 
   .tab__contacts-part {
-    p,
-    a {
-      font-size: 14px;
-      line-height: 22px;
-    }
-
     a {
       &:hover {
         color: $hover-text;

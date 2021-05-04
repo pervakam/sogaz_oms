@@ -89,14 +89,13 @@
 
     .tab-item__point-today {
       display: block;
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875em;
+      line-height: 140%;
       margin: 0;
 
       span {
         color: $blue;
       }
-
     }
 
     .tab-item__point-day,
@@ -112,8 +111,8 @@
         margin: 0 0 16px;
 
         .tab__info-description {
-          font-size: 14px;
-          line-height: 20px;
+          font-size: 0.875em;
+          line-height: 140%;
           letter-spacing: unset;
           width: 100%;
           margin: 0;
@@ -203,8 +202,8 @@
         margin: 0 0 16px;
 
         .tab__info-description {
-          font-size: 14px;
-          line-height: 20px;
+          font-size: 0.875em;
+          line-height: 140%;
           letter-spacing: unset;
           width: 100%;
           margin: 0;
@@ -257,14 +256,13 @@
 
     .tab-item__point-today {
       display: block;
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875em;
+      line-height: 140%;
       margin: 0;
 
       span {
         color: $blue;
       }
-
     }
 
     .tab-item__point-day,
@@ -409,8 +407,6 @@
   border-radius: 4px;
   color: $black-text;
   text-transform: none;
-  font-size: 16px;
-  line-height: 24px;
   font-weight: normal;
   padding: 7px 14px;
   cursor: pointer;
@@ -451,6 +447,7 @@
 
   h2 {
     @include title-h2;
+
     padding: 64px 0 40px 42px;
     border-bottom: 1px solid $button-second;
   }
@@ -516,6 +513,7 @@
 
 .tab-item__point-list {
   @include list;
+
   max-height: 679px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -539,7 +537,6 @@
   max-height: 679px;
   box-sizing: border-box;
   padding: 24px;
-
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -760,8 +757,6 @@
           margin: 0 0 16px;
 
           .tab__info-description {
-            font-size: 14px;
-            line-height: 20px;
             letter-spacing: unset;
             width: 100%;
             margin: 0;
@@ -814,14 +809,11 @@
 
       .tab-item__point-today {
         display: block;
-        font-size: 14px;
-        line-height: 20px;
         margin: 0;
 
         span {
           color: $blue;
         }
-
       }
 
       .tab-item__point-day,
@@ -941,6 +933,7 @@
 
     h2 {
       @include title-tablet-h2;
+
       padding: 32px 0 32px 32px;
     }
   }
@@ -1090,7 +1083,6 @@
         outline: none;
         width: 24px;
         height: 24px;
-
         background-image: url("../img/menu-close-icon.svg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -1103,7 +1095,6 @@
         right: 24px;
         width: 24px;
         height: 24px;
-
         background-image: url("../img/menu-close-icon.svg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -1168,8 +1159,8 @@
           margin: 0 0 24px;
 
           .tab__info-description {
-            font-size: 18px;
-            line-height: 22px;
+            font-size: 1.28em;
+            line-height: 120%;
           }
 
           .tab-item__point-service {
@@ -1251,8 +1242,6 @@
           margin: 0 0 16px;
 
           .tab__info-description {
-            font-size: 14px;
-            line-height: 20px;
             letter-spacing: unset;
             width: 100%;
             margin: 0;
@@ -1305,14 +1294,11 @@
 
       .tab-item__point-today {
         display: block;
-        font-size: 14px;
-        line-height: 20px;
         margin: 0;
 
         span {
           color: $blue;
         }
-
       }
 
       .tab-item__point-day,

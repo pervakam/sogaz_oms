@@ -25,6 +25,7 @@
 
 .tab-item__media-list-wrapper {
   @include list;
+
   width: 800px;
   height: max-content;
   max-height: 1950px;
@@ -79,14 +80,15 @@
 
 .tab-item__media-slide-title {
   time {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
     color: $black-text;
   }
 
   h4 {
     @include title-h4;
+
     color: $black-text;
     line-height: 30px;
     margin: 16px 0 0;
@@ -107,7 +109,6 @@
   outline: none;
   width: 32px;
   height: 32px;
-
   background-image: url("../img/modal-close-icon.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -275,8 +276,8 @@
   border: none;
   outline: none;
   background-color: transparent;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875em;
+  line-height: 120%;
   letter-spacing: 0.03em;
   font-weight: bold;
   text-transform: uppercase;
@@ -307,8 +308,8 @@
 
 .tab__photo-section-counter {
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875em;
+  line-height: 120%;
   letter-spacing: 0.03em;
   color: $light-gray;
 
@@ -395,11 +396,8 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-
   font-family: $Stratos;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 23px;
   text-align: center;
   color: $blue;
   padding: 12px 0;
@@ -441,6 +439,7 @@
   .tab-item__media-slide-title {
     h4 {
       @include title-tablet-h2;
+
       color: $black-text;
       margin: 11px 0 0;
     }

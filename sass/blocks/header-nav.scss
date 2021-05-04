@@ -140,10 +140,8 @@
 }
 
 .page-header__nav-item-pdf {
-  font-family: $Stratos;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
+  @include title-h3;
+  line-height: 150%;
   margin: 38px 0 0 0;
   position: relative;
   width: 722px;
@@ -176,10 +174,8 @@
 }
 
 .page-header__section-title {
-  font-family: $Stratos;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
+  @include title-h3;
+  line-height: 150%;
   color: $blue;
   margin: 32px 0 0;
   display: block;
@@ -245,11 +241,8 @@
 
 .page-header__section-contacts {
   a {
-    font-family: $Stratos;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 38px;
-    color: $blue;
+    @include title-h2;
+
     text-decoration: none;
     display: block;
     margin: 6px 0 0;
@@ -300,8 +293,8 @@
   & input:focus ~ label,
   & input:not(:focus):valid ~ label {
     top: 8px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
   }
 }
@@ -317,8 +310,6 @@
   a {
     color: $blue;
     text-decoration: none;
-    font-size: 16px;
-    line-height: 22px;
   }
 }
 
@@ -411,8 +402,8 @@
     text-align: left;
 
     p {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
       width: unset;
     }
 
@@ -490,7 +481,6 @@
       display: block;
     }
 
-
     & input:checked ~ .page-header__section-title--menu {
       &::after {
         transform: rotate(90deg);
@@ -513,8 +503,8 @@
     margin: 16px 0 0;
 
     a {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.14em;
+      line-height: 120%;
     }
 
     a:hover {
@@ -575,8 +565,8 @@
   }
 
   .page-header__section-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.28em;
+    line-height: 120%;
     margin: 20px 0 0;
     padding: 26px 0 0;
     border-top: 1px solid $button-second;
@@ -676,8 +666,8 @@
     a {
       font-family: $Stratos;
       font-weight: normal;
-      font-size: 32px;
-      line-height: 38px;
+      font-size: 2.29em;
+      line-height: 120%;
       color: $blue;
       text-decoration: none;
       display: block;

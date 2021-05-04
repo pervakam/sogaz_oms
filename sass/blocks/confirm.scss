@@ -1,0 +1,38 @@
+.confirm {
+    width: 100%;
+    max-width: 528px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 24px;
+
+    &__wrapper {
+        background-color: $white;
+        width: 100%;
+        padding: 80px 0 176px;
+    }
+
+    h1 {
+        margin: 8px 0 0;
+    }
+
+    p {
+        margin: 16px 0 0;
+    }
+
+    a {
+
+        text-decoration: none;
+    }
+
+    &__button {
+        display: block;
+        box-sizing: border-box;
+        padding: 19px;
+        margin: 32px auto 0;
+        width: 272px;
+
+        &:hover {
+            background-color: $hover-text;
+        }
+    }
+}

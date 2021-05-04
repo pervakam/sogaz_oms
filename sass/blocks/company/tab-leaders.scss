@@ -9,6 +9,7 @@
 
 .tab__leaders-list {
   @include list;
+
   margin: 37px 0 0;
   display: flex;
   justify-content: space-between;
@@ -45,8 +46,6 @@
   }
 
   p {
-    font-size: 16px;
-    line-height: 24px;
     margin: 0;
   }
 
@@ -84,6 +83,7 @@
 
     h1 {
       @include title-tablet-h1;
+
       margin: 24px 0 0;
     }
   }
@@ -97,11 +97,6 @@
 
     h3 {
       @include title-tablet-h2;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 22px;
     }
 
     img {

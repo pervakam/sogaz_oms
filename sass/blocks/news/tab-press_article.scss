@@ -8,12 +8,11 @@
 
   h2 {
     @include title-h2;
+
     margin: 40px 0 0;
   }
 
   span {
-    font-size: 16px;
-    line-height: 24px;
     color: $light-gray;
     display: block;
     margin: 24px 0 0;
@@ -21,8 +20,6 @@
 }
 
 .tab__article-description {
-  font-size: 16px;
-  line-height: 24px;
   width: 697px;
   margin: 40px 0 0 auto;
 }
@@ -113,8 +110,8 @@
   border: none;
   outline: none;
   background-color: transparent;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875em;
+  line-height: 120%;
   letter-spacing: 0.03em;
   font-weight: bold;
   text-transform: uppercase;
@@ -157,8 +154,8 @@
 
 .tab__article-photo-counter {
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875em;
+  line-height: 120%;
   letter-spacing: 0.03em;
   color: $light-gray;
   width: 50px;
@@ -170,8 +167,8 @@
 
   &--modal {
     font-family: $Stratos;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.125em;
+    line-height: 120%;
     margin: 0 auto;
     color: $white;
   }
@@ -184,6 +181,7 @@
 
 .tab__article-news-wrapper {
   @include list;
+
   display: flex;
   padding: 40px 0 32px;
   justify-content: flex-start;
@@ -254,14 +252,15 @@
 
 .tab__article-news-item-title {
   time {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 120%;
     letter-spacing: 0.02em;
     color: $black-text;
   }
 
   h4 {
     @include title-h4;
+
     color: $black-text;
     line-height: 30px;
     margin: 16px 0 0;
@@ -270,6 +269,7 @@
 
 .tab__article-news-item-photos-list {
   @include list;
+
   display: flex;
   justify-content: flex-start;
 }
@@ -324,24 +324,22 @@
 
     h1 {
       @include title-tablet-h1;
+
       margin: 40px 0 0;
     }
 
     h2 {
       @include title-tablet-h2;
+
       margin: 32px 0 0;
     }
 
     span {
-      font-size: 14px;
-      line-height: 20px;
       margin: 14px 0 0;
     }
   }
 
   .tab__article-description {
-    font-size: 14px;
-    line-height: 22px;
     width: 100%;
     max-width: 1216px;
     box-sizing: border-box;
@@ -410,6 +408,7 @@
   .tab__article-news-item-title {
     h4 {
       @include title-tablet-h2;
+
       color: $black-text;
       margin: 10px 0 0;
     }
@@ -454,6 +453,7 @@
   .tab__article-news-item-title {
     h4 {
       @include title-tablet-h2;
+
       color: $black-text;
       margin: 10px 0 0;
     }
@@ -462,8 +462,8 @@
   .tab__article-photo-counter {
     &--modal {
       font-family: $Stratos;
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 1.28em;
+      line-height: 120%;
       margin: 0 auto;
       width: 50px;
       color: $white;

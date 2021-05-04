@@ -6,14 +6,12 @@
   justify-content: flex-start;
   text-align: left;
   padding: 0 0 77px;
+  font-size: 0.875em;
+  line-height: 140%;
 
   h3 {
-    font-family: $Stratos;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 29px;
+    @include title-h3;
     color: $blue;
-    margin: 0;
 
     a {
       color: $blue;
@@ -26,11 +24,6 @@
 
   a {
     text-decoration: none;
-  }
-
-  a:hover,
-  a:focus {
-    color: $hover-text;
   }
 }
 
@@ -49,6 +42,7 @@
   letter-spacing: 0.03em;
   background-color: $button-second;
   color: $blue;
+  padding: 20px;
 
   &:hover,
   &:focus {
@@ -60,10 +54,15 @@
 .info__knowledge {
   width: 320px;
   margin: 0 93px 0 0;
+
+  a:hover,
+  a:focus {
+    color: $hover-text;
+  }
 }
 
 .info__knowledge-list,
-.iinfo__news-list {
+.info__news-list {
   list-style: none;
   margin: 16px 0 0 2px;
   padding: 0;
@@ -80,6 +79,11 @@
 
 .info__news {
   width: 388px;
+
+  a:hover,
+  a:focus {
+    color: $hover-text;
+  }
 }
 
 .info__news-item {
@@ -169,17 +173,14 @@
     padding: 0 32px 3px;
 
     h3 {
-      font-family: $Stratos;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 29px;
+      font-size: 1.71em;
       color: $blue;
       margin: 0;
     }
 
     p {
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 1.14em;
+      line-height: 137%;
       margin: 19px 0 0;
     }
   }
@@ -219,8 +220,8 @@
     width: 100%;
 
     a {
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 1.14em;
+      line-height: 137%;
     }
   }
 
@@ -236,14 +237,14 @@
     margin: 0 0 24px;
 
     time {
-      font-size: 12px;
-      line-height: 19px;
+      font-size: 0.857em;
+      line-height: 160%;
       margin: 0 33px 0 0;
     }
 
     a {
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 1.14em;
+      line-height: 137%;
     }
   }
 
@@ -266,21 +267,6 @@
     margin: 0 auto;
     display: block;
     padding: 0 24px 3px;
-
-    h3 {
-      font-family: $Stratos;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 29px;
-      color: $blue;
-      margin: 0;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 22px;
-      margin: 19px 0 0;
-    }
   }
 
   .info__bonuses {
@@ -326,8 +312,6 @@
     margin: 0 0 24px;
 
     time {
-      font-size: 12px;
-      line-height: 19px;
       margin: 0 0 8px 0;
     }
   }

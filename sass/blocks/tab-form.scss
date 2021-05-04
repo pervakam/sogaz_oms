@@ -83,8 +83,8 @@
     }
 
     & + label {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875em;
+      line-height: 143%;
       color: $black-text;
     }
 
@@ -105,6 +105,7 @@
     left: 19px;
     pointer-events: none;
     transition: 0.3s;
+    white-space: nowrap;
   }
 
   &--bonuses {
@@ -185,8 +186,8 @@
 
     label {
       top: 8px;
-      font-size: 12px;
-      line-height: 14px;
+      font-size: 0.75em;
+      line-height: 117%;
       letter-spacing: 0.02em;
       color: $light-gray;
     }
@@ -418,8 +419,8 @@
 
     input ~ label {
       top: 8px;
-      font-size: 12px;
-      line-height: 14px;
+      font-size: 0.75em;
+      line-height: 117%;
       letter-spacing: 0.02em;
       color: $light-gray;
     }
@@ -464,8 +465,8 @@
 
     input ~ label:first-of-type {
       top: 8px;
-      font-size: 12px;
-      line-height: 14px;
+      font-size: 0.75em;
+      line-height: 117%;
       letter-spacing: 0.02em;
       color: $light-gray;
     }
@@ -473,7 +474,7 @@
     input ~ label:last-of-type {
       top: unset;
       bottom: 10px;
-      font-size: 14px;
+      font-size: 0.875em;
       line-height: 140%;
       color: $light-gray;
     }
@@ -488,6 +489,7 @@
     resize: none;
     width: 554px;
     border: 1px solid $button-second;
+    background-color: transparent;
     box-sizing: border-box;
     border-radius: 8px;
     padding: 17px 30px 17px 15px;
@@ -508,8 +510,8 @@
     }
 
     &::placeholder {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875em;
+      line-height: 143%;
       color: $light-gray;
     }
   }
@@ -517,8 +519,8 @@
   input:focus ~ label:last-of-type,
   input:not(:focus):valid ~ label:last-of-type {
     top: 8px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 117%;
     letter-spacing: 0.02em;
     color: $light-gray;
   }
@@ -527,8 +529,8 @@
 .tab-item__search-input-selected {
   label {
     top: 8px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 117%;
     letter-spacing: 0.02em;
     color: $light-gray;
   }
@@ -563,8 +565,8 @@
 
   input + label {
     font-family: $Stratos;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 1.125em;
+    line-height: 100%;
     color: $black;
     box-sizing: border-box;
     border: 1px solid $button-second;
@@ -582,6 +584,7 @@
 
 .tab-item__search-button {
   width: 30.5%;
+  background-color: $blue;
 }
 
 @media (max-width: $tablet-max-width) {
@@ -802,8 +805,7 @@
     outline: none;
     width: 100%;
     text-transform: uppercase;
-    font-size: 14px;
-    line-height: 17px;
+    line-height: 120%;
     font-weight: bold;
     text-align: center;
     letter-spacing: 0.03em;
@@ -882,7 +884,6 @@
     width: 100%;
 
     input {
-
       &:focus,
       &:hover {
         border: 1px solid $light-gray;
