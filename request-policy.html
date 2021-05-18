@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="preload" href="fonts/stratos-regular-desktop.otf" as="font" crossorigin="anonymous" type="font/otf">
+  <link rel="preload" href="fonts/Stratos-Regular.woff2" as="font" crossorigin="anonymous" type="font/woff">
   <link rel="stylesheet" href="css/style.min.css" type="text/css">
 </head>
 <body>
@@ -624,14 +624,14 @@
       <h1>Заявка на оформление полиса ОМС</h1>
       <h3>Отправьте заявку и с вами свяжется специалист СОГАЗ-Мед. Он подберёт ближайший к вам офис и удобное время
         для подачи документов без очереди.</h3>
-      <form class="feedback__form feedback__form--request" enctype="multipart/form-data" method="post">
+      <form class="feedback__form feedback__form--request js-feedback__form" enctype="multipart/form-data" method="post">
         <fieldset>
           <legend>Пункт выдачи полиса ОМС</legend>
           <div class="feedback__form-location">
             <ul class="feedback__input-list">
-              <li class="tab-item__search-input tab-item__search-input--request-region">
+              <li class="tab-item__search-input tab-item__search-input--request-region input input--select js-input js-input--validate" data-validate="empty">
                 <label for="region-result-list">Регион</label>
-                <select id="region-result-list" class="form__result-list form__result-list--feedback" name="request-region">
+                <select id="region-result-list" class="input__value input__value--select js-policy-request__region" name="request-region">
                   <option disabled="" selected="" value=""></option>
                   <option>Амурская область</option>
                   <option>Архангельская область</option>
@@ -659,15 +659,17 @@
                   <option>Еврейская автономная область</option>
                   <option>Санкт-Петербург</option>
                 </select>
+                <div class="input__error">Поле должно быть заполнено</div>
               </li>
-              <li class="tab-item__search-input tab-item__search-input--point">
+              <li class="tab-item__search-input tab-item__search-input--point input input--select js-input js-input--validate" data-validate="empty">
                 <label for="point-result-list">Удобный пункт выдачи</label>
-                <select id="point-result-list" class="form__result-list form__result-list--point" name="point">
+                <select id="point-result-list" class="input__value input__value--select js-feedback__point" name="point">
                   <option disabled="" selected="" value=""></option>
                   <option>Амурская область</option>
                   <option>Архангельская область</option>
                   <option>Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ Зингер Плаза, 4 этаж, офис 401</option>
                 </select>
+                <div class="input__error">Поле должно быть заполнено</div>
               </li>
             </ul>
             <div class="feedback__location-search">
@@ -678,56 +680,63 @@
         <fieldset>
           <legend>Личные данные</legend>
           <ul class="feedback__input-list">
-            <li class="tab-item__search-input tab-item__search-input--surname">
-              <input type="text" name="surname" id="surname-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--surname input js-input js-input--validate" data-validate="fio">
+              <input class="input__value" type="text" name="surname" id="surname-feedback-field" value="" placeholder=" " required="">
               <label for="surname-feedback-field">Фамилия</label>
+              <div class="input__error">Поле должно быть заполнено и содержать русские буквы</div>
             </li>
-            <li class="tab-item__search-input tab-item__search-input--name">
-              <input type="text" name="name" id="name-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--name input js-input js-input--validate" data-validate="fio">
+              <input class="input__value" type="text" name="name" id="name-feedback-field" value="" placeholder=" " required="">
               <label for="name-feedback-field">Имя</label>
+              <div class="input__error">Поле должно быть заполнено и содержать русские буквы</div>
             </li>
-            <li class="tab-item__search-input tab-item__search-input--second-name">
-              <input type="text" name="second-name" id="second-name-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--second-name input js-input js-input--validate" data-validate="fio">
+              <input class="input__value" type="text" name="second-name" id="second-name-feedback-field" value="" placeholder=" " required="">
               <label for="second-name-feedback-field">Отчество, если есть</label>
+              <div class="input__error">Поле должно содержать русские буквы</div>
             </li>
-            <li class="tab-item__search-input tab-item__search-input--date">
-              <input type="date" name="date" id="date-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--date js-input js-input--validate" data-validate="empty">
+              <input class="input__value input__value--date" type="date" name="date" id="date-feedback-field" value="" placeholder=" " required="">
               <label for="date-feedback-field">Дата рождения</label>
+              <div class="input__error">Поле должно быть заполнено</div>
             </li>
-            <li class="tab-item__search-input tab-item__search-input--nationality">
+            <li class="tab-item__search-input tab-item__search-input--nationality input input--select js-input">
               <label for="nationality-result-list">Гражданство</label>
-              <select id="nationality-result-list" class="form__result-list" name="nationality">
+              <select id="nationality-result-list" class="input__value input__value--select" name="nationality">
                 <option disabled="" selected="" value=""></option>
                 <option selected="">Российская Федерация</option>
                 <option>Иное гражданство</option>
               </select>
             </li>
-            <li class="tab-item__search-input tab-item__search-input--id">
-              <input type="text" name="id" id="id-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--id input js-input js-input--validate" data-validate="snils">
+              <input class="input__value" type="text" name="snils" id="id-feedback-field" value="" placeholder=" " required="">
               <label for="id-feedback-field">СНИЛС</label>
+              <div class="input__error">Поле должно быть заполнено и содержать 11 цифр</div>
             </li>
           </ul>
         </fieldset>
         <fieldset>
           <legend>Контакты для получения полиса ОМС</legend>
           <ul class="feedback__input-list">
-            <li class="tab-item__search-input tab-item__search-input--phone">
-              <input type="text" name="phone" id="phone-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--phone input js-input js-input--validate" data-validate="phone">
+              <input class="input__value js-input__value-mask--phone" type="text" name="phone" id="phone-feedback-field" value="" placeholder=" " required="">
               <label for="phone-feedback-field">Номер телефона</label>
+              <div class="input__error">Поле должно быть заполнено в формате +7 (XXX) XXX-XX-XX</div>
             </li>
-            <li class="tab-item__search-input tab-item__search-input--mail">
-              <input type="text" name="mail" id="mail-feedback-field" value="" placeholder=" " required="">
+            <li class="tab-item__search-input tab-item__search-input--mail input js-input js-input--validate" data-validate="email">
+              <input class="input__value" type="text" name="mail" id="mail-feedback-field" value="" placeholder=" " required="">
               <label for="mail-feedback-field">E-mail</label>
+              <div class="input__error">Поле должно быть заполнено в формате example@example.ru</div>
             </li>
           </ul>
         </fieldset>
         <fieldset>
-          <div class="feedback__form-submit feedback__form-submit--point">
+          <div class="feedback__form-submit feedback__form-submit--point js-feedback__checkbox">
             <input type="checkbox" name="feedback-agree-field" id="feedback-agree-field" class="visually-hidden" required="">
             <label for="feedback-agree-field" class="feedback__form-agree feedback__form-agree--request">Даю согласие на
               обработку персональных
               данных, предоставленных мною в результате заполнения заявки на полис ОМС</label>
-            <button type="submit" class="feedback__form-button button">Отправить заявку</button>
+            <button type="submit" class="feedback__form-button js-feedback__form-button button">Отправить заявку</button>
           </div>
         </fieldset>
         <div class="feedback__confidentiality feedback__confidentiality--point">

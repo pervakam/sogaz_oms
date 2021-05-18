@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Адреса офисов и пункты выдачи полисов | СОГАЗ-МЕД</title>
+    <title>Важно знать | СОГАЗ-МЕД</title>
     <meta name="description" content="Сайт подбора страхования">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="preload" href="fonts/Stratos-Regular.woff2" as="font" crossorigin="anonymous" type="font/woff">
+    <link rel="preload" href="fonts/icomoon.woff2" as="font" crossorigin="anonymous" type="font/woff">
     <link rel="stylesheet" href="css/style.min.css" type="text/css">
 </head>
 <body>
@@ -157,6 +158,10 @@
             <path d="M12 14.6666V17.3336C15.676 17.3336 18.667 20.3235 18.667 23.9995H21.333C21.333 18.8536 17.146 14.6666 12 14.6666Z" fill="white"></path>
             <path d="M12 10V12.667C18.25 12.667 23.334 17.7499 23.334 23.9998H26C26 16.2799 19.72 10 12 10Z" fill="white"></path>
         </symbol>
+        <symbol id="rule_doc-icon" viewBox="0 0 40 40">
+            <path d="M27.7834 7.85989L27.7827 0.781738L34.8613 7.86042L27.7834 7.85989Z"></path>
+            <path d="M5.09165 0H25.1141L25.115 10.5287L35.6438 10.5296V40H5.09165V0Z"></path>
+        </symbol>
         <symbol id="search-icon" viewBox="0 0 24 24">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M5.00001 10.9999C5.00001 7.6909 7.69103 4.99989 11 4.99989C14.3091 4.99989 17.0001 7.6909 17.0001 10.9999C17.0001 14.3089 14.3091 16.9999 11 16.9999C7.69103 16.9999 5.00001 14.3089 5.00001 10.9999ZM20.7071 19.2931L17.3121 15.8971C18.3651 14.5431 19.0001 12.846 19.0001 11C19.0001 6.58902 15.4111 3 11 3C6.58902 3 3 6.58902 3 11C3 15.4111 6.58902 19.0001 11 19.0001C12.846 19.0001 14.5431 18.3651 15.8971 17.3121L19.2931 20.7071C19.4881 20.9021 19.7441 21.0001 20.0001 21.0001C20.2561 21.0001 20.5121 20.9021 20.7071 20.7071C21.0981 20.3161 21.0981 19.6841 20.7071 19.2931Z" fill="#000078"></path>
         </symbol>
@@ -297,7 +302,7 @@
         </div>
         <span>Версия для слабовидящих</span>
     </a>
-    <div class="main-nav__wrapper main-nav__wrapper--index">
+    <div class="main-nav__wrapper main-nav__wrapper--white main-nav__wrapper--health">
         <nav class="main-nav">
             <ul class="main-nav__help-list">
                 <li class="main-nav__help-item main-nav__help-item--menu">
@@ -626,209 +631,579 @@
 
 <main class="page-main">
     <div class="page-main__wrapper">
-        <section class="tab tab-item tab-item--address">
-            <h1>Адреса офисов и пункты выдачи полисов</h1>
-            <form class="feedback__form feedback__form--address" enctype="multipart/form-data" method="post">
-                <div class="feedback__form-location">
-                    <ul class="feedback__input-list">
-                        <li class="tab-item__search-input tab-item__search-input--address-region">
-                            <label for="region-result-list">Регион</label>
-                            <select id="region-result-list" class="form__result-list form__result-list--feedback" name="address-region">
-                                <option disabled="" selected="" value=""></option>
-                                <option>Амурская область</option>
-                                <option>Архангельская область</option>
-                                <option>Астраханская область</option>
-                                <option>республика Адыгея</option>
-                                <option>Брянская область</option>
-                                <option>Байконур</option>
-                                <option>республика Башкортостан</option>
-                                <option>республика Бурятия</option>
-                                <option>Волгоградская область</option>
-                                <option>Вологодская область</option>
-                                <option>Воронежская область</option>
-                                <option>Еврейская автономная область</option>
-                                <option>Амурская область</option>
-                                <option>Архангельская область</option>
-                                <option>Астраханская область</option>
-                                <option>республика Адыгея</option>
-                                <option>Брянская область</option>
-                                <option>Байконур</option>
-                                <option>республика Башкортостан</option>
-                                <option>республика Бурятия</option>
-                                <option>Волгоградская область</option>
-                                <option>Вологодская область</option>
-                                <option>Воронежская область</option>
-                                <option>Еврейская автономная область</option>
-                                <option>Санкт-Петербург</option>
-                            </select>
+        <section class="tabs tabs--hide">
+            <ul class="tabs__list">
+                <li class="tabs__item"><a href="health.html">Ваше здоровье</a></li>
+                <li class="tabs__item"><a href="health-food.html">Здоровое питание</a></li>
+                <li class="tabs__item"><a href="health-lifestyle.html">Образ жизни</a></li>
+                <li class="tabs__item"><a href="health-child.html">Здоровье ребенка</a></li>
+                <li class="tabs__item"><a href="health-prevention.html">Профилактика и диспансеризация</a></li>
+                <li class="tabs__item tabs__item--active"><a href="#">Важно знать</a></li>
+                <li class="tabs__item"><a href="health-family.html">Семья</a></li>
+                <li class="tabs__item"><a href="health-beauty.html">Красота</a></li>
+                <li class="tabs__item"><a href="health-disease.html">Болезни и симптомы</a></li>
+                <li class="tabs__item"><a href="health-human.html">Мужское и женское здоровье</a></li>
+                <li class="tabs__item"><a href="health-patient.html">Энциклопедия пациента</a></li>
+                <li class="tabs__item"><a href="health-psychology.html">Психология</a></li>
+                <li class="tabs__item"><a href="health-cardio.html">Сердечно-сосудистые заболевания</a></li>
+                <li class="tabs__item"><a href="health-tests.html">Опросы и тесты</a></li>
+            </ul>
+        </section>
+        <section class="tab tab-item tab-item--address tab-item--health">
+            <div class="back-button">
+                <a href="health-important.html">Важно знать</a>
+            </div>
+            <h1>Как прикрепиться к поликлинике и записаться к врачу</h1>
+            <ul class="tab__info-list">
+                <li class="tab__info-item">
+                    <input type="checkbox" id="info-item2" name="tab__info-item-title" class="visually-hidden">
+                    <label for="info-item2" class="tab__info-item-title"><span>Как прикрепиться к поликлинике</span></label>
+                    <div class="tab__info-description tab__info-description--health">
+                        <h3>Для прикрепления к медицинской организации необходимо наличие полиса обязательного
+                            медицинского страхования (ОМС). Полис ОМС оформляется в страховой медицинской
+                            организации.</h3>
+                        <p>Оформить полис ОМС можно лично или через своего представителя
+                            <span class="description-help description-help--left">
+                                <span class="description-help__data">Согласно ст. 16 Федерального закона от 29.11.2010 № 326-ФЗ «Об обязательном медицинском страховании в РФ» и ст. 21 Федерального закона от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан в РФ»</span>
+                            </span>
+                            в офисе СОГАЗ-Мед, а также
+                            можно заранее подать Заявку на оформление полиса ОМС на нашем сайте.</p>
+                        <p>Застрахованное лицо имеет право по собственному желанию сменить медицинскую организацию,
+                            но не чаще, чем один раз в год. Исключение составляет смена места жительства или места
+                            пребывания гражданина.</p>
+                        <h4>О прикреплении к медицинской организации</h4>
+                        <ul class="tab__info-description-list tab__info-description-list--health">
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item00001" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item00001" class="tab__info-description-item-title"><span>Для прикрепления к медицинской организации необходимо</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для прикрепления к медицинской организации необходимо</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>Изучить информацию о медицинских организациях, работающих в системе ОМС,
+                                            ознакомиться с перечнем и спецификацией работающих в поликлинике врачей,
+                                            информацией о врачебных участках при необходимости обслуживания на дому.
+                                        </li>
+                                        <li>Обратиться в регистратуру выбранной поликлиники
+                                            <span class="description-help description-help--left">
+                                                <span class="description-help__data">Порядок выбора гражданином медицинской организации определен:<br>
+                                                    <span>Приказом Минздравсоцразвития России от 26.04.2012 №406н «Об утверждении порядка выбора гражданином медицинской организации при оказании ему медицинской помощи в рамках программы государственных гарантий бесплатного оказания гражданам медицинской помощи»;</span><br>тзь
+                                                    <span>Приказом Минздрава России от 21.12.2012 N 1342н «Об утверждении порядка выбора гражданином медицинской организации (за исключением случаев оказания скорой медицинской помощи) за пределами территории субъекта РФ, в котором проживает гражданин, при оказании ему медицинской помощи в рамках программы государственных гарантий бесплатного оказания гражданам медицинской помощи».</span>
+                                                </span>
+                                          </span>
+                                            и написать заявление
+                                            о прикреплении на имя главного врача. Подать заявление можно также через
+                                            своего представителя (образцы заявлений представителя можно получить
+                                            в регистратуре или на сайте медицинской организации).
+                                        </li>
+                                        <li>Большинство медицинских организаций на собственных сайтах реализовали сервис
+                                            по прикреплению к их учреждению. Данный сервис позволяет оперативно
+                                            заполнить форму с вашими данными, автоматически сформировать заявление,
+                                            которое будет необходимо принести в распечатанном виде
+                                            в регистратуру/администрацию выбранной вами поликлиники.
+                                        </li>
+                                    </ul>
+                                    <p>После проверки данных, указанных в заявлении, прикрепление будет осуществлено.
+                                        Оповещение об этом вы сможете получить в виде смс-сообщения или телефонного
+                                        звонка от медицинской организации.</p>
+                                    <p>Если вы решили сменить одну медицинскую организацию на другую, в этом случае
+                                        после оформления нового заявления на прикрепление передача данных, таких как
+                                        открепление от прежней поликлиники, передача медицинских документов и,
+                                        оповещение страховой медицинской компании происходит автоматически
+                                        администрацией поликлиники. Присутствие заявителя не требуется.</p>
+                                    <button type="button" class="print-button">Распечатать</button>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item00002" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item00002" class="tab__info-description-item-title"><span>Категории граждан, имеющих право на выбор и прикрепление</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Категории граждан, имеющих право на выбор и прикрепление</h5>
+                                    <p>Самостоятельно выбрать медицинскую организацию из перечня частных или
+                                        государственных поликлиник, принимающих участие в системе ОМС и прикрепиться к
+                                        ней имеют права граждане следующих категорий:</p>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>граждане Российской Федерации,за исключением военнослужащих и лиц,
+                                            приравненных к ним в части организации оказания медицинской помощи;
+                                        </li>
+                                        <li>иностранные граждане и лица без гражданства постоянно и временно проживающие
+                                            на территории Российской Федерации;
+                                        </li>
+                                        <li>лица, имеющие право на получение медицинской помощи в соответствии с
+                                            Федеральным законом «О беженцах»;
+                                        </li>
+                                        <li>временно пребывающие на территории Российской Федерации трудящиеся
+                                            иностранные граждане государств – членов ЕАЭС;
+                                        </li>
+                                        <li>работающие на территории Российской Федерации члены коллегии Комиссии,
+                                            должностные лица и сотрудники органов ЕАЭС, находящиеся на территории
+                                            Российской Федерации.
+                                        </li>
+                                    </ul>
+                                    <button type="button" class="print-button">Распечатать</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <h4>Необходимые документы для прикрепления</h4>
+                        <ul class="tab__info-description-list tab__info-description-list--health">
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000001" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000001" class="tab__info-description-item-title"><span>Для детей после государственной регистрации рождения и до 14-ти лет, являющихся гражданами Российской Федерации</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для детей после государственной регистрации рождения и до 14-ти лет, являющихся
+                                        гражданами Российской Федерации</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>свидетельство о рождении;</li>
+                                        <li>документ, удостоверяющий личность законного представителя ребенка;</li>
+                                        <li>полис ОМС, выданный ребенку.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000002" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000002" class="tab__info-description-item-title"><span>Для граждан Российской Федерации в возрасте 14-ти лет и старше</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для граждан Российской Федерации в возрасте 14-ти лет и старше</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>паспорт гражданина Российской Федерации или временное удостоверение личности
+                                            гражданина Российской Федерации, выдаваемое на период оформления паспорта;
+                                        </li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000003" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000003" class="tab__info-description-item-title"><span>Для лиц, имеющих право на медицинскую помощь в соответствии с Федеральным законом «О беженцах»</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для лиц, имеющих право на медицинскую помощь в соответствии с Федеральным
+                                        законом «О беженцах»</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>удостоверение беженца или свидетельство о рассмотрении ходатайства о
+                                            признании беженцем по существу, или копия жалобы на решение о лишении
+                                            статуса беженца, поданной в Федеральную миграционную службу, с отметкой о ее
+                                            приеме к рассмотрению, или свидетельство о предоставлении временного убежища
+                                            на территории Российской Федерации;
+                                        </li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000004" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000004" class="tab__info-description-item-title"><span>Для иностранных граждан, постоянно проживающих в Российской Федерации</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для иностранных граждан, постоянно проживающих в Российской Федерации</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>паспорт иностранного гражданина либо иной документ, установленный
+                                            федеральным законом или признаваемый в соответствии с международным
+                                            договором Российской Федерации в качестве документа, удостоверяющего
+                                            личность иностранного гражданина;
+                                        </li>
+                                        <li>вид на жительство;</li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000005" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000005" class="tab__info-description-item-title"><span>Для лиц без гражданства, постоянно проживающих в Российской Федерации</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для лиц без гражданства, постоянно проживающих в Российской Федерации</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>документ, признаваемый в соответствии с международным договором Российской
+                                            Федерации в качестве документа, удостоверяющего личность лица без
+                                            гражданства;
+                                        </li>
+                                        <li>вид на жительство;</li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000006" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000006" class="tab__info-description-item-title"><span>Для иностранных граждан, временно проживающих в Российской Федерации</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для иностранных граждан, временно проживающих в Российской Федерации</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>паспорт иностранного гражданина либо иной документ, установленный
+                                            федеральным законом или признаваемый в соответствии с международным
+                                            договором Российской Федерации в качестве документа, удостоверяющего
+                                            личность иностранного гражданина, с отметкой о разрешении на временное
+                                            проживание в Российской Федерации;
+                                        </li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000007" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000007" class="tab__info-description-item-title"><span>Для лиц без гражданства, временно проживающих в Российской Федерации:</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для лиц без гражданства, временно проживающих в Российской Федерации:</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>документ, признаваемый в соответствии с международным договором Российской
+                                            Федерации в качестве документа, удостоверяющего личность лица без
+                                            гражданства, с отметкой о разрешении на временное проживание в Российской
+                                            Федерации либо документ установленной формы, выдаваемый в Российской
+                                            Федерации лицу без гражданства, не имеющему документа, удостоверяющего его
+                                            личность;
+                                        </li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000008" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000008" class="tab__info-description-item-title"><span>Для временно пребывающих в Российской Федерации трудящихся иностранных граждан из государств-членов ЕАЭС (Белоруссия, Казахстан, Киргизия, Армения)</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для временно пребывающих в Российской Федерации трудящихся иностранных граждан
+                                        из государств-членов ЕАЭС (Белоруссия, Казахстан, Киргизия, Армения)</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>паспорт иностранного гражданина либо иной документ, установленный
+                                            федеральным законом или признаваемый в соответствии с международным
+                                            договором РФ в качестве документа, удостоверяющего личность иностранного
+                                            гражданина;
+                                        </li>
+                                        <li>трудовой договор трудящегося государства - члена ЕАЭС;</li>
+                                        <li>полис ОМС.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000009" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000009" class="tab__info-description-item-title"><span>Для представителя гражданина, в том числе законного</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Для представителя гражданина, в том числе законного</h5>
+                                    <ul class="tab__description-list tab__description-list--health">
+                                        <li>документ, удостоверяющий личность, и документ, подтверждающий полномочия
+                                            представителя.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>В случае изменения места жительства необходим документ, подтверждающий факт изменения места
+                            жительства.</p>
+                        <p>В некоторых регионах можно воспользоваться электронными терминалами, которые позволяют
+                            избежать многочасовых очередей в регистратуру поликлиники, благодаря удобству и скорости
+                            записи на прием к выбранному врачу.</p>
+                        <h4>Электронное прикрепление</h4>
+                        <p>Прикрепиться к выбранной поликлинике можно через интернет с помощью портала<br>«Госуслуги»
+                            <span class="description-help description-help--right">
+                                <span class="description-help__data">Если существует региональная возможность</span>
+                            </span>
+                        </p>
+                        <p>Услугой могут воспользоваться лица, достигшие 18-ти лет.</p>
+                        <p>При заполнении заявления на портале необходимо указать следующие данные:</p>
+                        <ul>
+                            <li>паспортные данные;</li>
+                            <li>номер полиса ОМС;</li>
+                            <li>адрес регистрации и фактического проживания.</li>
+                        </ul>
+                        <p>Извещение о прикреплении заявитель получает в виде смс-сообщения на мобильный телефон,
+                            в виде письма на электронную почту или в личный кабинет портала «Госуслуги».</p>
+                        <h4>Выбор врача в своей медицинской организации</h4>
+                        <p>В выбранной медицинской организации также можно осуществить выбор врача-терапевта,
+                            врача-терапевта участкового, врача-педиатра, врача-педиатра участкового, врача общей
+                            практики (семейного врача) или фельдшера. Выбор осуществляется не чаще, чем один раз в год
+                            (за исключением случаев смены медицинской организации
+                            <span class="description-help description-help--left">
+                                <span class="description-help__data">Согласно ст. 16 Федерального закона от 29.11.2010 № 326-ФЗ «Об обязательном медицинском страховании в РФ» и ст. 21 Федерального закона от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан в РФ»</span>
+                            </span>
+                            ).</p>
+                        <p>Выбор осуществляется путем подачи заявления (здесь также можно попробовать зашифровать
+                            заявление для скачивания) лично или через своего представителя на имя руководителя
+                            медицинской организации в соответствии с установленным законодательством порядке.</p>
+                        <button type="button" class="print-button print-button--all">Распечатать всё</button>
+                    </div>
+                </li>
+                <li class="tab__info-item">
+                    <input type="checkbox" id="info-item3" name="tab__info-item-title" class="visually-hidden">
+                    <label for="info-item3" class="tab__info-item-title"><span>Как записаться к врачу</span></label>
+                    <div class="tab__info-description tab__info-description--health">
+                        <h3>Граждане, имеющие полис ОМС, могут записаться на прием к врачу одним из следующих
+                            способов</h3>
+                        <ul class="tab__description-list tab__description-list--health">
+                            <li>через регистратуру поликлиники;</li>
+                            <li>с помощью терминалов (инфоматов), установленных в холлах поликлиники;</li>
+                            <li>по телефону службы записи вашего региона;</li>
+                            <li>через электронную регистратуру/мобильное приложение.</li>
+                        </ul>
+                        <ul class="tab__info-description-list tab__info-description-list--health">
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000010" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000010" class="tab__info-description-item-title"><span>Подробнее об электронной записи</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Подробнее об электронной записи</h5>
+                                    <p>Для того чтобы записаться к врачу по полису ОМС потребуется непосредственно сам
+                                        документ, а также прикрепление к поликлинике.</p>
+                                    <p>На сегодняшний день наличие электронных сервисов для записи к врачу существенно
+                                        упрощает процедуру записи к врачу.</p>
+                                    <p>Так, например, на портале «Госуслуги», который работает на всей территории РФ,
+                                        необходимо один раз авторизоваться и внести данные полиса ОМС, чтобы в
+                                        дальнейшем
+                                        иметь возможность оперативно записаться к выбранному специалисту.</p>
+                                    <p>В некоторых регионах существуют электронные регистратуры, для входа в которые
+                                        необходимо указать номер полиса ОМС и дату рождения. После авторизации
+                                        предлагается
+                                        выбрать специалиста медицинской организации, к которому имеется прикрепление, и
+                                        записаться на приём.</p>
+                                    <p>Запись через мобильное приложение работает по принципу электронной
+                                        регистратуры.</p>
+                                    <p>Также можно записаться к врачу по полису ОМС в другую медицинскую организацию по
+                                        выданному направлению.</p>
+                                    <p>Помимо этого, электронные порталы также позволяют в любой момент посмотреть
+                                        запись к
+                                        врачу по номеру полиса ОМС или изменить дату приема при необходимости.</p>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000011" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000011" class="tab__info-description-item-title"><span>Рекомендации</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Рекомендации</h5>
+                                    <p>Запись к врачам - специалистам лучше производить заранее, так как очередь к ним
+                                        может иметь срок до 14 дней. Исключение составляют сроки ожидания медицинской
+                                        помощи для онкологических пациентов. Так, консультации врачей-специалистов в
+                                        случае подозрения на онкологическое заболевание должны проходить в течение 3
+                                        рабочих дней. Диагностические инструментальные и лабораторные исследования для
+                                        данной категории пациентов организуются в течение 7 рабочих дней. Ожидание
+                                        специализированной (за исключением высокотехнологичной) медицинской помощи для
+                                        пациентов с онкологическими заболеваниями также не может превышать 7 рабочих
+                                        дней с момента установления предварительного диагноза заболевания. Кроме того, в
+                                        течение 3 рабочих дней с момента постановки диагноза онкологического заболевания
+                                        врач-онколог устанавливает диспансерное наблюдение за пациентом. Услуга
+                                        электронной записи дает возможность сэкономить время на посещение клиники,
+                                        упрощает процедуру предоставления услуг.</p>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000012" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000012" class="tab__info-description-item-title"><span>Дальнейшие действия при посещении медорганизации</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Дальнейшие действия при посещении медорганизации</h5>
+                                    <p>В день записи необходимо прийти в назначенное время к врачу, взяв с собой полис
+                                        ОМС и паспорт. Если посещение данного учреждения осуществляется впервые и
+                                        медицинской карты у посетителя нет, то в регистратуре заведут новую. Если же она
+                                        была оформлена ранее – то запрашивать ее в регистратуре нет необходимости, она
+                                        уже будет находиться у врача.</p>
+                                </div>
+                            </li>
+                            <li class="tab__info-description-item">
+                                <input type="checkbox" id="info-description-item000013" name="tab__info-description-item-title" class="visually-hidden">
+                                <label for="info-description-item000013" class="tab__info-description-item-title"><span>Решение частых трудностей посетителей медорганизаций по ОМС</span></label>
+                                <div class="tab__info-document-list-wrapper tab__info-document-list-wrapper--health tab__info-document-list-wrapper--hide">
+                                    <button class="tab__info-document-list-wrapper-toggle" type="button" value="Закрыть окно"></button>
+                                    <h5>Решение частых трудностей посетителей медорганизаций по ОМС</h5>
+                                    <ol>
+                                        <li>
+                                            <p><strong>Номер вашего полиса ОМС не найден в Едином Регистре
+                                                Застрахованных лиц (ЕРЗ).</strong></p>
+                                            <p>Полис ОМС был оформлен и зарегистрирован в регионе проживания, изменений
+                                                не происходило:</p>
+                                            <ul>
+                                                <li>проверьте прикрепление в регистратуре вашей поликлиники лично или по
+                                                    телефону;
+                                                </li>
+                                                <li>обратитесь в страховую организацию, где Вы получали полис ОМС.</li>
+                                            </ul>
+                                            <p>Полис ОМС был оформлен в другом регионе:</p>
+                                            <ul>
+                                                <li>обратитесь в страховую компанию на территории, на которой Вы
+                                                    проживаете в данный момент для регистрации полиса ОМС;
+                                                </li>
+                                                <li>прикрепитесь к поликлинике.</li>
+                                            </ul>
+                                            <p>Если Вы уверены, что данные полиса ОМС и дата рождения введены верно и
+                                                ваш полис ОМС включен в базу ЕРЗ региона проживания, то обратитесь в
+                                                техническую поддержку электронной регистратуры.</p>
+
+
+                                        </li>
+                                        <li>
+                                            <p><strong>Не можете прикрепиться к поликлинике</strong></p>
+                                            <p>Если при входе в электронную регистратуру или мобильное приложение Вы
+                                                видите, что информация о прикреплении изменилась, то Вам необходимо
+                                                обратиться в регистратуру Вашей поликлиники для восстановления
+                                                прикрепления.</p>
+                                            <p>Проверить актуальность прикрепления можно несколькими способами:</p>
+                                            <ul>
+                                                <li>обратиться лично в регистратуру поликлиники;</li>
+                                                <li>обратиться в регистратуру поликлиники по телефону;</li>
+                                                <li>обратиться в круглосуточную службу записи электронной
+                                                    регистратуры;
+                                                </li>
+                                                <li>обратиться в свою страховую медицинскую организацию.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="tab__info-item">
+                    <input type="checkbox" id="info-item4" name="tab__info-item-title" class="visually-hidden">
+                    <label for="info-item4" class="tab__info-item-title"><span>Перечень мед.учреждений в вашем регионе</span></label>
+                    <div class="tab__info-description tab__info-description--health">
+                        <ul class="tab__report-list">
+                            <li class="tab__report-item">
+                                <a class="tab__report-item-link" href="https://docviewer.yandex.ru/view/197371689/?*=C71fcas5929xKGoUoxGf1eV6g657InVybCI6InlhLWJyb3dzZXI6Ly80RFQxdVhFUFJySlJYbFVGb2V3cnVQRHUyeWdnWnpkR0N3MnhRV29lS08tMF9KdXZ1a2ZIOEk4NzlfXzdjUmU2NHVuOXVSTzFobTYzdDVYaENRWmhDdmVoU1VhdURpQ3BuTklhMFdUX0VJWGJuSHRLV0JsZzhValVVcTBvS1ctak5XMWRSYXM5VXh3bnktSmdQZzNhRHc9PT9zaWduPUtDc3VQZ254cHNfSzFiemhhOXhTOUxmeU44alNSLW1taXB3MmprVG9yLUU9IiwidGl0bGUiOiIzLmRvY3giLCJub2lmcmFtZSI6ZmFsc2UsInVpZCI6IjE5NzM3MTY4OSIsInRzIjoxNjE3MjY0MDc5MjA1LCJ5dSI6Ijg2Nzg3OTk5MTYxNjc1ODAwOCJ9">
+                                    <div class="tab__report-item-description">
+                                        <p>11.9 Кб</p>
+                                        <h5>Мед.учреждения в Краснодарском крае</h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+            </ul>
+            <div>
+                <h2>Медицинские учреждения</h2>
+                <form class="feedback__form feedback__form--appointment-address" enctype="multipart/form-data" method="post">
+                    <div class="feedback__form-location">
+                        <ul class="feedback__input-list">
+                            <li class="tab-item__search-input tab-item__search-input--address-region">
+                                <label for="region-result-list">Регион</label>
+                                <select id="region-result-list" class="form__result-list form__result-list--feedback" name="address-region">
+                                    <option disabled="" selected="" value=""></option>
+                                    <option>Амурская область</option>
+                                    <option>Архангельская область</option>
+                                    <option>Астраханская область</option>
+                                    <option>республика Адыгея</option>
+                                    <option>Брянская область</option>
+                                    <option>Байконур</option>
+                                    <option>республика Башкортостан</option>
+                                    <option>республика Бурятия</option>
+                                    <option>Волгоградская область</option>
+                                    <option>Вологодская область</option>
+                                    <option>Воронежская область</option>
+                                    <option>Еврейская автономная область</option>
+                                    <option>Амурская область</option>
+                                    <option>Архангельская область</option>
+                                    <option>Астраханская область</option>
+                                    <option>республика Адыгея</option>
+                                    <option>Брянская область</option>
+                                    <option>Байконур</option>
+                                    <option>республика Башкортостан</option>
+                                    <option>республика Бурятия</option>
+                                    <option>Волгоградская область</option>
+                                    <option>Вологодская область</option>
+                                    <option>Воронежская область</option>
+                                    <option>Еврейская автономная область</option>
+                                    <option>Санкт-Петербург</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                <input class="tab-item__view-button tab-item__view-button--map" type="radio" name="view-button" id="button-map" checked="">
+                <label for="button-map">На карте</label>
+                <input class="tab-item__view-button tab-item__view-button--list" type="radio" name="view-button" id="button-list">
+                <label for="button-list">Списком</label>
+                <div class="tab-item__view-section tab-item__view-section--map">
+                    <div class="tab-item__point-map" id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22426.71220368872!2d12.482630157049163!3d41.89212426549366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2z0KDQuNC8LCDQmNGC0LDQu9C40Y8!5e0!3m2!1sru!2sru!4v1615453383767!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="tab-item__point-pin">
+                            <svg width="31" height="42" viewBox="0 0 31 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.6671 0C7.32599 0 0.540039 6.82352 0.540039 15.2107C0.540039 25.6195 14.0773 40.9002 14.6536 41.5456C15.195 42.1519 16.1402 42.1509 16.6806 41.5456C17.2569 40.9002 30.7941 25.6195 30.7941 15.2107C30.794 6.82352 24.0081 0 15.6671 0ZM15.6671 22.8637C11.4705 22.8637 8.05637 19.4306 8.05637 15.2107C8.05637 10.9909 11.4706 7.55787 15.6671 7.55787C19.8636 7.55787 23.2777 10.991 23.2777 15.2108C23.2777 19.4307 19.8636 22.8637 15.6671 22.8637Z" fill="#000078"></path>
+                            </svg>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-item__view-section tab-item__view-section--list">
+                    <ul class="tab-item__point-list">
+                        <li class="tab-item__point-item">
+                            <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1,
+                                БЦ
+                                Зингер
+                                Плаза, 4 этаж, офис 401</p>
+                            <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 1</h5>
+                            <p class="tab-item__point-metro">Бутово</p>
+                            <p class="tab-item__point-today">
+                                <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
+                                <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
+                            </p>
+                            <ul class="tab-item__point-services">
+                                <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
+                                <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
+                                <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
+                                <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
+                                <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
+                                <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
+                                <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
+                                <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
+                                <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
+                            </ul>
+                            <button type="button" class="tab-item__point-more-button">подробнее</button>
                         </li>
-                        <li class="tab-item__search-input tab-item__search-input--address-point">
-                            <label for="point-result-list">Адрес или объект</label>
-                            <select id="point-result-list" class="form__result-list form__result-list--point" name="address-point">
-                                <option disabled="" selected="" value=""></option>
-                                <option>Амурская область</option>
-                                <option>Архангельская область</option>
-                                <option>Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ Зингер Плаза, 4 этаж,
-                                    офис 401
-                                </option>
-                            </select>
+                        <li class="tab-item__point-item">
+                            <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1,
+                                БЦ
+                                Зингер
+                                Плаза, 4 этаж, офис 401</p>
+                            <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 2</h5>
+                            <p class="tab-item__point-metro">Бутово</p>
+                            <p class="tab-item__point-today">
+                                <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
+                                <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
+                            </p>
+                            <ul class="tab-item__point-services">
+                                <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
+                                <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
+                                <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
+                                <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
+                                <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
+                                <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
+                                <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
+                                <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
+                                <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
+                            </ul>
+                            <button type="button" class="tab-item__point-more-button">подробнее</button>
+                        </li>
+                        <li class="tab-item__point-item">
+                            <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1,
+                                БЦ
+                                Зингер
+                                Плаза, 4 этаж, офис 401</p>
+                            <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 3</h5>
+                            <p class="tab-item__point-metro">Бутово</p>
+                            <p class="tab-item__point-today">
+                                <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
+                                <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
+                            </p>
+                            <ul class="tab-item__point-services">
+                                <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
+                                <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
+                                <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
+                                <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
+                                <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
+                                <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
+                                <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
+                                <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
+                                <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
+                            </ul>
+                            <button type="button" class="tab-item__point-more-button">подробнее</button>
                         </li>
                     </ul>
-                    <a class="tab-item__about-address-button button" href="filial.html">о филиале</a>
                 </div>
-            </form>
-            <input class="tab-item__view-button tab-item__view-button--map" type="radio" name="view-button" id="button-map" checked="">
-            <label for="button-map">На карте</label>
-            <input class="tab-item__view-button tab-item__view-button--list" type="radio" name="view-button" id="button-list">
-            <label for="button-list">Списком</label>
-            <div class="tab-item__view-section tab-item__view-section--map">
-                <div class="tab-item__point-map" id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22426.71220368872!2d12.482630157049163!3d41.89212426549366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2z0KDQuNC8LCDQmNGC0LDQu9C40Y8!5e0!3m2!1sru!2sru!4v1615453383767!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <ul class="tab-item__point-list">
-                    <li class="tab-item__point-item">
-                        <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ
-                            Зингер
-                            Плаза, 4 этаж, офис 401</p>
-                        <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 1</h5>
-                        <p class="tab-item__point-metro">Бутово</p>
-                        <p class="tab-item__point-today">
-                            <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
-                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
-                        </p>
-                        <ul class="tab-item__point-services">
-                            <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
-                            <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
-                            <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
-                            <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
-                            <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
-                            <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
-                            <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
-                            <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
-                            <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
-                        </ul>
-                        <button type="button" class="tab-item__point-more-button">подробнее</button>
-                    </li>
-                    <li class="tab-item__point-item">
-                        <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ
-                            Зингер
-                            Плаза, 4 этаж, офис 401</p>
-                        <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 2</h5>
-                        <p class="tab-item__point-metro">Бутово</p>
-                        <p class="tab-item__point-today">
-                            <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
-                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
-                        </p>
-                        <ul class="tab-item__point-services">
-                            <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
-                            <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
-                            <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
-                            <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
-                            <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
-                            <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
-                            <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
-                            <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
-                            <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
-                        </ul>
-                        <button type="button" class="tab-item__point-more-button">подробнее</button>
-                    </li>
-                    <li class="tab-item__point-item">
-                        <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ
-                            Зингер
-                            Плаза, 4 этаж, офис 401</p>
-                        <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 3</h5>
-                        <p class="tab-item__point-metro">Бутово</p>
-                        <p class="tab-item__point-today">
-                            <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
-                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
-                        </p>
-                        <ul class="tab-item__point-services">
-                            <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
-                            <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
-                            <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
-                            <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
-                            <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
-                            <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
-                            <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
-                            <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
-                            <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
-                        </ul>
-                        <button type="button" class="tab-item__point-more-button">подробнее</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="tab-item__view-section tab-item__view-section--list">
-                <ul class="tab-item__point-list">
-                    <li class="tab-item__point-item">
-                        <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ
-                            Зингер
-                            Плаза, 4 этаж, офис 401</p>
-                        <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 1</h5>
-                        <p class="tab-item__point-metro">Бутово</p>
-                        <p class="tab-item__point-today">
-                            <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
-                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
-                        </p>
-                        <ul class="tab-item__point-services">
-                            <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
-                            <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
-                            <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
-                            <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
-                            <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
-                            <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
-                            <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
-                            <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
-                            <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
-                        </ul>
-                        <button type="button" class="tab-item__point-more-button">подробнее</button>
-                    </li>
-                    <li class="tab-item__point-item">
-                        <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ
-                            Зингер
-                            Плаза, 4 этаж, офис 401</p>
-                        <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 2</h5>
-                        <p class="tab-item__point-metro">Бутово</p>
-                        <p class="tab-item__point-today">
-                            <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
-                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
-                        </p>
-                        <ul class="tab-item__point-services">
-                            <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
-                            <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
-                            <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
-                            <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
-                            <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
-                            <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
-                            <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
-                            <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
-                            <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
-                        </ul>
-                        <button type="button" class="tab-item__point-more-button">подробнее</button>
-                    </li>
-                    <li class="tab-item__point-item">
-                        <p class="tab-item__point-address">Московская область, г.Подольск, ул. Комсомольская, д.1, БЦ
-                            Зингер
-                            Плаза, 4 этаж, офис 401</p>
-                        <h5 class="tab-item__point-title">Пункт выдачи полисов «Новомосковский» 3</h5>
-                        <p class="tab-item__point-metro">Бутово</p>
-                        <p class="tab-item__point-today">
-                            <span class="tab-item__point-time-today">Открыто до 22:00,</span><br>
-                            <span class="tab-item__point-break-today">перерыв 12:00 –13:00 </span>
-                        </p>
-                        <ul class="tab-item__point-services">
-                            <li class="tab-item__point-service tab-item__point-service--epoms" title="Оформление и выдача полисов ОМС, в том числе электронны"></li>
-                            <li class="tab-item__point-service tab-item__point-service--card" title="Оформление и выдача карты записи к врачу"></li>
-                            <li class="tab-item__point-service tab-item__point-service--full_day" title="Продлён рабочий день"></li>
-                            <li class="tab-item__point-service tab-item__point-service--weekend" title="Работает в выходные дни"></li>
-                            <li class="tab-item__point-service tab-item__point-service--save_policy" title="Возможность сохранения электронного полиса при смене страховой компании"></li>
-                            <li class="tab-item__point-service tab-item__point-service--policy" title="Оформление и выдача не электронных полисов ОМС"></li>
-                            <li class="tab-item__point-service tab-item__point-service--priem" title="Личный приём руководителя филиала"></li>
-                            <li class="tab-item__point-service tab-item__point-service--ecard" title="Оформление универсальной электронной карты"></li>
-                            <li class="tab-item__point-service tab-item__point-service--invalid" title="Оборудован для инвалидов"></li>
-                        </ul>
-                        <button type="button" class="tab-item__point-more-button">подробнее</button>
-                    </li>
-                </ul>
             </div>
         </section>
     </div>
@@ -836,7 +1211,7 @@
         <div class="point-modal">
             <button class="point-modal__close" type="button"><span class="visually-hidden">закрыть</span>
             </button>
-            <h2 class="point-modal__title">Пункт выдачи полисов «Новомосковский»</h2>
+            <h2 class="point-modal__title"><span>Пункт выдачи полисов «Новомосковский»</span></h2>
             <div class="point-modal__info">
                 <div class="point-modal__gallery">
                     <div class="point-modal__gallery-top">
@@ -902,6 +1277,8 @@
                                 </picture>
                             </div>
                         </div>
+<!--                        <div class="point-modal__gallery-prev"></div>-->
+<!--                        <div class="point-modal__gallery-next"></div>-->
                     </div>
                     <div class="point-modal__gallery-prev"></div>
                     <div class="point-modal__gallery-next"></div>
