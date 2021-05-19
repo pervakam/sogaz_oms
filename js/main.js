@@ -789,8 +789,44 @@ const customMoreButton = document.querySelector('.vision__custom--more');
 const hideSettings = document.querySelectorAll('.vision__settings-item--hide');
 const visionVersionBackButtons = document.querySelectorAll('.vision__back-button');
 const visionCustomButtons = document.querySelectorAll('.vision__custom');
+
+const visionFontSerifButton = document.querySelector('.vision__custom--serif');
+const visionFontSansSerifButton = document.querySelector('.vision__custom--sans-serif');
+const visionFontSmallButton = document.querySelector('.vision__custom--small');
+const visionFontMiddleButton = document.querySelector('.vision__custom--middle');
+const visionFontBigButton = document.querySelector('.vision__custom--big');
+const visionViewStandardButton = document.querySelector('.vision__custom--standard');
+const visionViewBlackWhiteButton = document.querySelector('.vision__custom--black-white');
+const visionViewInversionButton = document.querySelector('.vision__custom--inversion');
+const visionViewBlueButton = document.querySelector('.vision__custom--blue');
+const visionViewComfortButton = document.querySelector('.vision__custom--comfort');
+const visionViewBrownButton = document.querySelector('.vision__custom--brown');
+const visionKerningStandardButton = document.querySelector('.vision__custom--kerning-standard');
+const visionKerningMiddleButton = document.querySelector('.vision__custom--kerning-middle');
+const visionKerningBigButton = document.querySelector('.vision__custom--kerning-big');
+const visionInterlineSingleButton = document.querySelector('.vision__custom--interline-single');
+const visionInterlineOneHalfButton = document.querySelector('.vision__custom--one-half');
+const visionInterlineDoubleButton = document.querySelector('.vision__custom--interline-double');
+const visionImgOffButton = document.querySelector('.vision__custom--img-off');
+const visionImgOnButton = document.querySelector('.vision__custom--img-on');
+
 const HIDE_SETTINGS_TEXT = 'Скрыть дополнительные настройки';
 const SHOW_SETTINGS_TEXT = 'Открыть дополнительные настройки';
+
+const INVALID_VERSION = 'INVALID_VERSION';
+const FONT_TYPE = 'FONT_TYPE';
+const FONT_SIZE = 'FONT_SIZE';
+const COLOR_SCHEME = 'COLOR_SCHEME';
+const FONT_KERNING = 'FONT_KERNING';
+const FONT_INTERLINE = 'FONT_INTERLINE';
+const IMG_SHOW = 'IMG_SHOW';
+
+function readCookie(name) {
+	var matches = document.cookie.match(new RegExp(
+		'(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)',
+	));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
 visionSwitches.forEach(function (item) {
 	const visionCustomButtons = item.querySelectorAll('.vision__custom');
@@ -818,126 +854,450 @@ if (customMoreButton) {
 	});
 }
 
-visionActivateButton.addEventListener('click', function () {
+const visionActivateHandler = () => {
 	visionVersion.classList.remove('vision--hide');
 	header.classList.add('page-header--vision');
 	pageMain.classList.add('page-main--vision');
 	pageFooter.classList.add('page-footer--vision');
+
+	let INVALID_VERSION_STATUS = 'true';
+	let IMG_SHOW_STATUS = 'false';
+	document.cookie = INVALID_VERSION + '=' + INVALID_VERSION_STATUS;
+	document.cookie = IMG_SHOW + '=' + IMG_SHOW_STATUS;
+};
+
+const visionDefaultSettings = () => {
+	visionActivateHandler();
 	body.classList.add('font-middle');
 	body.classList.add('color-scheme-black-white');
 	body.classList.add('img-off');
-});
+};
+
+const visionDeactivateHandler = () => {
+	visionVersion.classList.add('vision--hide');
+	header.classList.remove('page-header--vision');
+	pageMain.classList.remove('page-main--vision');
+	pageFooter.classList.remove('page-footer--vision');
+	visionActivateButton.classList.remove('page-header__version-toggle--hide');
+	body.removeAttribute('class');
+
+	let INVALID_VERSION_STATUS = 'false';
+	let FONT_TYPE_STATUS = 'false';
+	let FONT_SIZE_STATUS = 'false';
+	let FONT_KERNING_STATUS = 'false';
+	let COLOR_SCHEME_STATUS = 'false';
+	let FONT_INTERLINE_STATUS = 'false';
+	let IMG_SHOW_STATUS = 'true';
+	document.cookie = INVALID_VERSION + '=' + INVALID_VERSION_STATUS;
+	document.cookie = FONT_TYPE + '=' + FONT_TYPE_STATUS;
+	document.cookie = FONT_SIZE + '=' + FONT_SIZE_STATUS;
+	document.cookie = FONT_KERNING + '=' + FONT_KERNING_STATUS;
+	document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
+	document.cookie = FONT_INTERLINE + '=' + FONT_INTERLINE_STATUS;
+	document.cookie = IMG_SHOW + '=' + IMG_SHOW_STATUS;
+	console.log(document.cookie);
+};
+
+visionActivateButton.addEventListener('click', visionDefaultSettings);
 
 visionVersionBackButtons.forEach(function (button) {
-	button.addEventListener('click', function () {
-		visionVersion.classList.add('vision--hide');
-		header.classList.remove('page-header--vision');
-		pageMain.classList.remove('page-main--vision');
-		pageFooter.classList.remove('page-footer--vision');
-		visionActivateButton.classList.remove('page-header__version-toggle--hide');
-		body.removeAttribute('class');
-	});
+	button.addEventListener('click', visionDeactivateHandler);
 });
+
+const fontSizeArray = ['font-small', 'font-middle', 'font-big'];
+const colorSchemeArray = ['color-scheme-black-white', 'color-scheme-inversion', 'color-scheme-blue', 'color-scheme-comfort', 'color-scheme-brown'];
+const fontKerningArray = ['font-kerning-middle', 'font-kerning-big'];
+const fontInterlineArray = ['font-interline-single', 'font-interline-double'];
+
+const removeOtherTypes = (array) => {
+	array.forEach((it) => {
+		body.classList.remove(it);
+	});
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+	let INVALID_VERSION_STATUS = readCookie(INVALID_VERSION);
+	let FONT_TYPE_STATUS = readCookie(FONT_TYPE);
+	let FONT_SIZE_STATUS = readCookie(FONT_SIZE);
+	let COLOR_SCHEME_STATUS = readCookie(COLOR_SCHEME);
+	let FONT_KERNING_STATUS = readCookie(FONT_KERNING);
+	let FONT_INTERLINE_STATUS = readCookie(FONT_INTERLINE);
+	let IMG_SHOW_STATUS = readCookie(IMG_SHOW);
+
+	if (INVALID_VERSION_STATUS === 'true') {
+		visionDefaultSettings();
+	}
+
+	if (FONT_TYPE_STATUS === 'font-serif') {
+		body.classList.add('font-serif');
+	}
+
+	if (FONT_SIZE_STATUS === 'font-small') {
+		body.classList.add('font-small');
+	}
+
+	if (FONT_SIZE_STATUS === 'font-middle') {
+		body.classList.add('font-middle');
+	}
+
+	if (FONT_SIZE_STATUS === 'font-big') {
+		body.classList.add('font-big');
+	}
+
+	if (COLOR_SCHEME_STATUS === 'false') {
+		body.classList.remove('color-scheme-black-white');
+	}
+
+	if (COLOR_SCHEME_STATUS === 'color-scheme-black-white') {
+		body.classList.add('color-scheme-black-white');
+	}
+
+	if (COLOR_SCHEME_STATUS === 'color-scheme-inversion') {
+		removeOtherTypes(colorSchemeArray);
+		body.classList.add('color-scheme-inversion');
+	}
+
+	if (COLOR_SCHEME_STATUS === 'color-scheme-blue') {
+		removeOtherTypes(colorSchemeArray);
+		body.classList.add('color-scheme-blue');
+	}
+
+	if (COLOR_SCHEME_STATUS === 'color-scheme-comfort') {
+		removeOtherTypes(colorSchemeArray);
+		body.classList.add('color-scheme-comfort');
+	}
+
+	if (COLOR_SCHEME_STATUS === 'color-scheme-brown') {
+		removeOtherTypes(colorSchemeArray);
+		body.classList.add('color-scheme-brown');
+	}
+
+	if (FONT_KERNING_STATUS === 'font-kerning-middle') {
+		removeOtherTypes(fontKerningArray);
+		body.classList.add('font-kerning-middle');
+	}
+
+	if (FONT_KERNING_STATUS === 'font-kerning-big') {
+		removeOtherTypes(fontKerningArray);
+		body.classList.add('font-kerning-big');
+	}
+
+	if (FONT_INTERLINE_STATUS === 'font-interline-single') {
+		removeOtherTypes(fontInterlineArray);
+		body.classList.add('font-interline-single');
+	}
+
+	if (FONT_INTERLINE_STATUS === 'font-interline-double') {
+		removeOtherTypes(fontInterlineArray);
+		body.classList.add('font-interline-double');
+	}
+
+	if (IMG_SHOW_STATUS === 'true') {
+		body.classList.remove('img-off');
+	}
+
+	if (IMG_SHOW_STATUS === 'false') {
+		body.classList.add('img-off');
+	}
+});
+
 
 visionCustomButtons.forEach(function (it) {
 	it.addEventListener('click', function (evt) {
-			if (evt.target === document.querySelector('.vision__custom--serif')) {
+			if (evt.target === visionFontSerifButton) {
 				body.classList.add('font-serif');
+
+				let FONT_TYPE_STATUS = 'font-serif';
+				document.cookie = FONT_TYPE + '=' + FONT_TYPE_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--sans-serif')) {
+			if (evt.target === visionFontSansSerifButton) {
 				body.classList.remove('font-serif');
+
+				let FONT_TYPE_STATUS = 'false';
+				document.cookie = FONT_TYPE + '=' + FONT_TYPE_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--small')) {
-				body.classList.remove('font-middle');
-				body.classList.remove('font-big');
+
+			if (evt.target === visionFontSmallButton) {
+				removeOtherTypes(fontSizeArray);
+				body.classList.add('font-small');
+
+				let FONT_SIZE_STATUS = 'font-small';
+				document.cookie = FONT_SIZE + '=' + FONT_SIZE_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--middle')) {
+			if (evt.target === visionFontMiddleButton) {
+				removeOtherTypes(fontSizeArray);
 				body.classList.add('font-middle');
-				body.classList.remove('font-big');
+
+				let FONT_SIZE_STATUS = 'font-middle';
+				document.cookie = FONT_SIZE + '=' + FONT_SIZE_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--big')) {
+			if (evt.target === visionFontBigButton) {
+				removeOtherTypes(fontSizeArray);
 				body.classList.add('font-big');
-				body.classList.remove('font-middle');
+
+				let FONT_SIZE_STATUS = 'font-big';
+				document.cookie = FONT_SIZE + '=' + FONT_SIZE_STATUS;
 			}
 
-			if (evt.target === document.querySelector('.vision__custom--standard')) {
-				body.classList.remove('color-scheme-black-white');
-				body.classList.remove('color-scheme-inversion');
-				body.classList.remove('color-scheme-blue');
-				body.classList.remove('color-scheme-comfort');
-				body.classList.remove('color-scheme-brown');
+			if (evt.target === visionViewStandardButton) {
+				removeOtherTypes(colorSchemeArray);
+
+				let COLOR_SCHEME_STATUS = 'false';
+				document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--black-white')) {
+			if (evt.target === visionViewBlackWhiteButton) {
+				removeOtherTypes(colorSchemeArray);
 				body.classList.add('color-scheme-black-white');
-				body.classList.remove('color-scheme-inversion');
-				body.classList.remove('color-scheme-blue');
-				body.classList.remove('color-scheme-comfort');
-				body.classList.remove('color-scheme-brown');
+
+				let COLOR_SCHEME_STATUS = 'color-scheme-black-white';
+				document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--inversion')) {
-				body.classList.remove('color-scheme-black-white');
+			if (evt.target === visionViewInversionButton) {
+				removeOtherTypes(colorSchemeArray);
 				body.classList.add('color-scheme-inversion');
-				body.classList.remove('color-scheme-blue');
-				body.classList.remove('color-scheme-comfort');
-				body.classList.remove('color-scheme-brown');
+
+				let COLOR_SCHEME_STATUS = 'color-scheme-inversion';
+				document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--blue')) {
-				body.classList.remove('color-scheme-black-white');
-				body.classList.remove('color-scheme-inversion');
+			if (evt.target === visionViewBlueButton) {
+				removeOtherTypes(colorSchemeArray);
 				body.classList.add('color-scheme-blue');
-				body.classList.remove('color-scheme-comfort');
-				body.classList.remove('color-scheme-brown');
+
+				let COLOR_SCHEME_STATUS = 'color-scheme-blue';
+				document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--comfort')) {
-				body.classList.remove('color-scheme-black-white');
-				body.classList.remove('color-scheme-inversion');
-				body.classList.remove('color-scheme-blue');
+			if (evt.target === visionViewComfortButton) {
+				removeOtherTypes(colorSchemeArray);
 				body.classList.add('color-scheme-comfort');
-				body.classList.remove('color-scheme-brown');
+
+				let COLOR_SCHEME_STATUS = 'color-scheme-comfort';
+				document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--brown')) {
-				body.classList.remove('color-scheme-black-white');
-				body.classList.remove('color-scheme-inversion');
-				body.classList.remove('color-scheme-blue');
-				body.classList.remove('color-scheme-comfort');
+			if (evt.target === visionViewBrownButton) {
+				removeOtherTypes(colorSchemeArray);
 				body.classList.add('color-scheme-brown');
+
+				let COLOR_SCHEME_STATUS = 'color-scheme-brown';
+				document.cookie = COLOR_SCHEME + '=' + COLOR_SCHEME_STATUS;
+				console.log(document.cookie);
 			}
 
-			if (evt.target === document.querySelector('.vision__custom--kerning-standard')) {
-				body.classList.remove('font-kerning-middle');
-				body.classList.remove('font-kerning-big');
+			if (evt.target === visionKerningStandardButton) {
+				removeOtherTypes(fontKerningArray);
+
+				let FONT_KERNING_STATUS = 'false';
+				document.cookie = FONT_KERNING + '=' + FONT_KERNING_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--kerning-middle')) {
+			if (evt.target === visionKerningMiddleButton) {
+				removeOtherTypes(fontKerningArray);
 				body.classList.add('font-kerning-middle');
-				body.classList.remove('font-kerning-big');
+
+				let FONT_KERNING_STATUS = 'font-kerning-middle';
+				document.cookie = FONT_KERNING + '=' + FONT_KERNING_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--kerning-big')) {
-				body.classList.remove('font-kerning-middle');
+			if (evt.target === visionKerningBigButton) {
+				removeOtherTypes(fontKerningArray);
 				body.classList.add('font-kerning-big');
+
+				let FONT_KERNING_STATUS = 'font-kerning-big';
+				document.cookie = FONT_KERNING + '=' + FONT_KERNING_STATUS;
 			}
 
-			if (evt.target === document.querySelector('.vision__custom--interline-single')) {
+			if (evt.target === visionInterlineSingleButton) {
+				removeOtherTypes(fontInterlineArray);
 				body.classList.add('font-interline-single');
-				body.classList.remove('font-interline-double');
+
+				let FONT_INTERLINE_STATUS = 'font-interline-single';
+				document.cookie = FONT_INTERLINE + '=' + FONT_INTERLINE_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--one-half')) {
-				body.classList.remove('font-interline-single');
-				body.classList.remove('font-interline-double');
+			if (evt.target === visionInterlineOneHalfButton) {
+				removeOtherTypes(fontInterlineArray);
+
+				let FONT_INTERLINE_STATUS = 'false';
+				document.cookie = FONT_INTERLINE + '=' + FONT_INTERLINE_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--interline-double')) {
-				body.classList.remove('font-interline-single');
+			if (evt.target === visionInterlineDoubleButton) {
+				removeOtherTypes(fontInterlineArray);
 				body.classList.add('font-interline-double');
+
+				let FONT_INTERLINE_STATUS = 'font-interline-double';
+				document.cookie = FONT_INTERLINE + '=' + FONT_INTERLINE_STATUS;
 			}
 
-			if (evt.target === document.querySelector('.vision__custom--img-off')) {
+			if (evt.target === visionImgOffButton) {
 				body.classList.add('img-off');
+
+				let IMG_SHOW_STATUS = 'false';
+				document.cookie = IMG_SHOW + '=' + IMG_SHOW_STATUS;
 			}
-			if (evt.target === document.querySelector('.vision__custom--img-on')) {
+			if (evt.target === visionImgOnButton) {
 				body.classList.remove('img-off');
+
+				let IMG_SHOW_STATUS = 'true';
+				document.cookie = IMG_SHOW + '=' + IMG_SHOW_STATUS;
 			}
 		},
 	);
 });
+
+// visionCustomButtons.forEach(function (it) {
+// 	it.addEventListener('click', function (evt) {
+// 			// if (evt.target === document.querySelector('.vision__custom--serif')) {
+// 			// 	body.classList.add('font-serif');
+// 			//
+// 			// 	let FONT_TYPE_STATUS = "font-serif";
+// 			// 	document.cookie = FONT_TYPE + "=" + FONT_TYPE_STATUS;
+// 			// 	console.log(document.cookie);
+// 			// }
+// 			visionCustomButtonsChecker(evt, visionFontSerifButton, 'font-serif')
+// 			if (evt.target === document.querySelector('.vision__custom--sans-serif')) {
+// 				body.classList.remove('font-serif');
+//
+// 				let FONT_TYPE_STATUS = "false";
+// 				document.cookie = FONT_TYPE + "=" + FONT_TYPE_STATUS;
+// 				console.log(document.cookie);
+// 			}
+//
+// 			if (evt.target === document.querySelector('.vision__custom--small')) {
+// 				removeOtherTypes(fontSizeArray)
+// 				body.classList.add('font-small');
+//
+// 				let FONT_SIZE_STATUS = "font-small";
+// 				document.cookie = FONT_SIZE + "=" + FONT_SIZE_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--middle')) {
+// 				removeOtherTypes(fontSizeArray)
+// 				body.classList.add('font-middle');
+//
+// 				let FONT_SIZE_STATUS = "font-middle";
+// 				document.cookie = FONT_SIZE + "=" + FONT_SIZE_STATUS;
+// 				console.log(document.cookie);
+//
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--big')) {
+// 				removeOtherTypes(fontSizeArray)
+// 				body.classList.add('font-big');
+//
+// 				let FONT_SIZE_STATUS = "font-big";
+// 				document.cookie = FONT_SIZE + "=" + FONT_SIZE_STATUS;
+// 				console.log(document.cookie);
+// 			}
+//
+// 			if (evt.target === document.querySelector('.vision__custom--standard')) {
+// 				removeOtherTypes(colorSchemeArray)
+//
+// 				let COLOR_SCHEME_STATUS = "false";
+// 				document.cookie = COLOR_SCHEME + "=" + COLOR_SCHEME_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--black-white')) {
+// 				removeOtherTypes(colorSchemeArray);
+// 				body.classList.add('color-scheme-black-white');
+//
+// 				let COLOR_SCHEME_STATUS = "color-scheme-black-white";
+// 				document.cookie = COLOR_SCHEME + "=" + COLOR_SCHEME_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--inversion')) {
+// 				removeOtherTypes(colorSchemeArray);
+// 				body.classList.add('color-scheme-inversion');
+//
+// 				let COLOR_SCHEME_STATUS = "color-scheme-inversion";
+// 				document.cookie = COLOR_SCHEME + "=" + COLOR_SCHEME_STATUS;
+// 				console.log(document.cookie);
+//
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--blue')) {
+// 				removeOtherTypes(colorSchemeArray);
+// 				body.classList.add('color-scheme-blue');
+//
+// 				let COLOR_SCHEME_STATUS = "color-scheme-blue";
+// 				document.cookie = COLOR_SCHEME + "=" + COLOR_SCHEME_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--comfort')) {
+// 				removeOtherTypes(colorSchemeArray);
+// 				body.classList.add('color-scheme-comfort');
+//
+// 				let COLOR_SCHEME_STATUS = "color-scheme-comfort";
+// 				document.cookie = COLOR_SCHEME + "=" + COLOR_SCHEME_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--brown')) {
+// 				removeOtherTypes(colorSchemeArray);
+// 				body.classList.add('color-scheme-brown');
+//
+// 				let COLOR_SCHEME_STATUS = "color-scheme-brown";
+// 				document.cookie = COLOR_SCHEME + "=" + COLOR_SCHEME_STATUS;
+// 				console.log(document.cookie);
+// 			}
+//
+// 			if (evt.target === document.querySelector('.vision__custom--kerning-standard')) {
+// 				removeOtherTypes(fontKerningArray);
+//
+// 				let FONT_KERNING_STATUS = "false";
+// 				document.cookie = FONT_KERNING + "=" + FONT_KERNING_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--kerning-middle')) {
+// 				removeOtherTypes(fontKerningArray);
+// 				body.classList.add('font-kerning-middle');
+//
+// 				let FONT_KERNING_STATUS = "font-kerning-middle";
+// 				document.cookie = FONT_KERNING + "=" + FONT_KERNING_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--kerning-big')) {
+// 				removeOtherTypes(fontKerningArray);
+// 				body.classList.add('font-kerning-big');
+//
+// 				let FONT_KERNING_STATUS = "font-kerning-big";
+// 				document.cookie = FONT_KERNING + "=" + FONT_KERNING_STATUS;
+// 				console.log(document.cookie);
+// 			}
+//
+// 			if (evt.target === document.querySelector('.vision__custom--interline-single')) {
+// 				removeOtherTypes(fontInterlineArray);
+// 				body.classList.add('font-interline-single');
+//
+// 				let FONT_INTERLINE_STATUS = "font-interline-single";
+// 				document.cookie = FONT_INTERLINE + "=" + FONT_INTERLINE_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--one-half')) {
+// 				removeOtherTypes(fontInterlineArray);
+//
+// 				let FONT_INTERLINE_STATUS = "false";
+// 				document.cookie = FONT_INTERLINE + "=" + FONT_INTERLINE_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--interline-double')) {
+// 				removeOtherTypes(fontInterlineArray);
+// 				body.classList.add('font-interline-double');
+//
+// 				let FONT_INTERLINE_STATUS = "font-interline-double";
+// 				document.cookie = FONT_INTERLINE + "=" + FONT_INTERLINE_STATUS;
+// 				console.log(document.cookie);
+// 			}
+//
+// 			if (evt.target === document.querySelector('.vision__custom--img-off')) {
+// 				body.classList.add('img-off');
+//
+// 				let IMG_SHOW_STATUS = "false";
+// 				document.cookie = IMG_SHOW + "=" + IMG_SHOW_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 			if (evt.target === document.querySelector('.vision__custom--img-on')) {
+// 				body.classList.remove('img-off');
+//
+// 				let IMG_SHOW_STATUS = "true";
+// 				document.cookie = IMG_SHOW + "=" + IMG_SHOW_STATUS;
+// 				console.log(document.cookie);
+// 			}
+// 		},
+// 	);
+// });
 
 ///// кнопка в тестах /////
 const testForm = document.querySelector('.test__form');
@@ -1202,7 +1562,7 @@ function validateForm(e, form) {
 		!form.querySelector('input[type="checkbox"]').checked
 	) {
 		valid = false;
-		agreeCheckbox.classList.add('feedback__form-agree--error')
+		agreeCheckbox.classList.add('feedback__form-agree--error');
 	}
 }
 
