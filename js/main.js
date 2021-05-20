@@ -1572,3 +1572,22 @@ if (sendFormTrigger) {
 		validateForm(e, form);
 	});
 }
+
+///// слайдер в блоке других новостей /////
+const articleNewsBlock = document.querySelector('.tab__article-news');
+if (articleNewsBlock) {
+	const otherNewsSwiper = new Swiper('.tab-item__list-container--article', {
+		slidesPerView: 'auto',
+
+		spaceBetween: 24,
+
+		wrapperClass: 'tab-item__list-wrapper--article',
+
+		slideClass: 'tab-item__list-slide--article',
+
+		navigation: {
+			nextEl: '.tab-item__list-next--article',
+			prevEl: '.tab-item__list-prev--article',
+		},
+	});
+}
