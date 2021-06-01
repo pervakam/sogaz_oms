@@ -112,14 +112,18 @@ headerMenuButton.addEventListener('click', function (evt) {
 });
 
 ///// кнопка наверх /////
-window.addEventListener('scroll', function () {
+const SCROLL_DISTANCE = 200;
+
+const scrollHandler = () => {
 	const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-	if (scrolled > 200) {
+	if (scrolled > SCROLL_DISTANCE) {
 		upButton.classList.remove('up-button-hide');
 	} else {
 		upButton.classList.add('up-button-hide');
 	}
-});
+};
+
+window.addEventListener('scroll', scrollHandler);
 
 upButton.addEventListener('click', function (evt) {
 	evt.preventDefault();
@@ -398,18 +402,26 @@ tabPhotoSections.forEach(function (it) {
 	const swiperList = it.querySelector('.tab__photo-section-list');
 	const swiperNextEl = it.querySelector('.tab__photo-section-next');
 	const swiperPrevEl = it.querySelector('.tab__photo-section-prev');
+	const swiperSlides = it.querySelectorAll('.tab__photo-section-slide');
+	const slideNumber = it.querySelector('.tab__article-photo-number');
+
+	slideNumber.textContent = swiperSlides.length.toString();
 
 	const PhotoSectionSlider = new Swiper(swiperList, {
+		on: {
+			slidePrevTransitionEnd: function () {
+				it.classList.remove('tab__photo-section--no-mask');
+			},
+			reachEnd: function () {
+				it.classList.add('tab__photo-section--no-mask');
+			},
+		},
+
 		slidesPerView: 'auto',
 
 		wrapperClass: 'tab__photo-section-wrapper',
 
 		slideClass: 'tab__photo-section-slide',
-
-		pagination: {
-			el: '.tab__article-photo-counter',
-			type: 'fraction',
-		},
 
 		navigation: {
 			nextEl: swiperNextEl,
@@ -434,6 +446,8 @@ tabItemMediaSlide.forEach(function (it) {
 			const tabMediaModalPhotoSection = tabPhotoSection.cloneNode(true);
 			const photoModal = tabItemMediaModal.appendChild(tabMediaModalPhotoSection);
 
+			body.classList.add('no-scroll');
+			upButton.classList.add('up-button-hide');
 			photoModal.classList.add('tab__photo-section--modal');
 			photoModal.querySelector('.tab__photo-section-navigation').classList.add('tab__photo-section-navigation--hide');
 
@@ -479,6 +493,8 @@ tabItemMediaSlide.forEach(function (it) {
 				photoModal.classList.remove('tab__photo-section--modal');
 				photoModal.remove();
 				photoModalThumbsSection.remove();
+				body.classList.remove('no-scroll');
+				scrollHandler();
 
 				topList.classList.remove('tab__photo-section-list--top');
 				topWrapper.classList.remove('tab__photo-section-wrapper--top');
