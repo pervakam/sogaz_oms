@@ -13,7 +13,7 @@ const upButton = document.querySelector('.up-button');
 const pageHeader = document.querySelector('.page-header');
 const mainNavHelpItemIcons = document.querySelectorAll('.main-nav__help-item-icon--menu');
 const mainNavHelpItemDescriptions = document.querySelectorAll('.main-nav__help-item-description');
-const regionModal = document.querySelector('#region-modal').content.querySelector('.region');
+const regionModal = document.querySelector('#region-modal');
 const mainNavMenu = document.querySelector('.main-nav__menu');
 const bonusesRegionField = document.getElementById('bonuses-region-field');
 const formRegionField = document.getElementById('region-field');
@@ -106,32 +106,36 @@ const openHeaderMenu = function () {
 	closeHeaderMenuByClick();
 };
 
-headerMenuButton.addEventListener('click', function (evt) {
-	evt.preventDefault();
-	openHeaderMenu();
-});
+if (headerMenuButton) {
+	headerMenuButton.addEventListener('click', function (evt) {
+		evt.preventDefault();
+		openHeaderMenu();
+	});
+}
 
 ///// кнопка наверх /////
 const SCROLL_DISTANCE = 200;
 
-const scrollHandler = () => {
-	const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-	if (scrolled > SCROLL_DISTANCE) {
-		upButton.classList.remove('up-button-hide');
-	} else {
-		upButton.classList.add('up-button-hide');
-	}
-};
+if(upButton) {
+	const scrollHandler = () => {
+		const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+		if (scrolled > SCROLL_DISTANCE) {
+			upButton.classList.remove('up-button-hide');
+		} else {
+			upButton.classList.add('up-button-hide');
+		}
+	};
 
-window.addEventListener('scroll', scrollHandler);
+	window.addEventListener('scroll', scrollHandler);
 
-upButton.addEventListener('click', function (evt) {
-	evt.preventDefault();
-	scrollToTop();
-});
+	upButton.addEventListener('click', function (evt) {
+		evt.preventDefault();
+		scrollToTop();
+	});
+}
 
 ///// слайдер в ОМС /////
-if (!pageMainVisionVersion) {
+if (header && !pageMainVisionVersion) {
 	const mySwiper = new Swiper('.oms-about__list', {
 		on: {
 			slidePrevTransitionEnd: function () {
@@ -185,18 +189,22 @@ const closeRegionModalByClick = function () {
 
 const openRegionModal = function () {
 	const fragment = document.createDocumentFragment();
-	const regionSearch = regionModal.cloneNode(true);
-	fragment.appendChild(regionSearch);
-	header.insertBefore(fragment, headerTopSection);
-	regionSearchModal = regionSearch;
 
-	const regionSearchField = document.getElementById('region-search-field');
+	if(regionModal) {
+		const regionModalContent = regionModal.content.querySelector('.region');
+		const regionSearch = regionModalContent.cloneNode(true);
+		fragment.appendChild(regionSearch);
+		header.insertBefore(fragment, headerTopSection);
+		regionSearchModal = regionSearch;
 
-	body.classList.add('no-scroll');
-	closeRegionModalByClick();
+		const regionSearchField = document.getElementById('region-search-field');
 
-	if (window.innerWidth <= 1279) {
-		regionSearchField.placeholder = 'Начните вводить регион';
+		body.classList.add('no-scroll');
+		closeRegionModalByClick();
+
+		if (window.innerWidth <= 1279) {
+			regionSearchField.placeholder = 'Начните вводить регион';
+		}
 	}
 };
 
@@ -392,7 +400,6 @@ if (window.innerWidth <= 1279 && tabSearchForm) {
 	if (tabSearchCloseButton) {
 		tabSearchCloseButton.addEventListener('click', tabFilterHandler);
 	}
-
 }
 
 /// карусель фотографий в разделе фотогалереи и в статье/////
@@ -577,175 +584,6 @@ tabItemPhotosLists.forEach(function (it) {
 	}
 });
 
-///// попап с пунктами выдачи полисов /////
-const feedbackLocationButton = document.querySelector('.feedback__location-button');
-const pointModalOverlay = document.querySelector('.tab-item__point-overlay');
-const pointSearchInput = document.querySelector('.tab-item__search-input--map-region');
-const pointModalCloseButton = document.querySelector('.tab-item__point-modal-close');
-const pointInfoCloseButton = document.querySelector('.tab-item__point-info-close');
-const pointInfoItems = document.querySelectorAll('.tab-item__point-item');
-const formPointField = document.querySelector('.form__result-list--point');
-const requestForm = document.querySelector('.feedback__form');
-const addressItem = document.querySelector('.tab-item--address');
-const pointPin = document.querySelector('.tab-item__point-pin');
-const pointModal = document.querySelector('.point-modal__overlay');
-const SHOW_MORE_TEXT = 'подробнее';
-const SHOW_LESS_TEXT = 'скрыть';
-
-const pointModalOverlayHandler = function () {
-	pointModalOverlay.classList.remove('tab-item__point-overlay--hide');
-	body.classList.add('no-scroll');
-	pointModalCloseButton.addEventListener('click', function () {
-		pointModalOverlay.classList.add('tab-item__point-overlay--hide');
-		body.classList.remove('no-scroll');
-	});
-};
-
-const addressModalOverlayHandler = function (item) {
-	const addressModalOverlay = pointModalOverlay.cloneNode(true);
-	const addressModal = addressItem.appendChild(addressModalOverlay);
-	const addressModalItemsList = addressModal.querySelector('.tab-item__point-list');
-	const addressModalTitle = addressModal.querySelector('.tab-item__point-modal-title');
-	const addressModalCloseButton = addressModal.querySelector('.tab-item__point-modal-close');
-
-	const currentItem = item.cloneNode(true);
-	const currentAddressModalItem = addressModalItemsList.appendChild(currentItem);
-	currentAddressModalItem.style.display = 'block';
-	const currentItemInfo = currentAddressModalItem.querySelectorAll('.tab__info-item');
-
-	for (let i = 0; i < currentItemInfo.length; i++) {
-		const currentItemInfoInput = currentItemInfo[i].querySelector('input[type="checkbox"]');
-		const currentItemInfoLabel = currentItemInfo[i].querySelector('.tab__info-item-title');
-		currentItemInfoInput.setAttribute('id', 'address-info-10' + [i]);
-		currentItemInfoLabel.setAttribute('for', 'address-info-10' + [i]);
-	}
-
-	addressModal.classList.remove('tab-item__point-overlay--address');
-	addressModal.classList.add('tab-item__point-overlay--address-modal');
-	upButton.classList.add('up-button-hide');
-	body.classList.add('no-scroll');
-
-	const addressItemTitle = item.querySelector('.tab-item__point-title');
-
-	addressModalTitle.textContent = addressItemTitle.textContent;
-
-	addressModalCloseButton.addEventListener('click', function () {
-		addressItem.removeChild(addressModal);
-		body.classList.remove('no-scroll');
-	});
-};
-
-if (feedbackLocationButton) {
-	feedbackLocationButton.addEventListener('click', pointModalOverlayHandler);
-}
-
-pointInfoItems.forEach(function (it) {
-	const pointInfoButton = it.querySelector('.tab-item__point-info-button');
-	const pointAddressField = it.querySelector('.tab-item__point-address');
-	const pointInfoMoreButton = it.querySelector('.tab-item__point-info-more-button');
-	const pointMoreButton = it.querySelector('.tab-item__point-more-button');
-
-	if (pointMoreButton) {
-		pointMoreButton.addEventListener('click', () => {
-			pointModal.classList.remove('point-modal__overlay--hide');
-
-			pointModal.querySelector('.point-modal__title').textContent = pointModal.querySelector('.point-modal__point-title').textContent = it.querySelector('.tab-item__point-title').textContent;
-
-			const pointModalCloseButton = document.querySelector('.point-modal__close');
-			pointModalCloseButton.addEventListener('click', () => {
-				pointModal.classList.add('point-modal__overlay--hide');
-			});
-		});
-	}
-
-	if (pointInfoMoreButton) {
-		pointInfoMoreButton.addEventListener('click', function () {
-			if (window.innerWidth > 640 && requestForm.contains(feedbackLocationButton)) {
-				if (pointInfoMoreButton.textContent === SHOW_MORE_TEXT) {
-					pointInfoMoreButton.textContent = SHOW_LESS_TEXT;
-				} else if (pointInfoMoreButton.textContent === SHOW_LESS_TEXT) {
-					pointInfoMoreButton.textContent = SHOW_MORE_TEXT;
-				}
-			} else if (window.innerWidth < 640 && requestForm.contains(feedbackLocationButton)) {
-				pointModalOverlay.classList.toggle('tab-item__point-overlay--mobile');
-			}
-
-			if (addressItem) {
-				addressModalOverlayHandler(it);
-			}
-		});
-	}
-
-	if (pointInfoButton) {
-		pointInfoButton.addEventListener('click', function () {
-			for (let i = 0; i < formPointField.options.length; i++) {
-				if (formPointField.options[i].textContent === pointAddressField.textContent) {
-					formPointField.options[i].setAttribute('selected', 'selected');
-				}
-			}
-			body.classList.remove('no-scroll');
-			formPointField.parentElement.classList.add('tab-item__search-input-selected');
-			pointModalOverlay.classList.add('tab-item__point-overlay--hide');
-		});
-	}
-});
-
-if (pointPin) {
-	pointPin.addEventListener('click', () => {
-		pointModal.classList.remove('point-modal__overlay--hide');
-		body.classList.add('no-scroll');
-		upButton.style.display = 'none';
-
-		const pointModalCloseButton = document.querySelector('.point-modal__close');
-		const closePointModalHandler = () => {
-			pointModal.classList.add('point-modal__overlay--hide');
-			body.classList.remove('no-scroll');
-			upButton.style.display = 'block';
-		};
-		const escPointModalHandler = (evt) => {
-			if (evt.keyCode === 27) {
-				evt.preventDefault();
-				closePointModalHandler();
-			}
-		};
-
-		pointModalCloseButton.addEventListener('click', closePointModalHandler);
-		window.addEventListener('keydown', escPointModalHandler);
-	});
-}
-
-if (pointModal) {
-	const addressGalleryThumbs = new Swiper('.point-modal__gallery-thumbs', {
-		wrapperClass: 'point-modal__gallery-wrapper--thumbs',
-		slideClass: 'point-modal__gallery-slide-thumbs',
-		slidesPerView: 'auto',
-		freeMode: true,
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
-
-		navigation: {
-			nextEl: '.point-modal__gallery-next',
-			prevEl: '.point-modal__gallery-prev',
-		},
-	});
-
-	const addressGalleryTop = new Swiper('.point-modal__gallery-top', {
-		wrapperClass: 'point-modal__gallery-wrapper--top',
-		slideClass: 'point-modal__gallery-slide-top',
-		slidesPerView: 'auto',
-		autoHeight: true,
-		centeredSlides: true,
-
-		thumbs: {
-			swiper: addressGalleryThumbs,
-		},
-		navigation: {
-			nextEl: '.point-modal__gallery-next',
-			prevEl: '.point-modal__gallery-prev',
-		},
-	});
-}
-
 ///// информационные баннеры /////
 const covidBanner = document.querySelector('.covid-banner');
 const courierBannerOverlay = document.querySelector('.courier-banner__overlay');
@@ -914,7 +752,9 @@ const visionDeactivateHandler = () => {
 	console.log(document.cookie);
 };
 
-visionActivateButton.addEventListener('click', visionDefaultSettings);
+if(visionActivateButton) {
+	visionActivateButton.addEventListener('click', visionDefaultSettings);
+}
 
 visionVersionBackButtons.forEach(function (button) {
 	button.addEventListener('click', visionDeactivateHandler);
@@ -1607,3 +1447,244 @@ if (articleNewsBlock) {
 		},
 	});
 }
+
+///// попап с пунктами выдачи полисов на странице "Заявка на оформление полиса ОМС" /////
+const feedbackLocationButton = document.querySelector('.feedback__location-button');
+const pointModalOverlay = document.querySelector('.tab-item__point-overlay');
+const pointModalCloseButton = document.querySelector('.tab-item__point-modal-close');
+const pointInfoItems = document.querySelectorAll('.tab-item__point-item');
+const requestForm = document.querySelector('.feedback__form');
+const SHOW_MORE_TEXT = 'подробнее';
+const SHOW_LESS_TEXT = 'скрыть';
+
+const pointModalOverlayHandler = function () {
+	pointModalOverlay.classList.remove('tab-item__point-overlay--hide');
+	body.classList.add('no-scroll');
+	pointModalCloseButton.addEventListener('click', function () {
+		pointModalOverlay.classList.add('tab-item__point-overlay--hide');
+		body.classList.remove('no-scroll');
+	});
+};
+
+if (feedbackLocationButton) {
+	feedbackLocationButton.addEventListener('click', pointModalOverlayHandler);
+}
+
+pointInfoItems.forEach(function (it) {
+	const pointInfoMoreButton = it.querySelector('.tab-item__point-info-more-button');
+
+	if (pointInfoMoreButton) {
+		pointInfoMoreButton.addEventListener('click', function () {
+			if (window.innerWidth > 640 && requestForm.contains(feedbackLocationButton)) {
+				if (pointInfoMoreButton.textContent === SHOW_MORE_TEXT) {
+					pointInfoMoreButton.textContent = SHOW_LESS_TEXT;
+				} else if (pointInfoMoreButton.textContent === SHOW_LESS_TEXT) {
+					pointInfoMoreButton.textContent = SHOW_MORE_TEXT;
+				}
+			} else if (window.innerWidth < 640 && requestForm.contains(feedbackLocationButton)) {
+				pointModalOverlay.classList.toggle('tab-item__point-overlay--mobile');
+			}
+		});
+	}
+});
+
+///// копирование списка ПВП для отображения "Списком" /////
+const pointsOnMap = document.querySelector('.tab-item__view-section--map');
+const pointsOnList = document.querySelector('.tab-item__view-section--list');
+
+if (pointsOnMap) {
+	const pointsList = pointsOnMap.querySelector('.tab-item__point-list');
+	const pointsListOnList = pointsOnList.appendChild(pointsList.cloneNode(true));
+}
+
+///// попап с информацией о пункте выдачи полисов на странице "Адреса офисов и пункты выдачи полисов" /////
+const pointModal = document.querySelector('.point-modal__overlay');
+const pointModalInfo = document.querySelector('.point-modal__info');
+const pointModalAddress = document.querySelector('.point-modal__point-address');
+const pointModalTitle = document.querySelector('.point-modal__title');
+const pointModalPointTitle = document.querySelector('.point-modal__point-title');
+const pointModalMetro = document.querySelector('.point-modal__point-metro');
+const pointAddressInfoItems = document.querySelectorAll('.tab-item__point-item--address');
+const modalNoGallery = document.querySelector('.point-modal__no-gallery');
+const pointModalSchedule = document.querySelector('.tab__info-item--schedule');
+const pointModalContacts = document.querySelector('.tab__info-item--contacts');
+const pointModalServices = document.querySelector('.tab__info-description--services');
+
+pointAddressInfoItems.forEach((it) => {
+	const pointMoreButton = it.querySelector('.tab-item__point-more-button');
+	const pointGallery = it.querySelector('.gallery');
+	const pointAddress = it.querySelector('.tab-item__point-address');
+	const pointTitle = it.querySelector('.tab-item__point-title');
+	const pointMetro = it.querySelector('.tab-item__point-metro');
+	const pointSchedule = it.querySelector('.tab__info-description--schedule');
+	const pointContacts = it.querySelector('.tab__info-description--contacts');
+	const pointServices = it.querySelector('.point-modal__point-services');
+
+	pointMoreButton.addEventListener('click', () => {
+		pointModal.classList.remove('point-modal__overlay--hide');
+		body.classList.add('no-scroll');
+		upButton.classList.add('up-button-hide');
+		pointModal.querySelector('.point-modal').focus();
+
+		///// копирование галереи ПВП в попап /////
+		if (it.contains(pointGallery)) {
+			const pointModalGallery = pointModalInfo.insertBefore(pointGallery.cloneNode(true), modalNoGallery);
+
+			if (pointModalGallery) {
+				pointModalGallery.classList.add('point-modal__gallery');
+				pointModalGallery.querySelector('.gallery-top').classList.add('point-modal__gallery-top');
+				pointModalGallery.querySelector('.gallery-thumbs').classList.add('point-modal__gallery-thumbs');
+				pointModalGallery.querySelector('.gallery-wrapper--top').classList.add('point-modal__gallery-wrapper');
+				pointModalGallery.querySelector('.gallery-wrapper--thumbs').classList.add('point-modal__gallery-wrapper');
+				pointModalGallery.querySelector('.gallery-wrapper--top').classList.add('point-modal__gallery-wrapper--top');
+				pointModalGallery.querySelector('.gallery-wrapper--thumbs').classList.add('point-modal__gallery-wrapper--thumbs');
+				pointModalGallery.querySelectorAll('.gallery-slide-top').forEach((it) => {
+					it.classList.add('point-modal__gallery-slide-top');
+				});
+				pointModalGallery.querySelectorAll('.gallery-slide-thumbs').forEach((it) => {
+					it.classList.add('point-modal__gallery-slide-thumbs');
+				});
+				pointModalGallery.querySelector('.gallery-prev').classList.add('point-modal__gallery-prev');
+				pointModalGallery.querySelector('.gallery-next').classList.add('point-modal__gallery-next');
+
+				const addressGalleryThumbs = new Swiper('.point-modal__gallery-thumbs', {
+					wrapperClass: 'point-modal__gallery-wrapper--thumbs',
+					slideClass: 'point-modal__gallery-slide-thumbs',
+					slidesPerView: 'auto',
+					freeMode: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+
+					navigation: {
+						nextEl: '.point-modal__gallery-next',
+						prevEl: '.point-modal__gallery-prev',
+					},
+				});
+
+				const addressGalleryTop = new Swiper('.point-modal__gallery-top', {
+					wrapperClass: 'point-modal__gallery-wrapper--top',
+					slideClass: 'point-modal__gallery-slide-top',
+					slidesPerView: 'auto',
+					autoHeight: true,
+					centeredSlides: true,
+
+					thumbs: {
+						swiper: addressGalleryThumbs,
+					},
+					navigation: {
+						nextEl: '.point-modal__gallery-next',
+						prevEl: '.point-modal__gallery-prev',
+					},
+				});
+			}
+		} else {
+			modalNoGallery.classList.remove('point-modal__no-gallery--hide');
+		}
+		///// копирование расписания ПВП в попап /////
+		pointModalSchedule.appendChild(pointSchedule.cloneNode(true));
+		///// копирование сервисов ПВП в попап /////
+		pointModalServices.appendChild(pointServices.cloneNode(true));
+		///// копирование контактов ПВП в попап /////
+		pointModalContacts.appendChild(pointContacts.cloneNode(true));
+		///// копирование адреса ПВП в попап /////
+		pointModalAddress.textContent = pointAddress.textContent;
+		pointModalMetro.textContent = pointMetro.textContent;
+		///// копирование названия ПВП в попап /////
+		pointModalTitle.textContent = pointModalPointTitle.textContent = pointTitle.textContent;
+
+		const pointModalCloseButton = document.querySelector('.point-modal__close');
+		const pointModalCloseHandler = () => {
+			pointModal.classList.add('point-modal__overlay--hide');
+			body.classList.remove('no-scroll');
+			scrollHandler();
+			modalNoGallery.classList.add('point-modal__no-gallery--hide');
+			if (pointModalInfo.querySelector('.point-modal__gallery')) {
+				pointModalInfo.removeChild(pointModalInfo.querySelector('.point-modal__gallery'));
+			}
+			if (pointModalInfo.querySelector('.tab__info-description--schedule')) {
+				pointModalInfo.querySelector('.tab__info-item--schedule').removeChild(pointModalInfo.querySelector('.tab__info-description--schedule'));
+			}
+			if (pointModalInfo.querySelector('.tab__info-description--contacts')) {
+				pointModalInfo.querySelector('.tab__info-item--contacts').removeChild(pointModalInfo.querySelector('.tab__info-description--contacts'));
+			}
+			if (pointModalInfo.querySelector('.point-modal__point-services')) {
+				pointModalInfo.querySelector('.tab__info-description--services').removeChild(pointModalInfo.querySelector('.point-modal__point-services'));
+			}
+		};
+		const escPointModalHandler = (evt) => {
+			if (evt.keyCode === 27) {
+				evt.preventDefault();
+				pointModalCloseHandler();
+			}
+		};
+
+		pointModalCloseButton.addEventListener('click', pointModalCloseHandler);
+		window.addEventListener('keydown', escPointModalHandler);
+	});
+});
+
+// if (pointModal) {
+// 	const addressGalleryThumbs = new Swiper('.point-modal__gallery-thumbs', {
+// 		wrapperClass: 'point-modal__gallery-wrapper--thumbs',
+// 		slideClass: 'point-modal__gallery-slide-thumbs',
+// 		slidesPerView: 'auto',
+// 		freeMode: true,
+// 		watchSlidesVisibility: true,
+// 		watchSlidesProgress: true,
+//
+// 		navigation: {
+// 			nextEl: '.point-modal__gallery-next',
+// 			prevEl: '.point-modal__gallery-prev',
+// 		},
+// 	});
+//
+// 	const addressGalleryTop = new Swiper('.point-modal__gallery-top', {
+// 		wrapperClass: 'point-modal__gallery-wrapper--top',
+// 		slideClass: 'point-modal__gallery-slide-top',
+// 		slidesPerView: 'auto',
+// 		autoHeight: true,
+// 		centeredSlides: true,
+//
+// 		thumbs: {
+// 			swiper: addressGalleryThumbs,
+// 		},
+// 		navigation: {
+// 			nextEl: '.point-modal__gallery-next',
+// 			prevEl: '.point-modal__gallery-prev',
+// 		},
+// 	});
+// }
+
+// if (pointPin) {
+// 	pointPin.addEventListener('click', () => {
+// 		pointModal.classList.remove('point-modal__overlay--hide');
+// 		body.classList.add('no-scroll');
+// 		upButton.style.display = 'none';
+//
+// 		const pointModalCloseButton = document.querySelector('.point-modal__close');
+// 		const closePointModalHandler = () => {
+// 			pointModal.classList.add('point-modal__overlay--hide');
+// 			body.classList.remove('no-scroll');
+// 			upButton.style.display = 'block';
+// 		};
+// 		const escPointModalHandler = (evt) => {
+// 			if (evt.keyCode === 27) {
+// 				evt.preventDefault();
+// 				closePointModalHandler();
+// 			}
+// 		};
+//
+// 		pointModalCloseButton.addEventListener('click', closePointModalHandler);
+// 		window.addEventListener('keydown', escPointModalHandler);
+// 	});
+// }
+//
+
+///// вывод на печать /////
+const printButton = document.querySelectorAll('.print-button');
+
+printButton.forEach((it) => {
+	it.addEventListener('click', () => {
+		window.print();
+	});
+});
